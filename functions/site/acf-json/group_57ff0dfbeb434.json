@@ -1,0 +1,322 @@
+{
+    "key": "group_57ff0dfbeb434",
+    "title": "GROUP: Grid",
+    "fields": [
+        {
+            "key": "field_57ff0e05e7ad8",
+            "label": "Grid Content",
+            "name": "grid",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "button_label": "Add Grid Item",
+            "min": "",
+            "max": "",
+            "layouts": [
+                {
+                    "key": "57ff0e0cead07",
+                    "name": "text",
+                    "label": "Grid Item: Text",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_57ff0e49e7ad9",
+                            "label": "Text",
+                            "name": "text",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "visual",
+                            "toolbar": "grid_text",
+                            "media_upload": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "57ff0e80e7ada",
+                    "name": "image",
+                    "label": "Grid Item: Image",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_57ff0e8ee7adc",
+                            "label": "Image",
+                            "name": "image",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_57ff120b9ce27",
+                            "label": "Image Max Width (px)",
+                            "name": "image_max_width",
+                            "type": "text",
+                            "instructions": "Enter a max width to resize the image too. Typical sizes will range  between \"150 - 400\" px. Leave blank to show image at it's largest possible size",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_57ff0e93e7add",
+                            "label": "Link",
+                            "name": "link",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_57ff20364c567"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "57ff0e8ce7adb",
+                    "name": "video",
+                    "label": "Grid Item: Video",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_57ff0f22e7ade",
+                            "label": "Video",
+                            "name": "video",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_57ff18ac0dafc"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "57ff1007e7adf",
+                    "name": "new_row",
+                    "label": "Layout: New Row",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_57ff172a71e48",
+                            "label": "",
+                            "name": "",
+                            "type": "message",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "<div><strong>BETA Feature<\/strong>(Only for the adventurous - May still have bugs under certain conditions)<\/div><div style=\"text-align:center\"><strong>-- Start Following Grid Items on a New Row --<\/strong><\/div>",
+                            "new_lines": "",
+                            "esc_html": 0
+                        },
+                        {
+                            "key": "field_57ff11d29ce26",
+                            "label": "",
+                            "name": "new_row_has_conditional",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "(Advanced) New row on only certain devices",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_57ff165c9ce28",
+                            "label": "Advanced: Only on Device",
+                            "name": "new_row_conditional",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_57ff11d29ce26",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "all": "(New Row on all devices)",
+                                "mobtab": "Mobile + Tablets Only",
+                                "desktab": "Desktop + Tablets Only",
+                                "desk": "Desktop Only",
+                                "tab": "Tablets Only",
+                                "mob": "Mobiles Only"
+                            },
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "all",
+                            "layout": "vertical",
+                            "return_format": "value"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            ]
+        },
+        {
+            "key": "field_57ff1b8c40bf9",
+            "label": "",
+            "name": "grid_vertical_alignment",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Vertically align grid items (instead of top alignment)",
+            "default_value": 0
+        },
+        {
+            "key": "field_57ff1c0c40bfa",
+            "label": "Grid Gutter Size",
+            "name": "grid_gutters",
+            "type": "radio",
+            "instructions": "(Spacing amount separating grid content items)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "small": "Small",
+                "normal": "Normal",
+                "large": "Large"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "normal",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_57ff28b1cfcc5",
+            "label": "container-size",
+            "name": "container-size",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_57ff26edd302a"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "brace-framework"
+            },
+            {
+                "param": "options_page",
+                "operator": "!=",
+                "value": "brace-framework"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1476754313
+}

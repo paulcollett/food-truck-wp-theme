@@ -1,0 +1,119 @@
+{
+    "key": "group_57d2669cdeb4d",
+    "title": "Theme Settings (Clone Nested Fields)",
+    "fields": [
+        {
+            "key": "field_57d266a8b5072",
+            "label": "",
+            "name": "help_and_support_group",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "field_57d266b9b5073",
+                "field_57d2681800924",
+                "field_57d266cbb5074",
+                "field_57d267a400923"
+            ],
+            "display": "group",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
+            "key": "field_57d266b9b5073",
+            "label": "Theme FAQ's",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57d2681800924",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "For the latest help, support and frequently ask questions please visit:<br \/>\r\n<a href=\"http:\/\/www.studiobrace.com\/truckfed-wordpress\">http:\/\/www.studiobrace.com\/truckfed-wordpress<\/a>",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_57d266cbb5074",
+            "label": "Upcoming Features",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57d267a400923",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "For the latest in theme updates, and update instructions please visit:<br \/>\r\n<a href=\"http:\/\/www.studiobrace.com\/truckfed-wordpress\">http:\/\/www.studiobrace.com\/truckfed-wordpress<\/a>",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "brace-framework"
+            },
+            {
+                "param": "current_user",
+                "operator": "!=",
+                "value": "logged_in"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1476855332
+}

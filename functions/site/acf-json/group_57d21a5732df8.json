@@ -1,0 +1,1059 @@
+{
+    "key": "group_57d21a5732df8",
+    "title": "Theme Settings",
+    "fields": [
+        {
+            "key": "field_57d262a2306de",
+            "label": "Getting Started",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57d262d1306e0",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<div><img src=\"http://www.studiobrace.com/truckfed/external-assets/truckfed-wp-admin-v1.png\" onerror=\"this.style.display='none'\" /></div><h1>Welcome to <strong>TruckFed<\/strong> theme for Wordpress<\/h1><p class=\"first_run\">Thankyou for choosing TruckLot and us at <a href=\"http://www.studiobrace.com/\" target=\"_blank\">Studio Brace</a> to help power your online presence - we think you'll love it!<\/p><p>See the provided geting started PDF for full setup help &amp; further support infomation. Happy theme-ing!<\/p>\r\n<h3>Getting Started Checklist<\/h3>\r\n<strong>1. Inital Look &amp; Feel<\/strong> Can be found using the links to the left<\/p>\r\n<p><strong>2. Create your inital pages!<\/strong> (ie. Home Page) Have fun using our easy to use layout builder!<\/p><p><strong>3. Set a page to be your Home Page<\/strong> Specify a home page <a href=\"options-reading.php\">Settings > Reading<\/a><\/p>\r\n<p><p><strong>4. SEO &amp; Stats<\/strong> Check out our SEO tab to the left<\/p>\r\n<p><strong>5. Release to the world!<\/strong> Remember it doesn't have to be perfect, you can always change as you go!<\/p>",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_57d26607aa60e",
+            "label": "",
+            "name": "getting_started_information",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "field_57d266a8b5072"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
+            "key": "field_57d2217964150",
+            "label": "Default Fonts & Colours",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57d2709aad4c2",
+            "label": "Colour Scheme Defaults: Accent Color",
+            "name": "scheme_accent",
+            "type": "color_picker",
+            "instructions": "Enter a max width to resize the image too. Typical sizes will range  between \"150 - 400\" px. Leave blank to show image at it's largest possible size",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_57e88c2e51931",
+            "label": "Colour Scheme Defaults: Text Color",
+            "name": "scheme_color",
+            "type": "color_picker",
+            "instructions": "This is the main body text color. It should be something neutral and easy to read against the background color",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_57e8904b1d874",
+            "label": "Colour Scheme Defaults: Heading Color",
+            "name": "scheme_heading",
+            "type": "color_picker",
+            "instructions": "(Advanced) New row on only certain devices",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_57d270cdad4c3",
+            "label": "Colour Scheme Defaults: Background",
+            "name": "scheme_background",
+            "type": "color_picker",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_57d221af64151",
+            "label": "Heading & Accent Font Type",
+            "name": "heading_font",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_57e839e3172da"
+            ],
+            "display": "group",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 1
+        },
+        {
+            "key": "field_57d221d864152",
+            "label": "Body Font (For regular text)",
+            "name": "body_font",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_57e839e3172da"
+            ],
+            "display": "group",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 1
+        },
+        {
+            "key": "field_57d26fcba8345",
+            "label": "Global Button Look",
+            "name": "default",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_57ff17be97320"
+            ],
+            "display": "group",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 1
+        },
+        {
+            "key": "field_57d21b9536fe0",
+            "label": "Logo",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57d261caa17d7",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<h1>Logo<\/h1>\r\n<p><em>Note:<\/em> Logo will be automatically linked to the home page<\/p>",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_57d21afc36fdc",
+            "label": "Logo Type",
+            "name": "logo_type",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "default": "Default (Site Name)",
+                "image": "Image",
+                "text": "Text"
+            },
+            "default_value": [
+                "default"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_57d21b1436fdd",
+            "label": "Logo Image",
+            "name": "logo_image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57d21afc36fdc",
+                        "operator": "==",
+                        "value": "image"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_57d21b4c36fde",
+            "label": "Logo: Text",
+            "name": "logo_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57d21afc36fdc",
+                        "operator": "==",
+                        "value": "text"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_57e89637e5e12",
+            "label": "Logo: Text Style",
+            "name": "logo_style",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57d21afc36fdc",
+                        "operator": "!=",
+                        "value": "image"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_57e83cc1301ac"
+            ],
+            "display": "group",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 1
+        },
+        {
+            "key": "field_57d268cf9d7ec",
+            "label": "Favicon (Address bar image)",
+            "name": "favicon_image",
+            "type": "image",
+            "instructions": "<strong>We recommend<\/strong> the <a href=\"https:\/\/www.wordpress.org\/plugins\/custom-favicon\/\">Custom Favicon plugin<\/a> for creating your \"favicon\".<br \/>\r\n<strong>Otherwise,<\/strong> for a quick favicon setup (not supported in older IE browsers), add your image below.<br \/><small>(If you use another plugin please leave this image blank to avoid conflicts)<\/small><br \/><small>(Note: any image changes may not show up instantly)<\/small>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_57d21bbf36fe1",
+            "label": "Navigation",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57d22368af369",
+            "label": "Navigation Menu Item Source",
+            "name": "navigation_source",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "auto": "Automatic",
+                "top": "Top Level Pages",
+                "custom": "Custom (Appearance > Menus)"
+            },
+            "default_value": [
+                "auto"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_57d21be236fe2",
+            "label": "Navigation",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57d22368af369",
+                        "operator": "==",
+                        "value": "custom"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Create your custom menu structure at <a href=\"#\">Appearance &gt; Menus<\/a>",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_57d21cdaad2ff",
+            "label": "Navigation Background Color",
+            "name": "navigation_background",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_57e89299e5e11",
+            "label": "Navigation Tiled Background Image",
+            "name": "navigation_background_image",
+            "type": "image",
+            "instructions": "Image will tile behind the header. Patterns are reccomended",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_57e84972e8bf5",
+            "label": "Navigation Button Styles",
+            "name": "nav",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_57ff17be97320"
+            ],
+            "display": "group",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 1
+        },
+        {
+            "key": "field_57e88b0151930",
+            "label": "Mobile Button Color",
+            "name": "mobile_button_color",
+            "type": "color_picker",
+            "instructions": "Button to show menu, when viewing on tablet & mobile devices.<br \/>\r\nLeave blank to default to accent color",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_5806db78cc6a3",
+            "label": "",
+            "name": "header_fixed",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Fixed \/ Pinned Header on desktop<br \/><small>(A fixed header stays at the top on page scroll)<\/small>",
+            "default_value": 1
+        },
+        {
+            "key": "field_57d26d0aa7826",
+            "label": "Posts Page",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57d26d1ca7827",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<p><strong>To create a page for your posts:<\/strong> To show your posts on your website you need to create a new page (ie. \"news\" or \"blog\") or have an existing page ready to be converted. Then visit <a href=\"options-reading.php\">Settings > Reading<\/a> and select your page.<\/p>",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5805a549955bf",
+            "label": "Posts Listing Page",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<p><strong> Posts per page:<\/strong> Visit <a href=\"options-reading.php\">Settings > Reading<\/a> to change<\/p>",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5805a93db2116",
+            "label": "Post Listing Page: heading",
+            "name": "posts_listing_heading",
+            "type": "text",
+            "instructions": "(leave blank to hide)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5805a55b955c0",
+            "label": "Post Page",
+            "name": "posts_social_icons",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Post Page: Social Share Buttons",
+            "default_value": 1
+        },
+        {
+            "key": "field_5805a5ac955c1",
+            "label": "",
+            "name": "posts_comment_button",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Post Page: Comment Button",
+            "default_value": 1
+        },
+        {
+            "key": "field_57d21d9493fbc",
+            "label": "Footer",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57d21dc193fbd",
+            "label": "Footer Content",
+            "name": "footer_content",
+            "type": "flexible_content",
+            "instructions": "Content here will show at the bottom of every page",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "button_label": "Add Footer Content",
+            "min": "",
+            "max": "",
+            "layouts": [
+                {
+                    "key": "57d21f16738df",
+                    "name": "text",
+                    "label": "Text",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_57f3258a70dd0",
+                            "label": "Text",
+                            "name": "text",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "visual",
+                            "toolbar": "footer_text",
+                            "media_upload": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "57d21f0e738de",
+                    "name": "social_buttons",
+                    "label": "Social Buttons",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_57ff0c37ca7d5",
+                            "label": "Facebook URL",
+                            "name": "facebook_url",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_57ff0c47ca7d6",
+                            "label": "Twitter URL",
+                            "name": "twitter_url",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_57ff0c61ca7d8",
+                            "label": "Instagram URL",
+                            "name": "instagram_url",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "57d251e2c8fa4",
+                    "name": "grid",
+                    "label": "Advanced: Custom Grid",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_57f337e123418",
+                            "label": "Grid",
+                            "name": "grid",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_57ff0dfbeb434"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "57d21f3d738e2",
+                    "name": "advanced",
+                    "label": "Advanced: HTML\/Shortcodes",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5805a89fe5aea",
+                            "label": "Advanced",
+                            "name": "advanced",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_57ff260c6fcc9"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            ]
+        },
+        {
+            "key": "field_57f326b816fa1",
+            "label": "Footer: Background Color",
+            "name": "footer_background_color",
+            "type": "color_picker",
+            "instructions": "Leave blank to show default",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_57f326f616fa2",
+            "label": "Footer: Text Color",
+            "name": "footer_text_color",
+            "type": "color_picker",
+            "instructions": "Leave blank to show default",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_580595166b703",
+            "label": "Footer: Colophon",
+            "name": "footer_credit",
+            "type": "text",
+            "instructions": "<p>Small text shown at the very bottom of your site, suitable for things like copyright info and giving credit. HTML is allowed. The follow tags can be used:<\/p>\r\n<p><code>{copy}<\/code> <code>{site_name}<\/code> <code>{year}<\/code> <code>{powered_by}<\/code><\/p>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "{copy} {site_name} | {powered_by}",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_57d254a841383",
+            "label": "SEO",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57d254c741384",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<h1>SEO<\/h1>\r\n\r\n<div style=\"padding:20px;background:rgba(0,0,0,0.1);font-size:110%\"><div style=\"max-width: 600px;\">\r\n\r\n<p><strong>This theme is coded to SEO best practices.<\/strong> Whatever content you enter will be appropriately indexed by search engines.<\/p>\r\n\r\n<p><em>PRO Tip:<\/em> Providing quality, regularly updated content should be your main SEO focus. On top of this there are some behind-the-scenes meta data (ie. page title and descriptions) which can be changed to influence what appears in your search listing for each page.<\/p>\r\n\r\n<p>To configure Search meta data we recommend & have theme support for the <a target=\"_blank\" href=\"https://www.wordpress.org/plugins/wordpress-seo/\">Yoast SEO Plugin<\/a><\/p>\r\n\r\n<p>If you havn't installed Yoast you can also set a custom Title & Meta Description for your home page easily below.<\/p>\r\n\r\n<\/div><\/div>",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_57d257a541385",
+            "label": "Home Page: Suggested Search Title",
+            "name": "custom_title",
+            "type": "text",
+            "instructions": "Leave blank to have automatically generated (this will be ignored when using yoast SEO Plugin)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_57d257fd7f776",
+            "label": "Home Page: Suggested Search Description",
+            "name": "custom_description",
+            "type": "text",
+            "instructions": "(this will be ignored when using yoast SEO Plugin)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5806fd60f02bd",
+            "label": "Stats",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5806fd79f02be",
+            "label": "Google Analytics Tracking ID",
+            "name": "google_analytics_id",
+            "type": "text",
+            "instructions": "Enter your google analytics tracking ID, in the format: UA-XXXXXXXX-X<br \/>\r\n<small>Leave blank to ignore<\/small>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "eg. UA-XXXXXXXX-X",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_57d2530941380",
+            "label": "Advanced",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57d25d70a060e",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<h1>Advanced<\/h1>\r\n\r\n<div style=\"padding:20px;background:rgba(0,0,0,0.1);font-size:110%\"><div style=\"max-width: 600px;\">\r\n\r\n<p><strong>Please note:<\/strong> We don't provide support for any custom code. We are however, interested in hearing about features you may need, which may make it into the next update!<\/p>\r\n\r\n<p><em>Pro Tip:<\/em> DONT modify theme files directly, rather create a child theme. Or, better still,  simply add code below. You can add custom HTML within this theme's page creation tools<\/p>\r\n\r\n<\/div><\/div>",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_57d2533141381",
+            "label": "Custom CSS",
+            "name": "custom_css",
+            "type": "textarea",
+            "instructions": "CSS to be injected into every page",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 16,
+            "new_lines": ""
+        },
+        {
+            "key": "field_57d2544941382",
+            "label": "Custom JS",
+            "name": "custom_js",
+            "type": "textarea",
+            "instructions": "Custom JS to be injected into every page. You may use jQuery",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 16,
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "brace-framework"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1476853288
+}

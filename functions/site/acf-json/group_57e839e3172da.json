@@ -1,0 +1,96 @@
+{
+    "key": "group_57e839e3172da",
+    "title": "GROUP: Font Family Group",
+    "fields": [
+        {
+            "key": "field_57e83a0a81167",
+            "label": "Font",
+            "name": "font",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "default": "(Default)",
+                "sans-serif": "Sans Serif",
+                "serif": "<span style=\"font-family:serif\">Serif<\/span>",
+                "monospace": "<span style=\"font-family:monospace\">Monospace<\/span>"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "default",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_57e83bf2e7eb7",
+            "label": "",
+            "name": "has_google_font",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "or, Custom Google Font",
+            "default_value": 0
+        },
+        {
+            "key": "field_57e839fb81166",
+            "label": "Google Font",
+            "name": "google_font",
+            "type": "google_font_selector",
+            "instructions": "Browse all google fonts here: <a href=\"https:\/\/fonts.google.com\" target=\"_blank\">https:\/\/fonts.google.com<\/a>",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57e83bf2e7eb7",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "include_web_safe_fonts": 0,
+            "enqueue_font": 0,
+            "default_font": "Droid Sans"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "brace-framework"
+            },
+            {
+                "param": "options_page",
+                "operator": "!=",
+                "value": "brace-framework"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1474842061
+}

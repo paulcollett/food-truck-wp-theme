@@ -1,0 +1,212 @@
+{
+    "key": "group_57ff20364c567",
+    "title": "Group: Link (conditional)",
+    "fields": [
+        {
+            "key": "field_57ff2046d9f59",
+            "label": "",
+            "name": "link_conditional",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Link to Page\/URL",
+            "default_value": 0
+        },
+        {
+            "key": "field_57ff203654970",
+            "label": "Link Type",
+            "name": "link_type",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57ff2046d9f59",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "page": "Page",
+                "internal": "Other Post or Page",
+                "external": "External Website",
+                "file": "File"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_57ff20365499f",
+            "label": "Link to Page\/URL",
+            "name": "link_to_page",
+            "type": "page_link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57ff203654970",
+                        "operator": "==",
+                        "value": "page"
+                    },
+                    {
+                        "field": "field_57ff2046d9f59",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": [
+                
+            ],
+            "allow_null": 0,
+            "allow_archives": 1,
+            "multiple": 0
+        },
+        {
+            "key": "field_57ff2036549ae",
+            "label": "Link to Other Page or Post",
+            "name": "link_to_internal",
+            "type": "page_link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57ff203654970",
+                        "operator": "==",
+                        "value": "internal"
+                    },
+                    {
+                        "field": "field_57ff2046d9f59",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                
+            ],
+            "taxonomy": [
+                
+            ],
+            "allow_null": 0,
+            "allow_archives": 1,
+            "multiple": 0
+        },
+        {
+            "key": "field_57ff2036549bd",
+            "label": "Link to External Website",
+            "name": "link_to_external",
+            "type": "url",
+            "instructions": "include http:\/\/ or https:\/\/ at the begining of the URL (eg. \"http:\/\/www.google.com\/\"). External links will open in a new tab\/window",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57ff203654970",
+                        "operator": "==",
+                        "value": "external"
+                    },
+                    {
+                        "field": "field_57ff2046d9f59",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_57ff2036549cb",
+            "label": "Link to file",
+            "name": "link_to_file",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57ff203654970",
+                        "operator": "==",
+                        "value": "file"
+                    },
+                    {
+                        "field": "field_57ff2046d9f59",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "brace-framework"
+            },
+            {
+                "param": "options_page",
+                "operator": "!=",
+                "value": "brace-framework"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1476338081
+}

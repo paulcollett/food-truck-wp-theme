@@ -1,0 +1,27 @@
+{
+    "key": "57dd963fcc40d",
+    "name": "location_module",
+    "label": "Upcoming Locations & Times  Module",
+    "display": "row",
+    "sub_fields": [
+        {
+            "key": "field_57dd967acc40f",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<strong>Your Location & Dates will show up here.<\/strong> To add\/edit locations visit the admin page <a href=\"admin.php?page=trucklot-locations\" target=\"_blank\">\"Location & Dates\"<\/a>",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        }
+    ],
+    "min": "",
+    "max": ""
+}

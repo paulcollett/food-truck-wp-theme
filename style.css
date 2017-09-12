@@ -1,0 +1,28 @@
+/*
+Theme Name: {**THEMENAME**}
+Theme URI: {**THEMEURI**}
+Author: Studio Brace
+Author URI: http://www.studiobrace.com/
+Description: {**THEMEDESCRIPTION**}
+Version: 1.0
+License: see licence.txt
+
+
+Hi! Adding CSS/JS?
+=============================
+
+First off, we don't reccommend changing source CSS/JS files - it makes it super hard to upgrade your theme
+
+So.. to add custom css / js:
+- Consider using a child theme
+- or, simply add css (or, javascript) via the {**THEMENAME**} Admin Page (reccomended)
+
+To add HTML:
+- use the "advanced" module in your page or posts. It lets you drop-in HTML anywhere on your page (reccomended)
+- Also, if you know PHP we have a bunch of wordpress hooks to inject HTML throughout your site (find hooks in page.php)
+Happy coding! - {**THEMENAME**} & the StudioBrace Team
+
+Need something else? Get in contact via:
+http://www.studiobrace.com/
+
+*/

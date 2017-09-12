@@ -1,0 +1,58 @@
+{
+    "key": "group_57ff26edd302a",
+    "title": "Group: Container Size",
+    "fields": [
+        {
+            "key": "field_57ff26f71b37c",
+            "label": "Contain content to maximum width",
+            "name": "container_size",
+            "type": "radio",
+            "instructions": "Useful for creating fixed width layouts",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "None (Full width)",
+                "max700": "Small (700px)",
+                "max700flush": "Small (700px) without margins",
+                "max900": "Medium (900px)",
+                "max900flush": "Medium (900px) without margins",
+                "max1400": "Large (1400px)",
+                "max1400flush": "Large (1400px) without margins"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "max900",
+            "layout": "vertical",
+            "return_format": "value"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "brace-framework"
+            },
+            {
+                "param": "options_page",
+                "operator": "!=",
+                "value": "brace-framework"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1476410624
+}

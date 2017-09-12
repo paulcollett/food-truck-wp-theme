@@ -1,0 +1,874 @@
+.cap
+  &:before, &:after
+    content: ' '
+    display: block
+    border-top: 3px solid currentcolor
+  &:before
+    margin-bottom: 20px
+  &:after
+    margin-top: 20px
+.cap--narrow
+  &:before, &:after
+    max-width: 200px
+    margin-left: auto
+    margin-right: auto
+.cap--dotted
+  &:before, &:after
+    border-top-style: dotted
+.cap--dashed
+  &:before, &:after
+    border-top-style: dashed
+.cap--double
+  &:before, &:after
+    border-top-style: double
+
+.button
+  -webkit-appearance: none
+  border: currentcolor solid 0
+  cursor: pointer
+  user-select: none
+  touch-action: manipulation
+  vertical-align: middle
+  display: inline-block
+  transition: all .05s ease-out
+  position: relative
+  background-clip: content-box
+  color: rgba(0,0,0,0.7)
+  background: currentcolor
+  transition: transform .1s ease-out
+  text-align: center
+  padding: 0
+  border-color: rgba(0,0,0,0.3)
+  &:hover
+    transform: scale(1.05)
+
+.button
+  > *
+    display: inline-block
+    color: currentcolor
+    line-height: 24px
+    padding: 8px 25px
+    color: #fff
+    overflow: hidden
+    vertical-align: middle
+
+.button--rotate
+  transform: rotate(-1deg)
+  &:hover
+    transform: rotate(-2deg) scale(1.05)
+
+.button--compact
+  > *
+    padding: 7px 13px
+
+.button--border1
+  border-width: 4px
+  border-style: solid
+  &.button--compact
+      border-width: 3px
+
+.button--border2
+  border-width: 4px
+  border-style: double
+  background-clip: content-box
+
+
+
+// diamond
+.button--cap1, .button--cap2, .button--cap3, .test
+  margin: 0 10px
+  max-width: 100%
+  &.w100
+    width: calc(100% - 20px)
+  > *
+    overflow: hidden
+    white-space: nowrap
+    max-width: 100%
+    br
+      display: none
+  &:before, &:after
+    content: ' '
+    position: absolute
+    top: 0
+  &:before
+    content: ' '
+    border-right: 10px solid currentcolor
+    border-top: 20px solid transparent
+    border-bottom: 20px solid transparent
+    left: -10px
+  &:after
+    content: ' '
+    border-left: 10px solid currentcolor
+    border-top: 20px solid transparent
+    border-bottom: 20px solid transparent
+    right: -10px
+
+// trapise
+.button--cap2
+  &:before
+    content: ' '
+    border-right: 10px solid currentcolor
+    border-bottom: none
+    border-top: 40px solid transparent
+    left: -10px
+  &:after
+    content: ' '
+    border-left: 10px solid currentcolor
+    border-bottom: none
+    border-top: 40px solid transparent
+    right: -10px
+
+// skew
+.button--cap3
+  &:before
+    content: ' '
+    border-right: 10px solid currentcolor
+    border-bottom: none
+    border-top: 40px solid transparent
+    left: -10px
+  &:after
+    content: ' '
+    border-left: 10px solid currentcolor
+    border-top: none
+    border-bottom: 40px solid transparent
+    right: -10px
+
+//pill
+.button--cap4
+  border-radius: 40px / 100%
+
+// disk
+.button--cap5
+  border-radius: 90% / 100%
+
+
+.button.button--social
+  background: transparent
+  color: currentcolor
+  border: 2px solid currentcolor
+  border-radius: 100%
+  width: 50px
+  height: 50px
+  > *
+    font-size: 20px
+    line-height: 46px
+    padding: 0
+    color: currentcolor
+
+.grid
+  text-align: center
+  justify-content: center
+  display: flex
+  flex-wrap: wrap
+  > *
+    text-align: left
+    display: inline-block
+
+.grid--middle
+  align-items: center
+  > *
+    vertical-align: middle
+
+.grid--gutter1
+  margin-left: -10px
+  > *
+    border-left: 10px solid transparent
+  > .grid_separator
+    height: 10px
+.grid--gutter2
+  margin-left: -20px
+  > *
+    border-left: 20px solid transparent
+  > .grid_separator
+    height: 20px
+.grid--gutter3
+  margin-left: -40px
+  > *
+    border-left: 40px solid transparent
+  > .grid_separator
+    height: 40px
+.grid--gutter4
+  margin-left: -60px
+  > *
+    border-left: 60px solid transparent
+  > .grid_separator
+    height: 60px
+.grid_separator
+  width: 100%
+.grid_fill
+  flex: 1
+
+.field
+  margin-bottom: 1.25rem
+.field--bottom0
+  margin-bottom: 0
+.field--hidden
+  height: 0
+  overflow: hidden
+  margin: 0
+
+.frame
+  position: relative
+  padding-bottom: 56.25%
+  height: 0
+  overflow: hidden
+  > iframe,.frame_media
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+
+.frame--square
+  padding-bottom: 100%
+
+.frame--normal
+  padding-bottom: 75%
+
+.frame--skinny
+  padding-bottom: 30%
+
+.frame--min-sm
+  min-width: 300px
+@media (max-width: 400px)
+  .frame--min-sm
+    min-width: 150px
+
+.map
+  background: rgba(0,0,0,0.2)
+
+.map--fill
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+
+.video
+  background: #000
+  position: relative
+  cursor: pointer
+
+.video--fill
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+
+.video_button
+  cursor: pointer
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  z-index: 1
+  &:before
+    content: ' '
+    position: absolute
+    background: currentcolor
+    border-radius: 40px
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    margin: auto
+    width: 80px
+    height: 80px
+    z-index: 1
+    transition: all .16s ease
+    box-shadow: 0 0 0 5px #fff
+  &:after
+    z-index: 1
+    content: ' '
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 3px
+    right: 0
+    margin: auto
+    width: 0
+    height: 0
+    border-left: 15px solid #fff
+    border-top: 10px solid transparent
+    border-bottom: 10px solid transparent
+  &:hover
+    background: rgba(255,255,255,0.1)
+  &:hover:before, &:hover:after
+    transform: scale(1.08)
+@media (max-width: 750px)
+  .video_button
+    &:before
+      width: 57px
+      height: 57px
+.cover-image
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  overflow: hidden
+  img
+    min-width: 100%
+    min-height: 100%
+    object-fit: cover// does not work ie 11
+.cover-image_img
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  overflow: hidden
+  background-size: cover
+  background-position: center center
+
+
+.separator
+  padding-bottom: 30px
+
+.separator--100
+  padding-bottom: 100px
+
+.debug-section
+  background: red
+  padding: 10px
+  color: #fff
+  font-family: monospace, inhert
+  font-size: 14px
+  display: none
+  a
+    color: #fff
+    text-decoration: underline
+
+.debug-section--module
+  background: orange
+
+.debug-section--show
+  display: block
+
+.debug-section_link
+  float: right
+  color: #fff
+
+.debug-section_sub
+  display: block
+  font-size: 10px
+
+.heading
+
+.heading--large
+  font-size: 3rem
+  line-height: 3rem
+  text-align: center
+  padding: 1rem 0
+  margin-bottom: 2rem
+.heading--medium
+  font-size: 2rem
+  line-height: 2rem
+  text-align: center
+  margin-bottom: 2rem
+.heading--small
+  font-size: 1.5rem
+  line-height: 1.5rem
+  margin-bottom: 1rem
+.heading--tiny
+  font-size: 1.1rem
+  line-height: 1.1rem
+  margin-bottom: 0.5rem
+
+.copy
+  &:after
+    content: ' '
+    display: table
+    clear: both
+  > div
+    margin-bottom: 1.25rem
+  > *:last-child
+    margin-bottom: 0
+  > input, > textarea, > select
+    margin-bottom: 0.75rem
+  > table
+    width: 100%
+    margin: 2rem 0
+  > h1, > h2, > h3, > h4
+    line-height: 1em
+    margin-bottom: 1em
+  > img
+    margin-bottom: 1.25em
+  > h1
+    font-size: 3rem
+  > h2
+    font-size: 2rem
+  > h3
+    font-size: 1.5rem
+  > h4
+    font-size: 1.25rem
+  p > a:not([style]):not([class]), li > a:not([style]):not([class])
+    border-bottom: 1px dotted currentcolor
+    &:hover
+      border-bottom-style: solid
+  pre
+    max-width: 100%
+    white-space: normal
+
+.news-grid
+  display: inline-block
+  font-size: 0
+  margin-left: -50px
+  margin-bottom: -30px
+  letter-spacing: 0
+  width: 100%
+  > *
+    display: inline-block
+    border-left: 50px solid transparent
+    margin-bottom: 30px
+    vertical-align: top
+    @extend %base
+    width: 100%
+
+.news-grid--cols3
+  > *
+    vertical-align: middle
+    width: 33.33%
+
+.news-grid--cols2
+  > *
+    vertical-align: middle
+    width: 50%
+@media (max-width: 950px)
+  .news-grid--cols3
+    > *
+      width: 50%
+@media (max-width: 750px)
+  .news-grid--cols2, .news-grid--cols3
+    > *
+      width: 100%
+.news-item
+  overflow: hidden
+  letter-spacing: 0
+  font-size: 0
+  > *
+    display: inline-block
+    vertical-align: middle
+    @extend %base
+.news-item--image .news-item_info
+  max-width: calc(100% - 150px)
+.news-item_title
+  font-size: 1.5em
+  line-height: 1.8em
+.news-item_image
+  max-width: 150px
+  overflow: hidden
+  padding-right: 30px
+
+.truncate
+  overflow: hidden
+  text-overflow: ellipsis
+
+.truncate--2lines
+  display: -webkit-box
+  -webkit-line-clamp: 2
+  -webkit-box-orient: vertical
+  max-height: calc(2.5rem + .2rem)
+
+.hero-text
+  font-size: 2rem
+  line-height: 2.2rem
+  max-width: 860px
+  margin: 0 auto
+  padding: 0 30px
+  > .copy
+    ul, ol, blockquote
+      @extend %base
+
+@media (max-width: 840px)
+  .hero-text
+    font-size: 1.5rem
+    line-height: 1.7rem
+    br
+      display: none
+
+@media (max-width: 650px)
+  .hero-text
+    font-size: 1.2rem
+    line-height: 1.4rem
+
+.section
+  //
+.section--background
+  padding: 1.5em 0
+  //background: rgba(0,0,0,0.1)
+
+.section--page
+  padding: 4.5rem 0
+.section--modules > .module1
+  padding-top: 4.5rem
+.section--modules > *:last-child
+  padding-bottom: 4rem
+@media (max-width: 750px)
+  .section--modules > .module1
+    padding-top: 2.5rem
+  .section--page
+    padding: 3rem 0
+@media (max-width: 600px)
+  .section--page
+    padding: 2rem 0
+  .section--background
+    padding: 1rem 0
+
+.slider
+  position: relative
+  overflow: hidden
+  width: 100%
+  > div
+    height: 100%
+    position: relative
+.slider_slide
+  width: 100%
+  position: relative
+  transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1)
+  float: left
+  overflow: hidden
+
+.slider--fill
+  position: absolute
+  top: 0
+  left: 0
+  height: 100%
+
+  .slider_slide
+    position: relative
+    height: 100%
+
+.centered-fill-text
+  position: absolute
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+  overflow: auto
+  display: flex
+  align-items: center
+  padding: 15px
+  > *
+    margin: auto
+
+.centered-fill-text--style1
+  .centered-fill-text_text
+    color: #fff
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1), -1px -1px 0 rgba(0, 0, 0, 0.2), 0px 3px 0 rgba(0, 0, 0, 0.4)
+
+.locations-module-list
+  overflow: hidden
+  font-size: 0
+  letter-spacing: 0
+  text-align: center
+  margin-left: -30px
+  margin-bottom: 20px
+.locations-module-list_item
+  @extend %base
+  width: 50%
+  padding-left: 30px
+  text-align: left
+  display: inline-block
+  margin-bottom: 30px
+  transition: all .15s ease
+
+  &:hover
+    cursor: pointer
+    transform: scale(1.03)
+
+@keyframes location-item-beacon
+  0%
+    opacity: 0
+    transform: scale(0)
+  30%
+    opacity: 0
+    transform: scale(0)
+  60%
+    transform: scale(1)
+  65%
+    opacity: 1
+  100%
+    opacity: 0
+    transform: scale(1.8)
+
+.location-item
+  position: relative
+
+.location-item_beacon
+  display: inline-block
+  width: 20px
+  height: 20px
+  vertical-align: middle
+  border-radius: 15px
+  position: relative
+  margin-right: 5px
+  margin-left: -5px
+  &:after
+    content: ' '
+    width: 8px
+    height: 8px
+    border-radius: 5px
+    background: red
+    position: absolute
+    margin: auto
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    animation: location-item-beacon .8s linear infinite
+
+.location-item_beacon--neutral
+  &:after
+    background: yellow
+
+@media (max-width: 730px)
+  .locations-module-list
+    max-width: 400px
+    margin-left: auto
+    margin-right: auto
+  .locations-module-list_item
+    width: 100%
+    padding-left: 0
+.locations-module-map
+  margin-bottom: 50px
+
+@keyframes location-detail-in
+  0%
+    opacity: 0
+    transform: translateX(30px)
+  100%
+    opacity: 1
+    transform: translateX(0px)
+
+.locations-detail
+  overflow: hidden
+  margin-bottom: 30px
+.js-location-container
+  display: none
+.locations-detail_back
+  width: 10%
+  float: left
+  padding-left: 30px
+  font-size: 80px
+  line-height: 40px
+  font-weight: 200
+  transition: all .15s ease
+  animation: location-detail-in .3s .5s ease-out backwards
+  &:hover
+    cursor: pointer
+    transform: translateX(-10px) scale(1.03)
+.locations-detail_location
+  width: 35%
+  float: left
+  margin-bottom: 20px
+  animation: location-detail-in .3s .3s ease-out backwards
+  padding-right: 15px
+.locations-detail_map
+  width: 55%
+  float: left
+  margin-bottom: 20px
+  animation: location-detail-in .3s ease-out backwards
+
+@media (max-width: 980px)
+  .locations-detail_back
+    width: 100%
+    float: none
+    text-align: center
+    max-width: 60px
+    margin: 0 auto
+    margin-bottom: 30px
+  .locations-detail_location
+    width: 100%
+    float: none
+    text-align: center
+  .locations-detail_map
+    width: 100%
+    float: none
+
+.post-toolbar
+  &:after
+    content: ' '
+    display: table
+    clear: both
+.post-toolbar_social
+  float: left
+.post-toolbar_comment
+  float: right
+
+.post-comment
+  position: relative
+  overflow: hidden
+  margin-bottom: 30px
+  &:before
+    display: block
+    content: ' '
+    border-top: 1px solid currentcolor
+    opacity: 0.3
+    margin-bottom: 30px
+  .post-comment_image
+    float: left
+    width: 50px
+  .post-comment_body
+    width: calc(100% - 50px)
+    float: left
+    padding-left: 30px
+
+.comment-respond
+  padding-top: 30px
+
+.post-feature-image
+  float: left
+  max-width: 66.66%
+  margin-left: -15%
+  margin-right: 30px
+  margin-bottom: 20px
+@media (max-width: 1150px)
+  .post-feature-image
+    float: none
+    text-align: center
+    max-width: 100%
+    margin: 0 0 30px 0
+
+.post-listing-item
+  overflow: hidden
+  position: relative
+  margin-bottom: 30px
+  &:last-child
+    margin: 0
+  &:after
+    content: ' '
+    display: block
+    border-bottom: 1px solid currentcolor
+    opacity: 0.1
+    padding-top: 30px
+    clear: both
+.post-listing-item_image
+  float: left
+  width: 250px
+  img
+    padding-right: 30px
+.post-listing-item_details
+  float: left
+  width: 300px
+  width: calc(100% - 250px)
+.post-listing-item_exerpt
+  line-height: 1.25rem
+  display: -webkit-box
+  -webkit-line-clamp: 4
+  -webkit-box-orient: vertical
+  max-height: 1.25rem * 4
+  overflow: hidden
+@media (max-width: 700px)
+  .post-listing-item_image
+    float: none
+    width: 100%
+    margin-bottom: 20px
+    text-align: center
+    img
+      padding-right: 0
+      max-height: 160px
+      width: auto
+  .post-listing-item_details
+    float: none
+    width: 100%
+
+@keyframes email-subscribed-message-in
+  0%
+    opacity: 0
+    transform: scale(0.5)
+  95%
+    opacity: 1
+    transform: scale(1.02)
+  100%
+    opacity: 1
+    transform: scale(1)
+.email-subscribed-message
+  animation: email-subscribed-message-in .25s cubic-bezier(0.22, 0.61, 0.36, 1)
+
+
+.testimonials
+  font-size: 0
+  letter-spacing: 0
+  margin-bottom: -30px
+  text-align: center
+  > *
+    display: inline-block
+    @extend %base
+    width: 33.33%
+    vertical-align: middle
+    padding: 0 15px 30px 15px
+@media (max-width: 1000px)
+  .testimonials
+    > *
+      width: 50%
+@media (max-width: 600px)
+  .testimonials
+    > *
+      width: 100%
+
+.testimonial
+  text-align: center
+.testimonial_title
+  margin-bottom: 0.5rem
+.testimonial_text
+  font-size: 1.2rem
+  line-height: 1.4rem
+  margin-bottom: 1rem
+.testimonial_stars
+  margin-bottom: 0.5rem
+.testimonial_image
+  padding-top: 0.5rem
+  max-width: 80px
+  margin: 0 auto
+  margin-bottom: 0.5rem
+.testimonial_cite
+  font-weight: 600
+  margin-bottom: 0.1rem
+.testimonial_location
+
+.trucklot-menu-items
+.trucklot-menu-item
+  overflow: hidden
+  padding-bottom: 10px
+  font-size: 0
+  letter-spacing: 0
+  text-align: center
+  &:after
+    content: ''
+    display: block
+    width: 100%
+    margin-top: 10px
+    border-bottom: 1px solid currentcolor
+    opacity: 0.1
+  > *
+    display: inline-block
+    vertical-align: middle
+    text-align: left
+    @extend %base
+.trucklot-menu-item_content
+  overflow: hidden
+  width: calc(100% - 300px)
+.trucklot-menu-item_name
+.trucklot-menu-item_price
+  float: right
+  padding: 0 0 20px 20px
+  opacity: 0.8
+.trucklot-menu-item_desc
+.trucklot-menu-item_image
+  padding-right: 30px
+  max-width: 300px
+  text-align: center
+.trucklot-menu + .trucklot-menu
+  padding-top: 40px
+@media (max-width: 800px)
+  .trucklot-menu-item_content
+    width: 100%
+  .trucklot-menu-item_image
+    width: 100%
+    padding: 0
+    text-align: center
+    margin-bottom: 15px
+
