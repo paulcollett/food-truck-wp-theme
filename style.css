@@ -1,9 +1,9 @@
 /*
-Theme Name: {**THEMENAME**}
-Theme URI: {**THEMEURI**}
-Author: Studio Brace
-Author URI: http://www.studiobrace.com/
-Description: {**THEMEDESCRIPTION**}
+Theme Name: Food Truck WP Theme
+Theme URI: https://github.com/paulcollett/food-truck-wp-theme
+Author: Paul Collett
+Author URI: http://www.paulcollett.com/
+Description: Food Truck Theme for Wordpress
 Version: 1.0
 License: see licence.txt
 
@@ -15,14 +15,14 @@ First off, we don't reccommend changing source CSS/JS files - it makes it super 
 
 So.. to add custom css / js:
 - Consider using a child theme
-- or, simply add css (or, javascript) via the {**THEMENAME**} Admin Page (reccomended)
+- or, simply add css (or, javascript) via the Food Truck Theme Admin Page (reccomended)
 
 To add HTML:
 - use the "advanced" module in your page or posts. It lets you drop-in HTML anywhere on your page (reccomended)
 - Also, if you know PHP we have a bunch of wordpress hooks to inject HTML throughout your site (find hooks in page.php)
-Happy coding! - {**THEMENAME**} & the StudioBrace Team
+Happy coding! - Food Truck Theme & the StudioBrace Team
 
 Need something else? Get in contact via:
-http://www.studiobrace.com/
+http://www.paulcollett.com/
 
 */

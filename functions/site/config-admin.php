@@ -70,14 +70,12 @@ class BraceAdmin
     }
 
     function on_first_run() {
-
         add_option('brace_theme_first_version', THEME_VERSION, false);
         update_option('brace_theme_current_version', THEME_VERSION, false);
         add_option('brace_theme_first_install', @gmmktime(), false);
         update_option('brace_theme_current_install', @gmmktime(), false);
 
-        wp_redirect(admin_url( 'admin.php?page=brace-framework&first_run=1' ));
-
+        wp_redirect(admin_url( 'admin.php?page=food-framework&first_run=1' ));
     }
 
     function acf_wysiwyg(){

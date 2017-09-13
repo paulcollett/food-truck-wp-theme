@@ -1,6 +1,6 @@
 <?php
 
-class BraceSiteFramework
+class FoodSiteFramework
 {
     
     function __construct() {
@@ -13,7 +13,7 @@ class BraceSiteFramework
 
         include $path . '/functions/site/template-utils.php';
         include $path . '/functions/site/acf-config.php';
-        include $path . '/functions/vendor/brace-menu/brace-menu.php';
+        include $path . '/functions/vendor/times-menu/plugin.php';
 
         $this->process_form_requests();
 
@@ -65,7 +65,7 @@ class BraceSiteFramework
 
     function add_assets_to_site() {
 
-        wp_enqueue_script( 'script', get_template_directory_uri() . '/assets/dist/js/main.js', array ( 'jquery' ), null, false);
+        wp_enqueue_scripts( 'script', get_template_directory_uri() . '/assets/dist/js/main.js', array ( 'jquery' ), null, false);
 
     }
 
@@ -153,4 +153,4 @@ class BraceSiteFramework
 
 }
 
-new BraceSiteFramework();
+new FoodSiteFramework();

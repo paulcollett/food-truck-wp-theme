@@ -15,7 +15,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "<div style=\"padding:15px!important;background:#ddd\"><strong>This page will display your Latest posts<\/strong><br \/>To configure the display of this page, visit <a href=\"admin.php?page=brace-framework\">TruckFed Theme &gt;<\/a> Posts Page\r\n<\/div>",
+            "message": "<div style=\"padding:15px!important;background:#ddd\"><strong>This page will display your Latest posts<\/strong><br \/>To configure the display of this page, visit <a href=\"admin.php?page=truck-framework\">Food Truck Theme &gt;<\/a> Posts Page\r\n<\/div>",
             "new_lines": "",
             "esc_html": 0
         }

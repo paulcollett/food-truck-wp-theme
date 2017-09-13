@@ -31,7 +31,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "<div><img src=\"http://www.studiobrace.com/truckfed/external-assets/truckfed-wp-admin-v1.png\" onerror=\"this.style.display='none'\" /></div><h1>Welcome to <strong>TruckFed<\/strong> theme for Wordpress<\/h1><p class=\"first_run\">Thankyou for choosing TruckLot and us at <a href=\"http://www.studiobrace.com/\" target=\"_blank\">Studio Brace</a> to help power your online presence - we think you'll love it!<\/p><p>See the provided geting started PDF for full setup help &amp; further support infomation. Happy theme-ing!<\/p>\r\n<h3>Getting Started Checklist<\/h3>\r\n<strong>1. Inital Look &amp; Feel<\/strong> Can be found using the links to the left<\/p>\r\n<p><strong>2. Create your inital pages!<\/strong> (ie. Home Page) Have fun using our easy to use layout builder!<\/p><p><strong>3. Set a page to be your Home Page<\/strong> Specify a home page <a href=\"options-reading.php\">Settings > Reading<\/a><\/p>\r\n<p><p><strong>4. SEO &amp; Stats<\/strong> Check out our SEO tab to the left<\/p>\r\n<p><strong>5. Release to the world!<\/strong> Remember it doesn't have to be perfect, you can always change as you go!<\/p>",
+            "message": "<div><img src=\"http://truck-wp-theme.paulcollett.com/external-assets/truckfed-wp-admin-v1.png\" onerror=\"this.style.display='none'\" /></div><h1>Welcome to <strong>Food Truck<\/strong> theme for Wordpress<\/h1><p class=\"first_run\">Thankyou for choosing the Food Truck theme to help power your online presence - we think you'll love it!<\/p>\r\n<h3>Getting Started Checklist<\/h3>\r\n<strong>1. Inital Look &amp; Feel<\/strong> Can be found using the links to the left<\/p>\r\n<p><strong>2. Create your inital pages!<\/strong> (ie. Home Page) Have fun using our easy to use layout builder!<\/p><p><strong>3. Set a page to be your Home Page<\/strong> Specify a home page <a href=\"options-reading.php\">Settings > Reading<\/a><\/p>\r\n<p><p><strong>4. SEO &amp; Stats<\/strong> Check out our SEO tab to the left<\/p>\r\n<p><strong>5. Release to the world!<\/strong> Remember it doesn't have to be perfect, you can always change as you go!<\/p>",
             "new_lines": "wpautop",
             "esc_html": 0
         },
@@ -1043,7 +1043,7 @@
             {
                 "param": "options_page",
                 "operator": "==",
-                "value": "brace-framework"
+                "value": "truck-framework"
             }
         ]
     ],

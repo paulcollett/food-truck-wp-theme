@@ -106,13 +106,12 @@ include_once( get_stylesheet_directory() . '/functions/vendor/acf/acf.php' );
 if( function_exists('acf_add_options_page') ) {
  
     acf_add_options_page(array(
-        'page_title'    => '{**THEMENAME**} Theme. Sitewide Look & Settings',
-        'menu_title'    => '{**THEMENAME**} Theme',
-        'menu_slug'     => 'brace-framework',
+        'page_title'    => 'Food Truck Theme. Sitewide Look & Settings',
+        'menu_title'    => 'Food Truck Theme',
+        'menu_slug'     => 'truck-framework',
         'capability'    => 'edit_posts',
         'redirect'  => false
     ));
- 
 }
 
 // load google font plugin
@@ -129,8 +128,6 @@ function acf_gfont_plugin_update_paths(){
 }
 
 add_action('admin_enqueue_scripts', 'acf_gfont_plugin_update_paths' , 99999);
-add_action('admin_enqueue_scripts', 'acf_gfont_plugin_update_paths' , 99999);
-
 
 // custom styles
 

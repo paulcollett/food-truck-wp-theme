@@ -55,7 +55,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "For the latest help, support and frequently ask questions please visit:<br \/>\r\n<a href=\"http:\/\/www.studiobrace.com\/truckfed-wordpress\">http:\/\/www.studiobrace.com\/truckfed-wordpress<\/a>",
+            "message": "For the latest help, support and frequently ask questions please visit:<br \/>\r\n<a href=\"https:\/\/github.com\/paulcollett\/food-truck-wp-theme\">https:\/\/github.com\/paulcollett\/food-truck-wp-theme<\/a>",
             "new_lines": "wpautop",
             "esc_html": 0
         },
@@ -88,7 +88,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "For the latest in theme updates, and update instructions please visit:<br \/>\r\n<a href=\"http:\/\/www.studiobrace.com\/truckfed-wordpress\">http:\/\/www.studiobrace.com\/truckfed-wordpress<\/a>",
+            "message": "For the latest in theme updates, and update instructions please visit:<br \/>\r\n<a href=\"https:\/\/github.com\/paulcollett\/food-truck-wp-theme\">https:\/\/github.com\/paulcollett\/food-truck-wp-theme<\/a>",
             "new_lines": "wpautop",
             "esc_html": 0
         }

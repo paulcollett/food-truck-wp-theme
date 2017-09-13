@@ -1,7 +1,6 @@
 <?php
 
 /*
- * StudioBrace Theme Framework
  * functions.php
 */
 
