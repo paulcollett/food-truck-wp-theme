@@ -1,4 +1,4 @@
-// StudioBrace Framework
+// Paul Collett / Food Truck Theme
 
 // Gulp & Gulp Plugins
 var gulp         = require('gulp');

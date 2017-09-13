@@ -4,7 +4,7 @@ class FoodSiteFramework
 {
     
     function __construct() {
-        define('THEME_VERSION', 'rDEV');
+        define('THEME_VERSION', '1.0');
 
         $this->register_wp_hooks();
         $path = get_template_directory();

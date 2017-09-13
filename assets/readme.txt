@@ -38,4 +38,4 @@ In your command line navigate to the assets/ folder, then:
 
 -----------
 
-Happy coding! - ThemeLot & the Studio Brace Team
+Happy coding!
