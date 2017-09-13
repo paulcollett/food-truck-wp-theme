@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_57d1ee803a69d",
-            "label": "<span class=\"foodlot-label\">TruckFed</span> Page Layout Type",
+            "label": "<span class=\"foodlot-label\">Food Truck</span> Page Layout Type",
             "name": "layout_type",
             "type": "radio",
             "instructions": "",
@@ -51,6 +51,121 @@
             "min": "",
             "max": "",
             "layouts": [
+                {
+                    "key": "57d1f06f8f04d",
+                    "name": "home_module",
+                    "label": "Home Module (Schedule Summary with Slider)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_57f1d9572423b",
+                            "label": "Dates & Times Button: Label",
+                            "name": "button_a_label",
+                            "type": "text",
+                            "instructions": "<strong>This is button shows up below the Locations & Times.<\/strong><br \/><em>Intended Use:<\/em> While the button can be whatever you what, it is intended to act as a \"View More\" for the Location & Times. To setup the button with this in mind you'll need to link it to a page that has the \"Dates & Locations\" Module.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Locations & Times",
+                            "placeholder": "eg. \"Locations & Times\"",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_57f1d97e2423c",
+                            "label": "Dates & Times Button: Link To Page",
+                            "name": "button_a_url",
+                            "type": "page_link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "page"
+                            ],
+                            "taxonomy": [
+                                
+                            ],
+                            "allow_null": 0,
+                            "allow_archives": 1,
+                            "multiple": 0
+                        },
+                        {
+                            "key": "field_57f1dc4633ec7",
+                            "label": "Additional Button: Label",
+                            "name": "button_b_label",
+                            "type": "text",
+                            "instructions": "<strong>This button shows below the Dates & Times button.<\/strong><br \/><em>Intended Use:<\/em> Act as a button to key content your visitors will be looking for. eg. \"News\". <small>(leave blank to hide)<\/small>",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_57f1dd7533ec8",
+                            "label": "Additional Button: Link To Page",
+                            "name": "button_b_url",
+                            "type": "page_link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "page"
+                            ],
+                            "taxonomy": [
+                                
+                            ],
+                            "allow_null": 0,
+                            "allow_archives": 1,
+                            "multiple": 0
+                        },
+                        {
+                            "key": "field_57fc2ad844858",
+                            "label": "Slider",
+                            "name": "slider",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_57f5b70275245"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 {
                     "key": "57d86a52a6f93",
                     "name": "post_items",
@@ -270,6 +385,117 @@
                             "layout": "block",
                             "prefix_label": 0,
                             "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "57dd963fcc40d",
+                    "name": "location_module",
+                    "label": "Upcoming Locations & Times  Module",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_57dd967acc40f",
+                            "label": "",
+                            "name": "",
+                            "type": "message",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "<strong>Your Location & Dates will show up here.<\/strong> To add\/edit locations visit the admin page <a href=\"admin.php?page=trucklot-locations\" target=\"_blank\">\"Location & Dates\"<\/a>",
+                            "new_lines": "wpautop",
+                            "esc_html": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "57dd9711cc410",
+                    "name": "display_menus",
+                    "label": "Display Menu(s) Module",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_57dd971fcc411",
+                            "label": "",
+                            "name": "",
+                            "type": "message",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "<strong>Your Menu\/s will show up here.<\/strong> To add\/edit menus visit the admin page <a href=\"admin.php?page=trucklot-menus\" target=\"_blank\">\"Menus\"<\/a>",
+                            "new_lines": "wpautop",
+                            "esc_html": 0
+                        },
+                        {
+                            "key": "field_57dd974ccc412",
+                            "label": "Menus",
+                            "name": "menus_to_show",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "all": "All Menus",
+                                "custom": "Select Menus <small>or, reorder all menus<\/small>"
+                            },
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "",
+                            "layout": "vertical",
+                            "return_format": "value"
+                        },
+                        {
+                            "key": "field_57dd9788cc413",
+                            "label": "Choose Menus to show",
+                            "name": "menus",
+                            "type": "relationship",
+                            "instructions": "Menus in the right column will be shown on the website. Click menus in the left column to add them to the right column. You can reorder them too.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_57dd974ccc412",
+                                        "operator": "==",
+                                        "value": "custom"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "trucklot-menus"
+                            ],
+                            "taxonomy": [
+                                
+                            ],
+                            "filters": "",
+                            "elements": "",
+                            "min": 1,
+                            "max": "",
+                            "return_format": "id"
                         }
                     ],
                     "min": "",
