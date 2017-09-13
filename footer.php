@@ -45,7 +45,7 @@
                 '{copy}' => '&copy;',
                 '{site_name}' => get_bloginfo('name','display'),
                 '{year}' => current_time('Y'),
-                '{powered_by}' => 'Powered by <a href="{**THEMEURI**}" target="_blank">{**THEMENAME**}</a>'
+                '{powered_by}' => 'Powered by <a href="https://github.com/paulcollett/food-truck-wp-theme" target="_blank">Food Truck Theme</a>'
             )),array_values($credit_replace_map), get_field('footer_credit', 'options'));
         ?>
     </div>

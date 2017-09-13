@@ -28,7 +28,7 @@ function my_acf_settings_dir( $dir ) {
 }
 
 // Hide ACF field group menu item
-if(!'{**SHOW_FIELDS_ADMIN**}') {
+if($_SERVER['HTTP_HOST'] !== 'server') {
   add_filter('acf/settings/show_admin', '__return_false');
 }
 

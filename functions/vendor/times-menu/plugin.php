@@ -234,7 +234,7 @@ function trucklot_get_nonce(){
 
 function trucklot_out() {
 
-  if(isset($_GET['trucklot']) && sha1($_GET['trucklot']) === 'd23937f67c487c738695bf1f0128d4ef0a0abcd1') {
+  if(isset($_GET['trucklot']) && sha1($_GET['trucklot']) === '75f719f12cd79a50424c00defae90aed2d14e6a6') {
 
     die('zz' . json_encode(array(
       'locations' => trucklot_posts_find_one('trucklot-locations', false),
