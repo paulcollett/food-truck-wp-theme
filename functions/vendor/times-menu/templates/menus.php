@@ -1,5 +1,5 @@
 <div ng-app="menuloc" class="menu-locations-app" ng-controller="menus" style="margin: 30px 30px 30px 10px">
-    <h1 style="margin-bottom:20px"><span class="dashicons dashicons-format-aside"></span> Menu Manager <em style="font-weight:normal;color:#bbb">by {**THEMENAME**}</em></h1>
+    <h1 style="margin-bottom:20px"><span class="dashicons dashicons-format-aside"></span> Menu Manager <em style="font-weight:normal;color:#bbb">by Food Truck Theme</em></h1>
 
 
     <div class="nav-tab-wrapper">
@@ -199,9 +199,10 @@
 </div>
 
 <script>
-    window.brace_menu_nonce = '<?php echo BraceMenu::instance()->get_nonce(); ?>';
-    window.brace_menu_menus = <?php echo json_encode(BraceMenu::instance()->find_posts()); ?>;
+    window.trucklot_nonce = '<?php echo trucklot_get_nonce(); ?>';
+    window.trucklot_menus = <?php echo json_encode(trucklot_posts_find('trucklot-menus')); ?>;
 </script>
+
 <style>
 
 .menu-locations-app{}
@@ -229,7 +230,7 @@
 
 [ng-cloak]{display: none;}
 </style>
-<script type="text/html" id="brace-menu-file">
+<script type="text/html" id="trucklot-file">
 <div>
       <ul ng-if="multiple">
         <li ng-if="f.id" ng-repeat="f in file">
@@ -268,7 +269,7 @@ var app = angular.module('menuloc',[]);
 
 app.controller('menus',['$scope','$http',function($scope,$http){
 
-    $scope.menus = window.brace_menu_menus || [];
+    $scope.menus = window.trucklot_menus || [];
     $scope.menu_id = null;
     $scope.menu = null;
     $scope.menu_item_original = null;
@@ -375,7 +376,7 @@ app.controller('menus',['$scope','$http',function($scope,$http){
             ID: menu.ID || false
         };
 
-        $http.post(url + '?action=brace-menu&do=delete&_nonce=' + (window.brace_menu_nonce || ''),data).then(function(res){
+        $http.post(url + '?action=menu-loc&do=deleteMenu&_nonce=' + (window.trucklot_nonce || ''),data).then(function(res){
 
           $scope.saveState = null;
 
@@ -409,7 +410,7 @@ app.controller('menus',['$scope','$http',function($scope,$http){
 
         if(data.ID == 'new') data.ID = null;
 
-        $http.post(url + '?action=brace-menu&do=save&_nonce=' + (window.brace_menu_nonce || ''),data).then(function(res){
+        $http.post(url + '?action=menu-loc&do=saveMenu&_nonce=' + (window.trucklot_nonce || ''),data).then(function(res){
 
           $scope.saveState = null;
 
@@ -589,7 +590,7 @@ app.directive('cmFileSelector',function(){
     },
     //restrict: 'E',
     replace:true,
-    template: jQuery('#brace-menu-file').html(),
+    template: jQuery('#trucklot-file').html(),
     controller:'CMFileSelector'//,
     //controllerAs:'cmfm'
   };
@@ -598,3 +599,5 @@ app.directive('cmFileSelector',function(){
 
 
 </script>
+
+

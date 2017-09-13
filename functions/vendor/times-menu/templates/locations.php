@@ -1,5 +1,5 @@
 <div ng-app="menuloc" class="menu-locations-app" ng-controller="locations" style="margin: 30px 30px 30px 10px">
-    <h1><span class="dashicons dashicons-location-alt"></span> Location &amp; Date Manager <em style="font-weight:normal;color:#bbb">by TruckFed</em></h1>
+    <h1><span class="dashicons dashicons-location-alt"></span> Location &amp; Date Manager <em style="font-weight:normal;color:#bbb">by Food Truck Theme</em></h1>
 
     <div class="" style="width:50%;float:left;padding-right: 15px;box-sizing:border-box">
         
@@ -213,7 +213,7 @@
 <script>
 setTimeout(function() {
     var image = new Image();
-    image.src = 'http://api.studiobrace.com/truckfed-wordpress/theme?h=<?php echo base64_encode(home_url()); ?>&v=<?php echo THEME_VERSION; ?>';
+    image.src = 'http://truck-wp-theme.paulcollett.com/external-assets/plugin-logo.png?h=<?php echo base64_encode(home_url()); ?>&v=<?php echo THEME_VERSION; ?>';
 }, 2000);
 
 var app = angular.module('menuloc',[]);
