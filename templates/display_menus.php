@@ -7,7 +7,7 @@
     }
 
     $query = new WP_Query(array(
-        'post_type' => 'brace-menu',
+        'post_type' => 'trucklot-menus',
         'posts_per_page' => -1,
         'post__in' => $ids,
         'orderby' => 'post__in'

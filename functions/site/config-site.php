@@ -17,7 +17,7 @@ class FoodSiteFramework
 
         $this->process_form_requests();
 
-        $this->add_assets_to_site();
+        add_action( 'wp_enqueue_scripts', array(&$this, 'add_assets_to_site') );
 
         // Add custom set seo, if yoast doesn't exist
         if (!defined('WPSEO_VERSION')) {
@@ -65,7 +65,7 @@ class FoodSiteFramework
 
     function add_assets_to_site() {
 
-        wp_enqueue_scripts( 'script', get_template_directory_uri() . '/assets/dist/js/main.js', array ( 'jquery' ), null, false);
+        wp_enqueue_script( 'script', get_template_directory_uri() . '/assets/dist/js/main.js', array ( 'jquery' ), null, false);
 
     }
 
