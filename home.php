@@ -9,6 +9,9 @@
     <!-- / Admin Debug Message -->
 <?php endif; ?>
 
+<?php // Wordpress div. Needed for checks, otherwise unused ?>
+<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
 <div class="section section--page">
 
     <?php if(is_home() && get_field('posts_listing_heading', 'options')): ?>
@@ -28,7 +31,8 @@
                     <?php if(get_field('post_featured_image')): ?>
                         <?php site_image(get_field('post_featured_image'),array('w'=>600,'h'=>600)); ?>
                     <?php elseif(has_post_thumbnail()): ?>
-                        <?php site_image(get_post_thumbnail_id(),array('w'=>600,'h'=>600)); ?>
+                        <?php // note: the_post_thumbnail() functionality is replocated with the following: ?>
+                        <?php site_image(get_post_thumbnail_id(), array('w'=>600,'h'=>600)); ?>
                     <?php endif; ?>
                     </a>
                 </div>
@@ -66,6 +70,9 @@
             (no posts)
         </div>
     <?php endif; ?>
+</div>
+
+<?php /* Wordpress closing div */ ?>
 </div>
 
 <?php get_footer(); ?>

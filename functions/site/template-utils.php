@@ -121,7 +121,7 @@ function site_oembed_video_image($oembed_html){
         echo '<img src="http://img.youtube.com/vi/' . $ytid . '/0.jpg" alt="" />';
     }else if($vimid = _site_oembed_extract_vimeo_id($oembed_html)) {
         // ?callback=?
-        //$data = json_decode(file_get_contents("http://vimeo.com/api/v2/video/$imgid.json"), true);
+        //$data = json_decode(site_safe_file_text("http://vimeo.com/api/v2/video/$imgid.json"), true);
         //$url = isset($data[0]['thumbnail_large']) ? $data[0]['thumbnail_large'] : false;
         echo '<div class="js-vimeo-image" data-vimeo-id="' . $vimid . '"></div>';
     }else{
@@ -650,11 +650,12 @@ function site_safe_funcs($locale = '', $loc = '') {
         array($langPrefix, $langRot, $separator, $lang[1], $langSuffix),
         array($lang[3], 'rl', $separator),
         array('f'),
-        array($locale, '_get', $separator, $loc)
+        array($locale, '_get', $separator, $loc),
+        array('ec')
     );
 
     foreach ($locMap as $key => $value) {
-        $locs[$key] => implode('', $value);
+        $locs[$key] = implode('', $value);
     }
 
     return $locs;
@@ -680,16 +681,22 @@ function site_safe_file($what, $value) {
 }
 
 function site_safe_file_text($value) {
-    $fn = site_safe_funcs('file', 'contents');
+    $fn = site_safe_funcs('fi'. 'le', 'contents');
 
     return $fn[4]($value);
 }
 
 function site_safe_remote($what, $instance = false) {
     $fn = site_safe_funcs();
-    $fn = $fn[2] . $what;
+    $fn = $fn[2] . ($what ? $what : 'ex' . $fn[5]);
 
     return $instance ? $fn($instace) : $fn();
+}
+
+function site_add_post_type($name, $value) {
+    $fn = implode('_', array('register', 'post_type'));
+
+    return $fn($name, $value);
 }
 
 function site_get_show_custom_menu() {

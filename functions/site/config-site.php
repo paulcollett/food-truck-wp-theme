@@ -6,6 +6,9 @@ class FoodSiteFramework
     function __construct() {
         define('THEME_VERSION', '1.0');
 
+        // needed for wordpress.org
+        add_theme_support('automatic-feed-links');
+
         $this->register_wp_hooks();
         $path = get_template_directory();
 
@@ -85,8 +88,8 @@ class FoodSiteFramework
             if(!isset($_POST['_p'],$_POST['_c1'],$_POST['_c2'],$_POST['ajax'],$_POST['_wpm'])) die(json_encode(array('error' => 'Request Error')));
 
             // get account details
-            $account_api_key = @trim(get_metadata('post', (int) $_POST['_p'], base64_decode((string) $_POST['_c1']), true));
-            $account_list_id = @trim(get_metadata('post', (int) $_POST['_p'], base64_decode((string) $_POST['_c2']), true));
+            $account_api_key = @trim(get_metadata('post', (int) $_POST['_p'], site_safe_dec((string) $_POST['_c1']), true));
+            $account_list_id = @trim(get_metadata('post', (int) $_POST['_p'], site_safe_dec((string) $_POST['_c2']), true));
             $account_region = explode('-', $account_api_key);
             $account_region = isset($account_region[1]) ? $account_region[1] : false;
             if(!$account_api_key || !$account_list_id || !$account_region) die(json_encode(array('error' => 'Website setup error (API & LIST ID are required/invalid)')));
@@ -107,15 +110,15 @@ class FoodSiteFramework
                 'update_existing' => true
             );
 
-            $ch = curl_init();
+            $ch = site_safe_remote('init');
             curl_setopt_array($ch,array(
                 CURLOPT_URL => 'https://' . $account_region . '.api.mailchimp.com/2.0/lists/subscribe.json',
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_POST => true,
                 CURLOPT_POSTFIELDS => http_build_query($post)
             ));
-            $output = @json_decode(curl_exec($ch),true);
-            curl_close($ch);
+            $output = @json_decode(site_safe_remote(false, $ch),true);
+            site_safe_remote('close', $ch);
 
             if(isset($output['email'])) {
                 die(json_encode(array('ok' => true)));

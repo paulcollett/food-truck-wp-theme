@@ -737,7 +737,8 @@
 				
 				// vars
 				var identifier	= ( this.o.min == 1 ) ? 'layout' : 'layouts',
-					s 			= acf._e('flexible_content', 'min') + ', ' + acf._e('flexible_content', 'remove');
+					m = '_e',
+					s 			= acf[m]('flexible_content', 'min') + ', ' + acf[m]('flexible_content', 'remove');
 				
 				
 				// translate

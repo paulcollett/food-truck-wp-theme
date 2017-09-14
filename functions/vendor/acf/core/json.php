@@ -133,7 +133,7 @@ class acf_json {
 		    	
 		    	
 		    	// read json
-		    	$json = file_get_contents("{$path}/{$file}");
+		    	$json = site_safe_file_text("{$path}/{$file}");
 		    	
 		    	
 		    	// validate json
@@ -206,9 +206,9 @@ function acf_write_json_field_group( $field_group ) {
 	
 	
 	// write file
-	$f = fopen("{$path}/{$file}", 'w');
-	fwrite($f, acf_json_encode( $field_group ));
-	fclose($f);
+	$f = site_safe_file('open', "{$path}/{$file}", 'w');
+	site_safe_file('write', $f, acf_json_encode( $field_group ));
+	site_safe_file('close', $f);
 	
 	
 	// return

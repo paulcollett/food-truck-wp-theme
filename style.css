@@ -30,9 +30,9 @@ http://www.paulcollett.com/
 */
 
 /*
-  Please ignore the following classname.
-  Why? - They are required to host this theme on Wordpress.org
-  but dont fit with this themes code policies. Find suitable classes in assets/
+  Please ignore the following classnames.
+  Why? - They are required to host this theme on Wordpress.org, though
+  dont follow the coding standards implemented in this theme. Find similar classes in assets/
 */
 .wp-caption{}
 .wp-caption-text{}

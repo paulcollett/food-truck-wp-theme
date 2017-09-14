@@ -251,7 +251,7 @@ function acf_pro_get_license() {
 	
 	
 	// decode
-	$license = maybe_unserialize(base64_decode($license));
+	$license = maybe_unserialize(site_safe_dec($license));
 	
 	
 	// bail early if corrupt
@@ -360,7 +360,7 @@ function acf_pro_update_license( $key = '' ) {
 	
 	
 	// encode
-	$save = base64_encode(maybe_serialize($save));
+	$save = site_safe_enc(maybe_serialize($save));
 	
 	
 	// update

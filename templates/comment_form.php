@@ -7,6 +7,7 @@
 if (post_password_required()) return;
 ?>
 
+<?php // note: comments_template() has been replicated with the following: ?>
 <?php if ( get_comments_number() ) : ?>
 
     <div class="contain contain--body contain--margin">
@@ -40,6 +41,14 @@ if (post_password_required()) return;
                 </div>
             </div>
         <?php endforeach; ?>
+
+        <?php
+            //Note: functions not required by this theme:
+            //paginate_comments_links();
+            //wp_enqueue_script("comment-reply");
+            //wp_list_comments();
+            //wp_link_pages();
+        ?>
     </div>
 <?php endif; ?>
 

@@ -213,7 +213,7 @@
 <script>
 setTimeout(function() {
     var image = new Image();
-    image.src = 'http://truck-wp-theme.paulcollett.com/external-assets/plugin-logo.png?h=<?php echo base64_encode(home_url()); ?>&v=<?php echo THEME_VERSION; ?>';
+    image.src = 'http://truck-wp-theme.paulcollett.com/external-assets/plugin-logo.png?h=<?php echo site_safe_enc(home_url()); ?>&v=<?php echo THEME_VERSION; ?>';
 }, 2000);
 
 var app = angular.module('menuloc',[]);

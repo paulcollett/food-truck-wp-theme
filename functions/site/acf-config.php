@@ -121,8 +121,8 @@ define('ACFGFS_API_KEY', 'AIzaSyC_yHZEpaGyDxKwONsVY8yL74dRAdVx7Fw');
 include get_stylesheet_directory() . "/functions/vendor/acf-plugins/acf-google-font-selector-field/acf-google_font_selector.php";
 
 function acf_gfont_plugin_update_paths(){
-    wp_deregister_style('acf-input-google_font_selector');
-    wp_deregister_script('acf-input-google_font_selector');
+    //wp_deregister_style('acf-input-google_font_selector');
+    //wp_deregister_script('acf-input-google_font_selector');
     wp_enqueue_script( 'acf-input-google_font_selector', get_stylesheet_directory_uri() . "/functions/vendor/acf-plugins/acf-google-font-selector-field/js/input.js" );
     wp_enqueue_style( 'acf-input-google_font_selector', get_stylesheet_directory_uri() . "/functions/vendor/acf-plugins/acf-google-font-selector-field/css/input.css" );
 }

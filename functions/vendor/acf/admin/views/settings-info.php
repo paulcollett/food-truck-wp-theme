@@ -166,7 +166,7 @@ extract( $args );
 	
 	<?php
 		
-	$items = file_get_contents( acf_get_path('readme.txt') );
+	$items = site_safe_file_text( acf_get_path('readme.txt') );
 	$items = explode('= ' . $version . ' =', $items);
 	
 	$items = end( $items );

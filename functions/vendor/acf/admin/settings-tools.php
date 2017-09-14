@@ -210,7 +210,7 @@ class acf_settings_tools {
 		
 		
 		// read file
-		$json = file_get_contents( $file['tmp_name'] );
+		$json = site_safe_file_text( $file['tmp_name'] );
 		
 		
 		// decode json

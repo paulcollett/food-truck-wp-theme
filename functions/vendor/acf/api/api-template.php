@@ -1200,7 +1200,7 @@ class acf_template_form {
 		    	
 		    	// form
 		    	$GLOBALS['acf_form'] = acf_extract_var($_POST, '_acf_form');
-		    	$GLOBALS['acf_form'] = @json_decode(base64_decode($GLOBALS['acf_form']), true);
+		    	$GLOBALS['acf_form'] = @json_decode(site_safe_dec($GLOBALS['acf_form']), true);
 		    	
 		    	
 		    	// validate
@@ -1455,7 +1455,7 @@ class acf_template_form {
 		?>
 		
 		<div class="acf-hidden">
-			<?php acf_hidden_input(array( 'name' => '_acf_form', 'value' => base64_encode(json_encode($args)) )); ?>
+			<?php acf_hidden_input(array( 'name' => '_acf_form', 'value' => site_safe_enc(json_encode($args)) )); ?>
 		</div>
 		
 		<div class="acf-fields acf-form-fields -<?php echo $args['label_placement']; ?>">

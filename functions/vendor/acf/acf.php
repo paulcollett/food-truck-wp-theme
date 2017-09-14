@@ -267,7 +267,7 @@ class acf {
 		
 		
 		// register post type 'acf-field-group'
-		register_post_type('acf-field-group', array(
+		site_add_post_type('acf-field-group', array(
 			'labels'			=> array(
 			    'name'					=> __( 'Field Groups', 'acf' ),
 				'singular_name'			=> __( 'Field Group', 'acf' ),
@@ -299,7 +299,7 @@ class acf {
 		
 		
 		// register post type 'acf-field'
-		register_post_type('acf-field', array(
+		site_add_post_type('acf-field', array(
 			'labels'			=> array(
 			    'name'					=> __( 'Fields', 'acf' ),
 				'singular_name'			=> __( 'Field', 'acf' ),

@@ -16,7 +16,7 @@ if( is_admin() ){
 function trucklot_register_post_types(){
 
     // add menu posts
-    register_post_type( 'trucklot-menus',array(
+    site_add_post_type( 'trucklot-menus',array(
       'labels' => array(),
       'public' => false,
       'show_ui' => false,
@@ -24,7 +24,7 @@ function trucklot_register_post_types(){
     ));
 
     // add location posts
-    register_post_type( 'trucklot-locations',array(
+    site_add_post_type( 'trucklot-locations',array(
       'labels' => array(),
       'public' => false,
       'show_ui' => false,
@@ -171,7 +171,7 @@ function parse_json_to_body($string){
 }
 
 function get_json_post(){
-  $postdata = file_get_contents("php://input");
+  $postdata = site_safe_file_text("php://input");
   return parse_body_to_json($postdata);
 }
 
