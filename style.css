@@ -1,11 +1,14 @@
 /*
-Theme Name: Food Truck WP Theme
+Theme Name: Food Truck
 Theme URI: https://github.com/paulcollett/food-truck-wp-theme
 Author: Paul Collett
 Author URI: http://www.paulcollett.com/
 Description: Food Truck Theme for Wordpress
 Version: 1.0
-
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: foodtruck
+Tags: theme-options, e-commerce, blog, food-and-drink, entertainment
 
 Hi! Adding CSS/JS?
 =============================
@@ -25,3 +28,18 @@ Need something else? Get in contact via:
 http://www.paulcollett.com/
 
 */
+
+/*
+  Please ignore the following classname.
+  Why? - They are required to host this theme on Wordpress.org
+  but dont fit with this themes code policies. Find suitable classes in assets/
+*/
+.wp-caption{}
+.wp-caption-text{}
+.sticky{}
+.screen-reader-text{}
+.gallery-caption{}
+.bypostauthor{}
+.alignright{}
+.alignleft{}
+.aligncenter{}

@@ -964,7 +964,7 @@ function acf_shortcode( $atts )
 	
 	return $value;
 }
-add_shortcode( 'acf', 'acf_shortcode' );
+//add_shortcode( 'acf', 'acf_shortcode' );
 
 
 

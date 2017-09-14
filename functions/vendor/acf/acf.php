@@ -7,7 +7,6 @@ Version: 5.4.7
 Author: Elliot Condon
 Author URI: http://www.elliotcondon.com/
 Copyright: Elliot Condon
-Text Domain: acf
 Domain Path: /lang
 */
 

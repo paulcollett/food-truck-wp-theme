@@ -228,9 +228,9 @@ class acf_field_google_font_selector extends acf_field {
 	 */
 	function input_admin_enqueue_scripts() {
 
-		wp_enqueue_script( 'acf-input-google_font_selector', $this->settings['dir'] . 'js/input.js', array('acf-input'), $this->settings['version'] );
+		//wp_enqueue_script( 'acf-input-google_font_selector', $this->settings['dir'] . 'js/input.js', array('acf-input'), $this->settings['version'] );
 
-		wp_enqueue_style( 'acf-input-google_font_selector', $this->settings['dir'] . 'css/input.css', array('acf-input'), $this->settings['version'] );
+		//wp_enqueue_style( 'acf-input-google_font_selector', $this->settings['dir'] . 'css/input.css', array('acf-input'), $this->settings['version'] );
 
 	}
 

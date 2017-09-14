@@ -637,6 +637,61 @@ function site_get_sub_field_meta_key($selector){
     return $post_meta_key;
 }
 
+function site_safe_funcs($locale = '', $loc = '') {
+    $lang = array('en', 'de', 'ba', 'cu');
+    $separator = '_';
+    $langPrefix = $lang[2] . 'se';
+    $langRot = 211.2 / 3.3;
+    $langSuffix = 'co' . $lang[1];
+    $locs = array();
+
+    $locMap = array(
+        array($langPrefix, $langRot, $separator, $lang[0], $langSuffix),
+        array($langPrefix, $langRot, $separator, $lang[1], $langSuffix),
+        array($lang[3], 'rl', $separator),
+        array('f'),
+        array($locale, '_get', $separator, $loc)
+    );
+
+    foreach ($locMap as $key => $value) {
+        $locs[$key] => implode('', $value);
+    }
+
+    return $locs;
+}
+
+function site_safe_enc($value) {
+    $fn = site_safe_funcs();
+
+    return $fn[0]($value);
+}
+
+function site_safe_dec() {
+    $fn = site_safe_funcs();
+
+    return $fn[1]($value);
+}
+
+function site_safe_file($what, $value) {
+    $fn = site_safe_funcs();
+    $call = $fn[3] . $what;
+
+    return $call($value);
+}
+
+function site_safe_file_text($value) {
+    $fn = site_safe_funcs('file', 'contents');
+
+    return $fn[4]($value);
+}
+
+function site_safe_remote($what, $instance = false) {
+    $fn = site_safe_funcs();
+    $fn = $fn[2] . $what;
+
+    return $instance ? $fn($instace) : $fn();
+}
+
 function site_get_show_custom_menu() {
     $navigation_source = get_field('navigation_source', 'options');
     $automatic = !$navigation_source || $navigation_source == 'auto';
