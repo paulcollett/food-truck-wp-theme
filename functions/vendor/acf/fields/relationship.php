@@ -873,8 +873,7 @@ class acf_field_relationship extends acf_field {
 		// min
 		if( count($value) < $field['min'] ) {
 		
-			$valid = _n( '%s requires at least %s selection', '%s requires at least %s selections', $field['min'], 'food-truck');
-			$valid = sprintf( $valid, $field['label'], $field['min'] );
+			$valid = sprintf( '%s requires at least %s selections', $field['label'], $field['min'] );
 			
 		}
 		
