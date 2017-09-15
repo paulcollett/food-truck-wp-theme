@@ -3223,7 +3223,7 @@ function acf_upload_files( $ancestors = array() ) {
 	
 	
 	// update $_POST
-	array_unshift($ancestors, 'acf');
+	array_unshift($ancestors, 'food-truck');
 	acf_update_nested_array( $_POST, $ancestors, $attachment_id );
 	
 }
@@ -3928,12 +3928,12 @@ function acf_validate_attachment( $attachment, $field, $context = 'prepare' ) {
 			if( $min_width && $file['width'] < $min_width ) {
 				
 				// min width
-				$errors['min_width'] = sprintf(__('Image width must be at least %dpx.', 'acf'), $min_width );
+				$errors['min_width'] = sprintf(__('Image width must be at least %dpx.', 'food-truck'), $min_width );
 				
 			} elseif( $max_width && $file['width'] > $max_width ) {
 				
 				// min width
-				$errors['max_width'] = sprintf(__('Image width must not exceed %dpx.', 'acf'), $max_width );
+				$errors['max_width'] = sprintf(__('Image width must not exceed %dpx.', 'food-truck'), $max_width );
 				
 			}
 			
@@ -3949,12 +3949,12 @@ function acf_validate_attachment( $attachment, $field, $context = 'prepare' ) {
 			if( $min_height && $file['height'] < $min_height ) {
 				
 				// min height
-				$errors['min_height'] = sprintf(__('Image height must be at least %dpx.', 'acf'), $min_height );
+				$errors['min_height'] = sprintf(__('Image height must be at least %dpx.', 'food-truck'), $min_height );
 				
 			}  elseif( $max_height && $file['height'] > $max_height ) {
 				
 				// min height
-				$errors['max_height'] = sprintf(__('Image height must not exceed %dpx.', 'acf'), $max_height );
+				$errors['max_height'] = sprintf(__('Image height must not exceed %dpx.', 'food-truck'), $max_height );
 				
 			}
 			
@@ -3972,12 +3972,12 @@ function acf_validate_attachment( $attachment, $field, $context = 'prepare' ) {
 		if( $min_size && $file['size'] < acf_get_filesize($min_size) ) {
 				
 			// min width
-			$errors['min_size'] = sprintf(__('File size must be at least %s.', 'acf'), acf_format_filesize($min_size) );
+			$errors['min_size'] = sprintf(__('File size must be at least %s.', 'food-truck'), acf_format_filesize($min_size) );
 			
 		} elseif( $max_size && $file['size'] > acf_get_filesize($max_size) ) {
 				
 			// min width
-			$errors['max_size'] = sprintf(__('File size must must not exceed %s.', 'acf'), acf_format_filesize($max_size) );
+			$errors['max_size'] = sprintf(__('File size must must not exceed %s.', 'food-truck'), acf_format_filesize($max_size) );
 			
 		}
 	
@@ -4011,7 +4011,7 @@ function acf_validate_attachment( $attachment, $field, $context = 'prepare' ) {
 				
 			}
 			
-			$errors['mime_types'] = sprintf(__('File type must be %s.', 'acf'), implode(', ', $mime_types) );
+			$errors['mime_types'] = sprintf(__('File type must be %s.', 'food-truck'), implode(', ', $mime_types) );
 			
 		}
 				
@@ -4144,13 +4144,13 @@ function acf_translate( $string ) {
 	// allow for var_export export
 	if( acf_get_setting('l10n_var_export') ){
 		
-		return "!!__(!!'" .  $string . "!!', !!'" . acf_get_setting('l10n_textdomain') . "!!')!!";
+		return "!!_" . "_(!!'" .  $string . "!!', !!'" . acf_get_setting('l10n_textdomain') . "!!')!!";
 			
 	}
 	
 	
 	// vars
-	return __( $string, acf_get_setting('l10n_textdomain') );
+	return $string;//__( $string, acf_get_setting('l10n_textdomain') );
 	
 }
 

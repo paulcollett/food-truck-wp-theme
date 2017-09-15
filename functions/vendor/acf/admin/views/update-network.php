@@ -1,7 +1,7 @@
 <?php 
 
 // vars
-$button = __('Upgrade Sites');
+$button = __('Upgrade Sites', 'food-truck');
 
 
 // extract

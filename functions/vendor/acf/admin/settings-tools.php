@@ -366,7 +366,7 @@ class acf_settings_tools {
 	
 	function generate() {
 		
-		// prevent default translation and fake __() within string
+		// prevent default translation and fake fn within string
 		acf_update_setting('l10n_var_export', true);
 		
 		

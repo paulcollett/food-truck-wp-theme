@@ -193,7 +193,7 @@ class acf {
 		
 		
 		// set text domain
-		load_textdomain( 'acf', acf_get_path( 'lang/acf-' . get_locale() . '.mo' ) );
+		//load_textdomain( 'acf', acf_get_path( 'lang/acf-' . get_locale() . '.mo' ) );
 		
 		
 		// include wpml support

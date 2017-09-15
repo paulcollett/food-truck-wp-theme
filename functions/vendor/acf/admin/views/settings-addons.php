@@ -41,7 +41,7 @@ $json = acf_extract_var( $args, 'json');
 						<?php if( apply_filters("acf/is_add_on_active/slug={$addon['slug']}", false ) ): ?>
 							<a class="button" disabled="disabled"><?php _e("Installed",'food-truck'); ?></a>
 						<?php else: ?>
-							<a class="button <?php echo $addon['btn_color']; ?>" target="_blank" href="<?php echo $addon['url']; ?>" ><?php _e($addon['btn']); ?></a>
+							<a class="button <?php echo $addon['btn_color']; ?>" target="_blank" href="<?php echo $addon['url']; ?>" ><?php _e($addon['btn'], 'food-truck'); ?></a>
 						<?php endif; ?>
 						
 						<?php if( !empty($addon['footer']) ): ?>
