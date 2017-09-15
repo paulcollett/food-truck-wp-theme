@@ -101,7 +101,7 @@ class acf_admin_update {
 		
 		
 		// add page
-		$page = site_add_theme_subpage('edit.php?post_type=acf-field-group', __('Upgrade Database','acf'), __('Upgrade Database','food-truck'), acf_get_setting('capability'), 'acf-upgrade', array($this,'html') );
+		$page = site_add_theme_subpage('edit.php?post_type=acf-field-group', __('Upgrade Database','food-truck'), __('Upgrade Database','food-truck'), acf_get_setting('capability'), 'acf-upgrade', array($this,'html') );
 		
 		
 		// actions

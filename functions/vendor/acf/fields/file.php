@@ -172,7 +172,7 @@ class acf_field_file extends acf_field {
 			
 		<?php else: ?>
 			
-			<p style="margin:0;"><?php _e('No file selected','acf'); ?> <a data-name="add" class="acf-button button" href="#"><?php _e('Add File','food-truck'); ?></a></p>
+			<p style="margin:0;"><?php _e('No file selected','food-truck'); ?> <a data-name="add" class="acf-button button" href="#"><?php _e('Add File','food-truck'); ?></a></p>
 			
 		<?php endif; ?>
 		

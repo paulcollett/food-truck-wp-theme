@@ -11,9 +11,9 @@ extract($args);
 	
 	<p><?php _e('Reading upgrade tasks...', 'food-truck'); ?></p>
 	
-	<p class="show-on-ajax"><i class="acf-loading"></i> <?php printf(__('Upgrading data to version %s', 'acf'), $plugin_version); ?></p>
+	<p class="show-on-ajax"><i class="acf-loading"></i> <?php printf(__('Upgrading data to version %s','food-truck'), $plugin_version); ?></p>
 	
-	<p class="show-on-complete"><?php _e('Database Upgrade complete', 'acf'); ?>. <a href="<?php echo admin_url('edit.php?post_type=acf-field-group&page=acf-settings-info'); ?>"><?php _e("See what's new",'food-truck'); ?></a>.</p>
+	<p class="show-on-complete"><?php _e('Database Upgrade complete','food-truck'); ?>. <a href="<?php echo admin_url('edit.php?post_type=acf-field-group&page=acf-settings-info'); ?>"><?php _e("See what's new",'food-truck'); ?></a>.</p>
 
 	<style type="text/css">
 		

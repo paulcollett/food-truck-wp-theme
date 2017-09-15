@@ -204,7 +204,7 @@ class acf_field_checkbox extends acf_field {
 		// choices
 		acf_render_field_setting( $field, array(
 			'label'			=> __('Choices','food-truck'),
-			'instructions'	=> __('Enter each choice on a new line.','acf') . '<br /><br />' . __('For more control, you may specify both a value and label like this:','acf'). '<br /><br />' . __('red : Red','food-truck'),
+			'instructions'	=> __('Enter each choice on a new line.','food-truck') . '<br /><br />' . __('For more control, you may specify both a value and label like this:','food-truck'). '<br /><br />' . __('red : Red','food-truck'),
 			'type'			=> 'textarea',
 			'name'			=> 'choices',
 		));	

@@ -8,7 +8,7 @@ extract($args);
 $active = $license ? true : false;
 $nonce = $active ? 'deactivate_pro_licence' : 'activate_pro_licence';
 $input = $active ? 'password' : 'text';
-$button = $active ? __('Deactivate License', 'acf') : __('Activate License', 'food-truck');
+$button = $active ? __('Deactivate License','food-truck') : __('Activate License', 'food-truck');
 $readonly = $active ? 1 : 0;
 
 ?>
@@ -21,7 +21,7 @@ $readonly = $active ? 1 : 0;
 			<h3><?php _e('License Information', 'food-truck'); ?></h3>
 		</div>
 		<div class="inner">
-			<p><?php printf(__('To unlock updates, please enter your license key below. If you don\'t have a licence key, please see <a href="%s" target="_blank">details & pricing</a>.','acf'), esc_url('https://www.advancedcustomfields.com/pro')); ?></p>
+			<p><?php printf(__('To unlock updates, please enter your license key below. If you don\'t have a licence key, please see <a href="%s" target="_blank">details & pricing</a>.','food-truck'), esc_url('https://www.advancedcustomfields.com/pro')); ?></p>
 			<form action="" method="post">
 			<div class="acf-hidden">
 				<input type="hidden" name="_acfnonce" value="<?php echo wp_create_nonce( $nonce ); ?>" />

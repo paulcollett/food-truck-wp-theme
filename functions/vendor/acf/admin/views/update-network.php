@@ -49,7 +49,7 @@ extract($args);
 				</td>
 				<td>
 				<?php if( $site['updates'] ): ?>
-					<span class="response"><?php printf(__('Site requires database upgrade from %s to %s', 'acf'), $site['acf_version'], $plugin_version); ?></span>
+					<span class="response"><?php printf(__('Site requires database upgrade from %s to %s','food-truck'), $site['acf_version'], $plugin_version); ?></span>
 				<?php else: ?>
 					<?php _e("Site is up to date", 'food-truck'); ?>
 				<?php endif; ?>
@@ -64,7 +64,7 @@ extract($args);
 	
 	<p><input type="submit" name="upgrade" value="<?php echo $button; ?>" class="button" id="upgrade-sites-2"></p>
 	
-	<p class="show-on-complete"><?php _e('Database Upgrade complete', 'acf'); ?>. <a href="<?php echo network_admin_url(); ?>"><?php _e("Return to network dashboard",'food-truck'); ?></a>.</p>
+	<p class="show-on-complete"><?php _e('Database Upgrade complete','food-truck'); ?>. <a href="<?php echo network_admin_url(); ?>"><?php _e("Return to network dashboard",'food-truck'); ?></a>.</p>
 	
 	<style type="text/css">
 		
@@ -163,7 +163,7 @@ extract($args);
 				
 				
 				// add loading
-				$tr.find('.response').html('<i class="acf-loading"></i></span> <?php printf(__('Upgrading data to version %s', 'acf'), $plugin_version); ?>');
+				$tr.find('.response').html('<i class="acf-loading"></i></span> <?php printf(__('Upgrading data to version %s','food-truck'), $plugin_version); ?>');
 				
 				
 				// get results

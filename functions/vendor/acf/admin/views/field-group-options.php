@@ -102,7 +102,7 @@ acf_render_field_wrap(array(
 // hide on screen
 acf_render_field_wrap(array(
 	'label'			=> __('Hide on screen','food-truck'),
-	'instructions'	=> __('<b>Select</b> items to <b>hide</b> them from the edit screen.','acf') . '<br /><br />' . __("If multiple field groups appear on an edit screen, the first field group's options will be used (the one with the lowest order number)",'food-truck'),
+	'instructions'	=> __('<b>Select</b> items to <b>hide</b> them from the edit screen.','food-truck') . '<br /><br />' . __("If multiple field groups appear on an edit screen, the first field group's options will be used (the one with the lowest order number)",'food-truck'),
 	'type'			=> 'checkbox',
 	'name'			=> 'hide_on_screen',
 	'prefix'		=> 'acf_field_group',

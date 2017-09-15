@@ -47,7 +47,7 @@ class acf_settings_tools {
 		
 		
 		// add page
-		$page = site_add_theme_subpage('edit.php?post_type=acf-field-group', __('Tools','acf'), __('Tools','food-truck'), acf_get_setting('capability'),'acf-settings-tools', array($this,'html') );
+		$page = site_add_theme_subpage('edit.php?post_type=acf-field-group', __('Tools','food-truck'), __('Tools','food-truck'), acf_get_setting('capability'),'acf-settings-tools', array($this,'html') );
 		
 		
 		// actions
@@ -194,7 +194,7 @@ class acf_settings_tools {
 		// validate error
 		if( $file['error'] ) {
 			
-			acf_add_admin_notice(__('Error uploading file. Please try again', 'acf'), 'error');
+			acf_add_admin_notice(__('Error uploading file. Please try again','food-truck'), 'error');
 			return;
 		
 		}
@@ -203,7 +203,7 @@ class acf_settings_tools {
 		// validate type
 		if( pathinfo($file['name'], PATHINFO_EXTENSION) !== 'json' ) {
 		
-			acf_add_admin_notice(__('Incorrect file type', 'acf'), 'error');
+			acf_add_admin_notice(__('Incorrect file type','food-truck'), 'error');
 			return;
 			
 		}
@@ -220,7 +220,7 @@ class acf_settings_tools {
 		// validate json
     	if( empty($json) ) {
     	
-    		acf_add_admin_notice(__('Import file empty', 'acf'), 'error');
+    		acf_add_admin_notice(__('Import file empty','food-truck'), 'error');
 	    	return;
     	
     	}
@@ -328,7 +328,7 @@ class acf_settings_tools {
     		// vars
     		$links = array();
     		$count = count($imported);
-    		$message = sprintf(_n( 'Imported 1 field group', 'Imported %s field groups', $count, 'acf' ), $count) . '.';
+    		$message = sprintf(_n( 'Imported 1 field group', 'Imported %s field groups', $count,'food-truck'), $count) . '.';
     		
     		
     		// populate links

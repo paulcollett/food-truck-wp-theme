@@ -59,7 +59,7 @@ if( empty($groups) ) {
 				// vars
 				// $group_id must be completely different to $rule_id to avoid JS issues
 				$group_id = "group_{$group_id}";
-				$h4 = ($group_id == "group_0") ? __("Show this field if",'acf') : __("or",'food-truck');
+				$h4 = ($group_id == "group_0") ? __("Show this field if",'food-truck') : __("or",'food-truck');
 				
 				?>
 				<div class="rule-group" data-id="<?php echo $group_id; ?>">

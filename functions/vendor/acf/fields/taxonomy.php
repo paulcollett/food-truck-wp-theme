@@ -905,7 +905,7 @@ class acf_field_taxonomy extends acf_field {
 		// note: this situation should never occur due to condition of the add new button
 		if( !current_user_can( $taxonomy_obj->cap->manage_terms) ) {
 			
-			echo '<p><strong>' . __("Error", 'acf') . '.</strong> ' . sprintf( __('User unable to add new %s', 'food-truck'), $taxonomy_label ) . '</p>';
+			echo '<p><strong>' . __("Error",'food-truck') . '.</strong> ' . sprintf( __('User unable to add new %s', 'food-truck'), $taxonomy_label ) . '</p>';
 			die;
 			
 		}

@@ -232,7 +232,7 @@ class acf_form_widget {
 			
 			// message
 			$message = __('Validation failed', 'food-truck') . '. ';
-			$message .= sprintf(_n( '1 field requires attention.', '%d fields require attention.', $total, 'acf' ), $total);
+			$message .= sprintf(_n( '1 field requires attention.', '%d fields require attention.', $total,'food-truck'), $total);
 			
 			
 			// add missing WP JS to remove spinning
@@ -330,7 +330,7 @@ class acf_form_widget {
 			
 			
 			// set data	
-			$setting->acf = acf_maybe_get($value, 'acf');
+			$setting->acf = acf_maybe_get($value,'food-truck');
 			
 			
 			// append

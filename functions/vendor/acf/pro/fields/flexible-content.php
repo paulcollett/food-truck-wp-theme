@@ -556,10 +556,10 @@ class acf_field_flexible_content extends acf_field {
 	<td class="acf-label">
 		<label><?php _e("Layout",'food-truck'); ?></label>
 		<p class="description acf-fl-actions">
-			<a data-name="acf-fc-reorder" title="<?php _e("Reorder Layout",'acf'); ?>" ><?php _e("Reorder",'food-truck'); ?></a>
-			<a data-name="acf-fc-delete" title="<?php _e("Delete Layout",'acf'); ?>" href="#"><?php _e("Delete",'food-truck'); ?></a>
-			<a data-name="acf-fc-duplicate" title="<?php _e("Duplicate Layout",'acf'); ?>" href="#"><?php _e("Duplicate",'food-truck'); ?></a>
-			<a data-name="acf-fc-add" title="<?php _e("Add New Layout",'acf'); ?>" href="#"><?php _e("Add New",'food-truck'); ?></a>
+			<a data-name="acf-fc-reorder" title="<?php _e("Reorder Layout",'food-truck'); ?>" ><?php _e("Reorder",'food-truck'); ?></a>
+			<a data-name="acf-fc-delete" title="<?php _e("Delete Layout",'food-truck'); ?>" href="#"><?php _e("Delete",'food-truck'); ?></a>
+			<a data-name="acf-fc-duplicate" title="<?php _e("Duplicate Layout",'food-truck'); ?>" href="#"><?php _e("Duplicate",'food-truck'); ?></a>
+			<a data-name="acf-fc-add" title="<?php _e("Add New Layout",'food-truck'); ?>" href="#"><?php _e("Add New",'food-truck'); ?></a>
 		</p>
 	</td>
 	<td class="acf-input">

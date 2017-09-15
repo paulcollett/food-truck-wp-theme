@@ -139,7 +139,7 @@ class acf_cache {
 	
 	function set_cache( $key = '', $data = '' ) {
 		
-		wp_cache_set($key, $data, 'acf');
+		wp_cache_set($key, $data,'food-truck');
 		
 		return $key;
 		
@@ -184,7 +184,7 @@ class acf_cache {
 	
 	function delete_cache( $key = '' ) {
 		
-		return wp_cache_delete( $key, 'acf' );
+		return wp_cache_delete( $key,'food-truck');
 		
 	}
 	

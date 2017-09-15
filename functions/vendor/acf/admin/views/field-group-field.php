@@ -55,10 +55,10 @@ $atts['class'] = str_replace('_', '-', $atts['class']);
 					<a class="edit-field" title="<?php _e("Edit field",'food-truck'); ?>" href="#"><?php echo acf_get_field_label($field); ?></a>
 				</strong>
 				<div class="row-options">
-					<a class="edit-field" title="<?php _e("Edit field",'acf'); ?>" href="#"><?php _e("Edit",'food-truck'); ?></a>
-					<a class="duplicate-field" title="<?php _e("Duplicate field",'acf'); ?>" href="#"><?php _e("Duplicate",'food-truck'); ?></a>
-					<a class="move-field" title="<?php _e("Move field to another group",'acf'); ?>" href="#"><?php _e("Move",'food-truck'); ?></a>
-					<a class="delete-field" title="<?php _e("Delete field",'acf'); ?>" href="#"><?php _e("Delete",'food-truck'); ?></a>
+					<a class="edit-field" title="<?php _e("Edit field",'food-truck'); ?>" href="#"><?php _e("Edit",'food-truck'); ?></a>
+					<a class="duplicate-field" title="<?php _e("Duplicate field",'food-truck'); ?>" href="#"><?php _e("Duplicate",'food-truck'); ?></a>
+					<a class="move-field" title="<?php _e("Move field to another group",'food-truck'); ?>" href="#"><?php _e("Move",'food-truck'); ?></a>
+					<a class="delete-field" title="<?php _e("Delete field",'food-truck'); ?>" href="#"><?php _e("Delete",'food-truck'); ?></a>
 				</div>
 			</li>
 			<li class="li-field-name"><?php echo $field['name']; ?></li>
@@ -66,7 +66,7 @@ $atts['class'] = str_replace('_', '-', $atts['class']);
 				<?php if( acf_field_type_exists($field['type']) ): ?>
 					<?php echo acf_get_field_type_label($field['type']); ?>
 				<?php else: ?>
-					<b><?php _e('Error', 'acf'); ?></b> <?php _e('Field type does not exist', 'food-truck'); ?>
+					<b><?php _e('Error','food-truck'); ?></b> <?php _e('Field type does not exist', 'food-truck'); ?>
 				<?php endif; ?>
 			</li>	
 		</ul>
@@ -205,7 +205,7 @@ $atts['class'] = str_replace('_', '-', $atts['class']);
 					<td class="acf-input">
 						<ul class="acf-hl">
 							<li>
-								<a class="button edit-field" title="<?php _e("Close Field",'acf'); ?>" href="#"><?php _e("Close Field",'food-truck'); ?></a>
+								<a class="button edit-field" title="<?php _e("Close Field",'food-truck'); ?>" href="#"><?php _e("Close Field",'food-truck'); ?></a>
 							</li>
 						</ul>
 					</td>

@@ -222,7 +222,7 @@ class acf_field_oembed extends acf_field {
 		</div>
 		
 		<div class="canvas-error">
-			<p><strong><?php _e("Error", 'acf'); ?></strong>. <?php _e("No embed found for the given URL", 'food-truck'); ?></p>
+			<p><strong><?php _e("Error",'food-truck'); ?></strong>. <?php _e("No embed found for the given URL", 'food-truck'); ?></p>
 		</div>
 		
 		<div class="canvas-media" data-name="value-embed">

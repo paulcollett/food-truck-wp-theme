@@ -139,11 +139,11 @@ class acf_admin_field_groups {
 			
 			if( $total == 1 ) {
 				
-				acf_add_admin_notice( sprintf(__('Field group duplicated. %s', 'acf'), '<a href="' . get_edit_post_link($ids[0]) . '">' . get_the_title($ids[0]) . '</a>') );
+				acf_add_admin_notice( sprintf(__('Field group duplicated. %s','food-truck'), '<a href="' . get_edit_post_link($ids[0]) . '">' . get_the_title($ids[0]) . '</a>') );
 				
 			} else {
 				
-				acf_add_admin_notice( sprintf(_n( '%s field group duplicated.', '%s field groups duplicated.', $total, 'acf' ), $total) );
+				acf_add_admin_notice( sprintf(_n( '%s field group duplicated.', '%s field groups duplicated.', $total,'food-truck'), $total) );
 				
 			}
 			
@@ -224,11 +224,11 @@ class acf_admin_field_groups {
 			
 			if( $total == 1 ) {
 				
-				acf_add_admin_notice( sprintf(__('Field group synchronised. %s', 'acf'), '<a href="' . get_edit_post_link($ids[0]) . '">' . get_the_title($ids[0]) . '</a>') );
+				acf_add_admin_notice( sprintf(__('Field group synchronised. %s','food-truck'), '<a href="' . get_edit_post_link($ids[0]) . '">' . get_the_title($ids[0]) . '</a>') );
 				
 			} else {
 				
-				acf_add_admin_notice( sprintf(_n( '%s field group synchronised.', '%s field groups synchronised.', $total, 'acf' ), $total) );
+				acf_add_admin_notice( sprintf(_n( '%s field group synchronised.', '%s field groups synchronised.', $total,'food-truck'), $total) );
 				
 			}
 			
@@ -603,7 +603,7 @@ class acf_admin_field_groups {
 			<h2><?php echo acf_get_setting('name'); ?></h2>
 
 			<h3><?php _e("Changelog",'food-truck'); ?></h3>
-			<p><?php printf(__('See what\'s new in <a href="%s">version %s</a>.','acf'), admin_url('edit.php?post_type=acf-field-group&page=acf-settings-info&tab=changelog'), acf_get_setting('version')); ?></p>
+			<p><?php printf(__('See what\'s new in <a href="%s">version %s</a>.','food-truck'), admin_url('edit.php?post_type=acf-field-group&page=acf-settings-info&tab=changelog'), acf_get_setting('version')); ?></p>
 			
 			<h3><?php _e("Resources",'food-truck'); ?></h3>
 			<ul>
@@ -663,7 +663,7 @@ class acf_admin_field_groups {
 			
 			
 			// create el
-			var $span = $('<span class="acf-duplicate-field-group"><a title="<?php _e('Duplicate this item', 'acf'); ?>" href="<?php echo admin_url($this->url . '&acfduplicate='); ?>' + post_id + '&_wpnonce=<?php echo wp_create_nonce('bulk-posts'); ?>"><?php _e('Duplicate', 'food-truck'); ?></a> | </span>');
+			var $span = $('<span class="acf-duplicate-field-group"><a title="<?php _e('Duplicate this item','food-truck'); ?>" href="<?php echo admin_url($this->url . '&acfduplicate='); ?>' + post_id + '&_wpnonce=<?php echo wp_create_nonce('bulk-posts'); ?>"><?php _e('Duplicate', 'food-truck'); ?></a> | </span>');
 			
 			
 			// replace
@@ -754,7 +754,7 @@ class acf_admin_field_groups {
 				<span class="row-title"><?php echo $field_group['title']; ?></span><span class="acf-description"><?php echo $field_group['key']; ?>.json</span>
 			</strong>
 			<div class="row-actions">
-				<span class="import"><a title="<?php echo esc_attr( __('Synchronise field group', 'acf') ); ?>" href="<?php echo admin_url($this->url . '&post_status=sync&acfsync=' . $field_group['key'] . '&_wpnonce=' . wp_create_nonce('bulk-posts')); ?>"><?php _e( 'Sync', 'food-truck'); ?></a></span>
+				<span class="import"><a title="<?php echo esc_attr( __('Synchronise field group','food-truck') ); ?>" href="<?php echo admin_url($this->url . '&post_status=sync&acfsync=' . $field_group['key'] . '&_wpnonce=' . wp_create_nonce('bulk-posts')); ?>"><?php _e( 'Sync', 'food-truck'); ?></a></span>
 			</div>
 		</td>
 		<?php foreach( $columns as $column ): ?>

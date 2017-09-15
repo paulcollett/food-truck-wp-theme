@@ -392,7 +392,7 @@ class acf_admin_field_group {
 		
 		
 		// vars
-		$status = $field_group['active'] ? __("Active",'acf') : __("Disabled",'food-truck');
+		$status = $field_group['active'] ? __("Active",'food-truck') : __("Disabled",'food-truck');
 		
 ?>
 <script type="text/javascript">

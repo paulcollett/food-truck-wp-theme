@@ -7,7 +7,7 @@ extract( $args );
 <div class="wrap about-wrap acf-wrap">
 	
 	<h1><?php _e("Welcome to Advanced Custom Fields",'food-truck'); ?> <?php echo $version; ?></h1>
-	<div class="about-text"><?php printf(__("Thank you for updating! ACF %s is bigger and better than ever before. We hope you like it.", 'acf'), $version); ?></div>
+	<div class="about-text"><?php printf(__("Thank you for updating! ACF %s is bigger and better than ever before. We hope you like it.",'food-truck'), $version); ?></div>
 	<div class="acf-icon logo">
 		<i class="acf-sprite-logo"></i>
 	</div>
@@ -49,19 +49,19 @@ extract( $args );
 		<div>
 			<h3><?php _e("Introducing ACF PRO", 'food-truck'); ?></h3>
 			<p><?php _e("We're changing the way premium functionality is delivered in an exciting way!", 'food-truck'); ?></p>
-			<p><?php printf(__('All 4 premium add-ons have been combined into a new <a href="%s">Pro version of ACF</a>. With both personal and developer licenses available, premium functionality is more affordable and accessible than ever before!', 'acf'), esc_url('https://www.advancedcustomfields.com/pro')); ?></p>
+			<p><?php printf(__('All 4 premium add-ons have been combined into a new <a href="%s">Pro version of ACF</a>. With both personal and developer licenses available, premium functionality is more affordable and accessible than ever before!','food-truck'), esc_url('https://www.advancedcustomfields.com/pro')); ?></p>
 		</div>
 		
 		<div>
 			<h3><?php _e("Powerful Features", 'food-truck'); ?></h3>
 			<p><?php _e("ACF PRO contains powerful features such as repeatable data, flexible content layouts, a beautiful gallery field and the ability to create extra admin options pages!", 'food-truck'); ?></p>
-			<p><?php printf(__('Read more about <a href="%s">ACF PRO features</a>.', 'acf'), esc_url('https://www.advancedcustomfields.com/pro')); ?></p>
+			<p><?php printf(__('Read more about <a href="%s">ACF PRO features</a>.','food-truck'), esc_url('https://www.advancedcustomfields.com/pro')); ?></p>
 		</div>
 		
 		<div>
 			<h3><?php _e("Easy Upgrading", 'food-truck'); ?></h3>
-			<p><?php printf(__('To help make upgrading easy, <a href="%s">login to your store account</a> and claim a free copy of ACF PRO!', 'acf'), esc_url('https://www.advancedcustomfields.com/my-account/')); ?></p>
-			<p><?php printf(__('We also wrote an <a href="%s">upgrade guide</a> to answer any questions, but if you do have one, please contact our support team via the <a href="%s">help desk</a>', 'acf'), esc_url('https://www.advancedcustomfields.com/resources/updates/upgrading-v4-v5/'), esc_url('https://support.advancedcustomfields.com')); ?>
+			<p><?php printf(__('To help make upgrading easy, <a href="%s">login to your store account</a> and claim a free copy of ACF PRO!','food-truck'), esc_url('https://www.advancedcustomfields.com/my-account/')); ?></p>
+			<p><?php printf(__('We also wrote an <a href="%s">upgrade guide</a> to answer any questions, but if you do have one, please contact our support team via the <a href="%s">help desk</a>','food-truck'), esc_url('https://www.advancedcustomfields.com/resources/updates/upgrading-v4-v5/'), esc_url('https://support.advancedcustomfields.com')); ?>
 			
 		</div>
 					
@@ -162,7 +162,7 @@ extract( $args );
 	
 <?php elseif( $active == 'changelog' ): ?>
 	
-	<p class="about-description"><?php printf(__("We think you'll love the changes in %s.", 'acf'), $version); ?></p>
+	<p class="about-description"><?php printf(__("We think you'll love the changes in %s.",'food-truck'), $version); ?></p>
 	
 	<?php
 		

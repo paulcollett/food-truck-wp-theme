@@ -54,12 +54,12 @@ class acf_admin {
 		
 		
 		// add parent
-		site_add_theme_page(__("Custom Fields",'acf'), __("Custom Fields",'food-truck'), $cap, $slug, false, 'dashicons-welcome-widgets-menus', '80.025');
+		site_add_theme_page(__("Custom Fields",'food-truck'), __("Custom Fields",'food-truck'), $cap, $slug, false, 'dashicons-welcome-widgets-menus', '80.025');
 		
 		
 		// add children
-		site_add_theme_subpage($slug, __('Field Groups','acf'), __('Field Groups','food-truck'), $cap, $slug );
-		site_add_theme_subpage($slug, __('Add New','acf'), __('Add New','food-truck'), $cap, 'post-new.php?post_type=acf-field-group' );
+		site_add_theme_subpage($slug, __('Field Groups','food-truck'), __('Field Groups','food-truck'), $cap, $slug );
+		site_add_theme_subpage($slug, __('Add New','food-truck'), __('Add New','food-truck'), $cap, 'post-new.php?post_type=acf-field-group' );
 		
 	}
 	

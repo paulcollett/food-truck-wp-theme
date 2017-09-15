@@ -48,7 +48,7 @@ class acf_settings_addons {
 
 
 		// add page
-		$page = site_add_theme_subpage('edit.php?post_type=acf-field-group', __('Add-ons','acf'), __('Add-ons','food-truck'), acf_get_setting('capability'),'acf-settings-addons', array($this,'html') );
+		$page = site_add_theme_subpage('edit.php?post_type=acf-field-group', __('Add-ons','food-truck'), __('Add-ons','food-truck'), acf_get_setting('capability'),'acf-settings-addons', array($this,'html') );
 
 
 		// actions
@@ -84,7 +84,7 @@ class acf_settings_addons {
         // validate
         if( is_wp_error($request) || wp_remote_retrieve_response_code($request) != 200)
         {
-        	acf_add_admin_notice(__('<b>Error</b>. Could not load add-ons list', 'acf'), 'error');
+        	acf_add_admin_notice(__('<b>Error</b>. Could not load add-ons list','food-truck'), 'error');
         }
         else
         {
