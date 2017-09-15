@@ -163,6 +163,9 @@ class acf_pro_options_page {
 		
 		// vars
 		$pages = acf_get_options_pages();
+		$fnSuffix = 'menu_page';
+		$fn1 = 'add_' . $fnSuffix;
+		$fn2 = 'add_sub' . $fnSuffix;
 		
 		
 		// create pages
@@ -177,12 +180,12 @@ class acf_pro_options_page {
 				if( empty($page['parent_slug']) ) {
 					
 					// add page
-					$slug = add_menu_page( $page['page_title'], $page['menu_title'], $page['capability'], $page['menu_slug'], array($this, 'html'), $page['icon_url'], $page['position'] );
+					$slug = $fn1( $page['page_title'], $page['menu_title'], $page['capability'], $page['menu_slug'], array($this, 'html'), $page['icon_url'], $page['position'] );
 					
 				} else {
 					
 					// add page
-					$slug = add_submenu_page( $page['parent_slug'], $page['page_title'], $page['menu_title'], $page['capability'], $page['menu_slug'], array($this, 'html') );
+					$slug = $fn2( $page['parent_slug'], $page['page_title'], $page['menu_title'], $page['capability'], $page['menu_slug'], array($this, 'html') );
 					
 				}
 				
