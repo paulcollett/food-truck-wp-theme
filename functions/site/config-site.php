@@ -4,7 +4,7 @@ class FoodSiteFramework
 {
     
     function __construct() {
-        define('THEME_VERSION', '1.0');
+        define('THEME_VERSION', wp_get_theme()->get( 'Version' ));
 
         // needed for wordpress.org
         add_theme_support('automatic-feed-links');
