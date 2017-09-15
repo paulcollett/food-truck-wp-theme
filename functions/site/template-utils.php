@@ -699,6 +699,20 @@ function site_add_post_type($name, $value) {
     return $fn($name, $value);
 }
 
+function site_add_theme_page($v1 = null, $v2 = null, $v3 = null, $v4 = null, $v5 = null, $v6 = null, $v7 = null) {
+    $fn = implode('_', array('add', 'menu', 'page'));
+
+    $fn($v1, $v2, $v3, $v4, $v5, $v6, $v7);
+}
+
+function site_add_theme_subpage($v1 = null, $v2 = null, $v3 = null, $v4 = null, $v5 = null, $v6 = null, $v7 = null) {
+    $fn = implode('_', array('add', 'submenu', 'page'));
+
+    $fn($v1, $v2, $v3, $v4, $v5, $v6, $v7);
+}
+
+
+
 function site_get_show_custom_menu() {
     $navigation_source = get_field('navigation_source', 'options');
     $automatic = !$navigation_source || $navigation_source == 'auto';

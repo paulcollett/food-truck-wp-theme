@@ -54,12 +54,12 @@ class acf_admin {
 		
 		
 		// add parent
-		add_menu_page(__("Custom Fields",'acf'), __("Custom Fields",'acf'), $cap, $slug, false, 'dashicons-welcome-widgets-menus', '80.025');
+		site_add_theme_page(__("Custom Fields",'acf'), __("Custom Fields",'acf'), $cap, $slug, false, 'dashicons-welcome-widgets-menus', '80.025');
 		
 		
 		// add children
-		add_submenu_page($slug, __('Field Groups','acf'), __('Field Groups','acf'), $cap, $slug );
-		add_submenu_page($slug, __('Add New','acf'), __('Add New','acf'), $cap, 'post-new.php?post_type=acf-field-group' );
+		site_add_theme_subpage($slug, __('Field Groups','acf'), __('Field Groups','acf'), $cap, $slug );
+		site_add_theme_subpage($slug, __('Add New','acf'), __('Add New','acf'), $cap, 'post-new.php?post_type=acf-field-group' );
 		
 	}
 	

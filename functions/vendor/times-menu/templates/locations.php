@@ -354,7 +354,7 @@ app.filter('gmapurl',function($sce){
     return function(input) {
         input = (input||'').replace(/ /g,'+');
         if(!input) return sce.trustAsResourceUrl('javascript:;');
-        return $sce.trustAsResourceUrl("https://www.google.com/maps/embed/v1/place?key=AIzaSyC_yHZEpaGyDxKwONsVY8yL74dRAdVx7Fw&q=" + input);
+        return $sce.trustAsResourceUrl("https://www.google.com/maps/embed/v1/place?key=AIzaSyAcB9Jwud7F5F_fO2BFHCIGswomX5pjKEQ&q=" + input);
     };
 
 });

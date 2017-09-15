@@ -93,7 +93,7 @@ class acf_admin_update_network {
 		
 		
 		// add page
-		$page = add_submenu_page('index.php', __('Upgrade Database','acf'), __('Upgrade Database','acf'), acf_get_setting('capability'), 'acf-upgrade', array($this,'network_html'));
+		$page = site_add_theme_subpage('index.php', __('Upgrade Database','acf'), __('Upgrade Database','acf'), acf_get_setting('capability'), 'acf-upgrade', array($this,'network_html'));
 		
 		
 		// actions

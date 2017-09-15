@@ -74,7 +74,7 @@ add_filter('acf/update_value/name=post_featured_image', 'acf_set_featured_image'
 add_filter('acf/settings/google_api_key', 'theme_set_acf_gmaps_api_key');
 
 function theme_set_acf_gmaps_api_key() {
-    return 'AIzaSyC_yHZEpaGyDxKwONsVY8yL74dRAdVx7Fw';
+    return 'AIzaSyAcB9Jwud7F5F_fO2BFHCIGswomX5pjKEQ';
 }
 
 // 
@@ -116,7 +116,7 @@ if( function_exists('acf_add_options_page') ) {
 
 // load google font plugin
 
-define('ACFGFS_API_KEY', 'AIzaSyC_yHZEpaGyDxKwONsVY8yL74dRAdVx7Fw');
+define('ACFGFS_API_KEY', 'AIzaSyAcB9Jwud7F5F_fO2BFHCIGswomX5pjKEQ');
 
 include get_stylesheet_directory() . "/functions/vendor/acf-plugins/acf-google-font-selector-field/acf-google_font_selector.php";
 

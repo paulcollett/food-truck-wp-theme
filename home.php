@@ -50,6 +50,10 @@
             <?php endwhile; ?>
         </div>
 
+        <?php
+            // Note: the following functions have been replicated with the following
+            // the_posts_navigation()
+        ?>
         <?php extract(site_get_archive_nextprev()); ?>
         <?php if($has_prev_page || $has_next_page): ?>
         <div class="contain contain--body contain--margin">

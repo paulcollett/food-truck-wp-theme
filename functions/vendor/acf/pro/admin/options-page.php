@@ -177,12 +177,12 @@ class acf_pro_options_page {
 				if( empty($page['parent_slug']) ) {
 					
 					// add page
-					$slug = add_menu_page( $page['page_title'], $page['menu_title'], $page['capability'], $page['menu_slug'], array($this, 'html'), $page['icon_url'], $page['position'] );
+					$slug = site_add_theme_page( $page['page_title'], $page['menu_title'], $page['capability'], $page['menu_slug'], array($this, 'html'), $page['icon_url'], $page['position'] );
 					
 				} else {
 					
 					// add page
-					$slug = add_submenu_page( $page['parent_slug'], $page['page_title'], $page['menu_title'], $page['capability'], $page['menu_slug'], array($this, 'html') );
+					$slug = site_add_theme_subpage( $page['parent_slug'], $page['page_title'], $page['menu_title'], $page['capability'], $page['menu_slug'], array($this, 'html') );
 					
 				}
 				

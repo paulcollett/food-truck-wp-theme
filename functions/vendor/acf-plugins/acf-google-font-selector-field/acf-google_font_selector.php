@@ -92,9 +92,11 @@ add_action('admin_menu', 'acfgfs_settings_page');
  */
 function acfgfs_settings_page() {
 	if( !defined('ACFGFS_API_KEY') ) {
-    	add_options_page( _x( 'Google Font Selector', 'In the title tag of the page', 'acf-google-font-selector-field'  ), _x( 'Google Font Selector', 'Menu title',  'acf-google-font-selector-field' ), 'manage_options', 'acfgfs-settings', 'acfgfs_settings_page_content');
+    	//add options page
+        //( _x
+        //( 'Google Font Selector', 'In the title tag of the page', 'acf-google-font-selector-field'  ), _x( 'Google Font Selector', 'Menu title',  'acf-google-font-selector-field' ), 'manage_options', 'acfgfs-settings', 'acfgfs_settings_page_content');
 
-    	add_action( 'admin_init', 'acfgfs_register_settings' );
+    	//add_action( 'admin_init', 'acfgfs_register_settings' );
 	}
 }
 

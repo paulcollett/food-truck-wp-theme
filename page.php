@@ -182,10 +182,4 @@
 
 <?php endif; ?>
 
-<?php
-    // note: $content_width = 900;
-    // is not required as this is a reponsive theme.
-    // this message is here as it is a legacy wordpress check
-?>
-
 <?php get_footer(); ?>
