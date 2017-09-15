@@ -33,7 +33,7 @@ class acf_field_tab extends acf_field {
 		
 		// vars
 		$this->name = 'tab';
-		$this->label = __("Tab",'acf');
+		$this->label = __("Tab",'food-truck');
 		$this->category = 'layout';
 		$this->defaults = array(
 			'value'		=> false, // prevents ACF from attempting to load value
@@ -94,13 +94,13 @@ class acf_field_tab extends acf_field {
 		
 		// message
 		$message = '';
-		$message .= '<span class="acf-error-message"><p>' . __("The tab field will display incorrectly when added to a Table style repeater field or flexible content field layout", 'acf') . '</p></span>';
-		$message .= '<p>' . __( 'Use "Tab Fields" to better organize your edit screen by grouping fields together.', 'acf') . '</p>';
-		$message .= '<p>' . __( 'All fields following this "tab field" (or until another "tab field" is defined) will be grouped together using this field\'s label as the tab heading.','acf') . '</p>';
+		$message .= '<span class="acf-error-message"><p>' . __("The tab field will display incorrectly when added to a Table style repeater field or flexible content field layout", 'food-truck') . '</p></span>';
+		$message .= '<p>' . __( 'Use "Tab Fields" to better organize your edit screen by grouping fields together.', 'food-truck') . '</p>';
+		$message .= '<p>' . __( 'All fields following this "tab field" (or until another "tab field" is defined) will be grouped together using this field\'s label as the tab heading.','food-truck') . '</p>';
 		
 		// default_value
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Instructions','acf'),
+			'label'			=> __('Instructions','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'message',
 			'message'		=> $message,
@@ -110,25 +110,25 @@ class acf_field_tab extends acf_field {
 		
 		// preview_size
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Placement','acf'),
+			'label'			=> __('Placement','food-truck'),
 			'type'			=> 'select',
 			'name'			=> 'placement',
 			'choices' 		=> array(
-				'top'			=>	__("Top aligned",'acf'),
-				'left'			=>	__("Left Aligned",'acf'),
+				'top'			=>	__("Top aligned",'food-truck'),
+				'left'			=>	__("Left Aligned",'food-truck'),
 			)
 		));
 		
 		
 		// endpoint
 		acf_render_field_setting( $field, array(
-			'label'			=> __('End-point','acf'),
-			'instructions'	=> __('Use this field as an end-point and start a new group of tabs','acf'),
+			'label'			=> __('End-point','food-truck'),
+			'instructions'	=> __('Use this field as an end-point and start a new group of tabs','food-truck'),
 			'type'			=> 'radio',
 			'name'			=> 'endpoint',
 			'choices'		=> array(
-				1				=> __("Yes",'acf'),
-				0				=> __("No",'acf'),
+				1				=> __("Yes",'food-truck'),
+				0				=> __("No",'food-truck'),
 			),
 			'layout'	=>	'horizontal',
 		));

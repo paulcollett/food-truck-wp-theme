@@ -14,10 +14,10 @@ extract( $args );
 <div class="acf-field-list-wrap">
 	
 	<ul class="acf-hl acf-thead">
-		<li class="li-field-order"><?php _e('Order','acf'); ?></li>
-		<li class="li-field-label"><?php _e('Label','acf'); ?></li>
-		<li class="li-field-name"><?php _e('Name','acf'); ?></li>
-		<li class="li-field-type"><?php _e('Type','acf'); ?></li>
+		<li class="li-field-order"><?php _e('Order','food-truck'); ?></li>
+		<li class="li-field-label"><?php _e('Label','food-truck'); ?></li>
+		<li class="li-field-name"><?php _e('Name','food-truck'); ?></li>
+		<li class="li-field-type"><?php _e('Type','food-truck'); ?></li>
 	</ul>
 	
 	<div class="acf-field-list<?php if( $layout ){ echo " layout-{$layout}"; } ?>">	
@@ -35,13 +35,13 @@ extract( $args );
 		
 		?>
 		<div class="no-fields-message" <?php if( $fields ){ echo 'style="display:none;"'; } ?>>
-			<?php _e("No fields. Click the <strong>+ Add Field</strong> button to create your first field.",'acf'); ?>
+			<?php _e("No fields. Click the <strong>+ Add Field</strong> button to create your first field.",'food-truck'); ?>
 		</div>
 	</div>
 	
 	<ul class="acf-hl acf-tfoot">
 		<li class="acf-fr">
-			<a href="#" class="button button-primary button-large add-field"><?php _e('+ Add Field','acf'); ?></a>
+			<a href="#" class="button button-primary button-large add-field"><?php _e('+ Add Field','food-truck'); ?></a>
 		</li>
 	</ul>
 	
@@ -51,7 +51,7 @@ extract( $args );
 	$clone = acf_get_valid_field(array(
 		'ID'		=> 'acfcloneindex',
 		'key'		=> 'acfcloneindex',
-		'label'		=> __('New Field','acf'),
+		'label'		=> __('New Field','food-truck'),
 		'name'		=> 'new_field',
 		'type'		=> 'text'
 	));

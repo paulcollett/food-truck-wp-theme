@@ -33,7 +33,7 @@ class acf_field_checkbox extends acf_field {
 		
 		// vars
 		$this->name = 'checkbox';
-		$this->label = __("Checkbox",'acf');
+		$this->label = __("Checkbox",'food-truck');
 		$this->category = 'choice';
 		$this->defaults = array(
 			'layout'			=> 'vertical',
@@ -139,7 +139,7 @@ class acf_field_checkbox extends acf_field {
 			if( $field['toggle'] ) {
 				
 				// vars
-				$label = __("Toggle All", 'acf');
+				$label = __("Toggle All", 'food-truck');
 				$atts = array(
 					'type'	=> 'checkbox',
 					'class'	=> 'acf-checkbox-toggle'
@@ -203,8 +203,8 @@ class acf_field_checkbox extends acf_field {
 		
 		// choices
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Choices','acf'),
-			'instructions'	=> __('Enter each choice on a new line.','acf') . '<br /><br />' . __('For more control, you may specify both a value and label like this:','acf'). '<br /><br />' . __('red : Red','acf'),
+			'label'			=> __('Choices','food-truck'),
+			'instructions'	=> __('Enter each choice on a new line.','acf') . '<br /><br />' . __('For more control, you may specify both a value and label like this:','acf'). '<br /><br />' . __('red : Red','food-truck'),
 			'type'			=> 'textarea',
 			'name'			=> 'choices',
 		));	
@@ -212,8 +212,8 @@ class acf_field_checkbox extends acf_field {
 		
 		// default_value
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Default Value','acf'),
-			'instructions'	=> __('Enter each default value on a new line','acf'),
+			'label'			=> __('Default Value','food-truck'),
+			'instructions'	=> __('Enter each default value on a new line','food-truck'),
 			'type'			=> 'textarea',
 			'name'			=> 'default_value',
 		));
@@ -221,43 +221,43 @@ class acf_field_checkbox extends acf_field {
 		
 		// layout
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Layout','acf'),
+			'label'			=> __('Layout','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'radio',
 			'name'			=> 'layout',
 			'layout'		=> 'horizontal', 
 			'choices'		=> array(
-				'vertical'		=> __("Vertical",'acf'), 
-				'horizontal'	=> __("Horizontal",'acf')
+				'vertical'		=> __("Vertical",'food-truck'), 
+				'horizontal'	=> __("Horizontal",'food-truck')
 			)
 		));
 		
 		
 		// layout
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Toggle','acf'),
-			'instructions'	=> __('Prepend an extra checkbox to toggle all choices','acf'),
+			'label'			=> __('Toggle','food-truck'),
+			'instructions'	=> __('Prepend an extra checkbox to toggle all choices','food-truck'),
 			'type'			=> 'radio',
 			'name'			=> 'toggle',
 			'layout'		=> 'horizontal', 
 			'choices'		=> array(
-				1				=> __("Yes",'acf'),
-				0				=> __("No",'acf'),
+				1				=> __("Yes",'food-truck'),
+				0				=> __("No",'food-truck'),
 			)
 		));
 		
 		
 		// return_format
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Return Value','acf'),
-			'instructions'	=> __('Specify the returned value on front end','acf'),
+			'label'			=> __('Return Value','food-truck'),
+			'instructions'	=> __('Specify the returned value on front end','food-truck'),
 			'type'			=> 'radio',
 			'name'			=> 'return_format',
 			'layout'		=> 'horizontal',
 			'choices'		=> array(
-				'value'			=> __('Value','acf'),
-				'label'			=> __('Label','acf'),
-				'array'			=> __('Both (Array)','acf')
+				'value'			=> __('Value','food-truck'),
+				'label'			=> __('Label','food-truck'),
+				'array'			=> __('Both (Array)','food-truck')
 			)
 		));		
 		

@@ -46,7 +46,7 @@ class acf_pro_options_page {
 	
 	function rule_types( $choices ) {
 		
-	    $choices[ __("Forms",'acf') ]['options_page'] = __("Options Page",'acf');
+	    $choices[ __("Forms",'acf') ]['options_page'] = __("Options Page",'food-truck');
 		
 	    return $choices;
 	    
@@ -82,7 +82,7 @@ class acf_pro_options_page {
 			
 		} else {
 			
-			$choices[''] = __('No options pages exist', 'acf');
+			$choices[''] = __('No options pages exist', 'food-truck');
 			
 		}
 		
@@ -303,19 +303,19 @@ class acf_pro_options_page {
 		// notices
 		if( !empty($_GET['message']) && $_GET['message'] == '1' ) {
 		
-			acf_add_admin_notice( __("Options Updated",'acf') );
+			acf_add_admin_notice( __("Options Updated",'food-truck') );
 			
 		}
 		
 		
 		// add submit div
-		add_meta_box('submitdiv', __('Publish','acf'), array($this, 'postbox_submitdiv'), 'acf_options_page', 'side', 'high');
+		add_meta_box('submitdiv', __('Publish','food-truck'), array($this, 'postbox_submitdiv'), 'acf_options_page', 'side', 'high');
 		
 		
 		
 		if( empty($field_groups) ) {
 		
-			acf_add_admin_notice(__("No Custom Field Groups found for this options page",'acf') . '. <a href="' . admin_url() . 'post-new.php?post_type=acf-field-group">' . __("Create a Custom Field Group",'acf') . '</a>', 'error');
+			acf_add_admin_notice(__("No Custom Field Groups found for this options page",'acf') . '. <a href="' . admin_url() . 'post-new.php?post_type=acf-field-group">' . __("Create a Custom Field Group",'food-truck') . '</a>', 'error');
 		
 		} else {
 			
@@ -416,7 +416,7 @@ class acf_pro_options_page {
 			'style'			=> $field_group['style'],
 			'label'			=> $field_group['label_placement'],
 			'edit_url'		=> '',
-			'edit_title'	=> __('Edit field group', 'acf'),
+			'edit_title'	=> __('Edit field group', 'food-truck'),
 			'visibility'	=> true
 		);
 		

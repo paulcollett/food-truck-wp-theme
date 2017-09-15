@@ -8,17 +8,17 @@ extract($args);
 $active = $license ? true : false;
 $nonce = $active ? 'deactivate_pro_licence' : 'activate_pro_licence';
 $input = $active ? 'password' : 'text';
-$button = $active ? __('Deactivate License', 'acf') : __('Activate License', 'acf');
+$button = $active ? __('Deactivate License', 'acf') : __('Activate License', 'food-truck');
 $readonly = $active ? 1 : 0;
 
 ?>
 <div class="wrap acf-settings-wrap">
 	
-	<h1><?php _e('Updates', 'acf'); ?></h1>
+	<h1><?php _e('Updates', 'food-truck'); ?></h1>
 	
 	<div class="acf-box" id="acf-license-information">
 		<div class="title">
-			<h3><?php _e('License Information', 'acf'); ?></h3>
+			<h3><?php _e('License Information', 'food-truck'); ?></h3>
 		</div>
 		<div class="inner">
 			<p><?php printf(__('To unlock updates, please enter your license key below. If you don\'t have a licence key, please see <a href="%s" target="_blank">details & pricing</a>.','acf'), esc_url('https://www.advancedcustomfields.com/pro')); ?></p>
@@ -30,7 +30,7 @@ $readonly = $active ? 1 : 0;
                 <tbody>
                 	<tr>
                     	<th>
-                    		<label for="acf-field-acf_pro_licence"><?php _e('License Key', 'acf'); ?></label>
+                    		<label for="acf-field-acf_pro_licence"><?php _e('License Key', 'food-truck'); ?></label>
                     	</th>
 						<td>
 							<?php 
@@ -62,14 +62,14 @@ $readonly = $active ? 1 : 0;
 	
 	<div class="acf-box" id="acf-update-information">
 		<div class="title">
-			<h3><?php _e('Update Information', 'acf'); ?></h3>
+			<h3><?php _e('Update Information', 'food-truck'); ?></h3>
 		</div>
 		<div class="inner">
 			<table class="form-table">
                 <tbody>
                 	<tr>
                     	<th>
-                    		<label><?php _e('Current Version', 'acf'); ?></label>
+                    		<label><?php _e('Current Version', 'food-truck'); ?></label>
                     	</th>
 						<td>
 							<?php echo $current_version; ?>
@@ -77,7 +77,7 @@ $readonly = $active ? 1 : 0;
 					</tr>
 					<tr>
                     	<th>
-                    		<label><?php _e('Latest Version', 'acf'); ?></label>
+                    		<label><?php _e('Latest Version', 'food-truck'); ?></label>
                     	</th>
 						<td>
 							<?php echo $remote_version; ?>
@@ -85,30 +85,30 @@ $readonly = $active ? 1 : 0;
 					</tr>
 					<tr>
                     	<th>
-                    		<label><?php _e('Update Available', 'acf'); ?></label>
+                    		<label><?php _e('Update Available', 'food-truck'); ?></label>
                     	</th>
 						<td>
 							<?php if( $update_available ): ?>
 								
-								<span style="margin-right: 5px;"><?php _e('Yes', 'acf'); ?></span>
+								<span style="margin-right: 5px;"><?php _e('Yes', 'food-truck'); ?></span>
 								
 								<?php if( $active ): ?>
-									<a class="button button-primary" href="<?php echo admin_url('plugins.php?s=Advanced+Custom+Fields+Pro'); ?>"><?php _e('Update Plugin', 'acf'); ?></a>
+									<a class="button button-primary" href="<?php echo admin_url('plugins.php?s=Advanced+Custom+Fields+Pro'); ?>"><?php _e('Update Plugin', 'food-truck'); ?></a>
 								<?php else: ?>
-									<a class="button" disabled="disabled" href="#"><?php _e('Please enter your license key above to unlock updates', 'acf'); ?></a>
+									<a class="button" disabled="disabled" href="#"><?php _e('Please enter your license key above to unlock updates', 'food-truck'); ?></a>
 								<?php endif; ?>
 								
 							<?php else: ?>
 								
-								<span style="margin-right: 5px;"><?php _e('No', 'acf'); ?></span>
-								<a class="button" href="<?php echo add_query_arg('force-check', 1); ?>"><?php _e('Check Again', 'acf'); ?></a>
+								<span style="margin-right: 5px;"><?php _e('No', 'food-truck'); ?></span>
+								<a class="button" href="<?php echo add_query_arg('force-check', 1); ?>"><?php _e('Check Again', 'food-truck'); ?></a>
 							<?php endif; ?>
 						</td>
 					</tr>
 					<?php if( $changelog ): ?>
 					<tr>
                     	<th>
-                    		<label><?php _e('Changelog', 'acf'); ?></label>
+                    		<label><?php _e('Changelog', 'food-truck'); ?></label>
                     	</th>
 						<td>
 							<?php echo $changelog; ?>
@@ -118,7 +118,7 @@ $readonly = $active ? 1 : 0;
 					<?php if( $upgrade_notice ): ?>
 					<tr>
                     	<th>
-                    		<label><?php _e('Upgrade Notice', 'acf'); ?></label>
+                    		<label><?php _e('Upgrade Notice', 'food-truck'); ?></label>
                     	</th>
 						<td>
 							<?php echo $upgrade_notice; ?>

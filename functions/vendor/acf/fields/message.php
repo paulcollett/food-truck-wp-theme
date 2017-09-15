@@ -33,7 +33,7 @@ class acf_field_message extends acf_field {
 		
 		// vars
 		$this->name = 'message';
-		$this->label = __("Message",'acf');
+		$this->label = __("Message",'food-truck');
 		$this->category = 'layout';
 		$this->defaults = array(
 			'value'			=> false, // prevents ACF from attempting to load value
@@ -113,7 +113,7 @@ class acf_field_message extends acf_field {
 		
 		// default_value
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Message','acf'),
+			'label'			=> __('Message','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'textarea',
 			'name'			=> 'message',
@@ -122,27 +122,27 @@ class acf_field_message extends acf_field {
 		
 		// formatting
 		acf_render_field_setting( $field, array(
-			'label'			=> __('New Lines','acf'),
-			'instructions'	=> __('Controls how new lines are rendered','acf'),
+			'label'			=> __('New Lines','food-truck'),
+			'instructions'	=> __('Controls how new lines are rendered','food-truck'),
 			'type'			=> 'select',
 			'name'			=> 'new_lines',
 			'choices'		=> array(
-				'wpautop'		=> __("Automatically add paragraphs",'acf'),
-				'br'			=> __("Automatically add &lt;br&gt;",'acf'),
-				''				=> __("No Formatting",'acf')
+				'wpautop'		=> __("Automatically add paragraphs",'food-truck'),
+				'br'			=> __("Automatically add &lt;br&gt;",'food-truck'),
+				''				=> __("No Formatting",'food-truck')
 			)
 		));
 		
 		
 		// HTML
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Escape HTML','acf'),
-			'instructions'	=> __('Allow HTML markup to display as visible text instead of rendering','acf'),
+			'label'			=> __('Escape HTML','food-truck'),
+			'instructions'	=> __('Allow HTML markup to display as visible text instead of rendering','food-truck'),
 			'type'			=> 'radio',
 			'name'			=> 'esc_html',
 			'choices'		=> array(
-				1				=> __("Yes",'acf'),
-				0				=> __("No",'acf'),
+				1				=> __("Yes",'food-truck'),
+				0				=> __("No",'food-truck'),
 			),
 			'layout'	=>	'horizontal',
 		));

@@ -54,7 +54,7 @@ class acf_settings_updates {
 				
 		
 		// add page
-		$page = site_add_theme_subpage('edit.php?post_type=acf-field-group', __('Updates','acf'), __('Updates','acf'), acf_get_setting('capability'),'acf-settings-updates', array($this,'html') );
+		$page = site_add_theme_subpage('edit.php?post_type=acf-field-group', __('Updates','acf'), __('Updates','food-truck'), acf_get_setting('capability'),'acf-settings-updates', array($this,'html') );
 		
 		
 		// actions
@@ -84,7 +84,7 @@ class acf_settings_updates {
 		
 		// vars
     	$error = acf_get_setting('remote_response_error');
-    	$notice = __('<b>Error</b>. Could not connect to update server', 'acf');
+    	$notice = __('<b>Error</b>. Could not connect to update server', 'food-truck');
     	
     	
     	// append error

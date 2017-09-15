@@ -33,7 +33,7 @@ class acf_field_relationship extends acf_field {
 		
 		// vars
 		$this->name = 'relationship';
-		$this->label = __("Relationship",'acf');
+		$this->label = __("Relationship",'food-truck');
 		$this->category = 'relational';
 		$this->defaults = array(
 			'post_type'			=> array(),
@@ -45,10 +45,10 @@ class acf_field_relationship extends acf_field {
 			'return_format'		=> 'object'
 		);
 		$this->l10n = array(
-			'min'		=> __("Minimum values reached ( {min} values )",'acf'),
-			'max'		=> __("Maximum values reached ( {max} values )",'acf'),
-			'loading'	=> __('Loading','acf'),
-			'empty'		=> __('No matches found','acf'),
+			'min'		=> __("Minimum values reached ( {min} values )",'food-truck'),
+			'max'		=> __("Maximum values reached ( {max} values )",'food-truck'),
+			'loading'	=> __('Loading','food-truck'),
+			'empty'		=> __('No matches found','food-truck'),
 		);
 		
 		
@@ -587,7 +587,7 @@ class acf_field_relationship extends acf_field {
 			<?php if( $width['search'] ): ?>
 			<li style="width:<?php echo $width['search']; ?>%;">
 				<div class="inner">
-				<input class="filter" data-filter="s" placeholder="<?php _e("Search...",'acf'); ?>" type="text" />
+				<input class="filter" data-filter="s" placeholder="<?php _e("Search...",'food-truck'); ?>" type="text" />
 				</div>
 			</li>
 			<?php endif; ?>
@@ -596,7 +596,7 @@ class acf_field_relationship extends acf_field {
 			<li style="width:<?php echo $width['post_type']; ?>%;">
 				<div class="inner">
 				<select class="filter" data-filter="post_type">
-					<option value=""><?php _e('Select post type','acf'); ?></option>
+					<option value=""><?php _e('Select post type','food-truck'); ?></option>
 					<?php foreach( $post_types as $k => $v ): ?>
 						<option value="<?php echo $k; ?>"><?php echo $v; ?></option>
 					<?php endforeach; ?>
@@ -609,7 +609,7 @@ class acf_field_relationship extends acf_field {
 			<li style="width:<?php echo $width['taxonomy']; ?>%;">
 				<div class="inner">
 				<select class="filter" data-filter="taxonomy">
-					<option value=""><?php _e('Select taxonomy','acf'); ?></option>
+					<option value=""><?php _e('Select taxonomy','food-truck'); ?></option>
 					<?php foreach( $term_groups as $k_opt => $v_opt ): ?>
 						<optgroup label="<?php echo $k_opt; ?>">
 							<?php foreach( $v_opt as $k => $v ): ?>
@@ -706,7 +706,7 @@ class acf_field_relationship extends acf_field {
 		
 		// post_type
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Filter by Post Type','acf'),
+			'label'			=> __('Filter by Post Type','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'select',
 			'name'			=> 'post_type',
@@ -714,13 +714,13 @@ class acf_field_relationship extends acf_field {
 			'multiple'		=> 1,
 			'ui'			=> 1,
 			'allow_null'	=> 1,
-			'placeholder'	=> __("All post types",'acf'),
+			'placeholder'	=> __("All post types",'food-truck'),
 		));
 		
 		
 		// taxonomy
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Filter by Taxonomy','acf'),
+			'label'			=> __('Filter by Taxonomy','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'select',
 			'name'			=> 'taxonomy',
@@ -728,39 +728,39 @@ class acf_field_relationship extends acf_field {
 			'multiple'		=> 1,
 			'ui'			=> 1,
 			'allow_null'	=> 1,
-			'placeholder'	=> __("All taxonomies",'acf'),
+			'placeholder'	=> __("All taxonomies",'food-truck'),
 		));
 		
 		
 		// filters
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Filters','acf'),
+			'label'			=> __('Filters','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'checkbox',
 			'name'			=> 'filters',
 			'choices'		=> array(
-				'search'		=> __("Search",'acf'),
-				'post_type'		=> __("Post Type",'acf'),
-				'taxonomy'		=> __("Taxonomy",'acf'),
+				'search'		=> __("Search",'food-truck'),
+				'post_type'		=> __("Post Type",'food-truck'),
+				'taxonomy'		=> __("Taxonomy",'food-truck'),
 			),
 		));
 		
 		
 		// filters
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Elements','acf'),
-			'instructions'	=> __('Selected elements will be displayed in each result','acf'),
+			'label'			=> __('Elements','food-truck'),
+			'instructions'	=> __('Selected elements will be displayed in each result','food-truck'),
 			'type'			=> 'checkbox',
 			'name'			=> 'elements',
 			'choices'		=> array(
-				'featured_image'	=> __("Featured Image",'acf'),
+				'featured_image'	=> __("Featured Image",'food-truck'),
 			),
 		));
 		
 		
 		// min
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Minimum posts','acf'),
+			'label'			=> __('Minimum posts','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'number',
 			'name'			=> 'min',
@@ -769,7 +769,7 @@ class acf_field_relationship extends acf_field {
 		
 		// max
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Maximum posts','acf'),
+			'label'			=> __('Maximum posts','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'number',
 			'name'			=> 'max',
@@ -780,13 +780,13 @@ class acf_field_relationship extends acf_field {
 		
 		// return_format
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Return Format','acf'),
+			'label'			=> __('Return Format','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'radio',
 			'name'			=> 'return_format',
 			'choices'		=> array(
-				'object'		=> __("Post Object",'acf'),
-				'id'			=> __("Post ID",'acf'),
+				'object'		=> __("Post Object",'food-truck'),
+				'id'			=> __("Post ID",'food-truck'),
 			),
 			'layout'	=>	'horizontal',
 		));
@@ -873,7 +873,7 @@ class acf_field_relationship extends acf_field {
 		// min
 		if( count($value) < $field['min'] ) {
 		
-			$valid = _n( '%s requires at least %s selection', '%s requires at least %s selections', $field['min'], 'acf' );
+			$valid = _n( '%s requires at least %s selection', '%s requires at least %s selections', $field['min'], 'food-truck');
 			$valid = sprintf( $valid, $field['label'], $field['min'] );
 			
 		}

@@ -6,7 +6,7 @@ $json = acf_extract_var( $args, 'json');
 ?>
 <div class="wrap acf-settings-wrap">
 	
-	<h1><?php _e("Add-ons",'acf'); ?></h1>
+	<h1><?php _e("Add-ons",'food-truck'); ?></h1>
 	
 	<div class="add-ons-list acf-cf">
 		
@@ -20,7 +20,7 @@ $json = acf_extract_var( $args, 'json');
 			        "description"	=> "",
 			        "thumbnail"		=> "",
 			        "url"			=> "",
-			        "btn"			=> __("Download & Install",'acf'),
+			        "btn"			=> __("Download & Install",'food-truck'),
 			        "btn_color"		=> ""
 				));
 				
@@ -39,7 +39,7 @@ $json = acf_extract_var( $args, 'json');
 					</div>
 					<div class="footer">
 						<?php if( apply_filters("acf/is_add_on_active/slug={$addon['slug']}", false ) ): ?>
-							<a class="button" disabled="disabled"><?php _e("Installed",'acf'); ?></a>
+							<a class="button" disabled="disabled"><?php _e("Installed",'food-truck'); ?></a>
 						<?php else: ?>
 							<a class="button <?php echo $addon['btn_color']; ?>" target="_blank" href="<?php echo $addon['url']; ?>" ><?php _e($addon['btn']); ?></a>
 						<?php endif; ?>

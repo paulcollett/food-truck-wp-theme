@@ -32,8 +32,8 @@ class acf_field_google_font_selector extends acf_field {
 	 */
 	function __construct() {
 		$this->name = 'google_font_selector';
-		$this->label = __( 'Google Font Selector', 'acf-google-font-selector-field');
-		$this->category = __( 'Choice' , 'acf' );
+		$this->label = __( 'Google Font Selector', 'food-truck');
+		$this->category = __( 'Choice' , 'food-truck');
 
 		$this->defaults = array(
 			'include_web_safe_fonts' => true,
@@ -76,23 +76,23 @@ class acf_field_google_font_selector extends acf_field {
 
 
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Web Safe Fonts?','acf-google-font-selector-field'),
-			'message'    	=> __('Include web safe fonts?','acf-google-font-selector-field'),
+			'label'			=> __('Web Safe Fonts?','food-truck'),
+			'message'    	=> __('Include web safe fonts?','food-truck'),
 			'type'			=> 'true_false',
 			'name'			=> 'include_web_safe_fonts',
 			'layout'		=> 'horizontal',
 		));
 
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Enqueue Font?','acf-google-font-selector-field'),
-			'message'    	=> __('Automatically load font?','acf-google-font-selector-field'),
+			'label'			=> __('Enqueue Font?','food-truck'),
+			'message'    	=> __('Automatically load font?','food-truck'),
 			'type'			=> 'true_false',
 			'name'			=> 'enqueue_font',
 			'layout'		=> 'horizontal',
 		));
 
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Default Font','acf-google-font-selector-field'),
+			'label'			=> __('Default Font','food-truck'),
 			'type'			=> 'select',
 			'name'			=> 'default_font',
 			'choices'       => acfgfs_get_font_dropdown_array()
@@ -120,7 +120,7 @@ class acf_field_google_font_selector extends acf_field {
 		<div class="acfgfs-font-selector">
 			<div class="acfgfs-loader"></div>
 			<div class="acfgfs-form-control acfgfs-font-family">
-				<div class="acfgfs-form-control-title"><?php _e('Font Family', 'acf-google-font-selector-field') ?></div>
+				<div class="acfgfs-form-control-title"><?php _e('Font Family', 'food-truck') ?></div>
 
 				<select name="<?php echo esc_attr($field['name']) ?>">
 					<?php
@@ -136,14 +136,14 @@ class acf_field_google_font_selector extends acf_field {
 					<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=<?php echo $font ?>">
 
 					<div style='font-family:<?php echo $font ?>'>
-						<?php _e( 'This is a preview of the selected font', 'acf-google-font-selector-field' ) ?>
+						<?php _e( 'This is a preview of the selected font', 'food-truck') ?>
 					</div>
 				</div>
 
 			</div>
 
 			<div class="acfgfs-form-control acfgfs-font-variants">
-				<div class="acfgfs-form-control-title"><?php _e('Variants', 'acf-google-font-selector-field') ?></div>
+				<div class="acfgfs-form-control-title"><?php _e('Variants', 'food-truck') ?></div>
 				<div class="acfgfs-list">
 					<?php acfgfs_display_variant_list( $field ) ?>
 				</div>
@@ -151,7 +151,7 @@ class acf_field_google_font_selector extends acf_field {
 			</div>
 
 			<div class="acfgfs-form-control acfgfs-font-subsets">
-				<div class="acfgfs-form-control-title"><?php _e('Subsets', 'acf-google-font-selector-field') ?></div>
+				<div class="acfgfs-form-control-title"><?php _e('Subsets', 'food-truck') ?></div>
 				<div class="acfgfs-list">
 					<?php acfgfs_display_subset_list( $field ) ?>
 				</div>

@@ -33,7 +33,7 @@ class acf_field_date_and_time_picker extends acf_field {
 		
 		// vars
 		$this->name = 'date_time_picker';
-		$this->label = __("Date Time Picker",'acf');
+		$this->label = __("Date Time Picker",'food-truck');
 		$this->category = 'jquery';
 		$this->defaults = array(
 			'display_format'	=> 'd/m/Y g:i a',
@@ -41,24 +41,24 @@ class acf_field_date_and_time_picker extends acf_field {
 			'first_day'			=> 1
 		);
 		$this->l10n = array(
-			'timeOnlyTitle'		=> _x('Choose Time',	'Date Time Picker JS timeOnlyTitle',	'acf'),
-	        'timeText'       	=> _x('Time',			'Date Time Picker JS timeText', 		'acf'),
-	        'hourText'        	=> _x('Hour',			'Date Time Picker JS hourText', 		'acf'),
-	        'minuteText'  		=> _x('Minute',			'Date Time Picker JS minuteText', 		'acf'),
-	        'secondText'		=> _x('Second',			'Date Time Picker JS secondText', 		'acf'),
-	        'millisecText'		=> _x('Millisecond',	'Date Time Picker JS millisecText', 	'acf'),
-	        'microsecText'		=> _x('Microsecond',	'Date Time Picker JS microsecText', 	'acf'),
-	        'timezoneText'		=> _x('Time Zone',		'Date Time Picker JS timezoneText', 	'acf'),
-	        'currentText'		=> _x('Now',			'Date Time Picker JS currentText', 		'acf'),
-	        'closeText'			=> _x('Done',			'Date Time Picker JS closeText', 		'acf'),
-	        'selectText'		=> _x('Select',			'Date Time Picker JS selectText', 		'acf'),
+			'timeOnlyTitle'		=> _x('Choose Time',	'Date Time Picker JS timeOnlyTitle',	'food-truck'),
+	        'timeText'       	=> _x('Time',			'Date Time Picker JS timeText', 		'food-truck'),
+	        'hourText'        	=> _x('Hour',			'Date Time Picker JS hourText', 		'food-truck'),
+	        'minuteText'  		=> _x('Minute',			'Date Time Picker JS minuteText', 		'food-truck'),
+	        'secondText'		=> _x('Second',			'Date Time Picker JS secondText', 		'food-truck'),
+	        'millisecText'		=> _x('Millisecond',	'Date Time Picker JS millisecText', 	'food-truck'),
+	        'microsecText'		=> _x('Microsecond',	'Date Time Picker JS microsecText', 	'food-truck'),
+	        'timezoneText'		=> _x('Time Zone',		'Date Time Picker JS timezoneText', 	'food-truck'),
+	        'currentText'		=> _x('Now',			'Date Time Picker JS currentText', 		'food-truck'),
+	        'closeText'			=> _x('Done',			'Date Time Picker JS closeText', 		'food-truck'),
+	        'selectText'		=> _x('Select',			'Date Time Picker JS selectText', 		'food-truck'),
 	        'amNames'			=> array(
-		        					_x('AM',			'Date Time Picker JS amText', 			'acf'),
-									_x('A',				'Date Time Picker JS amTextShort', 		'acf'),
+		        					_x('AM',			'Date Time Picker JS amText', 			'food-truck'),
+									_x('A',				'Date Time Picker JS amTextShort', 		'food-truck'),
 								),
 	        'pmNames'			=> array(
-		        					_x('PM',			'Date Time Picker JS pmText', 			'acf'),
-									_x('P',				'Date Time Picker JS pmTextShort', 		'acf'),
+		        					_x('PM',			'Date Time Picker JS pmText', 			'food-truck'),
+									_x('P',				'Date Time Picker JS pmTextShort', 		'food-truck'),
 								)
 		);
 		
@@ -183,8 +183,8 @@ class acf_field_date_and_time_picker extends acf_field {
 		
 		// display_format
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Display Format','acf'),
-			'instructions'	=> __('The format displayed when editing a post','acf'),
+			'label'			=> __('Display Format','food-truck'),
+			'instructions'	=> __('The format displayed when editing a post','food-truck'),
 			'type'			=> 'radio',
 			'name'			=> 'display_format',
 			'other_choice'	=> 1,
@@ -199,8 +199,8 @@ class acf_field_date_and_time_picker extends acf_field {
 		
 		// return_format
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Return Format','acf'),
-			'instructions'	=> __('The format returned via template functions','acf'),
+			'label'			=> __('Return Format','food-truck'),
+			'instructions'	=> __('The format returned via template functions','food-truck'),
 			'type'			=> 'radio',
 			'name'			=> 'return_format',
 			'other_choice'	=> 1,
@@ -215,7 +215,7 @@ class acf_field_date_and_time_picker extends acf_field {
 		
 		// first_day
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Week Starts On','acf'),
+			'label'			=> __('Week Starts On','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'select',
 			'name'			=> 'first_day',

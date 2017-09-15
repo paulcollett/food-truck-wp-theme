@@ -33,24 +33,24 @@ class acf_field_flexible_content extends acf_field {
 		
 		// vars
 		$this->name = 'flexible_content';
-		$this->label = __("Flexible Content",'acf');
+		$this->label = __("Flexible Content",'food-truck');
 		$this->category = 'layout';
 		$this->defaults = array(
 			'layouts'		=> array(),
 			'min'			=> '',
 			'max'			=> '',
-			'button_label'	=> __("Add Row",'acf'),
+			'button_label'	=> __("Add Row",'food-truck'),
 		);
 		$this->l10n = array(
-			'layout' 		=> __("layout", 'acf'),
-			'layouts'		=> __("layouts", 'acf'),
-			'remove'		=> __("remove {layout}?", 'acf'),
-			'min'			=> __("This field requires at least {min} {identifier}",'acf'),
-			'max'			=> __("This field has a limit of {max} {identifier}",'acf'),
-			'min_layout'	=> __("This field requires at least {min} {label} {identifier}",'acf'),
-			'max_layout'	=> __("Maximum {label} limit reached ({max} {identifier})",'acf'),
-			'available'		=> __("{available} {label} {identifier} available (max {max})",'acf'),
-			'required'		=> __("{required} {label} {identifier} required (min {min})",'acf'),
+			'layout' 		=> __("layout", 'food-truck'),
+			'layouts'		=> __("layouts", 'food-truck'),
+			'remove'		=> __("remove {layout}?", 'food-truck'),
+			'min'			=> __("This field requires at least {min} {identifier}",'food-truck'),
+			'max'			=> __("This field has a limit of {max} {identifier}",'food-truck'),
+			'min_layout'	=> __("This field requires at least {min} {label} {identifier}",'food-truck'),
+			'max_layout'	=> __("Maximum {label} limit reached ({max} {identifier})",'food-truck'),
+			'available'		=> __("{available} {label} {identifier} available (max {max})",'food-truck'),
+			'required'		=> __("{required} {label} {identifier} required (min {min})",'food-truck'),
 		);		
 		
 		
@@ -279,7 +279,7 @@ class acf_field_flexible_content extends acf_field {
 		
 		
 		// no value message
-		$no_value_message = __('Click the "%s" button below to start creating your layout','acf');
+		$no_value_message = __('Click the "%s" button below to start creating your layout','food-truck');
 		$no_value_message = apply_filters('acf/fields/flexible_content/no_value_message', $no_value_message, $field);
 
 ?>
@@ -405,17 +405,17 @@ class acf_field_flexible_content extends acf_field {
 		<?php acf_hidden_input(array( 'name' => "{$field['name']}[{$i}][acf_fc_layout]", 'value' => $layout['name'] )); ?>
 	</div>
 	
-	<div class="acf-fc-layout-handle" title="<?php _e('Drag to reorder','acf'); ?>"><?php echo $title; ?></div>
+	<div class="acf-fc-layout-handle" title="<?php _e('Drag to reorder','food-truck'); ?>"><?php echo $title; ?></div>
 	
 	<ul class="acf-fc-layout-controlls acf-hl">
 		<li class="acf-fc-show-on-hover">
-			<a class="acf-icon -plus small" href="#" data-event="add-layout" title="<?php _e('Add layout','acf'); ?>"></a>
+			<a class="acf-icon -plus small" href="#" data-event="add-layout" title="<?php _e('Add layout','food-truck'); ?>"></a>
 		</li>
 		<li class="acf-fc-show-on-hover">
-			<a class="acf-icon -minus small" href="#" data-event="remove-layout" title="<?php _e('Remove layout','acf'); ?>"></a>
+			<a class="acf-icon -minus small" href="#" data-event="remove-layout" title="<?php _e('Remove layout','food-truck'); ?>"></a>
 		</li>
 		<li>
-			<a class="acf-icon -collapse small" href="#" data-event="collapse-layout" title="<?php _e('Click to toggle','acf'); ?>"></a>
+			<a class="acf-icon -collapse small" href="#" data-event="collapse-layout" title="<?php _e('Click to toggle','food-truck'); ?>"></a>
 		</li>
 	</ul>
 	
@@ -554,12 +554,12 @@ class acf_field_flexible_content extends acf_field {
 			
 ?><tr class="acf-field" data-name="fc_layout" data-setting="flexible_content" data-id="<?php echo $layout['key']; ?>">
 	<td class="acf-label">
-		<label><?php _e("Layout",'acf'); ?></label>
+		<label><?php _e("Layout",'food-truck'); ?></label>
 		<p class="description acf-fl-actions">
-			<a data-name="acf-fc-reorder" title="<?php _e("Reorder Layout",'acf'); ?>" ><?php _e("Reorder",'acf'); ?></a>
-			<a data-name="acf-fc-delete" title="<?php _e("Delete Layout",'acf'); ?>" href="#"><?php _e("Delete",'acf'); ?></a>
-			<a data-name="acf-fc-duplicate" title="<?php _e("Duplicate Layout",'acf'); ?>" href="#"><?php _e("Duplicate",'acf'); ?></a>
-			<a data-name="acf-fc-add" title="<?php _e("Add New Layout",'acf'); ?>" href="#"><?php _e("Add New",'acf'); ?></a>
+			<a data-name="acf-fc-reorder" title="<?php _e("Reorder Layout",'acf'); ?>" ><?php _e("Reorder",'food-truck'); ?></a>
+			<a data-name="acf-fc-delete" title="<?php _e("Delete Layout",'acf'); ?>" href="#"><?php _e("Delete",'food-truck'); ?></a>
+			<a data-name="acf-fc-duplicate" title="<?php _e("Duplicate Layout",'acf'); ?>" href="#"><?php _e("Duplicate",'food-truck'); ?></a>
+			<a data-name="acf-fc-add" title="<?php _e("Add New Layout",'acf'); ?>" href="#"><?php _e("Add New",'food-truck'); ?></a>
 		</p>
 	</td>
 	<td class="acf-input">
@@ -584,7 +584,7 @@ class acf_field_flexible_content extends acf_field {
 					'name'		=> 'label',
 					'prefix'	=> $layout_prefix,
 					'value'		=> $layout['label'],
-					'prepend'	=> __('Label','acf')
+					'prepend'	=> __('Label','food-truck')
 				));
 				
 				?>
@@ -597,13 +597,13 @@ class acf_field_flexible_content extends acf_field {
 					'name'		=> 'name',
 					'prefix'	=> $layout_prefix,
 					'value'		=> $layout['name'],
-					'prepend'	=> __('Name','acf')
+					'prepend'	=> __('Name','food-truck')
 				));
 				
 				?>
 			</li>
 			<li class="acf-fc-meta-display">
-				<div class="acf-input-prepend"><?php _e('Layout','acf'); ?></div>
+				<div class="acf-input-prepend"><?php _e('Layout','food-truck'); ?></div>
 				<div class="acf-input-wrap select">
 					<?php 
 					
@@ -613,9 +613,9 @@ class acf_field_flexible_content extends acf_field {
 						'prefix'	=> $layout_prefix,
 						'value'		=> $layout['display'],
 						'choices'	=> array(
-							'table'			=> __('Table','acf'),
-							'block'			=> __('Block','acf'),
-							'row'			=> __('Row','acf')
+							'table'			=> __('Table','food-truck'),
+							'block'			=> __('Block','food-truck'),
+							'row'			=> __('Row','food-truck')
 						),
 					));
 					
@@ -630,7 +630,7 @@ class acf_field_flexible_content extends acf_field {
 					'name'		=> 'min',
 					'prefix'	=> $layout_prefix,
 					'value'		=> $layout['min'],
-					'prepend'	=> __('Min','acf')
+					'prepend'	=> __('Min','food-truck')
 				));
 				
 				?>
@@ -643,7 +643,7 @@ class acf_field_flexible_content extends acf_field {
 					'name'		=> 'max',
 					'prefix'	=> $layout_prefix,
 					'value'		=> $layout['max'],
-					'prepend'	=> __('Max','acf')
+					'prepend'	=> __('Max','food-truck')
 				));
 				
 				?>
@@ -671,7 +671,7 @@ class acf_field_flexible_content extends acf_field {
 		
 		// min
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Button Label','acf'),
+			'label'			=> __('Button Label','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'text',
 			'name'			=> 'button_label',
@@ -680,7 +680,7 @@ class acf_field_flexible_content extends acf_field {
 		
 		// min
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Minimum Layouts','acf'),
+			'label'			=> __('Minimum Layouts','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'number',
 			'name'			=> 'min',
@@ -689,7 +689,7 @@ class acf_field_flexible_content extends acf_field {
 		
 		// max
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Maximum Layouts','acf'),
+			'label'			=> __('Maximum Layouts','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'number',
 			'name'			=> 'max',

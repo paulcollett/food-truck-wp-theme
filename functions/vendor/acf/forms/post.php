@@ -292,7 +292,7 @@ class acf_form_post {
 			'style'			=> $field_group['style'],
 			'label'			=> $field_group['label_placement'],
 			'edit_url'		=> '',
-			'edit_title'	=> __('Edit field group', 'acf'),
+			'edit_title'	=> __('Edit field group', 'food-truck'),
 			'visibility'	=> $visibility
 		);
 		

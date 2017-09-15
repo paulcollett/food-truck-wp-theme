@@ -33,7 +33,7 @@ class acf_field_password extends acf_field {
 		
 		// vars
 		$this->name = 'password';
-		$this->label = __("Password",'acf');
+		$this->label = __("Password",'food-truck');
 		$this->defaults = array(
 			'placeholder'	=> '',
 			'prepend'		=> '',
@@ -131,8 +131,8 @@ class acf_field_password extends acf_field {
 		
 		// placeholder
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Placeholder Text','acf'),
-			'instructions'	=> __('Appears within the input','acf'),
+			'label'			=> __('Placeholder Text','food-truck'),
+			'instructions'	=> __('Appears within the input','food-truck'),
 			'type'			=> 'text',
 			'name'			=> 'placeholder',
 		));
@@ -140,8 +140,8 @@ class acf_field_password extends acf_field {
 		
 		// prepend
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Prepend','acf'),
-			'instructions'	=> __('Appears before the input','acf'),
+			'label'			=> __('Prepend','food-truck'),
+			'instructions'	=> __('Appears before the input','food-truck'),
 			'type'			=> 'text',
 			'name'			=> 'prepend',
 		));
@@ -149,8 +149,8 @@ class acf_field_password extends acf_field {
 		
 		// append
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Append','acf'),
-			'instructions'	=> __('Appears after the input','acf'),
+			'label'			=> __('Append','food-truck'),
+			'instructions'	=> __('Appears after the input','food-truck'),
 			'type'			=> 'text',
 			'name'			=> 'append',
 		));

@@ -191,12 +191,12 @@ class acf_field {
 	function get_field_types( $fields ) {
 		
 		$l10n = array(
-			'basic'			=> __('Basic', 'acf'),
-			'content'		=> __('Content', 'acf'),
-			'choice'		=> __('Choice', 'acf'),
-			'relational'	=> __('Relational', 'acf'),
-			'jquery'		=> __('jQuery', 'acf'),
-			'layout'		=> __('Layout', 'acf'),
+			'basic'			=> __('Basic', 'food-truck'),
+			'content'		=> __('Content', 'food-truck'),
+			'choice'		=> __('Choice', 'food-truck'),
+			'relational'	=> __('Relational', 'food-truck'),
+			'jquery'		=> __('jQuery', 'food-truck'),
+			'layout'		=> __('Layout', 'food-truck'),
 		);
 		
 		

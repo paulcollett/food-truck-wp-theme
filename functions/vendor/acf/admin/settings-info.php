@@ -47,7 +47,7 @@ class acf_settings_info {
 
 
 		// add page
-		site_add_theme_subpage('edit.php?post_type=acf-field-group', __('Info','acf'), __('Info','acf'), acf_get_setting('capability'),'acf-settings-info', array($this,'html'));
+		site_add_theme_subpage('edit.php?post_type=acf-field-group', __('Info','acf'), __('Info','food-truck'), acf_get_setting('capability'),'acf-settings-info', array($this,'html'));
 
 	}
 
@@ -72,8 +72,8 @@ class acf_settings_info {
 			'version'		=> acf_get_setting('version'),
 			'have_pro'		=> acf_get_setting('pro'),
 			'tabs'			=> array(
-				'new'			=> __("What's New", 'acf'),
-				'changelog'		=> __("Changelog", 'acf')
+				'new'			=> __("What's New", 'food-truck'),
+				'changelog'		=> __("Changelog", 'food-truck')
 			),
 			'active'		=> 'new'
 		);

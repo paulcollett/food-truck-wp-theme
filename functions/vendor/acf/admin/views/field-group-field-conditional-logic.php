@@ -26,7 +26,7 @@ if( empty($groups) ) {
 ?>
 <tr data-name="conditional_logic" class="acf-field">
 	<td class="acf-label">
-		<label><?php _e("Conditional Logic",'acf'); ?></label>
+		<label><?php _e("Conditional Logic",'food-truck'); ?></label>
 	</td>
 	<td class="acf-input">
 		<?php 
@@ -37,8 +37,8 @@ if( empty($groups) ) {
 			'prefix'		=> $field['prefix'],
 			'value'			=> $disabled ? 0 : 1,
 			'choices'		=> array(
-								1	=> __("Yes",'acf'),
-								0	=> __("No",'acf'),
+								1	=> __("Yes",'food-truck'),
+								0	=> __("No",'food-truck'),
 			),
 			'layout'		=> 'horizontal',
 			'class'			=> 'conditional-toggle'
@@ -59,7 +59,7 @@ if( empty($groups) ) {
 				// vars
 				// $group_id must be completely different to $rule_id to avoid JS issues
 				$group_id = "group_{$group_id}";
-				$h4 = ($group_id == "group_0") ? __("Show this field if",'acf') : __("or",'acf');
+				$h4 = ($group_id == "group_0") ? __("Show this field if",'acf') : __("or",'food-truck');
 				
 				?>
 				<div class="rule-group" data-id="<?php echo $group_id; ?>">
@@ -108,8 +108,8 @@ if( empty($groups) ) {
 									<?php 	
 									
 									$choices = array(
-										'=='	=>	__("is equal to",'acf'),
-										'!='	=>	__("is not equal to",'acf'),
+										'=='	=>	__("is equal to",'food-truck'),
+										'!='	=>	__("is not equal to",'food-truck'),
 									);
 									
 									
@@ -146,7 +146,7 @@ if( empty($groups) ) {
 									?>
 								</td>
 								<td class="add">
-									<a href="#" class="button add-conditional-rule"><?php _e("and",'acf'); ?></a>
+									<a href="#" class="button add-conditional-rule"><?php _e("and",'food-truck'); ?></a>
 								</td>
 								<td class="remove">
 									<a href="#" class="acf-icon -minus remove-conditional-rule"></a>
@@ -159,9 +159,9 @@ if( empty($groups) ) {
 				</div>
 			<?php endforeach; ?>
 			
-			<h4><?php _e("or",'acf'); ?></h4>
+			<h4><?php _e("or",'food-truck'); ?></h4>
 			
-			<a href="#" class="button add-conditional-group"><?php _e("Add rule group",'acf'); ?></a>
+			<a href="#" class="button add-conditional-group"><?php _e("Add rule group",'food-truck'); ?></a>
 			
 		</div>
 		

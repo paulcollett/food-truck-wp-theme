@@ -33,7 +33,7 @@ class acf_field_user extends acf_field {
 		
 		// vars
 		$this->name = 'user';
-		$this->label = __("User",'acf');
+		$this->label = __("User",'food-truck');
 		$this->category = 'relational';
 		$this->defaults = array(
 			'role' 			=> '',
@@ -376,7 +376,7 @@ class acf_field_user extends acf_field {
 	function render_field_settings( $field ) {
 		
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Filter by role','acf'),
+			'label'			=> __('Filter by role','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'select',
 			'name'			=> 'role',
@@ -384,20 +384,20 @@ class acf_field_user extends acf_field {
 			'multiple'		=> 1,
 			'ui'			=> 1,
 			'allow_null'	=> 1,
-			'placeholder'	=> __("All user roles",'acf'),
+			'placeholder'	=> __("All user roles",'food-truck'),
 		));
 		
 		
 		
 		// allow_null
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Allow Null?','acf'),
+			'label'			=> __('Allow Null?','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'radio',
 			'name'			=> 'allow_null',
 			'choices'		=> array(
-				1				=> __("Yes",'acf'),
-				0				=> __("No",'acf'),
+				1				=> __("Yes",'food-truck'),
+				0				=> __("No",'food-truck'),
 			),
 			'layout'	=>	'horizontal',
 		));
@@ -405,13 +405,13 @@ class acf_field_user extends acf_field {
 		
 		// multiple
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Select multiple values?','acf'),
+			'label'			=> __('Select multiple values?','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'radio',
 			'name'			=> 'multiple',
 			'choices'		=> array(
-				1				=> __("Yes",'acf'),
-				0				=> __("No",'acf'),
+				1				=> __("Yes",'food-truck'),
+				0				=> __("No",'food-truck'),
 			),
 			'layout'	=>	'horizontal',
 		));

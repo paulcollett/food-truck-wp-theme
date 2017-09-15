@@ -947,9 +947,9 @@ function acf_get_image_sizes() {
 	
 	// vars
 	$sizes = array(
-		'thumbnail'	=>	__("Thumbnail",'acf'),
-		'medium'	=>	__("Medium",'acf'),
-		'large'		=>	__("Large",'acf')
+		'thumbnail'	=>	__("Thumbnail",'food-truck'),
+		'medium'	=>	__("Medium",'food-truck'),
+		'large'		=>	__("Large",'food-truck')
 	);
 	
 	
@@ -998,7 +998,7 @@ function acf_get_image_sizes() {
 	
 	
 	// add full end
-	$sizes['full'] = __("Full Size",'acf');
+	$sizes['full'] = __("Full Size",'food-truck');
 	
 	
 	// filter for 3rd party customization
@@ -1255,7 +1255,7 @@ function acf_get_term_title( $term ) {
 	// empty
 	if( $title === '' ) {
 		
-		$title = __('(no title)', 'acf');
+		$title = __('(no title)', 'food-truck');
 		
 	}
 	
@@ -1818,7 +1818,7 @@ function acf_get_post_title( $post = 0, $is_search = false ) {
 	// empty
 	if( $title === '' ) {
 		
-		$title = __('(no title)', 'acf');
+		$title = __('(no title)', 'food-truck');
 		
 	}
 	
@@ -1855,7 +1855,7 @@ function acf_get_post_title( $post = 0, $is_search = false ) {
 			
 			
 			// append
-			$append .= ' | ' . __('Parent', 'acf') . ': ' . implode(' / ', $ancestors);
+			$append .= ' | ' . __('Parent', 'food-truck') . ': ' . implode(' / ', $ancestors);
 			
 		}
 		
@@ -4007,7 +4007,7 @@ function acf_validate_attachment( $attachment, $field, $context = 'prepare' ) {
 				$last1 = array_pop($mime_types);
 				$last2 = array_pop($mime_types);
 				
-				$mime_types[] = $last2 . ' ' . __('or', 'acf') . ' ' . $last1;
+				$mime_types[] = $last2 . ' ' . __('or', 'food-truck') . ' ' . $last1;
 				
 			}
 			

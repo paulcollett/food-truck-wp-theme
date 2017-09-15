@@ -33,7 +33,7 @@ class acf_field_clone extends acf_field {
 		
 		// vars
 		$this->name = 'clone';
-		$this->label = _x('Clone', 'noun', 'acf');
+		$this->label = _x('Clone', 'noun', 'food-truck');
 		$this->category = 'layout';
 		$this->defaults = array(
 			'clone' 		=> '',
@@ -685,8 +685,8 @@ class acf_field_clone extends acf_field {
 		
 		// default_value
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Fields', 'acf'),
-			'instructions'	=> __('Select one or more fields you wish to clone','acf'),
+			'label'			=> __('Fields', 'food-truck'),
+			'instructions'	=> __('Select one or more fields you wish to clone','food-truck'),
 			'type'			=> 'select',
 			'name'			=> 'clone',
 			'multiple' 		=> 1,
@@ -701,64 +701,64 @@ class acf_field_clone extends acf_field {
 		
 		// display
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Display','acf'),
-			'instructions'	=> __('Specify the style used to render the clone field', 'acf'),
+			'label'			=> __('Display','food-truck'),
+			'instructions'	=> __('Specify the style used to render the clone field', 'food-truck'),
 			'type'			=> 'select',
 			'name'			=> 'display',
 			'class'			=> 'setting-display',
 			'choices'		=> array(
-				'group'			=> __('Group (displays selected fields in a group within this field)','acf'),
-				'seamless'		=> __('Seamless (replaces this field with selected fields)','acf'),
+				'group'			=> __('Group (displays selected fields in a group within this field)','food-truck'),
+				'seamless'		=> __('Seamless (replaces this field with selected fields)','food-truck'),
 			),
 		));
 		
 		
 		// layout
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Layout','acf'),
-			'instructions'	=> __('Specify the style used to render the selected fields', 'acf'),
+			'label'			=> __('Layout','food-truck'),
+			'instructions'	=> __('Specify the style used to render the selected fields', 'food-truck'),
 			'type'			=> 'radio',
 			'name'			=> 'layout',
 			'layout'		=> 'horizontal',
 			'choices'		=> array(
-				'block'			=> __('Block','acf'),
-				'table'			=> __('Table','acf'),
-				'row'			=> __('Row','acf')
+				'block'			=> __('Block','food-truck'),
+				'table'			=> __('Table','food-truck'),
+				'row'			=> __('Row','food-truck')
 			)
 		));
 		
 		
 		// prefix_label
-		$instructions = __('Labels will be displayed as %s', 'acf');
+		$instructions = __('Labels will be displayed as %s', 'food-truck');
 		$instructions = sprintf($instructions, '<code class="prefix-label-code-1"></code>');
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Prefix Field Labels','acf'),
+			'label'			=> __('Prefix Field Labels','food-truck'),
 			'instructions'	=> $instructions,
 			'instructions_placement'	=> 'field',
 			'type'			=> 'radio',
 			'name'			=> 'prefix_label',
 			'class'			=> 'setting-prefix-label',
 			'choices'		=> array(
-				1				=> __("Yes",'acf'),
-				0				=> __("No",'acf'),
+				1				=> __("Yes",'food-truck'),
+				0				=> __("No",'food-truck'),
 			),
 			'layout'		=> 'horizontal',
 		));
 		
 		
 		// prefix_name
-		$instructions = __('Values will be saved as %s', 'acf');
+		$instructions = __('Values will be saved as %s', 'food-truck');
 		$instructions = sprintf($instructions, '<code class="prefix-name-code-1"></code>');
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Prefix Field Names','acf'),
+			'label'			=> __('Prefix Field Names','food-truck'),
 			'instructions'	=> $instructions,
 			'instructions_placement'	=> 'field',
 			'type'			=> 'radio',
 			'name'			=> 'prefix_name',
 			'class'			=> 'setting-prefix-name',
 			'choices'		=> array(
-				1				=> __("Yes",'acf'),
-				0				=> __("No",'acf'),
+				1				=> __("Yes",'food-truck'),
+				0				=> __("No",'food-truck'),
 			),
 			'layout'		=> 'horizontal',
 		));
@@ -872,11 +872,11 @@ class acf_field_clone extends acf_field {
 	function get_clone_setting_field_choice( $field ) {
 		
 		// bail early if no field
-		if( !$field ) return __('Unknown field', 'acf');
+		if( !$field ) return __('Unknown field', 'food-truck');
 		
 		
 		// title
-		$title = $field['label'] ? $field['label'] : __('(no title)', 'acf');
+		$title = $field['label'] ? $field['label'] : __('(no title)', 'food-truck');
 					
 		
 		// append type
@@ -911,11 +911,11 @@ class acf_field_clone extends acf_field {
 	function get_clone_setting_group_choice( $field_group ) {
 		
 		// bail early if no field group
-		if( !$field_group ) return __('Unknown field group', 'acf');
+		if( !$field_group ) return __('Unknown field group', 'food-truck');
 		
 		
 		// return
-		return sprintf( __('All fields from %s field group', 'acf'), $field_group['title'] );
+		return sprintf( __('All fields from %s field group', 'food-truck'), $field_group['title'] );
 		
 	}
 	

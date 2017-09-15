@@ -65,16 +65,16 @@ class acf_admin_field_group {
 		// append to messages
 		$messages['acf-field-group'] = array(
 			0 => '', // Unused. Messages start at index 1.
-			1 => __('Field group updated.', 'acf'),
-			2 => __('Field group updated.', 'acf'),
-			3 => __('Field group deleted.', 'acf'),
-			4 => __('Field group updated.', 'acf'),
+			1 => __('Field group updated.', 'food-truck'),
+			2 => __('Field group updated.', 'food-truck'),
+			3 => __('Field group deleted.', 'food-truck'),
+			4 => __('Field group updated.', 'food-truck'),
 			5 => false, // field group does not support revisions
-			6 => __('Field group published.', 'acf'),
-			7 => __('Field group saved.', 'acf'),
-			8 => __('Field group submitted.', 'acf'),
-			9 => __('Field group scheduled for.', 'acf'),
-			10 => __('Field group draft updated.', 'acf')
+			6 => __('Field group published.', 'food-truck'),
+			7 => __('Field group saved.', 'food-truck'),
+			8 => __('Field group submitted.', 'food-truck'),
+			9 => __('Field group scheduled for.', 'food-truck'),
+			10 => __('Field group draft updated.', 'food-truck')
 		);
 		
 		
@@ -179,9 +179,9 @@ class acf_admin_field_group {
 		
 		
 		// metaboxes
-		add_meta_box('acf-field-group-fields', __("Fields",'acf'), array($this, 'mb_fields'), 'acf-field-group', 'normal', 'high');
-		add_meta_box('acf-field-group-locations', __("Location",'acf'), array($this, 'mb_locations'), 'acf-field-group', 'normal', 'high');
-		add_meta_box('acf-field-group-options', __("Settings",'acf'), array($this, 'mb_options'), 'acf-field-group', 'normal', 'high');
+		add_meta_box('acf-field-group-fields', __("Fields",'food-truck'), array($this, 'mb_fields'), 'acf-field-group', 'normal', 'high');
+		add_meta_box('acf-field-group-locations', __("Location",'food-truck'), array($this, 'mb_locations'), 'acf-field-group', 'normal', 'high');
+		add_meta_box('acf-field-group-options', __("Settings",'food-truck'), array($this, 'mb_options'), 'acf-field-group', 'normal', 'high');
 		
 		
 		// actions
@@ -271,20 +271,20 @@ class acf_admin_field_group {
 		
 		// merge in new strings
 		$l10n = array_merge($l10n, array(
-			'move_to_trash'			=> __("Move to trash. Are you sure?",'acf'),
-			'checked'				=> __("checked",'acf'),
-			'no_fields'				=> __("No toggle fields available",'acf'),
-			'title_is_required'		=> __("Field group title is required",'acf'),
-			'copy'					=> __("copy",'acf'),
-			'or'					=> __("or",'acf'),
-			'fields'				=> __("Fields",'acf'),
-			'parent_fields'			=> __("Parent fields",'acf'),
-			'sibling_fields'		=> __("Sibling fields",'acf'),
-			'move_field'			=> __("Move Custom Field",'acf'),
-			'move_field_warning'	=> __("This field cannot be moved until its changes have been saved",'acf'),
-			'null'					=> __("Null",'acf'),
-			'unload'				=> __('The changes you made will be lost if you navigate away from this page','acf'),
-			'field_name_start'		=> __('The string "field_" may not be used at the start of a field name','acf'),
+			'move_to_trash'			=> __("Move to trash. Are you sure?",'food-truck'),
+			'checked'				=> __("checked",'food-truck'),
+			'no_fields'				=> __("No toggle fields available",'food-truck'),
+			'title_is_required'		=> __("Field group title is required",'food-truck'),
+			'copy'					=> __("copy",'food-truck'),
+			'or'					=> __("or",'food-truck'),
+			'fields'				=> __("Fields",'food-truck'),
+			'parent_fields'			=> __("Parent fields",'food-truck'),
+			'sibling_fields'		=> __("Sibling fields",'food-truck'),
+			'move_field'			=> __("Move Custom Field",'food-truck'),
+			'move_field_warning'	=> __("This field cannot be moved until its changes have been saved",'food-truck'),
+			'null'					=> __("Null",'food-truck'),
+			'unload'				=> __('The changes you made will be lost if you navigate away from this page','food-truck'),
+			'field_name_start'		=> __('The string "field_" may not be used at the start of a field name','food-truck'),
 		));
 		
 		
@@ -362,7 +362,7 @@ class acf_admin_field_group {
 		
 		// append
 	    $html .= '<div id="acf-append-show-on-screen" class="acf-hidden">';
-	    $html .= '<label for="acf-field-key-hide"><input id="acf-field-key-hide" type="checkbox" value="1" name="show_field_keys" ' . $checked . ' /> ' . __('Field Keys','acf') . '</label>';
+	    $html .= '<label for="acf-field-key-hide"><input id="acf-field-key-hide" type="checkbox" value="1" name="show_field_keys" ' . $checked . ' /> ' . __('Field Keys','food-truck') . '</label>';
 		$html .= '</div>';
 	    
 	    
@@ -392,7 +392,7 @@ class acf_admin_field_group {
 		
 		
 		// vars
-		$status = $field_group['active'] ? __("Active",'acf') : __("Disabled",'acf');
+		$status = $field_group['active'] ? __("Active",'acf') : __("Disabled",'food-truck');
 		
 ?>
 <script type="text/javascript">
@@ -843,11 +843,11 @@ class acf_admin_field_group {
 			case "page_type" :
 				
 				$choices = array(
-					'front_page'	=>	__("Front Page",'acf'),
-					'posts_page'	=>	__("Posts Page",'acf'),
-					'top_level'		=>	__("Top Level Page (no parent)",'acf'),
-					'parent'		=>	__("Parent Page (has children)",'acf'),
-					'child'			=>	__("Child Page (has parent)",'acf'),
+					'front_page'	=>	__("Front Page",'food-truck'),
+					'posts_page'	=>	__("Posts Page",'food-truck'),
+					'top_level'		=>	__("Top Level Page (no parent)",'food-truck'),
+					'parent'		=>	__("Parent Page (has children)",'food-truck'),
+					'child'			=>	__("Child Page (has parent)",'food-truck'),
 				);
 								
 				break;
@@ -863,7 +863,7 @@ class acf_admin_field_group {
 			case "page_template" :
 				
 				$choices = array(
-					'default' => apply_filters( 'default_page_template_title',  __('Default Template', 'acf') ),
+					'default' => apply_filters( 'default_page_template_title',  __('Default Template', 'food-truck') ),
 				);
 				
 				
@@ -886,9 +886,9 @@ class acf_admin_field_group {
 				
 				// viewing
 				$choices = array(
-					'logged_in'		=> __('Logged in', 'acf'),
-					'viewing_front'	=> __('Viewing front end', 'acf'),
-					'viewing_back'	=> __('Viewing back end', 'acf')
+					'logged_in'		=> __('Logged in', 'food-truck'),
+					'viewing_front'	=> __('Viewing front end', 'food-truck'),
+					'viewing_back'	=> __('Viewing back end', 'food-truck')
 				);
 								
 				break;
@@ -907,7 +907,7 @@ class acf_admin_field_group {
 				if( is_multisite() ) {
 					
 					$choices = array_merge(array(
-						'super_admin' => __('Super Admin', 'acf')
+						'super_admin' => __('Super Admin', 'food-truck')
 					), $choices);
 					
 				}
@@ -918,7 +918,7 @@ class acf_admin_field_group {
 				
 				global $wp_roles;
 				
-				$choices = array_merge( array('all' => __('All', 'acf')), $wp_roles->get_names() );
+				$choices = array_merge( array('all' => __('All', 'food-truck')), $wp_roles->get_names() );
 			
 				break;
 				
@@ -926,9 +926,9 @@ class acf_admin_field_group {
 			case "user_form" :
 				
 				$choices = array(
-					'all' 		=> __('All', 'acf'),
-					'edit' 		=> __('Add / Edit', 'acf'),
-					'register' 	=> __('Register', 'acf')
+					'all' 		=> __('All', 'food-truck'),
+					'edit' 		=> __('Add / Edit', 'food-truck'),
+					'register' 	=> __('Register', 'food-truck')
 				);
 			
 				break;
@@ -940,14 +940,14 @@ class acf_admin_field_group {
 			
 			case "attachment" :
 				
-				$choices = array('all' => __('All', 'acf'));
+				$choices = array('all' => __('All', 'food-truck'));
 			
 				break;
 				
 				
 			case "taxonomy" :
 				
-				$choices = array_merge( array('all' => __('All', 'acf')), acf_get_taxonomies() );
+				$choices = array_merge( array('all' => __('All', 'food-truck')), acf_get_taxonomies() );
 				
 								
 				// unset post_format
@@ -964,7 +964,7 @@ class acf_admin_field_group {
 				
 				// vars
 				$choices = array(
-					'all'	=> __('All', 'acf')
+					'all'	=> __('All', 'food-truck')
 				);
 				
 				
@@ -981,7 +981,7 @@ class acf_admin_field_group {
 				global $wp_widget_factory;
 				
 				$choices = array(
-					'all' 		=> __('All', 'acf'),
+					'all' 		=> __('All', 'food-truck'),
 				);
 				
 				
@@ -1165,10 +1165,10 @@ class acf_admin_field_group {
 			$v1 = $field['label'];
 			$v2 = '<a href="' . admin_url("post.php?post={$field_group['ID']}&action=edit") . '" target="_blank">' . $field_group['title'] . '</a>';
 			
-			echo '<p><strong>' . __('Move Complete.', 'acf') . '</strong></p>';
-			echo '<p>' . sprintf( __('The %s field can now be found in the %s field group', 'acf'), $v1, $v2 ). '</p>';
+			echo '<p><strong>' . __('Move Complete.', 'food-truck') . '</strong></p>';
+			echo '<p>' . sprintf( __('The %s field can now be found in the %s field group', 'food-truck'), $v1, $v2 ). '</p>';
 			
-			echo '<a href="#" class="button button-primary acf-close-popup">' . __("Close Window",'acf') . '</a>';
+			echo '<a href="#" class="button button-primary acf-close-popup">' . __("Close Window",'food-truck') . '</a>';
 			
 			die();
 			
@@ -1210,14 +1210,14 @@ class acf_admin_field_group {
 		));
 		
 		
-		echo '<p>' . __('Please select the destination for this field', 'acf') . '</p>';
+		echo '<p>' . __('Please select the destination for this field', 'food-truck') . '</p>';
 		
 		echo '<form id="acf-move-field-form">';
 		
 			// render
 			acf_render_field_wrap( $field );
 			
-			echo '<button type="submit" class="button button-primary">' . __("Move Field",'acf') . '</button>';
+			echo '<button type="submit" class="button button-primary">' . __("Move Field",'food-truck') . '</button>';
 			
 		echo '</form>';
 		

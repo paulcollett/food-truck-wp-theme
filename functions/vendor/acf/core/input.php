@@ -254,14 +254,14 @@ class acf_input {
 		
 		// l10n
 		$l10n = apply_filters( 'acf/input/admin_l10n', array(
-			'unload'				=> __('The changes you made will be lost if you navigate away from this page','acf'),
-			'expand_details' 		=> __('Expand Details','acf'),
-			'collapse_details' 		=> __('Collapse Details','acf'),
-			'validation_successful'	=> __('Validation successful', 'acf'),
-			'validation_failed'		=> __('Validation failed', 'acf'),
-			'validation_failed_1'	=> __('1 field requires attention', 'acf'),
-			'validation_failed_2'	=> __('%d fields require attention', 'acf'),
-			'restricted'			=> __('Restricted','acf')
+			'unload'				=> __('The changes you made will be lost if you navigate away from this page','food-truck'),
+			'expand_details' 		=> __('Expand Details','food-truck'),
+			'collapse_details' 		=> __('Collapse Details','food-truck'),
+			'validation_successful'	=> __('Validation successful', 'food-truck'),
+			'validation_failed'		=> __('Validation failed', 'food-truck'),
+			'validation_failed_1'	=> __('1 field requires attention', 'food-truck'),
+			'validation_failed_2'	=> __('%d fields require attention', 'food-truck'),
+			'restricted'			=> __('Restricted','food-truck')
 		));
 		
 		

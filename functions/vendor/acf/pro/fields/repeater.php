@@ -33,19 +33,19 @@ class acf_field_repeater extends acf_field {
 		
 		// vars
 		$this->name = 'repeater';
-		$this->label = __("Repeater",'acf');
+		$this->label = __("Repeater",'food-truck');
 		$this->category = 'layout';
 		$this->defaults = array(
 			'sub_fields'	=> array(),
 			'min'			=> 0,
 			'max'			=> 0,
 			'layout' 		=> 'table',
-			'button_label'	=> __("Add Row",'acf'),
+			'button_label'	=> __("Add Row",'food-truck'),
 			'collapsed'		=> ''
 		);
 		$this->l10n = array(
-			'min'			=>	__("Minimum rows reached ({min} rows)",'acf'),
-			'max'			=>	__("Maximum rows reached ({max} rows)",'acf'),
+			'min'			=>	__("Minimum rows reached ({min} rows)",'food-truck'),
+			'max'			=>	__("Maximum rows reached ({max} rows)",'food-truck'),
 		);
 		
 		
@@ -352,9 +352,9 @@ class acf_field_repeater extends acf_field {
 			<tr class="<?php echo $row_class; ?>" data-id="<?php echo $i; ?>">
 				
 				<?php if( $show_order ): ?>
-					<td class="acf-row-handle order" title="<?php _e('Drag to reorder','acf'); ?>">
+					<td class="acf-row-handle order" title="<?php _e('Drag to reorder','food-truck'); ?>">
 						<?php if( $field['collapsed'] ): ?>
-						<a class="acf-icon -collapse small" href="#" data-event="collapse-row" title="<?php _e('Click to toggle','acf'); ?>"></a>
+						<a class="acf-icon -collapse small" href="#" data-event="collapse-row" title="<?php _e('Click to toggle','food-truck'); ?>"></a>
 						<?php endif; ?>
 						<span><?php echo intval($i) + 1; ?></span>
 					</td>
@@ -399,8 +399,8 @@ class acf_field_repeater extends acf_field {
 				
 				<?php if( $show_remove ): ?>
 					<td class="acf-row-handle remove">
-						<a class="acf-icon -plus small" href="#" data-event="add-row" title="<?php _e('Add row','acf'); ?>"></a>
-						<a class="acf-icon -minus small" href="#" data-event="remove-row" title="<?php _e('Remove row','acf'); ?>"></a>
+						<a class="acf-icon -plus small" href="#" data-event="add-row" title="<?php _e('Add row','food-truck'); ?>"></a>
+						<a class="acf-icon -minus small" href="#" data-event="remove-row" title="<?php _e('Remove row','food-truck'); ?>"></a>
 					</td>
 				<?php endif; ?>
 				
@@ -448,7 +448,7 @@ class acf_field_repeater extends acf_field {
 		
 		?><tr class="acf-field" data-setting="repeater" data-name="sub_fields">
 			<td class="acf-label">
-				<label><?php _e("Sub Fields",'acf'); ?></label>
+				<label><?php _e("Sub Fields",'food-truck'); ?></label>
 				<p class="description"></p>		
 			</td>
 			<td class="acf-input">
@@ -478,8 +478,8 @@ class acf_field_repeater extends acf_field {
 		
 		
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Collapsed','acf'),
-			'instructions'	=> __('Select a sub field to show when row is collapsed','acf'),
+			'label'			=> __('Collapsed','food-truck'),
+			'instructions'	=> __('Select a sub field to show when row is collapsed','food-truck'),
 			'type'			=> 'select',
 			'name'			=> 'collapsed',
 			'allow_null'	=> 1,
@@ -489,7 +489,7 @@ class acf_field_repeater extends acf_field {
 		
 		// min
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Minimum Rows','acf'),
+			'label'			=> __('Minimum Rows','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'number',
 			'name'			=> 'min',
@@ -499,7 +499,7 @@ class acf_field_repeater extends acf_field {
 		
 		// max
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Maximum Rows','acf'),
+			'label'			=> __('Maximum Rows','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'number',
 			'name'			=> 'max',
@@ -509,23 +509,23 @@ class acf_field_repeater extends acf_field {
 		
 		// layout
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Layout','acf'),
+			'label'			=> __('Layout','food-truck'),
 			'instructions'	=> '',
 			'class'			=> 'acf-repeater-layout',
 			'type'			=> 'radio',
 			'name'			=> 'layout',
 			'layout'		=> 'horizontal',
 			'choices'		=> array(
-				'table'			=> __('Table','acf'),
-				'block'			=> __('Block','acf'),
-				'row'			=> __('Row','acf')
+				'table'			=> __('Table','food-truck'),
+				'block'			=> __('Block','food-truck'),
+				'row'			=> __('Row','food-truck')
 			)
 		));
 		
 		
 		// button_label
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Button Label','acf'),
+			'label'			=> __('Button Label','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'text',
 			'name'			=> 'button_label',

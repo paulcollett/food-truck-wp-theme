@@ -203,7 +203,7 @@ class acf_pro_updates {
 		
 		// vars
 		$activate_message = sprintf(
-			__('To enable updates, please enter your license key on the <a href="%s">Updates</a> page. If you don\'t have a licence key, please see <a href="%s">details & pricing</a>.', 'acf'),
+			__('To enable updates, please enter your license key on the <a href="%s">Updates</a> page. If you don\'t have a licence key, please see <a href="%s">details & pricing</a>.', 'food-truck'),
 			admin_url('edit.php?post_type=acf-field-group&page=acf-settings-updates'),
 			'https://www.advancedcustomfields.com/pro'
 		);

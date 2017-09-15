@@ -33,7 +33,7 @@ class acf_field_wysiwyg extends acf_field {
 		
 		// vars
 		$this->name = 'wysiwyg';
-		$this->label = __("Wysiwyg Editor",'acf');
+		$this->label = __("Wysiwyg Editor",'food-truck');
 		$this->category = 'content';
 		$this->defaults = array(
 			'tabs'			=> 'all',
@@ -374,8 +374,8 @@ acf.fields.wysiwyg.toolbars = <?php echo json_encode($json); ?>;
 				<?php endif; ?>
 				<?php if( user_can_richedit() && $show_tabs ): ?>
 					<div class="wp-editor-tabs">
-						<button id="<?php echo $id; ?>-tmce" class="wp-switch-editor switch-tmce" <?php echo  $button; ?> type="button"><?php echo __('Visual', 'acf'); ?></button>
-						<button id="<?php echo $id; ?>-html" class="wp-switch-editor switch-html" <?php echo  $button; ?> type="button"><?php echo _x( 'Text', 'Name for the Text editor tab (formerly HTML)', 'acf' ); ?></button>
+						<button id="<?php echo $id; ?>-tmce" class="wp-switch-editor switch-tmce" <?php echo  $button; ?> type="button"><?php echo __('Visual', 'food-truck'); ?></button>
+						<button id="<?php echo $id; ?>-html" class="wp-switch-editor switch-html" <?php echo  $button; ?> type="button"><?php echo _x( 'Text', 'Name for the Text editor tab (formerly HTML)', 'food-truck'); ?></button>
 					</div>
 				<?php endif; ?>
 			</div>
@@ -422,8 +422,8 @@ acf.fields.wysiwyg.toolbars = <?php echo json_encode($json); ?>;
 		
 		// default_value
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Default Value','acf'),
-			'instructions'	=> __('Appears when creating a new post','acf'),
+			'label'			=> __('Default Value','food-truck'),
+			'instructions'	=> __('Appears when creating a new post','food-truck'),
 			'type'			=> 'textarea',
 			'name'			=> 'default_value',
 		));
@@ -431,21 +431,21 @@ acf.fields.wysiwyg.toolbars = <?php echo json_encode($json); ?>;
 		
 		// tabs
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Tabs','acf'),
+			'label'			=> __('Tabs','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'select',
 			'name'			=> 'tabs',
 			'choices'		=> array(
-				'all'			=>	__("Visual & Text",'acf'),
-				'visual'		=>	__("Visual Only",'acf'),
-				'text'			=>	__("Text Only",'acf'),
+				'all'			=>	__("Visual & Text",'food-truck'),
+				'visual'		=>	__("Visual Only",'food-truck'),
+				'text'			=>	__("Text Only",'food-truck'),
 			)
 		));
 		
 		
 		// toolbar
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Toolbar','acf'),
+			'label'			=> __('Toolbar','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'select',
 			'name'			=> 'toolbar',
@@ -455,14 +455,14 @@ acf.fields.wysiwyg.toolbars = <?php echo json_encode($json); ?>;
 		
 		// media_upload
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Show Media Upload Buttons?','acf'),
+			'label'			=> __('Show Media Upload Buttons?','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'radio',
 			'name'			=> 'media_upload',
 			'layout'		=> 'horizontal',
 			'choices'		=> array(
-				1				=>	__("Yes",'acf'),
-				0				=>	__("No",'acf'),
+				1				=>	__("Yes",'food-truck'),
+				0				=>	__("No",'food-truck'),
 			)
 		));
 

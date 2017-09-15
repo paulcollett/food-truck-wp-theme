@@ -648,7 +648,7 @@ function acf_duplicate_field_group( $selector = 0, $new_post_id = 0 ) {
 	// add (copy)
 	if( !$new_post_id ) {
 		
-		$field_group['title'] .= ' (' . __("copy", 'acf') . ')';
+		$field_group['title'] .= ' (' . __("copy", 'food-truck') . ')';
 		
 	}
 	

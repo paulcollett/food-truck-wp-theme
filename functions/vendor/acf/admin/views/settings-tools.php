@@ -2,7 +2,7 @@
 
 // vars
 $field = array(
-	'label'		=> __('Select Field Groups', 'acf'),
+	'label'		=> __('Select Field Groups', 'food-truck'),
 	'type'		=> 'checkbox',
 	'name'		=> 'acf_export_keys',
 	'prefix'	=> false,
@@ -28,14 +28,14 @@ if( $field_groups ) {
 ?>
 <div class="wrap acf-settings-wrap">
 	
-	<h1><?php _e('Tools', 'acf'); ?></h1>
+	<h1><?php _e('Tools', 'food-truck'); ?></h1>
 	
 	<div class="acf-box" id="acf-export-field-groups">
 		<div class="title">
-			<h3><?php _e('Export Field Groups', 'acf'); ?></h3>
+			<h3><?php _e('Export Field Groups', 'food-truck'); ?></h3>
 		</div>
 		<div class="inner">
-			<p><?php _e('Select the field groups you would like to export and then select your export method. Use the download button to export to a .json file which you can then import to another ACF installation. Use the generate button to export to PHP code which you can place in your theme.', 'acf'); ?></p>
+			<p><?php _e('Select the field groups you would like to export and then select your export method. Use the download button to export to a .json file which you can then import to another ACF installation. Use the generate button to export to PHP code which you can place in your theme.', 'food-truck'); ?></p>
 			
 			<form method="post" action="">
 			<div class="acf-hidden">
@@ -47,8 +47,8 @@ if( $field_groups ) {
 					<tr>
 						<th></th>
 						<td>
-							<input type="submit" name="download" class="button button-primary" value="<?php _e('Download export file', 'acf'); ?>" />
-							<input type="submit" name="generate" class="button button-primary" value="<?php _e('Generate export code', 'acf'); ?>" />
+							<input type="submit" name="download" class="button button-primary" value="<?php _e('Download export file', 'food-truck'); ?>" />
+							<input type="submit" name="generate" class="button button-primary" value="<?php _e('Generate export code', 'food-truck'); ?>" />
 						</td>
 					</tr>
 				</tbody>
@@ -61,10 +61,10 @@ if( $field_groups ) {
 	
 	<div class="acf-box">
 		<div class="title">
-			<h3><?php _e('Import Field Groups', 'acf'); ?></h3>
+			<h3><?php _e('Import Field Groups', 'food-truck'); ?></h3>
 		</div>
 		<div class="inner">
-			<p><?php _e('Select the Advanced Custom Fields JSON file you would like to import. When you click the import button below, ACF will import the field groups.', 'acf'); ?></p>
+			<p><?php _e('Select the Advanced Custom Fields JSON file you would like to import. When you click the import button below, ACF will import the field groups.', 'food-truck'); ?></p>
 			
 			<form method="post" action="" enctype="multipart/form-data">
 			<div class="acf-hidden">
@@ -74,7 +74,7 @@ if( $field_groups ) {
                 <tbody>
                 	<tr>
                     	<th>
-                    		<label><?php _e('Select File', 'acf'); ?></label>
+                    		<label><?php _e('Select File', 'food-truck'); ?></label>
                     	</th>
 						<td>
 							<input type="file" name="acf_import_file">
@@ -83,7 +83,7 @@ if( $field_groups ) {
 					<tr>
 						<th></th>
 						<td>
-							<input type="submit" class="button button-primary" value="<?php _e('Import', 'acf'); ?>" />
+							<input type="submit" class="button button-primary" value="<?php _e('Import', 'food-truck'); ?>" />
 						</td>
 					</tr>
 				</tbody>

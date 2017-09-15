@@ -19,8 +19,8 @@ function acf_get_valid_options_page( $page = '' ) {
 	if( empty($page) ) {
 		
 		$page = array(
-			'page_title' 	=> __('Options','acf'),
-			'menu_title'	=> __('Options','acf'),
+			'page_title' 	=> __('Options','food-truck'),
+			'menu_title'	=> __('Options','food-truck'),
 			'menu_slug' 	=> 'acf-options',
 		);
 			
@@ -47,7 +47,7 @@ function acf_get_valid_options_page( $page = '' ) {
 		'redirect'		=> true,
 		'post_id'		=> 'options',
 		'autoload'		=> false,
-		'update_button'	=> __('Update', 'acf')
+		'update_button'	=> __('Update', 'food-truck')
 	));
 	
 	

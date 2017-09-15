@@ -51,10 +51,10 @@ class acf_media {
 		
 		// append
 		$l10n['media'] = array(
-			'select'		=> _x('Select', 'verb', 'acf'),
-			'edit'			=> _x('Edit', 'verb', 'acf'),
-			'update'		=> _x('Update', 'verb', 'acf'),
-			'uploadedTo'	=> __("Uploaded to this post",'acf'),
+			'select'		=> _x('Select', 'verb', 'food-truck'),
+			'edit'			=> _x('Edit', 'verb', 'food-truck'),
+			'update'		=> _x('Update', 'verb', 'food-truck'),
+			'uploadedTo'	=> __("Uploaded to this post",'food-truck'),
 			'default_icon'	=> wp_mime_type_icon()
 		);
 		

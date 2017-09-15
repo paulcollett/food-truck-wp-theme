@@ -33,7 +33,7 @@ class acf_field_text extends acf_field {
 		
 		// vars
 		$this->name = 'text';
-		$this->label = __("Text",'acf');
+		$this->label = __("Text",'food-truck');
 		$this->defaults = array(
 			'default_value'	=> '',
 			'maxlength'		=> '',
@@ -139,8 +139,8 @@ class acf_field_text extends acf_field {
 		
 		// default_value
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Default Value','acf'),
-			'instructions'	=> __('Appears when creating a new post','acf'),
+			'label'			=> __('Default Value','food-truck'),
+			'instructions'	=> __('Appears when creating a new post','food-truck'),
 			'type'			=> 'text',
 			'name'			=> 'default_value',
 		));
@@ -148,8 +148,8 @@ class acf_field_text extends acf_field {
 		
 		// placeholder
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Placeholder Text','acf'),
-			'instructions'	=> __('Appears within the input','acf'),
+			'label'			=> __('Placeholder Text','food-truck'),
+			'instructions'	=> __('Appears within the input','food-truck'),
 			'type'			=> 'text',
 			'name'			=> 'placeholder',
 		));
@@ -157,8 +157,8 @@ class acf_field_text extends acf_field {
 		
 		// prepend
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Prepend','acf'),
-			'instructions'	=> __('Appears before the input','acf'),
+			'label'			=> __('Prepend','food-truck'),
+			'instructions'	=> __('Appears before the input','food-truck'),
 			'type'			=> 'text',
 			'name'			=> 'prepend',
 		));
@@ -166,8 +166,8 @@ class acf_field_text extends acf_field {
 		
 		// append
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Append','acf'),
-			'instructions'	=> __('Appears after the input','acf'),
+			'label'			=> __('Append','food-truck'),
+			'instructions'	=> __('Appears after the input','food-truck'),
 			'type'			=> 'text',
 			'name'			=> 'append',
 		));
@@ -175,8 +175,8 @@ class acf_field_text extends acf_field {
 		
 		// maxlength
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Character Limit','acf'),
-			'instructions'	=> __('Leave blank for no limit','acf'),
+			'label'			=> __('Character Limit','food-truck'),
+			'instructions'	=> __('Leave blank for no limit','food-truck'),
 			'type'			=> 'number',
 			'name'			=> 'maxlength',
 		));

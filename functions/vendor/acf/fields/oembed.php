@@ -33,7 +33,7 @@ class acf_field_oembed extends acf_field {
 		
 		// vars
 		$this->name = 'oembed';
-		$this->label = __("oEmbed",'acf');
+		$this->label = __("oEmbed",'food-truck');
 		$this->category = 'content';
 		$this->defaults = array(
 			'width'		=> '',
@@ -209,7 +209,7 @@ class acf_field_oembed extends acf_field {
 		
 		<div class="title-search">
 			
-			<input data-name="search-input" type="text" placeholder="<?php _e("Enter URL", 'acf'); ?>" autocomplete="off" />
+			<input data-name="search-input" type="text" placeholder="<?php _e("Enter URL", 'food-truck'); ?>" autocomplete="off" />
 		</div>
 		
 		<a data-name="clear-button" href="#" class="acf-icon -cancel grey acf-soh-target"></a>
@@ -222,7 +222,7 @@ class acf_field_oembed extends acf_field {
 		</div>
 		
 		<div class="canvas-error">
-			<p><strong><?php _e("Error", 'acf'); ?></strong>. <?php _e("No embed found for the given URL", 'acf'); ?></p>
+			<p><strong><?php _e("Error", 'acf'); ?></strong>. <?php _e("No embed found for the given URL", 'food-truck'); ?></p>
 		</div>
 		
 		<div class="canvas-media" data-name="value-embed">
@@ -258,10 +258,10 @@ class acf_field_oembed extends acf_field {
 		
 		// width
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Embed Size','acf'),
+			'label'			=> __('Embed Size','food-truck'),
 			'type'			=> 'text',
 			'name'			=> 'width',
-			'prepend'		=> __('Width', 'acf'),
+			'prepend'		=> __('Width', 'food-truck'),
 			'append'		=> 'px',
 			'placeholder'	=> $this->default_values['width']
 		));
@@ -269,10 +269,10 @@ class acf_field_oembed extends acf_field {
 		
 		// height
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Embed Size','acf'),
+			'label'			=> __('Embed Size','food-truck'),
 			'type'			=> 'text',
 			'name'			=> 'height',
-			'prepend'		=> __('Height', 'acf'),
+			'prepend'		=> __('Height', 'food-truck'),
 			'append'		=> 'px',
 			'placeholder'	=> $this->default_values['height'],
 			'wrapper'		=> array(

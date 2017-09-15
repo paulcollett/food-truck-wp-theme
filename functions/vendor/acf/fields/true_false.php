@@ -33,7 +33,7 @@ class acf_field_true_false extends acf_field {
 		
 		// vars
 		$this->name = 'true_false';
-		$this->label = __("True / False",'acf');
+		$this->label = __("True / False",'food-truck');
 		$this->category = 'choice';
 		$this->defaults = array(
 			'default_value'	=> 0,
@@ -103,8 +103,8 @@ class acf_field_true_false extends acf_field {
 		
 		// message
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Message','acf'),
-			'instructions'	=> __('eg. Show extra content','acf'),
+			'label'			=> __('Message','food-truck'),
+			'instructions'	=> __('eg. Show extra content','food-truck'),
 			'type'			=> 'text',
 			'name'			=> 'message',
 		));
@@ -112,7 +112,7 @@ class acf_field_true_false extends acf_field {
 		
 		// default_value
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Default Value','acf'),
+			'label'			=> __('Default Value','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'true_false',
 			'name'			=> 'default_value',

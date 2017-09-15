@@ -2,44 +2,44 @@
 
 // vars
 $rule_types = apply_filters('acf/location/rule_types', array(
-	__("Post",'acf') => array(
-		'post_type'		=>	__("Post Type",'acf'),
-		'post_status'	=>	__("Post Status",'acf'),
-		'post_format'	=>	__("Post Format",'acf'),
-		'post_category'	=>	__("Post Category",'acf'),
-		'post_taxonomy'	=>	__("Post Taxonomy",'acf'),
-		'post'			=>	__("Post",'acf')
+	__("Post",'food-truck') => array(
+		'post_type'		=>	__("Post Type",'food-truck'),
+		'post_status'	=>	__("Post Status",'food-truck'),
+		'post_format'	=>	__("Post Format",'food-truck'),
+		'post_category'	=>	__("Post Category",'food-truck'),
+		'post_taxonomy'	=>	__("Post Taxonomy",'food-truck'),
+		'post'			=>	__("Post",'food-truck')
 	),
-	__("Page",'acf') => array(
-		'page_template'	=>	__("Page Template",'acf'),
-		'page_type'		=>	__("Page Type",'acf'),
-		'page_parent'	=>	__("Page Parent",'acf'),
-		'page'			=>	__("Page",'acf')
+	__("Page",'food-truck') => array(
+		'page_template'	=>	__("Page Template",'food-truck'),
+		'page_type'		=>	__("Page Type",'food-truck'),
+		'page_parent'	=>	__("Page Parent",'food-truck'),
+		'page'			=>	__("Page",'food-truck')
 	),
-	__("User",'acf') => array(
-		'current_user'		=>	__("Current User",'acf'),
-		'current_user_role'	=>	__("Current User Role",'acf'),
-		'user_form'			=>	__("User Form",'acf'),
-		'user_role'			=>	__("User Role",'acf')
+	__("User",'food-truck') => array(
+		'current_user'		=>	__("Current User",'food-truck'),
+		'current_user_role'	=>	__("Current User Role",'food-truck'),
+		'user_form'			=>	__("User Form",'food-truck'),
+		'user_role'			=>	__("User Role",'food-truck')
 	),
-	__("Forms",'acf') => array(
-		'attachment'	=>	__("Attachment",'acf'),
-		'taxonomy'		=>	__("Taxonomy Term",'acf'),
-		'comment'		=>	__("Comment",'acf'),
-		'widget'		=>	__("Widget",'acf')
+	__("Forms",'food-truck') => array(
+		'attachment'	=>	__("Attachment",'food-truck'),
+		'taxonomy'		=>	__("Taxonomy Term",'food-truck'),
+		'comment'		=>	__("Comment",'food-truck'),
+		'widget'		=>	__("Widget",'food-truck')
 	)
 ));
 
 $rule_operators = apply_filters( 'acf/location/rule_operators', array(
-	'=='	=>	__("is equal to",'acf'),
-	'!='	=>	__("is not equal to",'acf'),
+	'=='	=>	__("is equal to",'food-truck'),
+	'!='	=>	__("is not equal to",'food-truck'),
 ));
 						
 ?>
 <div class="acf-field">
 	<div class="acf-label">
-		<label><?php _e("Rules",'acf'); ?></label>
-		<p><?php _e("Create a set of rules to determine which edit screens will use these advanced custom fields",'acf'); ?></p>
+		<label><?php _e("Rules",'food-truck'); ?></label>
+		<p><?php _e("Create a set of rules to determine which edit screens will use these advanced custom fields",'food-truck'); ?></p>
 	</div>
 	<div class="acf-input">
 		<div class="rule-groups">
@@ -56,7 +56,7 @@ $rule_operators = apply_filters( 'acf/location/rule_operators', array(
 				
 				// $group_id must be completely different to $rule_id to avoid JS issues
 				$group_id = "group_{$group_id}";
-				$h4 = ($group_id == "group_0") ? __("Show this field group if",'acf') : __("or",'acf');
+				$h4 = ($group_id == "group_0") ? __("Show this field group if",'acf') : __("or",'food-truck');
 				
 				?>
 			
@@ -119,7 +119,7 @@ $rule_operators = apply_filters( 'acf/location/rule_operators', array(
 									
 								?></td>
 								<td class="add">
-									<a href="#" class="button add-location-rule"><?php _e("and",'acf'); ?></a>
+									<a href="#" class="button add-location-rule"><?php _e("and",'food-truck'); ?></a>
 								</td>
 								<td class="remove">
 									<a href="#" class="acf-icon -minus remove-location-rule"></a>
@@ -132,9 +132,9 @@ $rule_operators = apply_filters( 'acf/location/rule_operators', array(
 				</div>
 			<?php endforeach; ?>
 			
-			<h4><?php _e("or",'acf'); ?></h4>
+			<h4><?php _e("or",'food-truck'); ?></h4>
 			
-			<a href="#" class="button add-location-group"><?php _e("Add rule group",'acf'); ?></a>
+			<a href="#" class="button add-location-group"><?php _e("Add rule group",'food-truck'); ?></a>
 			
 		</div>
 	</div>

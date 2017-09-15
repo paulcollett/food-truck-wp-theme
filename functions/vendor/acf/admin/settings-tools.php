@@ -47,7 +47,7 @@ class acf_settings_tools {
 		
 		
 		// add page
-		$page = site_add_theme_subpage('edit.php?post_type=acf-field-group', __('Tools','acf'), __('Tools','acf'), acf_get_setting('capability'),'acf-settings-tools', array($this,'html') );
+		$page = site_add_theme_subpage('edit.php?post_type=acf-field-group', __('Tools','acf'), __('Tools','food-truck'), acf_get_setting('capability'),'acf-settings-tools', array($this,'html') );
 		
 		
 		// actions
@@ -144,7 +144,7 @@ class acf_settings_tools {
 		// validate
 		if( $json === false ) {
 			
-			acf_add_admin_notice( __("No field groups selected", 'acf') , 'error');
+			acf_add_admin_notice( __("No field groups selected", 'food-truck') , 'error');
 			return;
 		
 		}
@@ -181,7 +181,7 @@ class acf_settings_tools {
 		// validate
 		if( empty($_FILES['acf_import_file']) ) {
 			
-			acf_add_admin_notice( __("No file selected", 'acf') , 'error');
+			acf_add_admin_notice( __("No file selected", 'food-truck') , 'error');
 			return;
 		
 		}
@@ -377,7 +377,7 @@ class acf_settings_tools {
 		// validate
 		if( $json === false ) {
 			
-			acf_add_admin_notice( __("No field groups selected", 'acf') , 'error');
+			acf_add_admin_notice( __("No field groups selected", 'food-truck') , 'error');
 			return;
 		
 		}

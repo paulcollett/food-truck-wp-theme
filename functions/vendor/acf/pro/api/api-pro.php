@@ -325,7 +325,7 @@ function acf_pro_is_license_active() {
 	if( $license['url'] !== $url ) {
 		
 		// add notice
-		acf_add_admin_notice( __('Error validating license URL (website does not match). Please re-activate your license','acf'), 'error' );
+		acf_add_admin_notice( __('Error validating license URL (website does not match). Please re-activate your license','food-truck'), 'error' );
 		return false;
 		
 	}

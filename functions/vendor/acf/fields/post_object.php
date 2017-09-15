@@ -33,7 +33,7 @@ class acf_field_post_object extends acf_field {
 		
 		// vars
 		$this->name = 'post_object';
-		$this->label = __("Post Object",'acf');
+		$this->label = __("Post Object",'food-truck');
 		$this->category = 'relational';
 		$this->defaults = array(
 			'post_type'		=> array(),
@@ -280,7 +280,7 @@ class acf_field_post_object extends acf_field {
 		
 		
 		// look for parent
-		$search = '| ' . __('Parent', 'acf') . ':';
+		$search = '| ' . __('Parent', 'food-truck') . ':';
 		$pos = strpos($text, $search);
 		
 		if( $pos !== false ) {
@@ -396,7 +396,7 @@ class acf_field_post_object extends acf_field {
 		
 		// default_value
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Filter by Post Type','acf'),
+			'label'			=> __('Filter by Post Type','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'select',
 			'name'			=> 'post_type',
@@ -404,13 +404,13 @@ class acf_field_post_object extends acf_field {
 			'multiple'		=> 1,
 			'ui'			=> 1,
 			'allow_null'	=> 1,
-			'placeholder'	=> __("All post types",'acf'),
+			'placeholder'	=> __("All post types",'food-truck'),
 		));
 		
 		
 		// default_value
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Filter by Taxonomy','acf'),
+			'label'			=> __('Filter by Taxonomy','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'select',
 			'name'			=> 'taxonomy',
@@ -418,19 +418,19 @@ class acf_field_post_object extends acf_field {
 			'multiple'		=> 1,
 			'ui'			=> 1,
 			'allow_null'	=> 1,
-			'placeholder'	=> __("All taxonomies",'acf'),
+			'placeholder'	=> __("All taxonomies",'food-truck'),
 		));
 		
 		
 		// allow_null
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Allow Null?','acf'),
+			'label'			=> __('Allow Null?','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'radio',
 			'name'			=> 'allow_null',
 			'choices'		=> array(
-				1				=> __("Yes",'acf'),
-				0				=> __("No",'acf'),
+				1				=> __("Yes",'food-truck'),
+				0				=> __("No",'food-truck'),
 			),
 			'layout'	=>	'horizontal',
 		));
@@ -438,13 +438,13 @@ class acf_field_post_object extends acf_field {
 		
 		// multiple
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Select multiple values?','acf'),
+			'label'			=> __('Select multiple values?','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'radio',
 			'name'			=> 'multiple',
 			'choices'		=> array(
-				1				=> __("Yes",'acf'),
-				0				=> __("No",'acf'),
+				1				=> __("Yes",'food-truck'),
+				0				=> __("No",'food-truck'),
 			),
 			'layout'	=>	'horizontal',
 		));
@@ -452,13 +452,13 @@ class acf_field_post_object extends acf_field {
 		
 		// return_format
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Return Format','acf'),
+			'label'			=> __('Return Format','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'radio',
 			'name'			=> 'return_format',
 			'choices'		=> array(
-				'object'		=> __("Post Object",'acf'),
-				'id'			=> __("Post ID",'acf'),
+				'object'		=> __("Post Object",'food-truck'),
+				'id'			=> __("Post ID",'food-truck'),
 			),
 			'layout'	=>	'horizontal',
 		));

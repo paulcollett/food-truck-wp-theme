@@ -47,18 +47,18 @@ $atts['class'] = str_replace('_', '-', $atts['class']);
 	<div class="handle">
 		<ul class="acf-hl acf-tbody">
 			<li class="li-field-order">
-				<span class="acf-icon acf-sortable-handle" title="<?php _e('Drag to reorder','acf'); ?>"><?php echo ($i + 1); ?></span>
+				<span class="acf-icon acf-sortable-handle" title="<?php _e('Drag to reorder','food-truck'); ?>"><?php echo ($i + 1); ?></span>
 				<pre class="pre-field-key"><?php echo $field['key']; ?></pre>
 			</li>
 			<li class="li-field-label">
 				<strong>
-					<a class="edit-field" title="<?php _e("Edit field",'acf'); ?>" href="#"><?php echo acf_get_field_label($field); ?></a>
+					<a class="edit-field" title="<?php _e("Edit field",'food-truck'); ?>" href="#"><?php echo acf_get_field_label($field); ?></a>
 				</strong>
 				<div class="row-options">
-					<a class="edit-field" title="<?php _e("Edit field",'acf'); ?>" href="#"><?php _e("Edit",'acf'); ?></a>
-					<a class="duplicate-field" title="<?php _e("Duplicate field",'acf'); ?>" href="#"><?php _e("Duplicate",'acf'); ?></a>
-					<a class="move-field" title="<?php _e("Move field to another group",'acf'); ?>" href="#"><?php _e("Move",'acf'); ?></a>
-					<a class="delete-field" title="<?php _e("Delete field",'acf'); ?>" href="#"><?php _e("Delete",'acf'); ?></a>
+					<a class="edit-field" title="<?php _e("Edit field",'acf'); ?>" href="#"><?php _e("Edit",'food-truck'); ?></a>
+					<a class="duplicate-field" title="<?php _e("Duplicate field",'acf'); ?>" href="#"><?php _e("Duplicate",'food-truck'); ?></a>
+					<a class="move-field" title="<?php _e("Move field to another group",'acf'); ?>" href="#"><?php _e("Move",'food-truck'); ?></a>
+					<a class="delete-field" title="<?php _e("Delete field",'acf'); ?>" href="#"><?php _e("Delete",'food-truck'); ?></a>
 				</div>
 			</li>
 			<li class="li-field-name"><?php echo $field['name']; ?></li>
@@ -66,7 +66,7 @@ $atts['class'] = str_replace('_', '-', $atts['class']);
 				<?php if( acf_field_type_exists($field['type']) ): ?>
 					<?php echo acf_get_field_type_label($field['type']); ?>
 				<?php else: ?>
-					<b><?php _e('Error', 'acf'); ?></b> <?php _e('Field type does not exist', 'acf'); ?>
+					<b><?php _e('Error', 'acf'); ?></b> <?php _e('Field type does not exist', 'food-truck'); ?>
 				<?php endif; ?>
 			</li>	
 		</ul>
@@ -79,8 +79,8 @@ $atts['class'] = str_replace('_', '-', $atts['class']);
 		
 				// label
 				acf_render_field_wrap(array(
-					'label'			=> __('Field Label','acf'),
-					'instructions'	=> __('This is the name which will appear on the EDIT page','acf'),
+					'label'			=> __('Field Label','food-truck'),
+					'instructions'	=> __('This is the name which will appear on the EDIT page','food-truck'),
 					'required'		=> 1,
 					'type'			=> 'text',
 					'name'			=> 'label',
@@ -92,8 +92,8 @@ $atts['class'] = str_replace('_', '-', $atts['class']);
 				
 				// name
 				acf_render_field_wrap(array(
-					'label'			=> __('Field Name','acf'),
-					'instructions'	=> __('Single word, no spaces. Underscores and dashes allowed','acf'),
+					'label'			=> __('Field Name','food-truck'),
+					'instructions'	=> __('Single word, no spaces. Underscores and dashes allowed','food-truck'),
 					'required'		=> 1,
 					'type'			=> 'text',
 					'name'			=> 'name',
@@ -105,7 +105,7 @@ $atts['class'] = str_replace('_', '-', $atts['class']);
 				
 				// type
 				acf_render_field_wrap(array(
-					'label'			=> __('Field Type','acf'),
+					'label'			=> __('Field Type','food-truck'),
 					'instructions'	=> '',
 					'required'		=> 1,
 					'type'			=> 'select',
@@ -119,8 +119,8 @@ $atts['class'] = str_replace('_', '-', $atts['class']);
 				
 				// instructions
 				acf_render_field_wrap(array(
-					'label'			=> __('Instructions','acf'),
-					'instructions'	=> __('Instructions for authors. Shown when submitting data','acf'),
+					'label'			=> __('Instructions','food-truck'),
+					'instructions'	=> __('Instructions for authors. Shown when submitting data','food-truck'),
 					'type'			=> 'textarea',
 					'name'			=> 'instructions',
 					'prefix'		=> $field['prefix'],
@@ -131,15 +131,15 @@ $atts['class'] = str_replace('_', '-', $atts['class']);
 				
 				// required
 				acf_render_field_wrap(array(
-					'label'			=> __('Required?','acf'),
+					'label'			=> __('Required?','food-truck'),
 					'instructions'	=> '',
 					'type'			=> 'radio',
 					'name'			=> 'required',
 					'prefix'		=> $field['prefix'],
 					'value'			=> $field['required'],
 					'choices'		=> array(
-						1				=> __("Yes",'acf'),
-						0				=> __("No",'acf'),
+						1				=> __("Yes",'food-truck'),
+						0				=> __("No",'food-truck'),
 					),
 					'layout'		=> 'horizontal',
 					'class'			=> 'field-required'
@@ -160,13 +160,13 @@ $atts['class'] = str_replace('_', '-', $atts['class']);
 				
 				// wrapper
 				acf_render_field_wrap(array(
-					'label'			=> __('Wrapper Attributes','acf'),
+					'label'			=> __('Wrapper Attributes','food-truck'),
 					'instructions'	=> '',
 					'type'			=> 'text',
 					'name'			=> 'width',
 					'prefix'		=> $field['prefix'] . '[wrapper]',
 					'value'			=> $field['wrapper']['width'],
-					'prepend'		=> __('width', 'acf'),
+					'prepend'		=> __('width', 'food-truck'),
 					'append'		=> '%',
 					'wrapper'		=> array(
 						'data-name' => 'wrapper'
@@ -180,7 +180,7 @@ $atts['class'] = str_replace('_', '-', $atts['class']);
 					'name'			=> 'class',
 					'prefix'		=> $field['prefix'] . '[wrapper]',
 					'value'			=> $field['wrapper']['class'],
-					'prepend'		=> __('class', 'acf'),
+					'prepend'		=> __('class', 'food-truck'),
 					'wrapper'		=> array(
 						'data-append' => 'wrapper'
 					)
@@ -193,7 +193,7 @@ $atts['class'] = str_replace('_', '-', $atts['class']);
 					'name'			=> 'id',
 					'prefix'		=> $field['prefix'] . '[wrapper]',
 					'value'			=> $field['wrapper']['id'],
-					'prepend'		=> __('id', 'acf'),
+					'prepend'		=> __('id', 'food-truck'),
 					'wrapper'		=> array(
 						'data-append' => 'wrapper'
 					)
@@ -205,7 +205,7 @@ $atts['class'] = str_replace('_', '-', $atts['class']);
 					<td class="acf-input">
 						<ul class="acf-hl">
 							<li>
-								<a class="button edit-field" title="<?php _e("Close Field",'acf'); ?>" href="#"><?php _e("Close Field",'acf'); ?></a>
+								<a class="button edit-field" title="<?php _e("Close Field",'acf'); ?>" href="#"><?php _e("Close Field",'food-truck'); ?></a>
 							</li>
 						</ul>
 					</td>

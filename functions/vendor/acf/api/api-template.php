@@ -1011,7 +1011,7 @@ class acf_template_form {
 				'prefix'	=> 'acf',
 				'name'		=> '_post_title',
 				'key'		=> '_post_title',
-				'label'		=> __('Title', 'acf'),
+				'label'		=> __('Title', 'food-truck'),
 				'type'		=> 'text',
 				'required'	=> true,
 			),
@@ -1020,7 +1020,7 @@ class acf_template_form {
 				'prefix'	=> 'acf',
 				'name'		=> '_post_content',
 				'key'		=> '_post_content',
-				'label'		=> __('Content', 'acf'),
+				'label'		=> __('Content', 'food-truck'),
 				'type'		=> 'wysiwyg',
 			),
 			
@@ -1028,7 +1028,7 @@ class acf_template_form {
 				'prefix'	=> 'acf',
 				'name'		=> '_validate_email',
 				'key'		=> '_validate_email',
-				'label'		=> __('Validate Email', 'acf'),
+				'label'		=> __('Validate Email', 'food-truck'),
 				'type'		=> 'text',
 				'value'		=> '',
 				'wrapper'	=> array('style' => 'display:none !important;')
@@ -1078,7 +1078,7 @@ class acf_template_form {
 		// honeypot
 		if( !empty($_POST['acf']['_validate_email']) ) {
 			
-			acf_add_validation_error( '', __('Spam Detected', 'acf') );
+			acf_add_validation_error( '', __('Spam Detected', 'food-truck') );
 			
 		}
 		
@@ -1281,8 +1281,8 @@ class acf_template_form {
 			'return'				=> add_query_arg( 'updated', 'true', $url ),
 			'html_before_fields'	=> '',
 			'html_after_fields'		=> '',
-			'submit_value'			=> __("Update", 'acf'),
-			'updated_message'		=> __("Post updated", 'acf'),
+			'submit_value'			=> __("Update", 'food-truck'),
+			'updated_message'		=> __("Post updated", 'food-truck'),
 			'label_placement'		=> 'top',
 			'instruction_placement'	=> 'label',
 			'field_el'				=> 'div',

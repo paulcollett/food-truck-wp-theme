@@ -33,7 +33,7 @@ class acf_field_taxonomy extends acf_field {
 		
 		// vars
 		$this->name = 'taxonomy';
-		$this->label = __("Taxonomy",'acf');
+		$this->label = __("Taxonomy",'food-truck');
 		$this->category = 'relational';
 		$this->defaults = array(
 			'taxonomy' 			=> 'category',
@@ -704,7 +704,7 @@ class acf_field_taxonomy extends acf_field {
 		// vars
 		$args = array(
 			'taxonomy'     		=> $field['taxonomy'],
-			'show_option_none'	=> __('No', 'acf') . ' ' . $taxonomy_obj->labels->name,
+			'show_option_none'	=> __('No', 'food-truck') . ' ' . $taxonomy_obj->labels->name,
 			'hide_empty'   		=> false,
 			'style'        		=> 'none',
 			'walker'       		=> new acf_taxonomy_field_walker( $field ),
@@ -723,7 +723,7 @@ class acf_field_taxonomy extends acf_field {
 				<?php if( $field['field_type'] == 'radio' && $field['allow_null'] ): ?>
 					<li>
 						<label class="selectit">
-							<input type="radio" name="<?php echo $field['name']; ?>" value="" /> <?php _e("None", 'acf'); ?>
+							<input type="radio" name="<?php echo $field['name']; ?>" value="" /> <?php _e("None", 'food-truck'); ?>
 						</label>
 					</li>
 				<?php endif; ?>
@@ -754,8 +754,8 @@ class acf_field_taxonomy extends acf_field {
 		
 		// default_value
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Taxonomy','acf'),
-			'instructions'	=> __('Select the taxonomy to be displayed','acf'),
+			'label'			=> __('Taxonomy','food-truck'),
+			'instructions'	=> __('Select the taxonomy to be displayed','food-truck'),
 			'type'			=> 'select',
 			'name'			=> 'taxonomy',
 			'choices'		=> acf_get_taxonomies(),
@@ -764,19 +764,19 @@ class acf_field_taxonomy extends acf_field {
 		
 		// field_type
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Appearance','acf'),
-			'instructions'	=> __('Select the appearance of this field','acf'),
+			'label'			=> __('Appearance','food-truck'),
+			'instructions'	=> __('Select the appearance of this field','food-truck'),
 			'type'			=> 'select',
 			'name'			=> 'field_type',
 			'optgroup'		=> true,
 			'choices'		=> array(
-				__("Multiple Values",'acf') => array(
-					'checkbox' => __('Checkbox', 'acf'),
-					'multi_select' => __('Multi Select', 'acf')
+				__("Multiple Values",'food-truck') => array(
+					'checkbox' => __('Checkbox', 'food-truck'),
+					'multi_select' => __('Multi Select', 'food-truck')
 				),
-				__("Single Value",'acf') => array(
-					'radio' => __('Radio Buttons', 'acf'),
-					'select' => _x('Select', 'noun', 'acf')
+				__("Single Value",'food-truck') => array(
+					'radio' => __('Radio Buttons', 'food-truck'),
+					'select' => _x('Select', 'noun', 'food-truck')
 				)
 			)
 		));
@@ -784,13 +784,13 @@ class acf_field_taxonomy extends acf_field {
 		
 		// allow_null
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Allow Null?','acf'),
+			'label'			=> __('Allow Null?','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'radio',
 			'name'			=> 'allow_null',
 			'choices'		=> array(
-				1				=> __("Yes",'acf'),
-				0				=> __("No",'acf'),
+				1				=> __("Yes",'food-truck'),
+				0				=> __("No",'food-truck'),
 			),
 			'layout'	=>	'horizontal',
 		));
@@ -798,13 +798,13 @@ class acf_field_taxonomy extends acf_field {
 		
 		// add_term
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Create Terms','acf'),
-			'instructions'	=> __('Allow new terms to be created whilst editing','acf'),
+			'label'			=> __('Create Terms','food-truck'),
+			'instructions'	=> __('Allow new terms to be created whilst editing','food-truck'),
 			'type'			=> 'radio',
 			'name'			=> 'add_term',
 			'choices'		=> array(
-				1				=> __("Yes",'acf'),
-				0				=> __("No",'acf'),
+				1				=> __("Yes",'food-truck'),
+				0				=> __("No",'food-truck'),
 			),
 			'layout'	=>	'horizontal',
 		));
@@ -812,13 +812,13 @@ class acf_field_taxonomy extends acf_field {
 		
 		// save_terms
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Save Terms','acf'),
-			'instructions'	=> __('Connect selected terms to the post','acf'),
+			'label'			=> __('Save Terms','food-truck'),
+			'instructions'	=> __('Connect selected terms to the post','food-truck'),
 			'type'			=> 'radio',
 			'name'			=> 'save_terms',
 			'choices'		=> array(
-				1				=> __("Yes",'acf'),
-				0				=> __("No",'acf'),
+				1				=> __("Yes",'food-truck'),
+				0				=> __("No",'food-truck'),
 			),
 			'layout'	=>	'horizontal',
 		));
@@ -826,13 +826,13 @@ class acf_field_taxonomy extends acf_field {
 		
 		// load_terms
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Load Terms','acf'),
-			'instructions'	=> __('Load value from posts terms','acf'),
+			'label'			=> __('Load Terms','food-truck'),
+			'instructions'	=> __('Load value from posts terms','food-truck'),
 			'type'			=> 'radio',
 			'name'			=> 'load_terms',
 			'choices'		=> array(
-				1				=> __("Yes",'acf'),
-				0				=> __("No",'acf'),
+				1				=> __("Yes",'food-truck'),
+				0				=> __("No",'food-truck'),
 			),
 			'layout'	=>	'horizontal',
 		));
@@ -840,13 +840,13 @@ class acf_field_taxonomy extends acf_field {
 		
 		// return_format
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Return Value','acf'),
+			'label'			=> __('Return Value','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'radio',
 			'name'			=> 'return_format',
 			'choices'		=> array(
-				'object'		=>	__("Term Object",'acf'),
-				'id'			=>	__("Term ID",'acf')
+				'object'		=>	__("Term Object",'food-truck'),
+				'id'			=>	__("Term ID",'food-truck')
 			),
 			'layout'	=>	'horizontal',
 		));
@@ -905,7 +905,7 @@ class acf_field_taxonomy extends acf_field {
 		// note: this situation should never occur due to condition of the add new button
 		if( !current_user_can( $taxonomy_obj->cap->manage_terms) ) {
 			
-			echo '<p><strong>' . __("Error", 'acf') . '.</strong> ' . sprintf( __('User unable to add new %s', 'acf'), $taxonomy_label ) . '</p>';
+			echo '<p><strong>' . __("Error", 'acf') . '.</strong> ' . sprintf( __('User unable to add new %s', 'food-truck'), $taxonomy_label ) . '</p>';
 			die;
 			
 		}
@@ -918,7 +918,7 @@ class acf_field_taxonomy extends acf_field {
 			if( term_exists($args['term_name'], $field['taxonomy']) ) {
 				
 				wp_send_json_error(array(
-					'error'	=> sprintf( __('%s already exists', 'acf'), $taxonomy_label )
+					'error'	=> sprintf( __('%s already exists', 'food-truck'), $taxonomy_label )
 				));
 			
 			}
@@ -959,7 +959,7 @@ class acf_field_taxonomy extends acf_field {
 		
 			// success
 			wp_send_json_success(array(
-				'message'		=> sprintf( __('%s added', 'acf'), $taxonomy_label ),
+				'message'		=> sprintf( __('%s added', 'food-truck'), $taxonomy_label ),
 				'term_id'		=> $data['term_id'],
 				'term_name'		=> $args['term_name'],
 				'term_label'	=> $prefix . $args['term_name'],
@@ -971,7 +971,7 @@ class acf_field_taxonomy extends acf_field {
 		?><form method="post"><?php
 		
 		acf_render_field_wrap(array(
-			'label'			=> __('Name', 'acf'),
+			'label'			=> __('Name', 'food-truck'),
 			'name'			=> 'term_name',
 			'type'			=> 'text'
 		));
@@ -993,7 +993,7 @@ class acf_field_taxonomy extends acf_field {
 			}
 			
 			acf_render_field_wrap(array(
-				'label'			=> __('Parent', 'acf'),
+				'label'			=> __('Parent', 'food-truck'),
 				'name'			=> 'term_parent',
 				'type'			=> 'select',
 				'allow_null'	=> 1,
@@ -1004,7 +1004,7 @@ class acf_field_taxonomy extends acf_field {
 		}
 		
 		
-		?><p class="acf-submit"><button class="acf-button button button-primary" type="submit"><?php _e("Add", 'acf'); ?></button><i class="acf-spinner"></i><span></span></p></form><?php
+		?><p class="acf-submit"><button class="acf-button button button-primary" type="submit"><?php _e("Add", 'food-truck'); ?></button><i class="acf-spinner"></i><span></span></p></form><?php
 		
 		
 		// die

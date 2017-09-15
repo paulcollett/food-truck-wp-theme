@@ -93,7 +93,7 @@ class acf_admin_update_network {
 		
 		
 		// add page
-		$page = site_add_theme_subpage('index.php', __('Upgrade Database','acf'), __('Upgrade Database','acf'), acf_get_setting('capability'), 'acf-upgrade', array($this,'network_html'));
+		$page = site_add_theme_subpage('index.php', __('Upgrade Database','food-truck'), __('Upgrade Database','food-truck'), acf_get_setting('capability'), 'acf-upgrade', array($this,'network_html'));
 		
 		
 		// actions
@@ -145,7 +145,7 @@ class acf_admin_update_network {
 			
 		// view
 		$view = array(
-			'button_text'	=> __("Review sites & upgrade", 'acf'),
+			'button_text'	=> __("Review sites & upgrade", 'food-truck'),
 			'button_url'	=> network_admin_url('index.php?page=acf-upgrade'),
 			'confirm'		=> false
 		);

@@ -20,15 +20,15 @@ $preg_replace = array(
 ?>
 <div class="wrap acf-settings-wrap">
 	
-	<h1><?php _e('Tools', 'acf'); ?></h1>
+	<h1><?php _e('Tools', 'food-truck'); ?></h1>
 	
 	<div class="acf-box">
 		<div class="title">
-			<h3><?php _e('Export Field Groups to PHP', 'acf'); ?></h3>
+			<h3><?php _e('Export Field Groups to PHP', 'food-truck'); ?></h3>
 		</div>
 		
 		<div class="inner">
-			<p><?php _e("The following code can be used to register a local version of the selected field group(s). A local field group can provide many benefits such as faster load times, version control & dynamic fields/settings. Simply copy and paste the following code to your theme's functions.php file or include it within an external file.", 'acf'); ?></p>
+			<p><?php _e("The following code can be used to register a local version of the selected field group(s). A local field group can provide many benefits such as faster load times, version control & dynamic fields/settings. Simply copy and paste the following code to your theme's functions.php file or include it within an external file.", 'food-truck'); ?></p>
 			
 			<textarea class="pre" readonly="true"><?php
 			

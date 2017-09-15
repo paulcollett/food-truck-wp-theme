@@ -101,7 +101,7 @@ class acf_admin_update {
 		
 		
 		// add page
-		$page = site_add_theme_subpage('edit.php?post_type=acf-field-group', __('Upgrade Database','acf'), __('Upgrade Database','acf'), acf_get_setting('capability'), 'acf-upgrade', array($this,'html') );
+		$page = site_add_theme_subpage('edit.php?post_type=acf-field-group', __('Upgrade Database','acf'), __('Upgrade Database','food-truck'), acf_get_setting('capability'), 'acf-upgrade', array($this,'html') );
 		
 		
 		// actions
@@ -152,7 +152,7 @@ class acf_admin_update {
 		
 		// view
 		$view = array(
-			'button_text'	=> __("Upgrade Database", 'acf'),
+			'button_text'	=> __("Upgrade Database", 'food-truck'),
 			'button_url'	=> admin_url('edit.php?post_type=acf-field-group&page=acf-upgrade')
 		);
 		
@@ -217,7 +217,7 @@ class acf_admin_update {
 		if( !wp_verify_nonce($options['nonce'], 'acf_upgrade') ) {
 		
 			wp_send_json_error(array(
-				'message' => __('Error validating request', 'acf')
+				'message' => __('Error validating request', 'food-truck')
 			));	
 			
 		}
@@ -240,7 +240,7 @@ class acf_admin_update {
 		if( empty($updates) ) {
 			
 			wp_send_json_error(array(
-				'message' => __('No updates available', 'acf')
+				'message' => __('No updates available', 'food-truck')
 			));	
 			
 		}
@@ -257,7 +257,7 @@ class acf_admin_update {
 			if( !file_exists($path) ) {
 			
 				wp_send_json_error(array(
-					'message' => __('Error loading update', 'acf')
+					'message' => __('Error loading update', 'food-truck')
 				));	
 				
 			}

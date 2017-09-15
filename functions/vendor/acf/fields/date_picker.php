@@ -33,7 +33,7 @@ class acf_field_date_picker extends acf_field {
 		
 		// vars
 		$this->name = 'date_picker';
-		$this->label = __("Date Picker",'acf');
+		$this->label = __("Date Picker",'food-truck');
 		$this->category = 'jquery';
 		$this->defaults = array(
 			'display_format'	=> 'd/m/Y',
@@ -41,11 +41,11 @@ class acf_field_date_picker extends acf_field {
 			'first_day'			=> 1
 		);
 		$this->l10n = array(
-			'closeText'			=> _x('Done',	'Date Picker JS closeText',		'acf'),
-			'currentText'		=> _x('Today',	'Date Picker JS currentText',	'acf'),
-			'nextText'			=> _x('Next',	'Date Picker JS nextText',		'acf'),
-			'prevText'			=> _x('Prev',	'Date Picker JS prevText',		'acf'),
-			'weekHeader'		=> _x('Wk',		'Date Picker JS weekHeader',	'acf'),
+			'closeText'			=> _x('Done',	'Date Picker JS closeText',		'food-truck'),
+			'currentText'		=> _x('Today',	'Date Picker JS currentText',	'food-truck'),
+			'nextText'			=> _x('Next',	'Date Picker JS nextText',		'food-truck'),
+			'prevText'			=> _x('Prev',	'Date Picker JS prevText',		'food-truck'),
+			'weekHeader'		=> _x('Wk',		'Date Picker JS weekHeader',	'food-truck'),
 		);
 		
 		
@@ -194,8 +194,8 @@ class acf_field_date_picker extends acf_field {
 		
 		// display_format
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Display Format','acf'),
-			'instructions'	=> __('The format displayed when editing a post','acf'),
+			'label'			=> __('Display Format','food-truck'),
+			'instructions'	=> __('The format displayed when editing a post','food-truck'),
 			'type'			=> 'radio',
 			'name'			=> 'display_format',
 			'other_choice'	=> 1,
@@ -209,8 +209,8 @@ class acf_field_date_picker extends acf_field {
 		
 		// return_format
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Return Format','acf'),
-			'instructions'	=> __('The format returned via template functions','acf'),
+			'label'			=> __('Return Format','food-truck'),
+			'instructions'	=> __('The format returned via template functions','food-truck'),
 			'type'			=> 'radio',
 			'name'			=> 'return_format',
 			'other_choice'	=> 1,
@@ -225,7 +225,7 @@ class acf_field_date_picker extends acf_field {
 		
 		// first_day
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Week Starts On','acf'),
+			'label'			=> __('Week Starts On','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'select',
 			'name'			=> 'first_day',

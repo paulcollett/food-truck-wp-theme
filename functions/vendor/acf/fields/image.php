@@ -33,7 +33,7 @@ class acf_field_image extends acf_field {
 		
 		// vars
 		$this->name = 'image';
-		$this->label = __("Image",'acf');
+		$this->label = __("Image",'food-truck');
 		$this->category = 'content';
 		$this->defaults = array(
 			'return_format'	=> 'array',
@@ -48,11 +48,11 @@ class acf_field_image extends acf_field {
 			'mime_types'	=> ''
 		);
 		$this->l10n = array(
-			'select'		=> __("Select Image",'acf'),
-			'edit'			=> __("Edit Image",'acf'),
-			'update'		=> __("Update Image",'acf'),
-			'uploadedTo'	=> __("Uploaded to this post",'acf'),
-			'all'			=> __("All images",'acf'),
+			'select'		=> __("Select Image",'food-truck'),
+			'edit'			=> __("Edit Image",'food-truck'),
+			'update'		=> __("Update Image",'food-truck'),
+			'uploadedTo'	=> __("Uploaded to this post",'food-truck'),
+			'all'			=> __("All images",'food-truck'),
 		);
 		
 		
@@ -139,9 +139,9 @@ class acf_field_image extends acf_field {
 		<img data-name="image" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>"/>
 		<ul class="acf-hl acf-soh-target">
 			<?php if( $uploader != 'basic' ): ?>
-				<li><a class="acf-icon -pencil dark" data-name="edit" href="#" title="<?php _e('Edit', 'acf'); ?>"></a></li>
+				<li><a class="acf-icon -pencil dark" data-name="edit" href="#" title="<?php _e('Edit', 'food-truck'); ?>"></a></li>
 			<?php endif; ?>
-			<li><a class="acf-icon -cancel dark" data-name="remove" href="#" title="<?php _e('Remove', 'acf'); ?>"></a></li>
+			<li><a class="acf-icon -cancel dark" data-name="remove" href="#" title="<?php _e('Remove', 'food-truck'); ?>"></a></li>
 		</ul>
 	</div>
 	<div class="view hide-if-value">
@@ -155,7 +155,7 @@ class acf_field_image extends acf_field {
 			
 		<?php else: ?>
 			
-			<p style="margin:0;"><?php _e('No image selected','acf'); ?> <a data-name="add" class="acf-button button" href="#"><?php _e('Add Image','acf'); ?></a></p>
+			<p style="margin:0;"><?php _e('No image selected','acf'); ?> <a data-name="add" class="acf-button button" href="#"><?php _e('Add Image','food-truck'); ?></a></p>
 			
 		<?php endif; ?>
 	</div>
@@ -203,23 +203,23 @@ class acf_field_image extends acf_field {
 		
 		// return_format
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Return Value','acf'),
-			'instructions'	=> __('Specify the returned value on front end','acf'),
+			'label'			=> __('Return Value','food-truck'),
+			'instructions'	=> __('Specify the returned value on front end','food-truck'),
 			'type'			=> 'radio',
 			'name'			=> 'return_format',
 			'layout'		=> 'horizontal',
 			'choices'		=> array(
-				'array'			=> __("Image Array",'acf'),
-				'url'			=> __("Image URL",'acf'),
-				'id'			=> __("Image ID",'acf')
+				'array'			=> __("Image Array",'food-truck'),
+				'url'			=> __("Image URL",'food-truck'),
+				'id'			=> __("Image ID",'food-truck')
 			)
 		));
 		
 		
 		// preview_size
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Preview Size','acf'),
-			'instructions'	=> __('Shown when entering data','acf'),
+			'label'			=> __('Preview Size','food-truck'),
+			'instructions'	=> __('Shown when entering data','food-truck'),
 			'type'			=> 'select',
 			'name'			=> 'preview_size',
 			'choices'		=> acf_get_image_sizes()
@@ -228,25 +228,25 @@ class acf_field_image extends acf_field {
 		
 		// library
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Library','acf'),
-			'instructions'	=> __('Limit the media library choice','acf'),
+			'label'			=> __('Library','food-truck'),
+			'instructions'	=> __('Limit the media library choice','food-truck'),
 			'type'			=> 'radio',
 			'name'			=> 'library',
 			'layout'		=> 'horizontal',
 			'choices' 		=> array(
-				'all'			=> __('All', 'acf'),
-				'uploadedTo'	=> __('Uploaded to post', 'acf')
+				'all'			=> __('All', 'food-truck'),
+				'uploadedTo'	=> __('Uploaded to post', 'food-truck')
 			)
 		));
 		
 		
 		// min
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Minimum','acf'),
-			'instructions'	=> __('Restrict which images can be uploaded','acf'),
+			'label'			=> __('Minimum','food-truck'),
+			'instructions'	=> __('Restrict which images can be uploaded','food-truck'),
 			'type'			=> 'text',
 			'name'			=> 'min_width',
-			'prepend'		=> __('Width', 'acf'),
+			'prepend'		=> __('Width', 'food-truck'),
 			'append'		=> 'px',
 		));
 		
@@ -254,7 +254,7 @@ class acf_field_image extends acf_field {
 			'label'			=> '',
 			'type'			=> 'text',
 			'name'			=> 'min_height',
-			'prepend'		=> __('Height', 'acf'),
+			'prepend'		=> __('Height', 'food-truck'),
 			'append'		=> 'px',
 			'wrapper'		=> array(
 				'data-append' => 'min_width'
@@ -265,7 +265,7 @@ class acf_field_image extends acf_field {
 			'label'			=> '',
 			'type'			=> 'text',
 			'name'			=> 'min_size',
-			'prepend'		=> __('File size', 'acf'),
+			'prepend'		=> __('File size', 'food-truck'),
 			'append'		=> 'MB',
 			'wrapper'		=> array(
 				'data-append' => 'min_width'
@@ -275,11 +275,11 @@ class acf_field_image extends acf_field {
 		
 		// max
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Maximum','acf'),
-			'instructions'	=> __('Restrict which images can be uploaded','acf'),
+			'label'			=> __('Maximum','food-truck'),
+			'instructions'	=> __('Restrict which images can be uploaded','food-truck'),
 			'type'			=> 'text',
 			'name'			=> 'max_width',
-			'prepend'		=> __('Width', 'acf'),
+			'prepend'		=> __('Width', 'food-truck'),
 			'append'		=> 'px',
 		));
 		
@@ -287,7 +287,7 @@ class acf_field_image extends acf_field {
 			'label'			=> '',
 			'type'			=> 'text',
 			'name'			=> 'max_height',
-			'prepend'		=> __('Height', 'acf'),
+			'prepend'		=> __('Height', 'food-truck'),
 			'append'		=> 'px',
 			'wrapper'		=> array(
 				'data-append' => 'max_width'
@@ -298,7 +298,7 @@ class acf_field_image extends acf_field {
 			'label'			=> '',
 			'type'			=> 'text',
 			'name'			=> 'max_size',
-			'prepend'		=> __('File size', 'acf'),
+			'prepend'		=> __('File size', 'food-truck'),
 			'append'		=> 'MB',
 			'wrapper'		=> array(
 				'data-append' => 'max_width'
@@ -308,8 +308,8 @@ class acf_field_image extends acf_field {
 		
 		// allowed type
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Allowed file types','acf'),
-			'instructions'	=> __('Comma separated list. Leave blank for all types','acf'),
+			'label'			=> __('Allowed file types','food-truck'),
+			'instructions'	=> __('Comma separated list. Leave blank for all types','food-truck'),
 			'type'			=> 'text',
 			'name'			=> 'mime_types',
 		));

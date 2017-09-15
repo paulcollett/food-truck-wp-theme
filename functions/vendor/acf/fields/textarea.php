@@ -33,7 +33,7 @@ class acf_field_textarea extends acf_field {
 		
 		// vars
 		$this->name = 'textarea';
-		$this->label = __("Text Area",'acf');
+		$this->label = __("Text Area",'food-truck');
 		$this->defaults = array(
 			'default_value'	=> '',
 			'new_lines'		=> '',
@@ -136,8 +136,8 @@ class acf_field_textarea extends acf_field {
 		
 		// default_value
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Default Value','acf'),
-			'instructions'	=> __('Appears when creating a new post','acf'),
+			'label'			=> __('Default Value','food-truck'),
+			'instructions'	=> __('Appears when creating a new post','food-truck'),
 			'type'			=> 'textarea',
 			'name'			=> 'default_value',
 		));
@@ -145,8 +145,8 @@ class acf_field_textarea extends acf_field {
 		
 		// placeholder
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Placeholder Text','acf'),
-			'instructions'	=> __('Appears within the input','acf'),
+			'label'			=> __('Placeholder Text','food-truck'),
+			'instructions'	=> __('Appears within the input','food-truck'),
 			'type'			=> 'text',
 			'name'			=> 'placeholder',
 		));
@@ -154,8 +154,8 @@ class acf_field_textarea extends acf_field {
 		
 		// maxlength
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Character Limit','acf'),
-			'instructions'	=> __('Leave blank for no limit','acf'),
+			'label'			=> __('Character Limit','food-truck'),
+			'instructions'	=> __('Leave blank for no limit','food-truck'),
 			'type'			=> 'number',
 			'name'			=> 'maxlength',
 		));
@@ -163,8 +163,8 @@ class acf_field_textarea extends acf_field {
 		
 		// rows
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Rows','acf'),
-			'instructions'	=> __('Sets the textarea height','acf'),
+			'label'			=> __('Rows','food-truck'),
+			'instructions'	=> __('Sets the textarea height','food-truck'),
 			'type'			=> 'number',
 			'name'			=> 'rows',
 			'placeholder'	=> 8
@@ -173,14 +173,14 @@ class acf_field_textarea extends acf_field {
 		
 		// formatting
 		acf_render_field_setting( $field, array(
-			'label'			=> __('New Lines','acf'),
-			'instructions'	=> __('Controls how new lines are rendered','acf'),
+			'label'			=> __('New Lines','food-truck'),
+			'instructions'	=> __('Controls how new lines are rendered','food-truck'),
 			'type'			=> 'select',
 			'name'			=> 'new_lines',
 			'choices'		=> array(
-				'wpautop'		=> __("Automatically add paragraphs",'acf'),
-				'br'			=> __("Automatically add &lt;br&gt;",'acf'),
-				''				=> __("No Formatting",'acf')
+				'wpautop'		=> __("Automatically add paragraphs",'food-truck'),
+				'br'			=> __("Automatically add &lt;br&gt;",'food-truck'),
+				''				=> __("No Formatting",'food-truck')
 			)
 		));
 		

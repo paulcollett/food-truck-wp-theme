@@ -73,7 +73,7 @@ function acfgfs_setup_nag() {
 	if( !defined( 'ACFGFS_API_KEY' ) && !get_option('acfgfs_api_key') ) :
     ?>
     <div class="update-nag">
-        <p><?php echo sprintf( __( 'The Google Font Selector Field requires an Google API key to work. You can set your API key on the <a href="%s">options page</a>. If you need help getting an API key <a href="%s">click here</a>', 'acf-google-font-selector-field' ), admin_url( 'options-general.php?page=acfgfs-settings' ), 'https://wordpress.org/plugins/acf-google-font-selector-field/'  ); ?></p>
+        <p><?php echo sprintf( __( 'The Google Font Selector Field requires an Google API key to work. You can set your API key on the <a href="%s">options page</a>. If you need help getting an API key <a href="%s">click here</a>', 'food-truck'), admin_url( 'options-general.php?page=acfgfs-settings' ), 'https://wordpress.org/plugins/acf-google-font-selector-field/'  ); ?></p>
     </div>
     <?php
 	endif;
@@ -94,7 +94,7 @@ function acfgfs_settings_page() {
 	if( !defined('ACFGFS_API_KEY') ) {
     	//add options page
         //( _x
-        //( 'Google Font Selector', 'In the title tag of the page', 'acf-google-font-selector-field'  ), _x( 'Google Font Selector', 'Menu title',  'acf-google-font-selector-field' ), 'manage_options', 'acfgfs-settings', 'acfgfs_settings_page_content');
+        //( 'Google Font Selector', 'In the title tag of the page', 'acf-google-font-selector-field'  ), _x( 'Google Font Selector', 'Menu title',  'food-truck'), 'manage_options', 'acfgfs-settings', 'acfgfs_settings_page_content');
 
     	//add_action( 'admin_init', 'acfgfs_register_settings' );
 	}
@@ -128,14 +128,14 @@ function acfgfs_register_settings() {
 function acfgfs_settings_page_content() {
 ?>
 <div class="wrap">
-<h2><?php _e( 'Google Font Selector', 'acf-google-font-selector-field' ) ?></h2>
+<h2><?php _e( 'Google Font Selector', 'food-truck') ?></h2>
 
 <form method="post" action="options.php">
     <?php settings_fields( 'acfgfs' ); ?>
     <?php do_settings_sections( 'acfgfs' ); ?>
     <table class="form-table">
         <tr valign="top">
-        <th scope="row"><?php _e( 'Google API Key', 'acf-google-font-selector-field' ) ?></th>
+        <th scope="row"><?php _e( 'Google API Key', 'food-truck') ?></th>
         <td><input type="text" name="acfgfs_api_key" value="<?php echo esc_attr( get_option('acfgfs_api_key') ); ?>" /></td>
         </tr>
     </table>
@@ -149,7 +149,7 @@ function acfgfs_settings_page_content() {
 
             if( !empty( $response['error']['errors'] ) ) {
                 echo '<div id="acfgfs-api-key-error" class="error acfgfs-error">
-<p><strong>' . __( 'We tried to verify your API key but it seems it is incorrect. Make sure to copy-paste it from Google exactly.', 'acf-google-font-selector-field' ) . '</strong></p></div>';
+<p><strong>' . __( 'We tried to verify your API key but it seems it is incorrect. Make sure to copy-paste it from Google exactly.', 'food-truck') . '</strong></p></div>';
             }
         }
     ?>

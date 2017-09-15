@@ -33,7 +33,7 @@ class acf_field_url extends acf_field {
 		
 		// vars
 		$this->name = 'url';
-		$this->label = __("Url",'acf');
+		$this->label = __("Url",'food-truck');
 		$this->defaults = array(
 			'default_value'	=> '',
 			'placeholder'	=> '',
@@ -111,8 +111,8 @@ class acf_field_url extends acf_field {
 		
 		// default_value
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Default Value','acf'),
-			'instructions'	=> __('Appears when creating a new post','acf'),
+			'label'			=> __('Default Value','food-truck'),
+			'instructions'	=> __('Appears when creating a new post','food-truck'),
 			'type'			=> 'text',
 			'name'			=> 'default_value',
 		));
@@ -120,8 +120,8 @@ class acf_field_url extends acf_field {
 		
 		// placeholder
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Placeholder Text','acf'),
-			'instructions'	=> __('Appears within the input','acf'),
+			'label'			=> __('Placeholder Text','food-truck'),
+			'instructions'	=> __('Appears within the input','food-truck'),
 			'type'			=> 'text',
 			'name'			=> 'placeholder',
 		));
@@ -162,7 +162,7 @@ class acf_field_url extends acf_field {
 			
 		} else {
 			
-			$valid = __('Value must be a valid URL', 'acf');
+			$valid = __('Value must be a valid URL', 'food-truck');
 			
 		}
 		

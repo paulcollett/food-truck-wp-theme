@@ -33,7 +33,7 @@ class acf_field_color_picker extends acf_field {
 		
 		// vars
 		$this->name = 'color_picker';
-		$this->label = __("Color Picker",'acf');
+		$this->label = __("Color Picker",'food-truck');
 		$this->category = 'jquery';
 		$this->defaults = array(
 			'default_value'	=> '',
@@ -80,10 +80,10 @@ class acf_field_color_picker extends acf_field {
 			
 			// localize
 		    wp_localize_script('wp-color-picker', 'wpColorPickerL10n', array(
-		        'clear'			=> __('Clear', 'acf' ),
-		        'defaultString'	=> __('Default', 'acf' ),
-		        'pick'			=> __('Select Color', 'acf' ),
-		        'current'		=> __('Current Color', 'acf' )
+		        'clear'			=> __('Clear', 'food-truck'),
+		        'defaultString'	=> __('Default', 'food-truck'),
+		        'pick'			=> __('Select Color', 'food-truck'),
+		        'current'		=> __('Current Color', 'food-truck')
 		    )); 
 			
 		}
@@ -144,7 +144,7 @@ class acf_field_color_picker extends acf_field {
 		
 		// display_format
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Default Value','acf'),
+			'label'			=> __('Default Value','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'text',
 			'name'			=> 'default_value',

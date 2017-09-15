@@ -33,7 +33,7 @@ class acf_field_radio extends acf_field {
 		
 		// vars
 		$this->name = 'radio';
-		$this->label = __("Radio Button",'acf');
+		$this->label = __("Radio Button",'food-truck');
 		$this->category = 'choice';
 		$this->defaults = array(
 			'layout'			=> 'vertical',
@@ -238,8 +238,8 @@ class acf_field_radio extends acf_field {
 		
 		// choices
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Choices','acf'),
-			'instructions'	=> __('Enter each choice on a new line.','acf') . '<br /><br />' . __('For more control, you may specify both a value and label like this:','acf'). '<br /><br />' . __('red : Red','acf'),
+			'label'			=> __('Choices','food-truck'),
+			'instructions'	=> __('Enter each choice on a new line.','acf') . '<br /><br />' . __('For more control, you may specify both a value and label like this:','acf'). '<br /><br />' . __('red : Red','food-truck'),
 			'type'			=> 'textarea',
 			'name'			=> 'choices',
 		));
@@ -247,13 +247,13 @@ class acf_field_radio extends acf_field {
 		
 		// allow_null
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Allow Null?','acf'),
+			'label'			=> __('Allow Null?','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'radio',
 			'name'			=> 'allow_null',
 			'choices'		=> array(
-				1				=> __("Yes",'acf'),
-				0				=> __("No",'acf'),
+				1				=> __("Yes",'food-truck'),
+				0				=> __("No",'food-truck'),
 			),
 			'layout'	=>	'horizontal',
 		));
@@ -261,28 +261,28 @@ class acf_field_radio extends acf_field {
 		
 		// other_choice
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Other','acf'),
+			'label'			=> __('Other','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'true_false',
 			'name'			=> 'other_choice',
-			'message'		=> __("Add 'other' choice to allow for custom values", 'acf')
+			'message'		=> __("Add 'other' choice to allow for custom values", 'food-truck')
 		));
 		
 		
 		// save_other_choice
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Save Other','acf'),
+			'label'			=> __('Save Other','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'true_false',
 			'name'			=> 'save_other_choice',
-			'message'		=> __("Save 'other' values to the field's choices", 'acf')
+			'message'		=> __("Save 'other' values to the field's choices", 'food-truck')
 		));
 		
 		
 		// default_value
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Default Value','acf'),
-			'instructions'	=> __('Appears when creating a new post','acf'),
+			'label'			=> __('Default Value','food-truck'),
+			'instructions'	=> __('Appears when creating a new post','food-truck'),
 			'type'			=> 'text',
 			'name'			=> 'default_value',
 		));
@@ -290,29 +290,29 @@ class acf_field_radio extends acf_field {
 		
 		// layout
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Layout','acf'),
+			'label'			=> __('Layout','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'radio',
 			'name'			=> 'layout',
 			'layout'		=> 'horizontal', 
 			'choices'		=> array(
-				'vertical'		=> __("Vertical",'acf'), 
-				'horizontal'	=> __("Horizontal",'acf')
+				'vertical'		=> __("Vertical",'food-truck'), 
+				'horizontal'	=> __("Horizontal",'food-truck')
 			)
 		));
 		
 		
 		// return_format
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Return Value','acf'),
-			'instructions'	=> __('Specify the returned value on front end','acf'),
+			'label'			=> __('Return Value','food-truck'),
+			'instructions'	=> __('Specify the returned value on front end','food-truck'),
 			'type'			=> 'radio',
 			'name'			=> 'return_format',
 			'layout'		=> 'horizontal',
 			'choices'		=> array(
-				'value'			=> __('Value','acf'),
-				'label'			=> __('Label','acf'),
-				'array'			=> __('Both (Array)','acf')
+				'value'			=> __('Value','food-truck'),
+				'label'			=> __('Label','food-truck'),
+				'array'			=> __('Both (Array)','food-truck')
 			)
 		));
 		

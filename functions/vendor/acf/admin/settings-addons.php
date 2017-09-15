@@ -48,7 +48,7 @@ class acf_settings_addons {
 
 
 		// add page
-		$page = site_add_theme_subpage('edit.php?post_type=acf-field-group', __('Add-ons','acf'), __('Add-ons','acf'), acf_get_setting('capability'),'acf-settings-addons', array($this,'html') );
+		$page = site_add_theme_subpage('edit.php?post_type=acf-field-group', __('Add-ons','acf'), __('Add-ons','food-truck'), acf_get_setting('capability'),'acf-settings-addons', array($this,'html') );
 
 
 		// actions

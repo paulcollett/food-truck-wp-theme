@@ -33,7 +33,7 @@ class acf_field_google_map extends acf_field {
 		
 		// vars
 		$this->name = 'google_map';
-		$this->label = __("Google Map",'acf');
+		$this->label = __("Google Map",'food-truck');
 		$this->category = 'jquery';
 		$this->defaults = array(
 			'height'		=> '',
@@ -48,8 +48,8 @@ class acf_field_google_map extends acf_field {
 			'zoom'			=> '14'
 		);
 		$this->l10n = array(
-			'locating'			=> __("Locating",'acf'),
-			'browser_support'	=> __("Sorry, this browser does not support geolocation",'acf'),
+			'locating'			=> __("Locating",'food-truck'),
+			'browser_support'	=> __("Sorry, this browser does not support geolocation",'food-truck'),
 		);
 		
 		
@@ -129,12 +129,12 @@ class acf_field_google_map extends acf_field {
 	<div class="title acf-soh">
 		
 		<div class="actions acf-soh-target">
-			<a href="#" data-name="search" class="acf-icon -search grey" title="<?php _e("Search", 'acf'); ?>"></a>
-			<a href="#" data-name="clear" class="acf-icon -cancel grey" title="<?php _e("Clear location", 'acf'); ?>"></a>
-			<a href="#" data-name="locate" class="acf-icon -location grey" title="<?php _e("Find current location", 'acf'); ?>"></a>
+			<a href="#" data-name="search" class="acf-icon -search grey" title="<?php _e("Search", 'food-truck'); ?>"></a>
+			<a href="#" data-name="clear" class="acf-icon -cancel grey" title="<?php _e("Clear location", 'food-truck'); ?>"></a>
+			<a href="#" data-name="locate" class="acf-icon -location grey" title="<?php _e("Find current location", 'food-truck'); ?>"></a>
 		</div>
 		
-		<input class="search" type="text" placeholder="<?php _e("Search for address...",'acf'); ?>" value="<?php echo $field['value']['address']; ?>" />
+		<input class="search" type="text" placeholder="<?php _e("Search for address...",'food-truck'); ?>" value="<?php echo $field['value']['address']; ?>" />
 		<i class="acf-loading"></i>
 				
 	</div>
@@ -164,8 +164,8 @@ class acf_field_google_map extends acf_field {
 		
 		// center_lat
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Center','acf'),
-			'instructions'	=> __('Center the initial map','acf'),
+			'label'			=> __('Center','food-truck'),
+			'instructions'	=> __('Center the initial map','food-truck'),
 			'type'			=> 'text',
 			'name'			=> 'center_lat',
 			'prepend'		=> 'lat',
@@ -175,8 +175,8 @@ class acf_field_google_map extends acf_field {
 		
 		// center_lng
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Center','acf'),
-			'instructions'	=> __('Center the initial map','acf'),
+			'label'			=> __('Center','food-truck'),
+			'instructions'	=> __('Center the initial map','food-truck'),
 			'type'			=> 'text',
 			'name'			=> 'center_lng',
 			'prepend'		=> 'lng',
@@ -189,8 +189,8 @@ class acf_field_google_map extends acf_field {
 		
 		// zoom
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Zoom','acf'),
-			'instructions'	=> __('Set the initial zoom level','acf'),
+			'label'			=> __('Zoom','food-truck'),
+			'instructions'	=> __('Set the initial zoom level','food-truck'),
 			'type'			=> 'text',
 			'name'			=> 'zoom',
 			'placeholder'	=> $this->default_values['zoom']
@@ -199,8 +199,8 @@ class acf_field_google_map extends acf_field {
 		
 		// allow_null
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Height','acf'),
-			'instructions'	=> __('Customise the map height','acf'),
+			'label'			=> __('Height','food-truck'),
+			'instructions'	=> __('Customise the map height','food-truck'),
 			'type'			=> 'text',
 			'name'			=> 'height',
 			'append'		=> 'px',

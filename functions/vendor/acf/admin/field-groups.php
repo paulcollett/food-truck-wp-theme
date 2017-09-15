@@ -71,7 +71,7 @@ class acf_admin_field_groups {
 		
 		
 		// modify publish post status
-		$wp_post_statuses['publish']->label_count = _n_noop( 'Active <span class="count">(%s)</span>', 'Active <span class="count">(%s)</span>', 'acf' );
+		$wp_post_statuses['publish']->label_count = _n_noop( 'Active <span class="count">(%s)</span>', 'Active <span class="count">(%s)</span>', 'food-truck');
 		
 		
 		// reorder trash to end
@@ -391,7 +391,7 @@ class acf_admin_field_groups {
 		
 		
 		// add view
-		$views['json'] = '<a' . $class . ' href="' . admin_url($this->url . '&post_status=sync') . '">' . __('Sync available', 'acf') . ' <span class="count">(' . $total . ')</span></a>';
+		$views['json'] = '<a' . $class . ' href="' . admin_url($this->url . '&post_status=sync') . '">' . __('Sync available', 'food-truck') . ' <span class="count">(' . $total . ')</span></a>';
 		
 		
 		// return
@@ -504,10 +504,10 @@ class acf_admin_field_groups {
 		
 		return array(
 			'cb'	 				=> '<input type="checkbox" />',
-			'title' 				=> __('Title', 'acf'),
-			'acf-fg-description'	=> __('Description', 'acf'),
-			'acf-fg-status' 		=> '<i class="acf-icon -dot-3 small acf-js-tooltip" title="' . __('Status', 'acf') . '"></i>',
-			'acf-fg-count' 			=> __('Fields', 'acf'),
+			'title' 				=> __('Title', 'food-truck'),
+			'acf-fg-description'	=> __('Description', 'food-truck'),
+			'acf-fg-status' 		=> '<i class="acf-icon -dot-3 small acf-js-tooltip" title="' . __('Status', 'food-truck') . '"></i>',
+			'acf-fg-count' 			=> __('Fields', 'food-truck'),
 		);
 		
 	}
@@ -554,17 +554,17 @@ class acf_admin_field_groups {
 			
 			if( isset($this->sync[ $field_group['key'] ]) ) {
 				
-				echo '<i class="acf-icon -sync grey small acf-js-tooltip" title="' . __('Sync available', 'acf') .'"></i> ';
+				echo '<i class="acf-icon -sync grey small acf-js-tooltip" title="' . __('Sync available', 'food-truck') .'"></i> ';
 				
 			}
 			
 			if( $field_group['active'] ) {
 				
-				//echo '<i class="acf-icon -check small acf-js-tooltip" title="' . __('Active', 'acf') .'"></i> ';
+				//echo '<i class="acf-icon -check small acf-js-tooltip" title="' . __('Active', 'food-truck') .'"></i> ';
 				
 			} else {
 				
-				echo '<i class="acf-icon -minus yellow small acf-js-tooltip" title="' . __('Disabled', 'acf') . '"></i> ';
+				echo '<i class="acf-icon -minus yellow small acf-js-tooltip" title="' . __('Disabled', 'food-truck') . '"></i> ';
 				
 			}
 	    
@@ -602,25 +602,25 @@ class acf_admin_field_groups {
 		<div class="inner">
 			<h2><?php echo acf_get_setting('name'); ?></h2>
 
-			<h3><?php _e("Changelog",'acf'); ?></h3>
+			<h3><?php _e("Changelog",'food-truck'); ?></h3>
 			<p><?php printf(__('See what\'s new in <a href="%s">version %s</a>.','acf'), admin_url('edit.php?post_type=acf-field-group&page=acf-settings-info&tab=changelog'), acf_get_setting('version')); ?></p>
 			
-			<h3><?php _e("Resources",'acf'); ?></h3>
+			<h3><?php _e("Resources",'food-truck'); ?></h3>
 			<ul>
-				<li><a href="<?php echo $www; ?>#getting-started" target="_blank"><?php _e("Getting Started",'acf'); ?></a></li>
-				<li><a href="<?php echo $www; ?>#updates" target="_blank"><?php _e("Updates",'acf'); ?></a></li>
-				<li><a href="<?php echo $www; ?>#field-types" target="_blank"><?php _e("Field Types",'acf'); ?></a></li>
-				<li><a href="<?php echo $www; ?>#functions" target="_blank"><?php _e("Functions",'acf'); ?></a></li>
-				<li><a href="<?php echo $www; ?>#actions" target="_blank"><?php _e("Actions",'acf'); ?></a></li>
-				<li><a href="<?php echo $www; ?>#filters" target="_blank"><?php _e("Filters",'acf'); ?></a></li>
-				<li><a href="<?php echo $www; ?>#how-to" target="_blank"><?php _e("'How to' guides",'acf'); ?></a></li>
-				<li><a href="<?php echo $www; ?>#tutorials" target="_blank"><?php _e("Tutorials",'acf'); ?></a></li>
-				<li><a href="<?php echo $www; ?>#faq" target="_blank"><?php _e("FAQ",'acf'); ?></a></li>
+				<li><a href="<?php echo $www; ?>#getting-started" target="_blank"><?php _e("Getting Started",'food-truck'); ?></a></li>
+				<li><a href="<?php echo $www; ?>#updates" target="_blank"><?php _e("Updates",'food-truck'); ?></a></li>
+				<li><a href="<?php echo $www; ?>#field-types" target="_blank"><?php _e("Field Types",'food-truck'); ?></a></li>
+				<li><a href="<?php echo $www; ?>#functions" target="_blank"><?php _e("Functions",'food-truck'); ?></a></li>
+				<li><a href="<?php echo $www; ?>#actions" target="_blank"><?php _e("Actions",'food-truck'); ?></a></li>
+				<li><a href="<?php echo $www; ?>#filters" target="_blank"><?php _e("Filters",'food-truck'); ?></a></li>
+				<li><a href="<?php echo $www; ?>#how-to" target="_blank"><?php _e("'How to' guides",'food-truck'); ?></a></li>
+				<li><a href="<?php echo $www; ?>#tutorials" target="_blank"><?php _e("Tutorials",'food-truck'); ?></a></li>
+				<li><a href="<?php echo $www; ?>#faq" target="_blank"><?php _e("FAQ",'food-truck'); ?></a></li>
 			</ul>
 		</div>
 		<div class="footer footer-blue">
 			<ul class="acf-hl">
-				<li><?php _e("Created by",'acf'); ?> Elliot Condon</li>
+				<li><?php _e("Created by",'food-truck'); ?> Elliot Condon</li>
 			</ul>
 		</div>
 	</div>
@@ -663,7 +663,7 @@ class acf_admin_field_groups {
 			
 			
 			// create el
-			var $span = $('<span class="acf-duplicate-field-group"><a title="<?php _e('Duplicate this item', 'acf'); ?>" href="<?php echo admin_url($this->url . '&acfduplicate='); ?>' + post_id + '&_wpnonce=<?php echo wp_create_nonce('bulk-posts'); ?>"><?php _e('Duplicate', 'acf'); ?></a> | </span>');
+			var $span = $('<span class="acf-duplicate-field-group"><a title="<?php _e('Duplicate this item', 'acf'); ?>" href="<?php echo admin_url($this->url . '&acfduplicate='); ?>' + post_id + '&_wpnonce=<?php echo wp_create_nonce('bulk-posts'); ?>"><?php _e('Duplicate', 'food-truck'); ?></a> | </span>');
 			
 			
 			// replace
@@ -679,7 +679,7 @@ class acf_admin_field_groups {
 	
 	
 	// modify bulk actions
-	$('#bulk-action-selector-bottom option[value="edit"]').attr('value','acfduplicate').text('<?php _e( 'Duplicate', 'acf' ); ?>');
+	$('#bulk-action-selector-bottom option[value="edit"]').attr('value','acfduplicate').text('<?php _e( 'Duplicate', 'food-truck'); ?>');
 	
 	
 	// clean up table
@@ -696,7 +696,7 @@ class acf_admin_field_groups {
 	
 	
 	// search
-	$('.subsubsub').append(' | <li><a href="#" class="acf-toggle-search"><?php _e('Search', 'acf'); ?></a></li>');
+	$('.subsubsub').append(' | <li><a href="#" class="acf-toggle-search"><?php _e('Search', 'food-truck'); ?></a></li>');
 	
 	
 	// events
@@ -746,7 +746,7 @@ class acf_admin_field_groups {
 <?php foreach( $this->sync as $field_group ): $i++; ?>
 	<tr <?php if($i%2 == 0): ?>class="alternate"<?php endif; ?>>
 		<th class="check-column" scope="row">
-			<label for="cb-select-<?php echo $field_group['key']; ?>" class="screen-reader-text"><?php printf( __( 'Select %s', 'acf' ), $field_group['title'] ); ?></label>
+			<label for="cb-select-<?php echo $field_group['key']; ?>" class="screen-reader-text"><?php printf( __( 'Select %s', 'food-truck'), $field_group['title'] ); ?></label>
 			<input type="checkbox" value="<?php echo $field_group['key']; ?>" name="post[]" id="cb-select-<?php echo $field_group['key']; ?>">
 		</th>
 		<td class="post-title page-title column-title">
@@ -754,7 +754,7 @@ class acf_admin_field_groups {
 				<span class="row-title"><?php echo $field_group['title']; ?></span><span class="acf-description"><?php echo $field_group['key']; ?>.json</span>
 			</strong>
 			<div class="row-actions">
-				<span class="import"><a title="<?php echo esc_attr( __('Synchronise field group', 'acf') ); ?>" href="<?php echo admin_url($this->url . '&post_status=sync&acfsync=' . $field_group['key'] . '&_wpnonce=' . wp_create_nonce('bulk-posts')); ?>"><?php _e( 'Sync', 'acf' ); ?></a></span>
+				<span class="import"><a title="<?php echo esc_attr( __('Synchronise field group', 'acf') ); ?>" href="<?php echo admin_url($this->url . '&post_status=sync&acfsync=' . $field_group['key'] . '&_wpnonce=' . wp_create_nonce('bulk-posts')); ?>"><?php _e( 'Sync', 'food-truck'); ?></a></span>
 			</div>
 		</td>
 		<?php foreach( $columns as $column ): ?>
@@ -771,7 +771,7 @@ class acf_admin_field_groups {
 	
 	
 	// modify bulk actions
-	$('#bulk-action-selector-bottom option[value="edit"]').attr('value','acfsync').text('<?php _e('Sync', 'acf'); ?>');
+	$('#bulk-action-selector-bottom option[value="edit"]').attr('value','acfsync').text('<?php _e('Sync', 'food-truck'); ?>');
 	$('#bulk-action-selector-bottom option[value="trash"]').remove();
 		
 })(jQuery);

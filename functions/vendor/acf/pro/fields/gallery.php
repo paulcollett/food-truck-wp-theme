@@ -33,7 +33,7 @@ class acf_field_gallery extends acf_field {
 		
 		// vars
 		$this->name = 'gallery';
-		$this->label = __("Gallery",'acf');
+		$this->label = __("Gallery",'food-truck');
 		$this->category = 'content';
 		$this->defaults = array(
 			'library'		=> 'all',
@@ -49,11 +49,11 @@ class acf_field_gallery extends acf_field {
 			'insert'		=> 'append'
 		);
 		$this->l10n = array(
-			'select'		=> __("Add Image to Gallery",'acf'),
-			'edit'			=> __("Edit Image",'acf'),
-			'update'		=> __("Update Image",'acf'),
-			'uploadedTo'	=> __("Uploaded to this post",'acf'),
-			'max'			=> __("Maximum selection reached",'acf')
+			'select'		=> __("Add Image to Gallery",'food-truck'),
+			'edit'			=> __("Edit Image",'food-truck'),
+			'update'		=> __("Update Image",'food-truck'),
+			'uploadedTo'	=> __("Uploaded to this post",'food-truck'),
+			'max'			=> __("Maximum selection reached",'food-truck')
 		);
 		
 		
@@ -333,7 +333,7 @@ class acf_field_gallery extends acf_field {
 		// dimentions
 		if( $attachment['type'] === 'audio' ) {
 			
-			$dimentions = __('Length', 'acf') . ': ' . $attachment['fileLength'];
+			$dimentions = __('Length', 'food-truck') . ': ' . $attachment['fileLength'];
 			
 		} elseif( !empty($attachment['width']) ) {
 			
@@ -354,8 +354,8 @@ class acf_field_gallery extends acf_field {
 			<p class="uploaded"><?php echo $attachment['dateFormatted']; ?></p>
 			<p class="dimensions"><?php echo $dimentions; ?></p>
 			<p class="actions">
-				<a href="#" class="acf-gallery-edit" data-id="<?php echo $id; ?>"><?php _e('Edit', 'acf'); ?></a>
-				<a href="#" class="acf-gallery-remove" data-id="<?php echo $id; ?>"><?php _e('Remove', 'acf'); ?></a>
+				<a href="#" class="acf-gallery-edit" data-id="<?php echo $id; ?>"><?php _e('Edit', 'food-truck'); ?></a>
+				<a href="#" class="acf-gallery-remove" data-id="<?php echo $id; ?>"><?php _e('Remove', 'food-truck'); ?></a>
 			</p>
 		</div>
 		<table class="form-table">
@@ -367,7 +367,7 @@ class acf_field_gallery extends acf_field {
 					'name'		=> 'title',
 					'prefix'	=> $prefix,
 					'type'		=> 'text',
-					'label'		=> __('Title', 'acf'),
+					'label'		=> __('Title', 'food-truck'),
 					'value'		=> $attachment['title']
 				), 'tr');
 				
@@ -376,7 +376,7 @@ class acf_field_gallery extends acf_field {
 					'name'		=> 'caption',
 					'prefix'	=> $prefix,
 					'type'		=> 'textarea',
-					'label'		=> __('Caption', 'acf'),
+					'label'		=> __('Caption', 'food-truck'),
 					'value'		=> $attachment['caption']
 				), 'tr');
 				
@@ -385,7 +385,7 @@ class acf_field_gallery extends acf_field {
 					'name'		=> 'alt',
 					'prefix'	=> $prefix,
 					'type'		=> 'text',
-					'label'		=> __('Alt Text', 'acf'),
+					'label'		=> __('Alt Text', 'food-truck'),
 					'value'		=> $attachment['alt']
 				), 'tr');
 				
@@ -394,7 +394,7 @@ class acf_field_gallery extends acf_field {
 					'name'		=> 'description',
 					'prefix'	=> $prefix,
 					'type'		=> 'textarea',
-					'label'		=> __('Description', 'acf'),
+					'label'		=> __('Description', 'food-truck'),
 					'value'		=> $attachment['description']
 				), 'tr');
 				
@@ -543,7 +543,7 @@ class acf_field_gallery extends acf_field {
 							<?php endif; ?>
 						</div>
 						<div class="actions acf-soh-target">
-							<a class="acf-icon -cancel dark acf-gallery-remove" href="#" data-id="<?php echo $a['ID']; ?>" title="<?php _e('Remove', 'acf'); ?>"></a>
+							<a class="acf-icon -cancel dark acf-gallery-remove" href="#" data-id="<?php echo $a['ID']; ?>" title="<?php _e('Remove', 'food-truck'); ?>"></a>
 						</div>
 					</div>
 				<?php endforeach; ?>
@@ -556,15 +556,15 @@ class acf_field_gallery extends acf_field {
 			
 			<ul class="acf-hl">
 				<li>
-					<a href="#" class="acf-button button button-primary acf-gallery-add"><?php _e('Add to gallery', 'acf'); ?></a>
+					<a href="#" class="acf-button button button-primary acf-gallery-add"><?php _e('Add to gallery', 'food-truck'); ?></a>
 				</li>
 				<li class="acf-fr">
 					<select class="acf-gallery-sort">
-						<option value=""><?php _e('Bulk actions', 'acf'); ?></option>
-						<option value="date"><?php _e('Sort by date uploaded', 'acf'); ?></option>
-						<option value="modified"><?php _e('Sort by date modified', 'acf'); ?></option>
-						<option value="title"><?php _e('Sort by title', 'acf'); ?></option>
-						<option value="reverse"><?php _e('Reverse current order', 'acf'); ?></option>
+						<option value=""><?php _e('Bulk actions', 'food-truck'); ?></option>
+						<option value="date"><?php _e('Sort by date uploaded', 'food-truck'); ?></option>
+						<option value="modified"><?php _e('Sort by date modified', 'food-truck'); ?></option>
+						<option value="title"><?php _e('Sort by title', 'food-truck'); ?></option>
+						<option value="reverse"><?php _e('Reverse current order', 'food-truck'); ?></option>
 					</select>
 				</li>
 			</ul>
@@ -582,10 +582,10 @@ class acf_field_gallery extends acf_field {
 			
 			<ul class="acf-hl">
 				<li>
-					<a href="#" class="acf-button button acf-gallery-close"><?php _e('Close', 'acf'); ?></a>
+					<a href="#" class="acf-button button acf-gallery-close"><?php _e('Close', 'food-truck'); ?></a>
 				</li>
 				<li class="acf-fr">
-					<a class="acf-button button button-primary acf-gallery-update"><?php _e('Update', 'acf'); ?></a>
+					<a class="acf-button button button-primary acf-gallery-update"><?php _e('Update', 'food-truck'); ?></a>
 				</li>
 			</ul>
 			
@@ -636,7 +636,7 @@ class acf_field_gallery extends acf_field {
 		
 		// min
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Minimum Selection','acf'),
+			'label'			=> __('Minimum Selection','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'number',
 			'name'			=> 'min'
@@ -645,7 +645,7 @@ class acf_field_gallery extends acf_field {
 		
 		// max
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Maximum Selection','acf'),
+			'label'			=> __('Maximum Selection','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'number',
 			'name'			=> 'max'
@@ -654,38 +654,38 @@ class acf_field_gallery extends acf_field {
 		
 		// insert
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Insert','acf'),
-			'instructions'	=> __('Specify where new attachments are added','acf'),
+			'label'			=> __('Insert','food-truck'),
+			'instructions'	=> __('Specify where new attachments are added','food-truck'),
 			'type'			=> 'select',
 			'name'			=> 'insert',
 			'choices' 		=> array(
-				'append'		=> __('Append to the end', 'acf'),
-				'prepend'		=> __('Prepend to the beginning', 'acf')
+				'append'		=> __('Append to the end', 'food-truck'),
+				'prepend'		=> __('Prepend to the beginning', 'food-truck')
 			)
 		));
 		
 		
 		// library
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Library','acf'),
-			'instructions'	=> __('Limit the media library choice','acf'),
+			'label'			=> __('Library','food-truck'),
+			'instructions'	=> __('Limit the media library choice','food-truck'),
 			'type'			=> 'radio',
 			'name'			=> 'library',
 			'layout'		=> 'horizontal',
 			'choices' 		=> array(
-				'all'			=> __('All', 'acf'),
-				'uploadedTo'	=> __('Uploaded to post', 'acf')
+				'all'			=> __('All', 'food-truck'),
+				'uploadedTo'	=> __('Uploaded to post', 'food-truck')
 			)
 		));
 		
 		
 		// min
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Minimum','acf'),
-			'instructions'	=> __('Restrict which images can be uploaded','acf'),
+			'label'			=> __('Minimum','food-truck'),
+			'instructions'	=> __('Restrict which images can be uploaded','food-truck'),
 			'type'			=> 'text',
 			'name'			=> 'min_width',
-			'prepend'		=> __('Width', 'acf'),
+			'prepend'		=> __('Width', 'food-truck'),
 			'append'		=> 'px',
 		));
 		
@@ -693,7 +693,7 @@ class acf_field_gallery extends acf_field {
 			'label'			=> '',
 			'type'			=> 'text',
 			'name'			=> 'min_height',
-			'prepend'		=> __('Height', 'acf'),
+			'prepend'		=> __('Height', 'food-truck'),
 			'append'		=> 'px',
 			'wrapper'		=> array(
 				'data-append' => 'min_width'
@@ -704,7 +704,7 @@ class acf_field_gallery extends acf_field {
 			'label'			=> '',
 			'type'			=> 'text',
 			'name'			=> 'min_size',
-			'prepend'		=> __('File size', 'acf'),
+			'prepend'		=> __('File size', 'food-truck'),
 			'append'		=> 'MB',
 			'wrapper'		=> array(
 				'data-append' => 'min_width'
@@ -714,11 +714,11 @@ class acf_field_gallery extends acf_field {
 		
 		// max
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Maximum','acf'),
-			'instructions'	=> __('Restrict which images can be uploaded','acf'),
+			'label'			=> __('Maximum','food-truck'),
+			'instructions'	=> __('Restrict which images can be uploaded','food-truck'),
 			'type'			=> 'text',
 			'name'			=> 'max_width',
-			'prepend'		=> __('Width', 'acf'),
+			'prepend'		=> __('Width', 'food-truck'),
 			'append'		=> 'px',
 		));
 		
@@ -726,7 +726,7 @@ class acf_field_gallery extends acf_field {
 			'label'			=> '',
 			'type'			=> 'text',
 			'name'			=> 'max_height',
-			'prepend'		=> __('Height', 'acf'),
+			'prepend'		=> __('Height', 'food-truck'),
 			'append'		=> 'px',
 			'wrapper'		=> array(
 				'data-append' => 'max_width'
@@ -737,7 +737,7 @@ class acf_field_gallery extends acf_field {
 			'label'			=> '',
 			'type'			=> 'text',
 			'name'			=> 'max_size',
-			'prepend'		=> __('File size', 'acf'),
+			'prepend'		=> __('File size', 'food-truck'),
 			'append'		=> 'MB',
 			'wrapper'		=> array(
 				'data-append' => 'max_width'
@@ -747,8 +747,8 @@ class acf_field_gallery extends acf_field {
 		
 		// allowed type
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Allowed file types','acf'),
-			'instructions'	=> __('Comma separated list. Leave blank for all types','acf'),
+			'label'			=> __('Allowed file types','food-truck'),
+			'instructions'	=> __('Comma separated list. Leave blank for all types','food-truck'),
 			'type'			=> 'text',
 			'name'			=> 'mime_types',
 		));
@@ -820,7 +820,7 @@ class acf_field_gallery extends acf_field {
 		
 		if( count($value) < $field['min'] ) {
 		
-			$valid = _n( '%s requires at least %s selection', '%s requires at least %s selections', $field['min'], 'acf' );
+			$valid = _n( '%s requires at least %s selection', '%s requires at least %s selections', $field['min'], 'food-truck');
 			$valid = sprintf( $valid, $field['label'], $field['min'] );
 			
 		}

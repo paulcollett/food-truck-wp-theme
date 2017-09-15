@@ -33,7 +33,7 @@ class acf_field_select extends acf_field {
 		
 		// vars
 		$this->name = 'select';
-		$this->label = _x('Select', 'noun', 'acf');
+		$this->label = _x('Select', 'noun', 'food-truck');
 		$this->category = 'choice';
 		$this->defaults = array(
 			'multiple' 		=> 0,
@@ -46,18 +46,18 @@ class acf_field_select extends acf_field {
 			'return_format'	=> 'value'
 		);
 		$this->l10n = array(
-			'matches_1'				=> _x('One result is available, press enter to select it.',	'Select2 JS matches_1',	'acf'),
-			'matches_n'				=> _x('%d results are available, use up and down arrow keys to navigate.',	'Select2 JS matches_n',	'acf'),
-			'matches_0'				=> _x('No matches found',	'Select2 JS matches_0',	'acf'),
-			'input_too_short_1'		=> _x('Please enter 1 or more characters', 'Select2 JS input_too_short_1', 'acf' ),
-			'input_too_short_n'		=> _x('Please enter %d or more characters', 'Select2 JS input_too_short_n', 'acf' ),
-			'input_too_long_1'		=> _x('Please delete 1 character', 'Select2 JS input_too_long_1', 'acf' ),
-			'input_too_long_n'		=> _x('Please delete %d characters', 'Select2 JS input_too_long_n', 'acf' ),
-			'selection_too_long_1'	=> _x('You can only select 1 item', 'Select2 JS selection_too_long_1', 'acf' ),
-			'selection_too_long_n'	=> _x('You can only select %d items', 'Select2 JS selection_too_long_n', 'acf' ),
-			'load_more'				=> _x('Loading more results&hellip;', 'Select2 JS load_more', 'acf' ),
-			'searching'				=> _x('Searching&hellip;', 'Select2 JS searching', 'acf' ),
-			'load_fail'           	=> _x('Loading failed', 'Select2 JS load_fail', 'acf' ),
+			'matches_1'				=> _x('One result is available, press enter to select it.',	'Select2 JS matches_1',	'food-truck'),
+			'matches_n'				=> _x('%d results are available, use up and down arrow keys to navigate.',	'Select2 JS matches_n',	'food-truck'),
+			'matches_0'				=> _x('No matches found',	'Select2 JS matches_0',	'food-truck'),
+			'input_too_short_1'		=> _x('Please enter 1 or more characters', 'Select2 JS input_too_short_1', 'food-truck'),
+			'input_too_short_n'		=> _x('Please enter %d or more characters', 'Select2 JS input_too_short_n', 'food-truck'),
+			'input_too_long_1'		=> _x('Please delete 1 character', 'Select2 JS input_too_long_1', 'food-truck'),
+			'input_too_long_n'		=> _x('Please delete %d characters', 'Select2 JS input_too_long_n', 'food-truck'),
+			'selection_too_long_1'	=> _x('You can only select 1 item', 'Select2 JS selection_too_long_1', 'food-truck'),
+			'selection_too_long_n'	=> _x('You can only select %d items', 'Select2 JS selection_too_long_n', 'food-truck'),
+			'load_more'				=> _x('Loading more results&hellip;', 'Select2 JS load_more', 'food-truck'),
+			'searching'				=> _x('Searching&hellip;', 'Select2 JS searching', 'food-truck'),
+			'load_fail'           	=> _x('Loading failed', 'Select2 JS load_fail', 'food-truck'),
 		);
 		
 		
@@ -246,7 +246,7 @@ class acf_field_select extends acf_field {
 		// placeholder
 		if( empty($field['placeholder']) ) {
 		
-			$field['placeholder'] = _x('Select', 'verb', 'acf');
+			$field['placeholder'] = _x('Select', 'verb', 'food-truck');
 			
 		}
 		
@@ -443,8 +443,8 @@ class acf_field_select extends acf_field {
 		
 		// choices
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Choices','acf'),
-			'instructions'	=> __('Enter each choice on a new line.','acf') . '<br /><br />' . __('For more control, you may specify both a value and label like this:','acf'). '<br /><br />' . __('red : Red','acf'),
+			'label'			=> __('Choices','food-truck'),
+			'instructions'	=> __('Enter each choice on a new line.','acf') . '<br /><br />' . __('For more control, you may specify both a value and label like this:','acf'). '<br /><br />' . __('red : Red','food-truck'),
 			'type'			=> 'textarea',
 			'name'			=> 'choices',
 		));	
@@ -452,8 +452,8 @@ class acf_field_select extends acf_field {
 		
 		// default_value
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Default Value','acf'),
-			'instructions'	=> __('Enter each default value on a new line','acf'),
+			'label'			=> __('Default Value','food-truck'),
+			'instructions'	=> __('Enter each default value on a new line','food-truck'),
 			'type'			=> 'textarea',
 			'name'			=> 'default_value',
 		));
@@ -461,13 +461,13 @@ class acf_field_select extends acf_field {
 		
 		// allow_null
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Allow Null?','acf'),
+			'label'			=> __('Allow Null?','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'radio',
 			'name'			=> 'allow_null',
 			'choices'		=> array(
-				1				=> __("Yes",'acf'),
-				0				=> __("No",'acf'),
+				1				=> __("Yes",'food-truck'),
+				0				=> __("No",'food-truck'),
 			),
 			'layout'	=>	'horizontal',
 		));
@@ -475,13 +475,13 @@ class acf_field_select extends acf_field {
 		
 		// multiple
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Select multiple values?','acf'),
+			'label'			=> __('Select multiple values?','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'radio',
 			'name'			=> 'multiple',
 			'choices'		=> array(
-				1				=> __("Yes",'acf'),
-				0				=> __("No",'acf'),
+				1				=> __("Yes",'food-truck'),
+				0				=> __("No",'food-truck'),
 			),
 			'layout'	=>	'horizontal',
 		));
@@ -489,13 +489,13 @@ class acf_field_select extends acf_field {
 		
 		// ui
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Stylised UI','acf'),
+			'label'			=> __('Stylised UI','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'radio',
 			'name'			=> 'ui',
 			'choices'		=> array(
-				1				=> __("Yes",'acf'),
-				0				=> __("No",'acf'),
+				1				=> __("Yes",'food-truck'),
+				0				=> __("No",'food-truck'),
 			),
 			'layout'	=>	'horizontal',
 		));
@@ -503,13 +503,13 @@ class acf_field_select extends acf_field {
 		
 		// ajax
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Use AJAX to lazy load choices?','acf'),
+			'label'			=> __('Use AJAX to lazy load choices?','food-truck'),
 			'instructions'	=> '',
 			'type'			=> 'radio',
 			'name'			=> 'ajax',
 			'choices'		=> array(
-				1				=> __("Yes",'acf'),
-				0				=> __("No",'acf'),
+				1				=> __("Yes",'food-truck'),
+				0				=> __("No",'food-truck'),
 			),
 			'layout'	=>	'horizontal',
 		));
@@ -517,15 +517,15 @@ class acf_field_select extends acf_field {
 		
 		// return_format
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Return Format','acf'),
-			'instructions'	=> __('Specify the value returned','acf'),
+			'label'			=> __('Return Format','food-truck'),
+			'instructions'	=> __('Specify the value returned','food-truck'),
 			'type'			=> 'radio',
 			'name'			=> 'return_format',
 			'layout'		=> 'horizontal',
 			'choices'		=> array(
-				'value'			=> __('Value','acf'),
-				'label'			=> __('Label','acf'),
-				'array'			=> __('Both (Array)','acf')
+				'value'			=> __('Value','food-truck'),
+				'label'			=> __('Label','food-truck'),
+				'array'			=> __('Both (Array)','food-truck')
 			)
 		));
 			

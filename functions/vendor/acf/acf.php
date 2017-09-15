@@ -56,7 +56,7 @@ class acf {
 		$this->settings = array(
 			
 			// basic
-			'name'				=> __('Advanced Custom Fields', 'acf'),
+			'name'				=> __('Advanced Custom Fields', 'food-truck'),
 			'version'			=> '5.4.7',
 						
 			// urls
@@ -269,16 +269,16 @@ class acf {
 		// register post type 'acf-field-group'
 		site_add_post_type('acf-field-group', array(
 			'labels'			=> array(
-			    'name'					=> __( 'Field Groups', 'acf' ),
-				'singular_name'			=> __( 'Field Group', 'acf' ),
-			    'add_new'				=> __( 'Add New' , 'acf' ),
-			    'add_new_item'			=> __( 'Add New Field Group' , 'acf' ),
-			    'edit_item'				=> __( 'Edit Field Group' , 'acf' ),
-			    'new_item'				=> __( 'New Field Group' , 'acf' ),
-			    'view_item'				=> __( 'View Field Group', 'acf' ),
-			    'search_items'			=> __( 'Search Field Groups', 'acf' ),
-			    'not_found'				=> __( 'No Field Groups found', 'acf' ),
-			    'not_found_in_trash'	=> __( 'No Field Groups found in Trash', 'acf' ), 
+			    'name'					=> __( 'Field Groups', 'food-truck'),
+				'singular_name'			=> __( 'Field Group', 'food-truck'),
+			    'add_new'				=> __( 'Add New' , 'food-truck'),
+			    'add_new_item'			=> __( 'Add New Field Group' , 'food-truck'),
+			    'edit_item'				=> __( 'Edit Field Group' , 'food-truck'),
+			    'new_item'				=> __( 'New Field Group' , 'food-truck'),
+			    'view_item'				=> __( 'View Field Group', 'food-truck'),
+			    'search_items'			=> __( 'Search Field Groups', 'food-truck'),
+			    'not_found'				=> __( 'No Field Groups found', 'food-truck'),
+			    'not_found_in_trash'	=> __( 'No Field Groups found in Trash', 'food-truck'), 
 			),
 			'public'			=> false,
 			'show_ui'			=> true,
@@ -301,16 +301,16 @@ class acf {
 		// register post type 'acf-field'
 		site_add_post_type('acf-field', array(
 			'labels'			=> array(
-			    'name'					=> __( 'Fields', 'acf' ),
-				'singular_name'			=> __( 'Field', 'acf' ),
-			    'add_new'				=> __( 'Add New' , 'acf' ),
-			    'add_new_item'			=> __( 'Add New Field' , 'acf' ),
-			    'edit_item'				=> __( 'Edit Field' , 'acf' ),
-			    'new_item'				=> __( 'New Field' , 'acf' ),
-			    'view_item'				=> __( 'View Field', 'acf' ),
-			    'search_items'			=> __( 'Search Fields', 'acf' ),
-			    'not_found'				=> __( 'No Fields found', 'acf' ),
-			    'not_found_in_trash'	=> __( 'No Fields found in Trash', 'acf' ), 
+			    'name'					=> __( 'Fields', 'food-truck'),
+				'singular_name'			=> __( 'Field', 'food-truck'),
+			    'add_new'				=> __( 'Add New' , 'food-truck'),
+			    'add_new_item'			=> __( 'Add New Field' , 'food-truck'),
+			    'edit_item'				=> __( 'Edit Field' , 'food-truck'),
+			    'new_item'				=> __( 'New Field' , 'food-truck'),
+			    'view_item'				=> __( 'View Field', 'food-truck'),
+			    'search_items'			=> __( 'Search Fields', 'food-truck'),
+			    'not_found'				=> __( 'No Fields found', 'food-truck'),
+			    'not_found_in_trash'	=> __( 'No Fields found in Trash', 'food-truck'), 
 			),
 			'public'			=> false,
 			'show_ui'			=> false,
@@ -349,12 +349,12 @@ class acf {
 		
 		// acf-disabled
 		register_post_status('acf-disabled', array(
-			'label'                     => __( 'Disabled', 'acf' ),
+			'label'                     => __( 'Disabled', 'food-truck'),
 			'public'                    => true,
 			'exclude_from_search'       => false,
 			'show_in_admin_all_list'    => true,
 			'show_in_admin_status_list' => true,
-			'label_count'               => _n_noop( 'Disabled <span class="count">(%s)</span>', 'Disabled <span class="count">(%s)</span>', 'acf' ),
+			'label_count'               => _n_noop( 'Disabled <span class="count">(%s)</span>', 'Disabled <span class="count">(%s)</span>', 'food-truck'),
 		));
 		
 	}

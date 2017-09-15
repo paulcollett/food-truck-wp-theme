@@ -21,7 +21,7 @@ class acf_pro {
 		
 		// update setting
 		acf_update_setting( 'pro', true );
-		acf_update_setting( 'name', __('Advanced Custom Fields PRO', 'acf') );
+		acf_update_setting( 'name', __('Advanced Custom Fields PRO', 'food-truck') );
 		
 
 		// api
@@ -189,7 +189,7 @@ class acf_pro {
 		
 		// append
 		$l10n['flexible_content'] = array(
-			'layout_warning' => __('Flexible Content requires at least 1 layout','acf')
+			'layout_warning' => __('Flexible Content requires at least 1 layout','food-truck')
 		);
 		
 		

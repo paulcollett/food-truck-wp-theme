@@ -10,9 +10,9 @@ extract($args);
 ?>
 <div id="acf-upgrade-wrap" class="wrap">
 	
-	<h1><?php _e("Advanced Custom Fields Database Upgrade",'acf'); ?></h1>
+	<h1><?php _e("Advanced Custom Fields Database Upgrade",'food-truck'); ?></h1>
 	
-	<p><?php echo sprintf( __("The following sites require a DB upgrade. Check the ones you want to update and then click %s.", 'acf'), '"' . $button . '"'); ?></p>
+	<p><?php echo sprintf( __("The following sites require a DB upgrade. Check the ones you want to update and then click %s.", 'food-truck'), '"' . $button . '"'); ?></p>
 	
 	<p><input type="submit" name="upgrade" value="<?php echo $button; ?>" class="button" id="upgrade-sites"></p>
 	
@@ -21,16 +21,16 @@ extract($args);
 		<thead>
 			<tr>
 				<td class="manage-column check-column" scope="col"><input type="checkbox" id="sites-select-all"></td>
-				<th class="manage-column" scope="col" style="width:33%;"><label for="sites-select-all"><?php _e("Site", 'acf'); ?></label></th>
-				<th><?php _e("Description", 'acf'); ?></th>
+				<th class="manage-column" scope="col" style="width:33%;"><label for="sites-select-all"><?php _e("Site", 'food-truck'); ?></label></th>
+				<th><?php _e("Description", 'food-truck'); ?></th>
 			</tr>
 		</thead>
 	
 		<tfoot>
 		<tr>
 			<td class="manage-column check-column" scope="col"><input type="checkbox" id="sites-select-all-2"></td>
-			<th class="manage-column" scope="col"><label for="sites-select-all-2"><?php _e("Site", 'acf'); ?></label></th>
-			<th><?php _e("Description", 'acf'); ?></th>
+			<th class="manage-column" scope="col"><label for="sites-select-all-2"><?php _e("Site", 'food-truck'); ?></label></th>
+			<th><?php _e("Description", 'food-truck'); ?></th>
 		</tr>
 		</tfoot>
 		
@@ -51,7 +51,7 @@ extract($args);
 				<?php if( $site['updates'] ): ?>
 					<span class="response"><?php printf(__('Site requires database upgrade from %s to %s', 'acf'), $site['acf_version'], $plugin_version); ?></span>
 				<?php else: ?>
-					<?php _e("Site is up to date", 'acf'); ?>
+					<?php _e("Site is up to date", 'food-truck'); ?>
 				<?php endif; ?>
 				</td>
 			</tr>
@@ -64,7 +64,7 @@ extract($args);
 	
 	<p><input type="submit" name="upgrade" value="<?php echo $button; ?>" class="button" id="upgrade-sites-2"></p>
 	
-	<p class="show-on-complete"><?php _e('Database Upgrade complete', 'acf'); ?>. <a href="<?php echo network_admin_url(); ?>"><?php _e("Return to network dashboard",'acf'); ?></a>.</p>
+	<p class="show-on-complete"><?php _e('Database Upgrade complete', 'acf'); ?>. <a href="<?php echo network_admin_url(); ?>"><?php _e("Return to network dashboard",'food-truck'); ?></a>.</p>
 	
 	<style type="text/css">
 		
@@ -103,7 +103,7 @@ extract($args);
 					
 					
 					// confirm
-					var answer = confirm("<?php _e('It is strongly recommended that you backup your database before proceeding. Are you sure you wish to run the updater now?', 'acf'); ?>");
+					var answer = confirm("<?php _e('It is strongly recommended that you backup your database before proceeding. Are you sure you wish to run the updater now?', 'food-truck'); ?>");
 					
 					
 					// bail early if no confirm
@@ -159,7 +159,7 @@ extract($args);
 				// vars
 				var $input = this.$inputs.eq( this.i ),
 					$tr = $input.closest('tr'),
-					text = '<?php _e('Upgrade complete', 'acf'); ?>';
+					text = '<?php _e('Upgrade complete', 'food-truck'); ?>';
 				
 				
 				// add loading
