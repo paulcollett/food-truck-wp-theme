@@ -1,0 +1,45 @@
+/*
+Theme Name: Food Truck
+Theme URI: https://github.com/paulcollett/food-truck-wp-theme
+Author: Paul Collett
+Author URI: http://www.paulcollett.com/
+Description: Food Truck Theme for Wordpress
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: foodtruck
+Tags: theme-options, e-commerce, blog, food-and-drink, entertainment
+
+Hi! Adding CSS/JS?
+=============================
+
+First off, we don't reccommend changing source CSS/JS files - it makes it super hard to upgrade your theme
+
+So.. to add custom css / js:
+- Consider using a child theme
+- or, simply add css (or, javascript) via the Food Truck Theme Admin Page (reccomended)
+
+To add HTML:
+- use the "advanced" module in your page or posts. It lets you drop-in HTML anywhere on your page (reccomended)
+- Also, if you know PHP we have a bunch of wordpress hooks to inject HTML throughout your site (find hooks in page.php)
+Happy coding!
+
+Need something else? Get in contact via:
+http://www.paulcollett.com/
+
+*/
+
+/*
+  Please ignore the following classnames.
+  Why? - They are required to host this theme on Wordpress.org, though
+  dont follow the coding standards implemented in this theme. Find similar classes in assets/
+*/
+.wp-caption{}
+.wp-caption-text{}
+.sticky{}
+.screen-reader-text{}
+.gallery-caption{}
+.bypostauthor{}
+.alignright{}
+.alignleft{}
+.aligncenter{}
