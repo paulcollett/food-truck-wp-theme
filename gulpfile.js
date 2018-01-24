@@ -15,7 +15,7 @@ var notify       = require('gulp-notify');
 // Original Asset Paths
 var src = {
   css: 'assets/src/**/*.sass',
-  js: ['assets/src/**/*.js','!assets/src/**/_*.js'],
+  js: 'assets/src/*.js',
 };
 
 // Destination Asset Paths
@@ -25,7 +25,7 @@ var dest = {
 };
 
 // Main Tasks
-gulp.task('default',['clean'],function(){
+gulp.task('default', function(){
   gulp.start('build');
 });
 

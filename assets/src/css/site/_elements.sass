@@ -1,0 +1,94 @@
+// containers
+.contain
+  box-sizing: content-box
+  margin: 0 auto
+  padding: 0 4vw
+  max-width: 40rem
+  *, *:before, *:after
+    box-sizing: border-box
+
+.contain--full
+  max-width: none
+
+.section
+  padding-top: 6%
+
+.tagline-section
+  background: brown
+  min-height: 70vh
+  padding: 4%
+  display: flex
+  align-items: center
+
+.content
+  h1, h2, h3, h4
+    margin-bottom: calc(.5em + 4%)
+    &:not(:first-child)
+      padding-top: 1.2em
+  //h1, h2
+  //  border-bottom: 1px solid rgba(#000, 0.1)
+  //  padding-bottom: .1em
+  h1
+    font-size: calc(1.5em + .3vw)
+  h2
+    font-size: calc(1.3em + .3vw)
+  h3
+    font-size: calc(1.1em + .3vw)
+  p, pre, table, ul, ol, > img, blockquote, hr
+    margin-bottom: calc(.5em + 4%)
+  pre
+    padding: 10px
+    background: #F5F4F2
+  blockquote
+    position: relative
+    display: inline-block
+    border-left: 5px solid transparent
+    &:before, &:after
+      content: ''
+      display: block
+      height: 5px
+      background: currentcolor
+      opacity: 0.1
+      max-width: 30%
+      margin: 0 auto
+    &:before
+      margin-bottom: calc(.5em + 3%)
+    &:after
+      margin-top: calc(.5em + 3%)
+  ul, ol
+    list-style: disk
+  table
+    display: inline-block
+    border: none
+    max-width: 100%
+    overflow: auto
+    &:before, &:after
+      content: ''
+      display: block
+      height: 1px
+    th, td
+      padding: 5px
+      font-size: .9em
+      text-align: inherit
+    tbody td
+      position: relative
+      border-top: 1px solid transparent
+      &:before
+        position: absolute
+        top: -1px
+        left: 0
+        right: 0
+        content: ''
+        border-top: 1px solid currentcolor
+        opacity: 0.1
+
+  a
+    //font-weight: bold
+    //color: #C68400
+    &:hover
+      text-decoration: underline
+      text-decoration-skip: ink
+
+@media (max-width: 900px)
+  .content
+    font-size: 0.75em

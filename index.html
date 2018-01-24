@@ -4,48 +4,148 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title></title>
-<link rel="stylesheet" href="assets/dist/css/main.css">
+<link rel="stylesheet" href="assets/dist/css/site.css">
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+window.FoodTruckTheme = (function(global) {
+  var exprt = {};
+
+  (function($) {
+    var mobileNavOpen = false;
+    var $body = $();
+    var $navItems = $();
+    var $movNavItemWrapper = $();
+    var $mobNavContainer = $();
+
+    function cloneNavItemsToMobileContainer() {
+      var $container = $mobNavContainer.clone();
+      var $items = $navItems.clone();
+
+      $container.empty().append($items);
+      $items.wrap($movNavItemWrapper);
+
+      $mobNavContainer.replaceWith($container);
+
+      $mobNavContainer = $container;
+    }
+
+    function toggleMobileNav() {
+      mobileNavOpen || cloneNavItemsToMobileContainer();
+
+      mobileNavOpen = !mobileNavOpen;
+
+      $body.toggleClass('site--nav-open', mobileNavOpen);
+    }
+
+    exprt.navReady = function() {
+      $body = $('body');
+      $navItems = $('.navigation .nav-link');
+      $movNavItemWrapper = $('.navigation_mob_items_item');
+      $mobNavContainer = $movNavItemWrapper.parent();
+      $movNavItemWrapper = $movNavItemWrapper.clone();
+
+      $('.navigation-toggle').on('click', toggleMobileNav);
+    }
+  })(window.jQuery);
+
+  (function($) {
+    var $body = $();
+    var windowWidth = Infinity;
+    var breakPoint = Infinity;
+
+    var onResize = function() {
+      windowWidth = window.innerWidth || $(window).width();
+
+      $body.toggleClass('site--nav-mobile', windowWidth <= breakPoint);
+
+      console.log('resize', windowWidth);
+    }
+
+    exprt.mobileNavAt = function(newBreakpoint) {
+      breakPoint = ~~newBreakpoint;
+      console.log('updated breakpoint', newBreakpoint);
+    }
+
+    exprt.bodyReady = function() {
+      $body = $('body');
+
+      onResize();
+
+      $(window).on('resize', onResize);
+    }
+  })(window.jQuery);
+
+  return exprt;
+})(this);
+
+
+
+
+
+</script>
 
 </head>
 <body>
+<script>FoodTruckTheme.mobileNavAt(window.FoodTruckTheme_MobNavAt || 1200); FoodTruckTheme.bodyReady();</script>
 
-<div class="navigation">
-
-  <div class="navigation_items">
-    <div class="navigation_item"><a href="" data-dummy="2,3"></a></div>
-    <div class="navigation_item"><a href="" data-dummy="2,3"></a></div>
-    <div class="navigation_item"><a href="" data-dummy="2,3"></a></div>
+<header class="navigation">
+  <nav class="navigation_items">
+    <div class="navigation_items_links">
+      <div class="navigation_items_links_item"><a class="nav-link" href="" data-dummy="1,3"></a></div>
+      <div class="navigation_items_links_item"><a class="nav-link nav-link--active" href="" data-dummy="1,2"></a></div>
+      <div class="navigation_items_links_item"><a class="nav-link" href="" data-dummy="1,2"></a></div>
+    </div>
     <div class="navigation_items_logo">
       <div class="logo">
-        <img src="" data-dummy="300,200" />
+        <img src="" data-dummy="100,300x100,300" />
       </div>
     </div>
-    <div class="navigation_item"><a href="" data-dummy="2,3"></a></div>
-    <div class="navigation_item"><a href="" data-dummy="2,3"></a></div>
-    <div class="navigation_item"><a href="" data-dummy="2,3"></a></div>
+    <div class="navigation_items_links">
+      <div class="navigation_items_links_item"><a class="nav-link" href="" data-dummy="1,2"></a></div>
+      <div class="navigation_items_links_item"><a class="nav-link" href="" data-dummy="1,2"></a></div>
+      <div class="navigation_items_links_item"><a class="nav-link" href="" data-dummy="1,2"></a></div>
+      <div class="navigation_items_links_toggle">
+          <div class="navigation-toggle"><i></i></div>
+      </div>
+    </div>
+  </nav>
+  <div class="navigation_mob">
+    <nav class="navigation_mob_items">
+      <div class="navigation_mob_items_item"></div>
+    </nav>
   </div>
-  <div class="navigation_toggle">
-    <div class="navigation-toggle"></div>
-  </div>
-</div>
+</header>
+<script>FoodTruckTheme.navReady();</script>
+
+
+
 
 <div class="section">
   <div class="contain contain--body">
-    <div data-dummy="sink"></div>
+    <div class="content tc" data-dummy="sink"></div>
   </div>
 </div>
 
 <div class="tagline-section">
   <div class="contain contain--body">
-    <div data-dummy="sink"></div>
+    <div data-dummy></div>
   </div>
 </div>
 
-<div class="footer">
-  &copy; Website Name
+<div class="footer ptlg pblg">
+  <div class="content">
+    <div class="tc">&copy; Website Name</div>
+  </div>
 </div>
 
 <script src="//dummyjs.com/js"></script>
 
+<style>
+
+ html {
+  /*font-size: 16px;*/
+ }
+</style>
 </body>
 </html>

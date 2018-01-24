@@ -1,0 +1,147 @@
+.field
+  color: inherit
+  display: inline-block
+  border: 1px solid rgba(0, 0, 0, 0.2) //currentcolor
+  border-bottom-width: 2px
+  border-radius: 0 // iOS needed
+  background: #fff
+  line-height: 20px
+  padding: 15px 20px
+  font-size: 16px
+  outline: none
+  appearance: none
+  border-radius: 0
+  max-width: 100%
+  user-select: all
+  width: 100%
+  border-radius: 0
+  transition: border .15s ease-out
+  &::placeholder
+    color: inherit
+    opacity: 0.6
+  &:focus::placeholder
+    opacity: 0.4
+  &:focus
+    border-color: rgba(0, 0, 0, 0.4)
+select.field
+  cursor: pointer
+  padding-right: 25px
+  background-image: url('data:image/svg+xml,<svg fill="#333" height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/></svg>')
+  background-repeat: no-repeat
+  background-position: center right 5px
+  user-select: none
+input.field
+  text-overflow: ellipsis
+  white-space: nowrap
+  padding-right: 5px
+.field--readonly, .field[readonly]
+  opacity: 0.6
+.field--disabled, .field[disabled]
+  opacity: 0.6
+  user-select: none
+  cursor: default
+  background: transparent
+textarea.field
+  resize: none
+  height: 80px
+
+.checkbox, .radio
+  display: flex
+  display: inline-flex
+  vertical-align: middle
+  border: 1px solid #ccc
+  background: #fff
+  border-bottom: 2px solid #ccc
+  line-height: 17px
+  padding: 12px 15px
+  font-size: 16px
+  outline: none
+  appearance: none
+  border-radius: 0
+  max-width: 100%
+  user-select: none
+  width: 26px
+  height: 26px
+  margin-right: 5px
+  &:focus
+    border-color: rgba(0, 0, 0, 0.4)
+.radio
+  border-radius: 100%
+.checkbox:checked, .radio:checked, .checkbox--checked, .radio--checked
+  border-color: blue
+.checkbox:checked:after, .radio:checked:after, .checkbox--checked:after, .radio--checked:after
+  content: ''
+  display: block
+  width: 18px
+  height: 18px
+  margin: auto
+  background: url('data:image/svg+xml,<svg fill="blue" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>');
+.radio:checked:after, .radio--checked:after
+  content: ''
+  display: block
+  width: 10px
+  height: 10px
+  background: blue
+  border-radius: 100%
+
+.button
+  appearance: none
+  display: inline-block
+  display: flex-inline
+  align-items: center
+  position: relative
+  line-height: 1rem
+  padding: 16px 18px
+  font-size: 0.9rem
+  background: transparent//needed to override browser default <button>
+  user-select: none
+  cursor: pointer
+  border: 2px solid #EF9D19//orange
+  color: blue
+  box-shadow: 0 2px 5px -3px #333
+  touch-action: manipulation
+  border-radius: 3px
+  text-align: center
+  color: #EF9D19
+  &:hover
+    box-shadow: 0 4px 5px -4px #333
+  &:active
+    top: 1px
+    box-shadow: none
+  &:focus
+    outline: none
+.button--large
+  padding: 18px 40px
+  font-size: 1.2rem
+  line-height: 1.2rem
+
+.button--primary
+  color: #fff
+  background: #EF9D19
+  border: 1px solid rgba(0, 0, 0, 0.05)
+  &:after
+    background: rgba(0, 0, 0, 0.3)
+.button--disabled, .button[disabled]
+  opacity: 0.5
+  cursor: default
+  box-shadow: none
+  &:hover
+    box-shadow: none
+  &:active
+    top: 0
+@keyframes button--loading
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+.button--loading
+  &:before
+    content: ''
+    display: inline-block
+    width: 10px
+    height: 10px
+    border: 2px solid transparent
+    border-color: currentcolor currentcolor transparent transparent
+    border-radius: 10px
+    animation: button--loading .4s infinite linear
+    margin-right: 10px

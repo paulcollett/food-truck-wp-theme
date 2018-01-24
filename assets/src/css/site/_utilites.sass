@@ -1,0 +1,107 @@
+// Container
+  .grid
+    display: flex
+    flex-wrap: wrap
+    > *
+      border-left: 0 solid transparent
+      min-height: 1px // stop collapsing
+      position: relative
+  .grid--c
+    justify-content: center
+  .grid--vc
+    align-items: center
+  .grid--vb
+    align-items: flex-end
+  .grid_item--vt
+    align-self: flex-start
+  .grid_item--vc
+    align-self: center
+  .grid_item--vb
+    align-self: flex-end
+
+  // Gutters
+  .grid
+    margin-left: -4vw
+    > *
+      border-left-width: 4vw
+  .grid--gsm
+    margin-left: -2vw
+    > *
+      border-left-width: 2vw
+  .grid--glg
+    margin-left: -6vw
+    > *
+      border-left-width: 6vw
+
+  // Widths for Columns (and inputs, buttons etc)
+  .w-auto
+    flex: 0 0 auto
+    width: auto
+  .w-grow
+    flex-basis: 0
+    flex-grow: 1
+    &:empty:after
+      content: ' '
+      white-space: pre
+
+  @for $i from 0 through 12
+    .w#{$i}
+      @if $i == 0
+        display: none
+      @else
+        display: block
+        width: percentage($i/12)
+
+  $gridBreakpoints: (xl: 1200px, lg: 992px, md: 768px, sm: 576px, xs: 400px)
+  @each $name, $value in $gridBreakpoints
+    @media (max-width: $value)
+      @for $i from 0 through 12
+        .w#{$name}-auto
+          flex: 0 0 auto
+          width: auto
+        .w#{$name}-grow
+          flex-basis: 0
+          flex-grow: 1
+          &:empty:after
+            content: ' '
+            white-space: pre
+        .w#{$name}#{$i}
+          flex-basis: auto
+          flex-grow: 0
+          @if $i == 0
+            display: none
+          @else
+            display: block
+            width: percentage($i/12)
+
+// vertical spacing
+$vSpacing: (xs: 2, sm: 6, md: 10, lg: 14, xl: 18, xxl: 22)
+@each $name, $value in $vSpacing
+  $vh: $value * 0.5vh
+  .mb#{$name}
+    margin-bottom: calc(#{$value}px + #{$vh})
+  .pt#{$name}
+    padding-top: calc(#{$value}px + #{$vh})
+  .pb#{$name}
+    padding-bottom: calc(#{$value}px + #{$vh})
+
+// text size
+$fsSizes: (xs: 0.7, sm: 0.9, md: 1, lg: 1.2, xl: 2)
+@each $name, $value in $fsSizes
+  .fs#{$name}
+    font-size: #{$value}rem
+@media (max-width: 576px)
+  .fsxl
+    font-size: 1.6rem
+
+// text modifiers
+.tl
+  text-align: left
+.tc
+  text-align: center
+.tr
+  text-align: right
+.tu
+  text-transform: uppercase
+
+
