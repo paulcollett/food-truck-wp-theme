@@ -26,22 +26,26 @@
   &:last-child
     text-align: right
     //justify-content: flex-end
-.navigation_items_links_item
+.navigation_items_links > li
   display: inline-block
   vertical-align: middle
   padding: 1vh 3% // note: Firefox doesn't support % on vertical padding + margins on Flex items
-.site--nav-mobile .navigation_items_links_item
+  // Mobile Nav btn container:
+  &.navigation_items_links_toggle
+    margin-right: 10%
+    display: none
+
+.site--nav-mobile .navigation_items_links > li
   display: none
+  // Mobile Nav btn container:
+  &.navigation_items_links_toggle
+    display: block
 
 .navigation_items_logo
   flex-shrink: 0
   padding: 3vh 4% // note: Firefox doesn't support % on vertical padding + margins on Flex items
 
-.navigation_items_links_toggle
-  margin-right: 10%
-  display: none
-.site--nav-mobile .navigation_items_links_toggle
-  display: block
+
 
 .navigation_mob
   position: fixed
@@ -131,7 +135,7 @@
     color: green
 
 
-.nav-link
+@mixin button($type: '', $active-selector: '&.active')
   display: inline-block
   touch-action: manipulation
   padding: .3em 0
@@ -143,15 +147,25 @@
     height: 4px
     position: absolute
     bottom: 0
-    right: 50%
-    left: 50%
+    right: 51%
+    left: 51%
     background: currentcolor
     transition: none .25s ease-out
     transition-property: right, left
-  &--active:after, &:hover:after
+  &:hover:after
     right: 0%
-    left: 0
+    left: 0%
+  @at-root #{$active-selector}:active
+    right: 0%
+    left: 0%
 
+.button, .btn
+  @include button()
+
+// navigation link
+.menu-item
+  > a
+    @include button('', '.menu-item.current-menu-item  > a')
 
 
 @keyframes logo-in

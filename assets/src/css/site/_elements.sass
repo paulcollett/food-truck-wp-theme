@@ -3,24 +3,62 @@
   box-sizing: content-box
   margin: 0 auto
   padding: 0 4vw
-  max-width: 40rem
   *, *:before, *:after
     box-sizing: border-box
 
-.contain--full
+.contain--xs
+  max-width: 20rem
+
+.contain--sm
+  max-width: 30rem
+
+.contain--md
+  max-width: 40rem
+
+.contain--lg
+  max-width: 50rem
+
+.contain--xl
+  max-width: 60rem
+
+.contain--none
+  padding: 0
   max-width: none
 
-.section
-  padding-top: 6%
+//.section
+//  padding-top: 6%
 
-.tagline-section
-  background: brown
-  min-height: 70vh
-  padding: 4%
+.widgets-layout
   display: flex
-  align-items: center
+  flex-wrap: wrap
+.widgets-layout_widget
+  min-width: 50%
+  flex: 1
+  background: #666
+  color: #fff
+  display: flex
+.widgets-layout_widget:nth-child(4n + 2), .widgets-layout_widget:nth-child(4n + 3)
+  background: #ccc
+  color: #444
+.widgets-layout_widget_contain
+  padding: 4vw
+  margin: auto
+
+@media (max-width: 900px)
+  .widgets-layout_widget
+    min-width: 100%
+
+//
+  .tagline-section
+    background: brown
+    min-height: 70vh
+    padding: 4%
+    display: flex
+    align-items: center
 
 .content
+  text-align: center
+
   h1, h2, h3, h4
     margin-bottom: calc(.5em + 4%)
     &:not(:first-child)
@@ -81,13 +119,14 @@
         content: ''
         border-top: 1px solid currentcolor
         opacity: 0.1
-
   a
     //font-weight: bold
     //color: #C68400
     &:hover
       text-decoration: underline
       text-decoration-skip: ink
+  & > *:last-child
+    margin-bottom: 0
 
 @media (max-width: 900px)
   .content
