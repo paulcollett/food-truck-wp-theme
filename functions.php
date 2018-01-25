@@ -50,7 +50,6 @@ class FoodTruckTheme {
 new FoodTruckTheme();
 
 
-
 //get_theme_starter_content()
 
 class FoodTruckThemeCustomization {
@@ -78,7 +77,7 @@ class FoodTruckThemeCustomization {
       'width'       => 500,
       'flex-height' => true,
       'flex-width'  => true,
-      'header-text' => array( 'site-title', FTT_TEXT_DOMAIN),
+      'header-text' => array( 'site-title' ),
     ));
 
     /*
@@ -115,42 +114,54 @@ class FoodTruckThemeCustomization {
   }
 
   function init_options($wp_customize) {
-    // Section: default colors
+    //Clarify default elements
+    $wp_customize->get_section('title_tagline')->title = 'Logo & Icons';
+    $wp_customize->get_section('static_front_page')->title = 'Homepage';
+    $wp_customize->get_section('static_front_page')->priority = 20;
+    $wp_customize->remove_control('blogdescription');
+    $wp_customize->remove_control('header_text');
+
+    $wp_customize->add_panel('ftt_advanced', array(
+      'title'    => __('Advanced', FTT_TEXT_DOMAIN),
+      'description' => 'Stuff that you can change',
+      'priority' => 200,
+    ));
+    $wp_customize->get_section('custom_css')->panel = 'ftt_advanced';
+
+    $wp_customize->add_section('ftt_colors', array(
+      'title'    => __('Colors', FTT_TEXT_DOMAIN),
+      'description' => 'Stuff that you can change',
+      'priority' => 30,
+    ));
+
     $this->add_colors_options($wp_customize);
 
-    $wp_customize->add_panel( 'front_page_panel', array(
-      'title' => 'Front Page Stuff',
-      'description' => 'Stuff that you can change about the Front Page',
-      'priority' => 10,
-      'active_callback' => 'is_front_page',
+    $wp_customize->add_section('ftt_fonts', array(
+      'title'    => __('Fonts', FTT_TEXT_DOMAIN),
+      'description' => 'Stuff that you can change',
+      'priority' => 30,
     ));
 
-    $wp_customize->add_section( 'themedemo_panel_settings', array(
-      'title' => 'More Stuff',
-      'priority' => 10,
-      'panel' => 'front_page_panel',
+    $this->add_font_options($wp_customize);
+
+    $wp_customize->add_section('ftt_footer', array(
+      'title'    => __('Footer Text', FTT_TEXT_DOMAIN),
+      'description' => 'Stuff that you can change',
+      'priority' => 150,
+      'panel' => 'ftt_advanced'
     ));
 
-    $wp_customize->add_setting( 'demo_radio_control', array(
-      'default'        => 'a',
-    ));
-
-    $wp_customize->add_control( 'demo_radio_control', array(
-      'label'      => 'radio_control',
-      'section'    => 'themedemo_panel_settings',
-      'settings'   => 'demo_radio_control',
-      'type'       => 'radio',
-      'choices'    => array(
-      'a' => 'Choice A',
-      'b' => 'Choice B',
-      ),
-    ));
-
+    $this->add_footer_options($wp_customize);
   }
 
   function add_colors_options($wp_customize) {
-
-    $wp_customize->add_control('colorscheme', array(
+    // OPTION
+    $wp_customize->add_setting('ftt_theme_options[color_scheme]', array(
+      'default'        => 'value_xyz',
+      'capability'     => 'edit_theme_options',
+      'type'           => 'option',
+    ));
+    $wp_customize->add_control('color-scheme', array(
       'type'    => 'radio',
       'label'    => __( 'Color Scheme', 'twentyseventeen' ),
       'choices'  => array(
@@ -158,22 +169,85 @@ class FoodTruckThemeCustomization {
         'dark'   => __( 'Dark', 'twentyseventeen' ),
         'custom' => __( 'Custom', 'twentyseventeen' ),
       ),
-      'section'  => 'colors',
+      'section'  => 'ftt_colors',
+      'settings'   => 'ftt_theme_options[color_scheme]',
       'priority' => 5,
     ));
 
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_color', array(
-      'label'      => __( 'Header Color', 'mytheme' ),
-      'section'    => 'your_section_id',
-      'settings'   => 'your_setting_id',
+    // OPTION
+    $wp_customize->add_setting('ftt_theme_options[brand_color]', array(
+      'default'        => 'value_xyz',
+      'capability'     => 'edit_theme_options',
+      'type'           => 'option',
+    ));
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'ftt_theme_options[brand_color]', array(
+      'label'      => __( 'Brand Color', 'mytheme' ),
+      'section'    => 'ftt_colors',
+      'settings'   => 'ftt_theme_options[brand_color]',
     )));
+
+    // OPTION
+    $wp_customize->add_setting('ftt_theme_options[text_color]', array(
+      'default'        => 'value_xyz',
+      'capability'     => 'edit_theme_options',
+      'type'           => 'option',
+    ));
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'ftt_theme_options[text_color]', array(
+      'label'      => __( 'Text Colour', 'mytheme' ),
+      'section'    => 'ftt_colors',
+      'settings'   => 'ftt_theme_options[text_color]',
+    )));
+
+    // OPTION
+    $wp_customize->add_setting('ftt_theme_options[background_color]', array(
+      'default'        => 'value_xyz',
+      'capability'     => 'edit_theme_options',
+      'type'           => 'option',
+    ));
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'ftt_theme_options[background_color]', array(
+      'label'      => __( 'Background Color', 'mytheme' ),
+      'section'    => 'ftt_colors',
+      'settings'   => 'ftt_theme_options[background_color]',
+    )));
+
+    return $wp_customize;
   }
 
-
-  function _todo() {
-
-
+  function add_font_options($wp_customize) {
+    // OPTION
+    $wp_customize->add_setting('ftt_theme_options[font_scheme]', array(
+      'default'        => 'value_xyz',
+      'capability'     => 'edit_theme_options',
+      'type'           => 'option',
+    ));
+    $wp_customize->add_control('color-scheme', array(
+      'type'    => 'radio',
+      'label'    => __( 'Fonts', 'twentyseventeen' ),
+      'choices'  => array(
+        'light'  => __( 'Light', 'twentyseventeen' ),
+        'dark'   => __( 'Dark', 'twentyseventeen' ),
+        'custom' => __( 'Custom', 'twentyseventeen' ),
+      ),
+      'section'  => 'ftt_fonts',
+      'settings'   => 'ftt_theme_options[font_scheme]',
+      'priority' => 5,
+    ));
   }
+
+  function add_footer_options($wp_customize) {
+    // OPTION
+    $wp_customize->add_setting('themename_theme_options[text_test]', array(
+      'default'        => 'value_xyz',
+      'capability'     => 'edit_theme_options',
+      'type'           => 'option',
+    ));
+    $wp_customize->add_control('themename_text_test', array(
+        'label'      => __('Text Test', 'themename'),
+        'section'    => 'ftt_footer',
+        'settings'   => 'themename_theme_options[text_test]',
+    ));
+  }
+
 
   function get_starter_content() {
     $content = array();
@@ -465,4 +539,3 @@ function ftt_get_pages_of_root_parent() {
 function ftt_no_wp_top_menu_fallback($args) {
   echo FoodTruckThemeNavigation::instance()->output_wp_menu_fallback($args['menu_id']);
 }
-

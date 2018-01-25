@@ -102,9 +102,19 @@ window.FoodTruckTheme = (function(global) {
       ?>
     </ul>
     <div class="navigation_items_logo">
-      <div class="logo">
-        <img src="" data-dummy="100,300x100,300" />
-      </div>
+      <a href="<?php echo esc_url(home_url('/')); ?>" class="logo" rel="home" itemprop="url">
+        <?php if(has_custom_logo()): ?>
+          <?php
+            // Note: the_custom_logo() outputs a wrapping a <a />, so we'll bypass:
+            echo wp_get_attachment_image(get_theme_mod('custom_logo'), 'full', false, array(
+              'itemprop' => 'logo',
+              'alt' => get_bloginfo( 'name', 'display' )
+            ));
+          ?>
+        <?php else: ?>
+          <?php echo get_bloginfo('name', 'display'); ?>
+        <?php endif; ?>
+      </a>
     </div>
     <ul class="navigation_items_links menu-top-right-container">
       <?php

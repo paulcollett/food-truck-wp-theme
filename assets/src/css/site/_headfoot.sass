@@ -1,12 +1,22 @@
+$nav_zindex: 99999 // same as #wpadminbar
+
 .navigation
   background: #ccc
-  position: fixed
   position: sticky
   width: 100%
   top: 0
-  z-index: 99997
+  z-index: $nav_zindex
   cursor: default
   user-select: none
+
+.admin-bar .navigation
+  top: 32px
+.admin-bar.site--nav-open .navigation
+  z-index: $nav_zindex + 1
+
+@media (max-width: 782px)
+  .admin-bar .navigation
+    top: 46px
 
 .navigation_items
   display: flex
@@ -53,7 +63,7 @@
   left: 0
   height: 0
   display: flex
-  z-index: 99998
+  z-index: 1
   right: 0
   background: #ccc
   overflow: auto
@@ -130,7 +140,7 @@
   @include pauls-burger-button(44px, 30px, 2px, 14px, '.site--nav-open &') // width, height, line size, spacing between lines, active css selector
   cursor: pointer
   position: relative
-  z-index: 99999
+  z-index: 2
   .site--nav-open &
     color: green
 
@@ -189,6 +199,7 @@
   animation: logo-in .4s .1s ease backwards
   color: currentcolor
   font-size: 120%
+  min-height: 1px
   img
     max-width: 250px
     max-height: 110px
