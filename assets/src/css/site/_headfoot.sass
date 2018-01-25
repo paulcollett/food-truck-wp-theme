@@ -155,9 +155,10 @@
   &:hover:after
     right: 0%
     left: 0%
-  @at-root #{$active-selector}:active
-    right: 0%
-    left: 0%
+  @at-root #{$active-selector}
+    &:after
+      right: 0%
+      left: 0%
 
 .button, .btn
   @include button()
@@ -165,8 +166,12 @@
 // navigation link
 .menu-item
   > a
-    @include button('', '.menu-item.current-menu-item  > a')
+    @include button('', '.menu-item.current-menu-item > a')
 
+// sub navigation link
+.sub-menu-item
+  > a
+    @include button('', '.sub-menu-item.current-sub-menu-item > a')
 
 @keyframes logo-in
   0%

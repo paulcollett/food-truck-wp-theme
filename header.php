@@ -3,7 +3,6 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="stylesheet" href="assets/dist/css/site.css">
 
 <!-- wp_head -->
 <?php wp_head(); ?>
@@ -88,48 +87,34 @@ window.FoodTruckTheme = (function(global) {
 <body <?php body_class(); ?>>
 <script>FoodTruckTheme.mobileNavAt(window.FoodTruckTheme_MobNavAt || 1200); FoodTruckTheme.bodyReady();</script>
 
-<?php //if ( has_nav_menu( 'top' ) ) { ?>
-
 <header class="navigation" role="navigation">
   <nav class="navigation_items">
-
     <ul class="navigation_items_links menu-top-left-container">
       <?php
         wp_nav_menu(array(
           'theme_location' => 'top-left',
-          'menu_id'        => 'top-menu-left',
+          'menu_id' => 'top-menu-left',
           'depth' => 1,
-          'container' => false,//'div',
-          //'container_class' => 'navigation_items_links menu-{menu slug}-container',
-          //'walker' => new WPDocs_Walker_Nav_Menu(), // <div class="navigation_items_links_item"><a class="nav-link" href="" data-dummy="1,3"></a></div>
-          'items_wrap' => '%3$s',//'<div class="navigation_items_links_item"><a class="nav-link" href=""'
-          'fallback_cb' => false, //'wp_page_menu'
+          'container' => false,
+          'items_wrap' => '%3$s',
+          'fallback_cb' => 'ftt_no_wp_top_menu_fallback',
         ));
       ?>
     </ul>
-
-    <!--
-      <div class="navigation_items_links_item"><a class="nav-link nav-link--active" href="" data-dummy="1,2"></a></div>
-      <div class="navigation_items_links_item"><a class="nav-link" href="" data-dummy="1,2"></a></div>
-    -->
-
     <div class="navigation_items_logo">
       <div class="logo">
         <img src="" data-dummy="100,300x100,300" />
       </div>
     </div>
-
     <ul class="navigation_items_links menu-top-right-container">
       <?php
         wp_nav_menu(array(
           'theme_location' => 'top-right',
-          'menu_id'        => 'top-menu-right',
+          'menu_id' => 'top-menu-right',
           'depth' => 1,
-          'container' => false,//'div',
-          //'container_class' => 'navigation_items_links menu-{menu slug}-container',
-          //'walker' => new WPDocs_Walker_Nav_Menu(), // <div class="navigation_items_links_item"><a class="nav-link" href="" data-dummy="1,3"></a></div>
-          'items_wrap' => '%3$s',//'<div class="navigation_items_links_item"><a class="nav-link" href=""'
-          'fallback_cb' => false, //'wp_page_menu'
+          'container' => false,
+          'items_wrap' => '%3$s',
+          'fallback_cb' => 'ftt_no_wp_top_menu_fallback',
         ));
       ?>
       <li class="navigation_items_links_toggle">
