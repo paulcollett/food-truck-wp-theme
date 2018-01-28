@@ -68,6 +68,8 @@ class FoodTruckThemeCustomization {
       // get_theme_starter_content()
       add_theme_support( 'starter-content', $this->get_starter_content());
     });
+
+    add_action('wp_head', array($this, 'output_css'));
   }
 
   function manage_feature_support() {
@@ -114,28 +116,28 @@ class FoodTruckThemeCustomization {
   }
 
   function init_options($wp_customize) {
-    //Clarify default elements
+    // Clean up defaults
     $wp_customize->get_section('title_tagline')->title = 'Logo & Icons';
-    $wp_customize->get_section('static_front_page')->title = 'Homepage';
+    $wp_customize->get_section('static_front_page')->title = 'Home & Blog Pages';
     $wp_customize->get_section('static_front_page')->priority = 20;
     $wp_customize->remove_control('blogdescription');
     $wp_customize->remove_control('header_text');
-
-    $wp_customize->add_panel('ftt_advanced', array(
+    $wp_customize->add_panel('ftt_panel_advanced', array(
       'title'    => __('Advanced', FTT_TEXT_DOMAIN),
       'description' => 'Stuff that you can change',
       'priority' => 200,
     ));
-    $wp_customize->get_section('custom_css')->panel = 'ftt_advanced';
+    $wp_customize->get_section('custom_css')->panel = 'ftt_panel_advanced';
 
-    $wp_customize->add_section('ftt_colors', array(
+    // Add colors options
+    $wp_customize->add_section('ftt_section_colors', array(
       'title'    => __('Colors', FTT_TEXT_DOMAIN),
       'description' => 'Stuff that you can change',
       'priority' => 30,
     ));
 
-    $this->add_colors_options($wp_customize);
-
+    $this->add_colors_options($wp_customize, 'ftt_section_colors');
+/*
     $wp_customize->add_section('ftt_fonts', array(
       'title'    => __('Fonts', FTT_TEXT_DOMAIN),
       'description' => 'Stuff that you can change',
@@ -143,74 +145,104 @@ class FoodTruckThemeCustomization {
     ));
 
     $this->add_font_options($wp_customize);
+*/
 
-    $wp_customize->add_section('ftt_footer', array(
+    // Other Misc Options
+    $wp_customize->add_section('ftt_section_footer', array(
       'title'    => __('Footer Text', FTT_TEXT_DOMAIN),
       'description' => 'Stuff that you can change',
-      'priority' => 150,
-      'panel' => 'ftt_advanced'
+      'priority' => 10,
+      'panel' => 'ftt_panel_advanced'
     ));
 
-    $this->add_footer_options($wp_customize);
+    $this->add_footer_options($wp_customize, 'ftt_section_footer');
+
+    $wp_customize->add_section('ftt_section_mobnav_bp', array(
+      'title'    => __('Mobile Navigation Breakpoint', FTT_TEXT_DOMAIN),
+      'description' => 'Show the mobile navigation when the browser width is how many pixels:',
+      'priority' => 20,
+      'panel' => 'ftt_panel_advanced'
+    ));
+
+    $this->add_breakpoint_options($wp_customize, 'ftt_section_mobnav_bp');
   }
 
-  function add_colors_options($wp_customize) {
+  function add_colors_options($wp_customize, $section_id) {
     // OPTION
-    $wp_customize->add_setting('ftt_theme_options[color_scheme]', array(
-      'default'        => 'value_xyz',
+    $option_id = 'ftt_theme_mod_color_scheme';
+    $control_id = $option_id;
+    $wp_customize->add_setting($option_id, array(
+      'default'        => 'tropical',
       'capability'     => 'edit_theme_options',
-      'type'           => 'option',
+      'type'           => 'theme_mod', // Alt: 'option' get_option()
     ));
-    $wp_customize->add_control('color-scheme', array(
+    $wp_customize->add_control($control_id, array(
       'type'    => 'radio',
-      'label'    => __( 'Color Scheme', 'twentyseventeen' ),
+      'label'    => __( 'Pre-Designed Color Schemes', FTT_TEXT_DOMAIN),
       'choices'  => array(
-        'light'  => __( 'Light', 'twentyseventeen' ),
-        'dark'   => __( 'Dark', 'twentyseventeen' ),
-        'custom' => __( 'Custom', 'twentyseventeen' ),
+        'tropical'  => __('Tropical', FTT_TEXT_DOMAIN),
+        'modern'   => __('Modern', FTT_TEXT_DOMAIN),
+        'tanned' => __('Tanned', FTT_TEXT_DOMAIN),
+        'dark' => __('Dark', FTT_TEXT_DOMAIN),
+        'custom' => __('Custom', FTT_TEXT_DOMAIN),
       ),
-      'section'  => 'ftt_colors',
-      'settings'   => 'ftt_theme_options[color_scheme]',
+      'section'  => $section_id,
+      'settings'   => $option_id,
       'priority' => 5,
     ));
 
+    $color_scheme_options_id = $option_id;
+
+    $is_custom_scheme = function($control) use ($color_scheme_options_id) {
+      return $control->manager->get_setting($color_scheme_options_id)->value() == 'custom';
+    };
+
     // OPTION
-    $wp_customize->add_setting('ftt_theme_options[brand_color]', array(
+    $option_id = 'ftt_theme_mod_brand_color';
+    $control_id = $option_id;
+    $wp_customize->add_setting($option_id, array(
       'default'        => 'value_xyz',
       'capability'     => 'edit_theme_options',
-      'type'           => 'option',
+      'type'           => 'theme_mod',
     ));
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'ftt_theme_options[brand_color]', array(
-      'label'      => __( 'Brand Color', 'mytheme' ),
-      'section'    => 'ftt_colors',
-      'settings'   => 'ftt_theme_options[brand_color]',
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $control_id, array(
+      'label'      => __( 'Brand Color', FTT_TEXT_DOMAIN),
+      'section'    => $section_id,
+      'settings'   => $option_id,
+      'active_callback' => $is_custom_scheme
     )));
 
     // OPTION
-    $wp_customize->add_setting('ftt_theme_options[text_color]', array(
+    $option_id = 'ftt_theme_mod_text_color';
+    $control_id = $option_id;
+    $wp_customize->add_setting($option_id, array(
       'default'        => 'value_xyz',
       'capability'     => 'edit_theme_options',
-      'type'           => 'option',
+      'type'           => 'theme_mod',
     ));
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'ftt_theme_options[text_color]', array(
-      'label'      => __( 'Text Colour', 'mytheme' ),
-      'section'    => 'ftt_colors',
-      'settings'   => 'ftt_theme_options[text_color]',
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $control_id, array(
+      'label'      => __( 'Text Colour', FTT_TEXT_DOMAIN),
+      'section'    => $section_id,
+      'settings'   => $option_id,
+      'active_callback' => $is_custom_scheme
     )));
 
     // OPTION
-    $wp_customize->add_setting('ftt_theme_options[background_color]', array(
+    $option_id = 'ftt_theme_mod_background_color';
+    $control_id = $option_id;
+    $wp_customize->add_setting($option_id, array(
       'default'        => 'value_xyz',
       'capability'     => 'edit_theme_options',
-      'type'           => 'option',
+      'type'           => 'theme_mod',
     ));
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'ftt_theme_options[background_color]', array(
-      'label'      => __( 'Background Color', 'mytheme' ),
-      'section'    => 'ftt_colors',
-      'settings'   => 'ftt_theme_options[background_color]',
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $control_id, array(
+      'label'      => __( 'Background Color', FTT_TEXT_DOMAIN),
+      'section'    => $section_id,
+      'settings'   => $option_id,
+      'active_callback' => $is_custom_scheme
     )));
 
-    return $wp_customize;
+    //return $wp_customize;
   }
 
   function add_font_options($wp_customize) {
@@ -218,15 +250,15 @@ class FoodTruckThemeCustomization {
     $wp_customize->add_setting('ftt_theme_options[font_scheme]', array(
       'default'        => 'value_xyz',
       'capability'     => 'edit_theme_options',
-      'type'           => 'option',
+      'type'           => 'theme_mod',
     ));
-    $wp_customize->add_control('color-scheme', array(
+    $wp_customize->add_control('font-scheme', array(
       'type'    => 'radio',
-      'label'    => __( 'Fonts', 'twentyseventeen' ),
+      'label'    => __( 'Designed Font', FTT_TEXT_DOMAIN),
       'choices'  => array(
-        'light'  => __( 'Light', 'twentyseventeen' ),
-        'dark'   => __( 'Dark', 'twentyseventeen' ),
-        'custom' => __( 'Custom', 'twentyseventeen' ),
+        'light'  => __( 'Light', FTT_TEXT_DOMAIN),
+        'dark'   => __( 'Dark', FTT_TEXT_DOMAIN),
+        'custom' => __( 'Custom', FTT_TEXT_DOMAIN),
       ),
       'section'  => 'ftt_fonts',
       'settings'   => 'ftt_theme_options[font_scheme]',
@@ -234,17 +266,108 @@ class FoodTruckThemeCustomization {
     ));
   }
 
-  function add_footer_options($wp_customize) {
+  function add_footer_options($wp_customize, $section_id) {
     // OPTION
-    $wp_customize->add_setting('themename_theme_options[text_test]', array(
-      'default'        => 'value_xyz',
+    $option_id = 'ftt_theme_mod_footer_text';
+    $control_id = $option_id;
+    $wp_customize->add_setting($option_id, array(
+      'default'        => '[copyright] [year] [name]',
       'capability'     => 'edit_theme_options',
-      'type'           => 'option',
+      'type'           => 'theme_mod'
     ));
-    $wp_customize->add_control('themename_text_test', array(
-        'label'      => __('Text Test', 'themename'),
-        'section'    => 'ftt_footer',
-        'settings'   => 'themename_theme_options[text_test]',
+    $wp_customize->add_control($control_id, array(
+        'label'      => __('Footer Text', FTT_TEXT_DOMAIN),
+        'section'    => $section_id,
+        'settings'   => $option_id,
+    ));
+  }
+
+  function add_breakpoint_options($wp_customize, $section_id) {
+    // OPTION
+    $option_id = 'ftt_theme_mod_nav_breakpoint';
+    $control_id = $option_id;
+    $wp_customize->add_setting($option_id, array(
+      'default'        => 1200,
+      'capability'     => 'edit_theme_options',
+      'type'           => 'theme_mod'
+    ));
+    $wp_customize->add_control($control_id, array(
+        'type'    => 'number',
+        'label'      => __('Breakpoint in pixels', FTT_TEXT_DOMAIN),
+        'section'    => $section_id,
+        'settings'   => $option_id,
+    ));
+  }
+
+  function output_css() {
+    $css_rule = function($selector, $rules = array()) {
+      $rules = array_map(function($value, $rule) {
+        return $rule . ': ' . $value;
+      }, array_values($rules), array_keys($rules));
+
+      return sprintf('%s { %s }', $selector, implode("; ", $rules));
+    };
+
+    $color_scheme_name = get_theme_mod('ftt_theme_mod_color_scheme', 'tropical');
+    $font_scheme_name = get_theme_mod('ftt_theme_mod_font_scheme', 'tropical');
+
+    $color_schemes_available = array(
+      'tropical' => array('brown', '#444', 'yellow'),
+      'modern' => array(),
+      'tanned' => array(),
+      'dark' => array(),
+      'custom' => array(
+        get_theme_mod('ftt_theme_mod_brand_color'),
+        get_theme_mod('ftt_theme_mod_text_color'),
+        get_theme_mod('ftt_theme_mod_background_color')
+      )
+    );
+    $font_schemes_available = array(
+      'tropical' => array('Open Sans', 'Roboto'),
+      'modern' => array(),
+      'tanned' => array(),
+      'dark' => array(),
+      'custom' => array(
+        get_theme_mod('ftt_theme_mod_brand_color'),
+        get_theme_mod('ftt_theme_mod_text_color'),
+        get_theme_mod('ftt_theme_mod_background_color')
+      )
+    );
+
+    $color_scheme_name = isset($color_schemes_available[$color_scheme_name]) ? $color_scheme_name : 'tropical';
+    $font_scheme_name = isset($font_schemes_available[$font_scheme_name]) ? $font_scheme_name : 'tropical';
+    $color_scheme = $color_schemes_available[$color_scheme_name];
+    $font_scheme = $font_schemes_available[$font_scheme_name];
+
+    echo implode("\n", array(
+      sprintf('<!-- Customized Food Truck Theme CSS (%s, %s) --> ', $color_scheme_name, $font_scheme_name),
+      '<style>',
+      $css_rule('body', array(
+        'color' => $color_scheme[1],
+        'background-color' => $color_scheme[2],
+        'font-family' => $font_scheme[1]
+      )),
+      $css_rule('.navigation', array(
+        'color' => $color_scheme[0],
+        'background-color' => $color_scheme[2]
+      )),
+      $css_rule('.navigation_mob, .site--nav-open .navigation-toggle', array(
+        'color' => $color_scheme[2]
+      )),
+      $css_rule('.navigation_mob', array(
+        'background-color' => $color_scheme[0]
+      )),
+      $css_rule('.content a', array(
+        'color' => $color_scheme[0]
+      )),
+      $css_rule('.button, .btn, button, .navigation, h1, h2, h3, h4, h5', array(
+        'font-family' => $font_scheme[0]
+      )),
+      $css_rule('.logo_text', array(
+        'color' => $color_scheme[2],
+        'background-color' => $color_scheme[0],
+      )),
+      '</style>'
     ));
   }
 

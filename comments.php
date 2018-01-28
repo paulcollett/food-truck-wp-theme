@@ -46,14 +46,14 @@ if ( have_comments() ) : ?>
         'avatar_size' => 100,
         'style'       => 'ol',
         'short_ping'  => true,
-        'reply_text'  => twentyseventeen_get_svg( array( 'icon' => 'mail-reply' ) ) . __( 'Reply', 'twentyseventeen' ),
+        'reply_text'  => __( 'Reply', 'twentyseventeen' ),
       ) );
     ?>
   </ol>
 
   <?php the_comments_pagination( array(
-    'prev_text' => twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous', 'twentyseventeen' ) . '</span>',
-    'next_text' => '<span class="screen-reader-text">' . __( 'Next', 'twentyseventeen' ) . '</span>' . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ),
+    'prev_text' => '<span class="screen-reader-text">' . __( 'Previous', 'twentyseventeen' ) . '</span>',
+    'next_text' => '<span class="screen-reader-text">' . __( 'Next', 'twentyseventeen' ) . '</span>',
   ) );
 
 endif; // Check for have_comments().

@@ -1,7 +1,6 @@
 $nav_zindex: 99999 // same as #wpadminbar
 
 .navigation
-  background: #ccc
   position: sticky
   width: 100%
   top: 0
@@ -141,8 +140,9 @@ $nav_zindex: 99999 // same as #wpadminbar
   cursor: pointer
   position: relative
   z-index: 2
-  .site--nav-open &
-    color: green
+  transition: color .2s ease
+  //.site--nav-open &
+  //  color: green
 
 
 @mixin button($type: '', $active-selector: '&.active')

@@ -85,7 +85,7 @@ window.FoodTruckTheme = (function(global) {
 
 </head>
 <body <?php body_class(); ?>>
-<script>FoodTruckTheme.mobileNavAt(window.FoodTruckTheme_MobNavAt || 1200); FoodTruckTheme.bodyReady();</script>
+<script>FoodTruckTheme.mobileNavAt(<?php echo absint(get_theme_mod('ftt_theme_mod_nav_breakpoint')) ?: 1200; ?>); FoodTruckTheme.bodyReady();</script>
 
 <header class="navigation" role="navigation">
   <nav class="navigation_items">
@@ -112,7 +112,7 @@ window.FoodTruckTheme = (function(global) {
             ));
           ?>
         <?php else: ?>
-          <?php echo get_bloginfo('name', 'display'); ?>
+          <div class="logo_text"><?php echo get_bloginfo('name', 'display'); ?></div>
         <?php endif; ?>
       </a>
     </div>
