@@ -17,6 +17,10 @@ $nav_zindex: 99999 // same as #wpadminbar
   .admin-bar .navigation
     top: 46px
 
+@media (max-width: 600px)
+  .admin-bar .navigation
+    top: 0px
+
 .navigation_items
   display: flex
   //justify-content: space-between
@@ -32,6 +36,7 @@ $nav_zindex: 99999 // same as #wpadminbar
   //justify-content: space-between
   align-items: center
   padding: 2vh 0
+  font-size: calc(0.5em + 1vw)
   &:last-child
     text-align: right
     //justify-content: flex-end
@@ -200,11 +205,31 @@ $nav_zindex: 99999 // same as #wpadminbar
   color: currentcolor
   font-size: 120%
   min-height: 1px
+  max-width: 250px // for the text
+  text-align: center // for the text
+  line-height: 1.3em // for the text
+  transform: scale(1)
+  transition: transform .2s ease
+  &:hover
+    transform: scale(1.05)
   img
     max-width: 250px
     max-height: 110px
     width: auto
     height: auto
+.logo_text
+  display: inline
+  padding: 1% 4%
+  box-decoration-break: clone
+  font-size: .9em
+  transform: rotate(-25deg)
+  word-break: normal
+@media (max-width: 700px)
+  .logo
+    max-width: 180px
+    line-height: 1.1em
+  .logo_text
+    font-size: .7em
 
 .site--nav-mobile .logo
   img
