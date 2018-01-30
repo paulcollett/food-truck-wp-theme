@@ -17,7 +17,7 @@ if ( post_password_required() ) {
 <?php
 // You can start editing here -- including this comment!
 if ( have_comments() ) : ?>
-  <h2 class="comments-title">
+  <h3 class="comments-title">
     <?php
     $comments_number = get_comments_number();
     if ( '1' === $comments_number ) {
@@ -38,7 +38,7 @@ if ( have_comments() ) : ?>
       );
     }
     ?>
-  </h2>
+  </h3>
 
   <ol class="comment-list">
     <?php

@@ -1,6 +1,6 @@
 $nav_zindex: 99999 // same as #wpadminbar
 
-.navigation
+.mainnav
   position: sticky
   width: 100%
   top: 0
@@ -8,27 +8,27 @@ $nav_zindex: 99999 // same as #wpadminbar
   cursor: default
   user-select: none
 
-.admin-bar .navigation
+.admin-bar .mainnav
   top: 32px
-.admin-bar.site--nav-open .navigation
+.admin-bar.site--nav-open .mainnav
   z-index: $nav_zindex + 1
 
 @media (max-width: 782px)
-  .admin-bar .navigation
+  .admin-bar .mainnav
     top: 46px
 
 @media (max-width: 600px)
-  .admin-bar .navigation
+  .admin-bar .mainnav
     top: 0px
 
-.navigation_items
+.mainnav_items
   display: flex
   //justify-content: space-between
   align-items: center
   min-height: 1px // prevent collapse
   padding: 0 1%
 
-.navigation_items_links
+.mainnav_items_links
   width: 1%
   flex: 1
   //display: flex
@@ -40,28 +40,28 @@ $nav_zindex: 99999 // same as #wpadminbar
   &:last-child
     text-align: right
     //justify-content: flex-end
-.navigation_items_links > li
+.mainnav_items_links > li
   display: inline-block
   vertical-align: middle
   padding: 1vh 3% // note: Firefox doesn't support % on vertical padding + margins on Flex items
   // Mobile Nav btn container:
-  &.navigation_items_links_toggle
+  &.mainnav_items_links_toggle
     margin-right: 10%
     display: none
 
-.site--nav-mobile .navigation_items_links > li
+.site--nav-mobile .mainnav_items_links > li
   display: none
   // Mobile Nav btn container:
-  &.navigation_items_links_toggle
+  &.mainnav_items_links_toggle
     display: block
 
-.navigation_items_logo
+.mainnav_items_logo
   flex-shrink: 0
   padding: 3vh 4% // note: Firefox doesn't support % on vertical padding + margins on Flex items
 
 
 
-.navigation_mob
+.mainnav_mob
   position: fixed
   top: 0
   left: 0
@@ -78,7 +78,7 @@ $nav_zindex: 99999 // same as #wpadminbar
     transition: height 0s 0s linear, opacity .2s ease-out
     height: 100vh
     opacity: 1
-.navigation_mob_items
+.mainnav_mob_items
   text-align: center
   margin: auto
   width: 100%
@@ -86,7 +86,7 @@ $nav_zindex: 99999 // same as #wpadminbar
   text-align: center
   padding: 4vw
 
-.navigation_mob_items_item
+.mainnav_mob_items_item
   font-size: calc(1em + 1vw)
   margin-bottom: .3em
   animation: mob-nav-items-in .25s ease-out both
@@ -140,7 +140,7 @@ $nav_zindex: 99999 // same as #wpadminbar
     > *
       opacity: 0
 
-.navigation-toggle
+.mainnav-toggle
   @include pauls-burger-button(44px, 30px, 2px, 14px, '.site--nav-open &') // width, height, line size, spacing between lines, active css selector
   cursor: pointer
   position: relative
@@ -174,9 +174,6 @@ $nav_zindex: 99999 // same as #wpadminbar
     &:after
       right: 0%
       left: 0%
-
-.button, .btn
-  @include button()
 
 // navigation link
 .menu-item
@@ -222,7 +219,6 @@ $nav_zindex: 99999 // same as #wpadminbar
   padding: 1% 4%
   box-decoration-break: clone
   font-size: .9em
-  transform: rotate(-25deg)
   word-break: normal
 @media (max-width: 700px)
   .logo
@@ -242,3 +238,16 @@ $nav_zindex: 99999 // same as #wpadminbar
       max-width: 170px
       max-height: 80px
 
+.sub-pages
+  text-align: center
+  padding: calc(10px + 5vh) 4vw
+  max-width: 100%
+  //white-space: nowrap
+  //overflow: auto
+  //-webkit-overflow-scrolling: touch
+  margin-left: -2%
+  font-size: calc(0.5em + 1vw)
+
+.sub-menu-item
+  display: inline-block
+  margin-left: 2%

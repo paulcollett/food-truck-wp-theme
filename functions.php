@@ -9,6 +9,9 @@ define('FTT_TEXT_DOMAIN', 'food-truck-theme');
 //get_parent_theme_file_uri( '/assets/images/header.jpg' )
 //get_template_directory_uri() . '/assets/dist/css/site.css'
 
+
+//RECOMMENDED: No reference to add_editor_style()
+
 class FoodTruckTheme {
   function __construct() {
     // Hooks
@@ -56,6 +59,8 @@ class FoodTruckThemeCustomization {
   function __construct() {
     $this->manage_feature_support();
 
+    $this->manage_theme_helpers();
+
     // Possible future feature
     //$this->add_default_bg_support();
 
@@ -66,7 +71,7 @@ class FoodTruckThemeCustomization {
       // default starter content
       // https://developer.wordpress.org/reference/functions/get_theme_starter_content/
       // get_theme_starter_content()
-      add_theme_support( 'starter-content', $this->get_starter_content());
+      //add_theme_support('starter-content', $this->get_starter_content());
     });
 
     add_action('wp_head', array($this, 'output_css'));
@@ -120,14 +125,21 @@ class FoodTruckThemeCustomization {
     $wp_customize->get_section('title_tagline')->title = 'Logo & Icons';
     $wp_customize->get_section('static_front_page')->title = 'Home & Blog Pages';
     $wp_customize->get_section('static_front_page')->priority = 20;
-    $wp_customize->remove_control('blogdescription');
-    $wp_customize->remove_control('header_text');
     $wp_customize->add_panel('ftt_panel_advanced', array(
       'title'    => __('Advanced', FTT_TEXT_DOMAIN),
       'description' => 'Stuff that you can change',
       'priority' => 200,
     ));
     $wp_customize->get_section('custom_css')->panel = 'ftt_panel_advanced';
+
+    // Home Page Options
+    $wp_customize->add_section('ftt_section_home', array(
+      'title'    => __('Homepage Panels', FTT_TEXT_DOMAIN),
+      'description' => 'Stuff that you can change',
+      'priority' => 30,
+    ));
+
+    $this->add_home_options($wp_customize, 'ftt_section_home');
 
     // Add colors options
     $wp_customize->add_section('ftt_section_colors', array(
@@ -138,6 +150,7 @@ class FoodTruckThemeCustomization {
 
     $this->add_colors_options($wp_customize, 'ftt_section_colors');
 
+    // Add font options
     $wp_customize->add_section('ftt_fonts', array(
       'title'    => __('Fonts', FTT_TEXT_DOMAIN),
       'description' => 'Stuff that you can change',
@@ -246,6 +259,56 @@ class FoodTruckThemeCustomization {
     )));
   }
 
+  function add_home_options($wp_customize, $section_id) {
+    // Move built-in to new section
+    $wp_customize->get_control('header_text')->section = $section_id;
+    $wp_customize->get_control('header_text')->label = 'Display Tagline Banner on Homepage';
+    $wp_customize->get_control('header_text')->priority = 0;
+
+    $wp_customize->get_control('blogdescription')->section = $section_id;
+
+    $option_id = 'ftt_theme_mod_tagline_text';
+    $control_id = $option_id;
+    $wp_customize->add_setting($option_id, array(
+      'default'        => 'Spreading the love for all things tasty, our sustainably run food truck strives to bring fresh, vibrant and carefully handpicked ingredients to your plate.',
+      'capability'     => 'edit_theme_options',
+      'type'           => 'theme_mod',
+    ));
+    $wp_customize->add_control($control_id, array(
+      'type' => 'textarea',
+      'label'      => __('About paragraph', FTT_TEXT_DOMAIN),
+      'section'    => $section_id,
+      'settings'   => $option_id,
+    ));
+
+    $option_id = 'ftt_theme_mod_tagline_image';
+    $control_id = $option_id;
+    $wp_customize->add_setting($option_id, array(
+      //'default'        => 'bungee',
+      'capability'     => 'edit_theme_options',
+      'type'           => 'theme_mod',
+    ));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, $control_id, array(
+      'label'      => __( 'Background Image', 'theme_name' ),
+      'section'    => $section_id,
+      'settings'   => $option_id,
+    )));
+
+    $option_id = 'ftt_theme_mod_tagline_bgtint';
+    $control_id = $option_id;
+    $wp_customize->add_setting($option_id, array(
+      'default'        => true,
+      'capability'     => 'edit_theme_options',
+      'type'           => 'theme_mod',
+    ));
+    $wp_customize->add_control($control_id, array(
+      'type' => 'checkbox',
+      'label'      => __( 'Tint Background Image', 'theme_name' ),
+      'section'    => $section_id,
+      'settings'   => $option_id,
+    ));
+  }
+
   function add_font_options($wp_customize, $section_id) {
     // OPTION
     $option_id = 'ftt_theme_mod_font_scheme';
@@ -322,8 +385,8 @@ class FoodTruckThemeCustomization {
     $font_scheme_name = get_theme_mod('ftt_theme_mod_font_scheme', 'tropical');
 
     $color_schemes_available = array(
-      'del-mar' => array('#599977', '#a53e47', '#FFF9DA'),
-      'cupcake' => array('#ff5dbd', '#844384', '#f4bfca'),
+      'del-mar' => array('#599977', '#7d3b41', '#FFF9DA'),
+      'cupcake' => array('#ea45a7', '#6f336e', '#f4bfca'),
       'modern' => array('#777', '#333', '#fff'),
       'waves' => array('#00A2FF', '#fff', '#001866'),
       'fries' => array('#F2772D', '#45371A', '#fff'),
@@ -355,7 +418,7 @@ class FoodTruckThemeCustomization {
     $color_scheme = $color_schemes_available[$color_scheme_name];
     $font_scheme_query = str_replace(' ', '+', implode('|', $font_schemes_available[$font_scheme_name]));
     $font_scheme_stack = array_map(function($v) {
-      return '"' . (explode(':', $v)[0]) . '", monospace';
+      return '"' . (explode(':', $v)[0]) . '", sans-serif';
     }, $font_schemes_available[$font_scheme_name]);
 
     echo implode("\n", array(
@@ -367,23 +430,26 @@ class FoodTruckThemeCustomization {
         'background-color' => $color_scheme[2],
         'font-family' => $font_scheme_stack[1]
       )),
-      $css_rule('.navigation', array(
+      $css_rule('.mainnav, .ftt-banner-tagline-text_line', array(
         'color' => $color_scheme[0],
         'background-color' => $color_scheme[2]
       )),
-      $css_rule('.navigation_mob, .site--nav-open .navigation-toggle', array(
+      $css_rule('.mainnav_mob, .site--nav-open .mainnav-toggle', array(
         'color' => $color_scheme[2]
       )),
-      $css_rule('.navigation_mob', array(
+      $css_rule('html, .mainnav_mob', array(
         'background-color' => $color_scheme[0]
       )),
-      $css_rule('.content a', array(
-        'color' => $color_scheme[0]
+      $css_rule('.ftt-banner-tagline', array(
+        'color' => $color_scheme[0],
       )),
-      $css_rule('.navigation, .sub-pages, h1, h2, h3, h4, h5, .btn, .button, button, input[type=submit], .submit', array(
+      get_theme_mod('ftt_theme_mod_tagline_image', '') ? $css_rule('.ftt-banner-tagline', array(
+        'background-image' => sprintf('url(%s)', get_theme_mod('ftt_theme_mod_tagline_image', ''))
+      )) : '',
+      $css_rule('.mainnav, .sub-pages, h1, h2, h3, h4, h5, .btn, .button, button, *[type=submit], .submit', array(
         'font-family' => $font_scheme_stack[0]
       )),
-      $css_rule('.logo_text, .btn, .button, button, input[type=submit], .submit', array(
+      $css_rule('.logo_text, .btn, .button, button, *[type=submit], .submit', array(
         'color' => $color_scheme[2],
         'background-color' => $color_scheme[0]
       )),
@@ -392,13 +458,31 @@ class FoodTruckThemeCustomization {
         'background-color' => $color_scheme[0],
       )),
       $css_rule('.widgets-layout_widget:nth-child(4n + 2), .widgets-layout_widget:nth-child(4n + 3)', array(
-        'color' => $color_scheme[0],
-        'background-color' => $color_scheme[1],
+        'color' => $color_scheme[0].'!important',
+        'background-color' => $color_scheme[1].'!important',
+      )),
+      $css_rule('.widgets-layout_widget .btn, .widgets-layout_widget .button, .widgets-layout_widget button, .widgets-layout_widget *[type=submit], .widgets-layout_widget .submit', array(
+        'color' => $color_scheme[1] .'!important',
+        'background-color' => $color_scheme[2].'!important'
       )),
       '</style>'
     ));
   }
 
+  function manage_theme_helpers() {
+    // Helpers to allow adjusting the theme content container on a per text basis
+    if(!shortcode_exists('no_container')) {
+      add_shortcode('no_container', function($a = array(), $c = '') {
+        return sprintf('</div></section><div class="content">%s</div><section class="contain contain--md ptmd mbmd"><div class="content">', do_shortcode($c));
+      });
+    }
+
+    if(!shortcode_exists('large_container')) {
+      add_shortcode('large_container', function($a = array(), $c = '') {
+        return sprintf('</div></section><section class="contain contain--lg ptmd mbmd"><div class="content">%s</div></section><section class="contain contain--md ptmd mbmd"><div class="content">', do_shortcode($c));
+      });
+    }
+  }
 
   function get_starter_content() {
     $content = array();
@@ -411,7 +495,7 @@ class FoodTruckThemeCustomization {
           'file' => 'assets/images/featured-logo.jpg',
         ),
       );
-
+/*
     $content['posts'] = array(
       'about' => array(
           // Use a page template with the predefined about page
@@ -424,7 +508,8 @@ class FoodTruckThemeCustomization {
           'post_content' => 'About services'
       ),
     );
-
+*/
+/*
     $content['nav_menus'] = array(
       'top' => array(
         'name' => __( 'Top Menu', 'twentyseventeen' ),
@@ -442,25 +527,15 @@ class FoodTruckThemeCustomization {
           ),
         ),
       ),
-      /*'social' => array(
-        'name' => __( 'Social Links Menu', 'twentyseventeen' ),
-        'items' => array(
-          'link_yelp',
-          'link_facebook',
-          'link_twitter',
-          'link_instagram',
-          'link_email',
-        ),
-      ),*/
-    );
-
+    );*/
+/*
     $content['theme_mods'] = array(
       'panel_1' => '{{homepage-section}}',
 			'panel_2' => '{{about}}',
 			'panel_3' => '{{blog}}',
       'panel_4' => '{{contact}}',
       'page_layout' => 'one-column'
-    );
+    );*/
 
     $content['options'] = array(
 			'show_on_front' => 'page',
@@ -474,9 +549,14 @@ class FoodTruckThemeCustomization {
 
     $content['widgets'] = array(
       'footer' => array(
-        'meta_custom' => array( 'meta', array(
-          'title' => 'Pre-hydrated meta widget.',
-        )),
+        'theme_initial_widget_1' => array('text', array(
+          'title' => 'Join the mailing list',
+          'text' => 'This is a good sport for a sign up form. Try a Mailchimp plugin'
+        ))
+        //'theme_initial_widget_1' => array('text', array(
+        //  'title' => 'Join the mailing list',
+        //  'text' => 'This is a good sport for a sign up form. Try a Mailchimp plugin'
+        //)),
       ),
     );
 
@@ -512,7 +592,7 @@ class FoodTruckThemeNavigation {
     return self::$instance;
   }
 
-  function get_pages_of_root_parent(){
+  function get_pages_of_root_parent() {
     $page_id = get_the_ID();
 
     $return_parent = true;
@@ -652,7 +732,9 @@ class FoodTruckThemeNavigation {
       return;
     }
 
-    $current_page_id = get_the_ID();
+    $current_page_id = isset($GLOBALS['wp_the_query']->query['page_id'])
+      ? $GLOBALS['wp_the_query']->query['page_id']
+      : get_the_ID();
 
     $pages = get_pages(array(
       'parent' => 0,

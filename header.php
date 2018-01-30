@@ -41,12 +41,12 @@ window.FoodTruckTheme = (function(global) {
 
     exprt.navReady = function() {
       $body = $('body');
-      $navItems = $('.navigation_items_links .menu-item');
-      //$movNavItemWrapper = $('.navigation_mob_items');
-      $mobNavContainer = $('.navigation_mob_items');//$movNavItemWrapper.parent();
+      $navItems = $('.mainnav_items_links .menu-item');
+      //$movNavItemWrapper = $('.mainnav_mob_items');
+      $mobNavContainer = $('.mainnav_mob_items');//$movNavItemWrapper.parent();
       //$movNavItemWrapper = $movNavItemWrapper.clone();
 
-      $('.navigation-toggle').on('click', toggleMobileNav);
+      $('.mainnav-toggle').on('click', toggleMobileNav);
     }
   })(window.jQuery);
 
@@ -85,11 +85,11 @@ window.FoodTruckTheme = (function(global) {
 
 </head>
 <body <?php body_class(); ?>>
-<script>FoodTruckTheme.mobileNavAt(<?php echo absint(get_theme_mod('ftt_theme_mod_nav_breakpoint')) ?: 1200; ?>); FoodTruckTheme.bodyReady();</script>
+<script>FoodTruckTheme.mobileNavAt(<?php echo absint(get_theme_mod('ftt_theme_mod_nav_breakpoint')) ?: (!empty($content_width) ? $content_width : 0) ?: 1200; ?>); FoodTruckTheme.bodyReady();</script>
 
-<header class="navigation" role="navigation">
-  <nav class="navigation_items">
-    <ul class="navigation_items_links menu-top-left-container">
+<header class="mainnav" role="mainnav">
+  <nav class="mainnav_items">
+    <ul class="mainnav_items_links menu-top-left-container">
       <?php
         wp_nav_menu(array(
           'theme_location' => 'top-left',
@@ -101,7 +101,7 @@ window.FoodTruckTheme = (function(global) {
         ));
       ?>
     </ul>
-    <div class="navigation_items_logo">
+    <div class="mainnav_items_logo">
       <a href="<?php echo esc_url(home_url('/')); ?>" class="logo" rel="home" itemprop="url">
         <?php if(has_custom_logo()): ?>
           <?php
@@ -116,7 +116,7 @@ window.FoodTruckTheme = (function(global) {
         <?php endif; ?>
       </a>
     </div>
-    <ul class="navigation_items_links menu-top-right-container">
+    <ul class="mainnav_items_links menu-top-right-container">
       <?php
         wp_nav_menu(array(
           'theme_location' => 'top-right',
@@ -127,14 +127,14 @@ window.FoodTruckTheme = (function(global) {
           'fallback_cb' => 'ftt_no_wp_top_menu_fallback',
         ));
       ?>
-      <li class="navigation_items_links_toggle">
-        <div class="navigation-toggle"><i></i></div>
+      <li class="mainnav_items_links_toggle">
+        <div class="mainnav-toggle"><i></i></div>
       </li>
     </ul>
   </nav>
-  <nav class="navigation_mob">
-    <ul class="navigation_mob_items menu-top-mobile-container">
-      <li class="navigation_mob_items_item"></li>
+  <nav class="mainnav_mob">
+    <ul class="mainnav_mob_items menu-top-mobile-container">
+      <li class="mainnav_mob_items_item"></li>
     </ul>
   </nav>
 </header>

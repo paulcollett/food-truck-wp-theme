@@ -26,7 +26,7 @@
   max-width: none
 
 
-.btn, .button, button, input[type=submit], .submit
+.btn, .button, button, *[type=submit], .submit
   cursor: pointer
   display: inline-block
   background: #ccc
@@ -41,8 +41,38 @@
   &:active
     transform: scale(1)
 
-//.section
-//  padding-top: 6%
+.ftt-banner-tagline
+  display: flex
+  padding: 4vh 4vw
+  overflow: hidden
+  min-height: 80vh
+  cursor: default
+  position: relative
+  background: currentcolor center center no-repeat
+  background-size: cover
+.ftt-banner-tagline--tint:after
+  content: ''
+  z-index: 0
+  position: absolute
+  top: 0
+  right: 0
+  left: 0
+  bottom: 0
+  background: currentcolor
+  opacity: 0.7
+.ftt-banner-tagline_contain
+  width: 100%
+  margin: auto
+  position: relative
+  z-index: 1
+.ftt-banner-tagline_contain.content
+  max-width: 40em
+.ftt-banner-tagline-text_line
+  display: inline
+  padding: .1em .2em
+  line-height: 2em
+  box-decoration-break: clone
+  word-break: normal
 
 .widgets-layout
   display: flex
@@ -59,6 +89,7 @@
 .widgets-layout_widget_contain
   padding: 4vw
   margin: auto
+  width: 100%
 
 @media (max-width: 900px)
   .widgets-layout_widget
@@ -74,20 +105,25 @@
 
 .content
   text-align: center
-
+  max-width: 100%
+  overflow: hidden
+  // just incase any user added floats havnt been cleared
+  &:after
+    content: ''
+    clear: both
+  //word-wrap: break-word
   h1, h2, h3, h4
     margin-bottom: calc(.5em + 4%)
     &:not(:first-child)
       padding-top: 1.2em
-  //h1, h2
-  //  border-bottom: 1px solid rgba(#000, 0.1)
-  //  padding-bottom: .1em
   h1
-    font-size: calc(1.5em + .3vw)
+    font-size: calc(2em + .3vw)
   h2
-    font-size: calc(1.3em + .3vw)
+    font-size: calc(1.6em + .3vw)
   h3
-    font-size: calc(1.1em + .3vw)
+    font-size: calc(1.2em + .3vw)
+  h4
+    font-size: calc(1em + .3vw)
   p, pre, table, ul, ol, > img, blockquote, hr
     margin-bottom: calc(.5em + 4%)
   pre
@@ -97,6 +133,7 @@
     position: relative
     display: inline-block
     border-left: 5px solid transparent
+    opacity: 0.8
     &:before, &:after
       content: ''
       display: block
@@ -109,8 +146,10 @@
       margin-bottom: calc(.5em + 3%)
     &:after
       margin-top: calc(.5em + 3%)
-  ul, ol
-    list-style: disk
+  ul, ul li
+    list-style: disc inside
+  ol, ol li
+    list-style: decimal inside
   table
     display: inline-block
     border: none
@@ -135,14 +174,44 @@
         content: ''
         border-top: 1px solid currentcolor
         opacity: 0.1
-  a
-    //font-weight: bold
-    //color: #C68400
+  a:not(.button):not(.btn)
+    text-decoration-skip: ink
+    text-decoration: underline
+    transition: opacity .2s ease
     &:hover
-      text-decoration: underline
-      text-decoration-skip: ink
+      opacity: 0.7
   & > *:last-child
     margin-bottom: 0
+  label
+    display: block
+    font-size: 1em
+  input:not([type=submit]):not([type=checkbox]):not([type=radio]), textarea
+      display: inline-block
+      padding: .6em .8em
+      font-size: 1em
+      max-width: 100%
+      width: 100%
+      color: currentcolor
+      background: none
+      outline: none
+      background-color: inherit
+      border: 3px solid currentcolor
+      &::placeholder
+        color: currentcolor
+        text-align: inherit
+  textarea
+    min-height: 3em
+    max-height: 10em
+  // Wordpress wysiwyg
+  .aligncenter, .alignnone, .post-thumbnail
+    margin: 0 auto
+    margin-bottom: calc(.5em + 4%)
+  .alignright, .alignleft
+    margin: 0 3% 3% 3%
+  .alignright
+    float: right
+  .alignleft
+    float: left
 
 @media (max-width: 900px)
   .content

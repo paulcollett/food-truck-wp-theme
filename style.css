@@ -10,20 +10,3 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: foodtruck
 Tags: theme-options, e-commerce, blog, food-and-drink, entertainment
 */
-
-supports 4.1+ because no title tag due to lack of support
-
-/*
-  Please ignore the following classnames.
-  Why? - They are required to host this theme on Wordpress.org, though
-  dont follow the coding standards implemented in this theme. Find similar classes in assets/
-*/
-.wp-caption{}
-.wp-caption-text{}
-.sticky{}
-.screen-reader-text{}
-.gallery-caption{}
-.bypostauthor{}
-.alignright{}
-.alignleft{}
-.aligncenter{}

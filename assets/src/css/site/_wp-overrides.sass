@@ -1,0 +1,153 @@
+.comments-area
+  padding-top: calc(.5em + 4%)
+  border-top: 1px solid currentcolor
+  margin-top: calc(.5em + 4%)
+.comment-list
+  //
+.content .comment
+  list-style: none
+  padding-bottom: calc(.5em + 4%)
+  border-bottom: 1px solid currentcolor
+  margin-bottom: calc(.5em + 4%)
+.comment-content p
+  margin: 0
+.comment-author img
+  border-radius: 100%
+  max-width: 3em
+
+.page-links, .post-navigation
+  clear: both
+
+
+.post + .post
+  padding-top: calc(.5em + 4%)
+  &:before
+    content: ''
+    display: block
+    opacity: 0.2
+    border-top: 3px solid currentcolor
+    margin-bottom: calc(.5em + 4%)
+.post
+  & > *:last-child
+    margin-bottom: 0
+.pagination, .post-navigation
+  &:before
+    content: ''
+    display: block
+    opacity: 0.2
+    border-top: 3px solid currentcolor
+    margin: calc(.5em + 4%) 0
+  .nav-subtitle
+    opacity: 0.7
+    &:after
+      content: ': '
+.twitter-tweet
+  margin: 0 auto
+
+.page-numbers:not(.dots)
+  display: inline-block
+  padding: 1%
+
+//supports 4.1+ because no title tag due to lack of support
+// required WP Classes
+.wp-caption
+  position: relative
+  padding: 2%
+  &:after
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    pointer-events: none
+    border: 2px solid currentcolor
+    opacity: 0.2
+.content .wp-caption-text
+  font-size: 0.8em
+  margin: 0
+  padding-top: .3em
+.sticky
+  padding: 4%
+  border: 3px solid currentcolor
+/* Hide visually but not from screen readers */
+.screen-reader-text,
+.screen-reader-text span
+	border: 0
+	clip: rect(1px, 1px, 1px, 1px)
+	clip-path: inset(50%)
+	height: 1px
+	margin: -1px
+	overflow: hidden
+	padding: 0
+	position: absolute
+	width: 1px
+	word-wrap: normal !important; // many screen reader and browser combinations announce broken words as they would appear visually
+.gallery-caption
+  font-size: 0.8em
+  margin: 0
+.bypostauthor
+  -wp-required: selector
+  outline: 1px solid red
+//.alignright
+//.alignleft
+//.aligncenter
+
+// Common Widget issues
+.widgets-layout
+  .button, *[type=submit], button, .btn
+    display: inline-block!important
+    width: auto !important
+    font-size: 1rem !important
+    padding: .4em .8em !important
+    height: auto!important
+    border: none!important
+  input[type=email],
+  input[type=text],
+  input[type=tel]
+    display: inline-block!important
+    padding: .6em .8em !important
+    border: 3px solid currentcolor!important
+    font-size: 1rem !important
+    width: 100% !important
+    color: inherit!important
+    background: transparent!important
+    height: auto!important
+
+// Inbuild navigation widget
+.widgets-layout_widget.widget_nav_menu .content
+  .menu
+    margin-left: -0.7em
+  ul
+    display: inline
+  ul li
+    list-style: none
+    display: inline
+    margin-left: .7em
+  a
+    text-decoration: none
+  a:hover
+    opacity: 1
+
+// Food Truck Plugin
+.content .locations-summary-addr-link
+  border-bottom: none
+
+// WP Forms Plugin
+// Subscriber Form Layout
+.widgets-layout
+  .wpforms-field-medium
+    max-width: 100% !important
+// Mailchimp Override any Custom HTML & Mailchimp styles
+#mc_embed_signup
+  background: none !important
+  font: inherit !important
+#mc_embed_signup form
+  padding: 0 !important
+  text-align: inherit!important
+#mc_embed_signup input:not(.button)
+  margin-bottom: 1.5em!important
+#mc_embed_signup .indicates-required
+  display: none
+
+
