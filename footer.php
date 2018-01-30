@@ -16,7 +16,7 @@
       echo str_replace(
         array_keys($footer_text_tags),
         array_values($footer_text_tags),
-        get_theme_mod("ftt_theme_mod_footer_text", "[copyright] [year] [name]")
+        esc_html(get_theme_mod("ftt_theme_mod_footer_text", "[copyright] [year] [name]"))
       );
     ?>
   </div>

@@ -16,9 +16,14 @@ class FoodTruckThemeCustomization {
     //$this->add_default_bg_support();
 
     // Provide suitable starter content typical of Food Truck websites WP4.7+
-    add_action('after_setup_theme', function () {
+    // We can't replicate that this works, maybe a future core addition?
+    add_action('after_setup_theme', function() {
+      //add_filter('get_theme_starter_content', function($x) {
+        //var_dump($x);
+        //die;
+      //});
       add_theme_support('starter-content', $this->get_starter_content());
-    }, 100);
+    });
 
     // Output customization css
     add_action('wp_head', array($this, 'output_css'));
@@ -80,7 +85,7 @@ class FoodTruckThemeCustomization {
     $wp_customize->get_section('static_front_page')->priority = 20;
     $wp_customize->add_panel('ftt_panel_advanced', array(
       'title'    => __('Advanced', 'food-truck'),
-      'description' => 'Stuff that you can change',
+      //'description' => '',
       'priority' => 200,
     ));
     $wp_customize->get_section('custom_css')->panel = 'ftt_panel_advanced';
@@ -88,7 +93,7 @@ class FoodTruckThemeCustomization {
     // Home Page Options
     $wp_customize->add_section('ftt_section_home', array(
       'title'    => __('Homepage Panels', 'food-truck'),
-      'description' => 'Stuff that you can change',
+      //'description' => '',
       'priority' => 30,
     ));
 
@@ -97,7 +102,7 @@ class FoodTruckThemeCustomization {
     // Add colors options
     $wp_customize->add_section('ftt_section_colors', array(
       'title'    => __('Colors', 'food-truck'),
-      'description' => 'Stuff that you can change',
+      //'description' => '',
       'priority' => 30,
     ));
 
@@ -106,7 +111,7 @@ class FoodTruckThemeCustomization {
     // Add font options
     $wp_customize->add_section('ftt_fonts', array(
       'title'    => __('Fonts', 'food-truck'),
-      'description' => 'Stuff that you can change',
+      //'description' => '',
       'priority' => 30,
     ));
 
@@ -115,7 +120,7 @@ class FoodTruckThemeCustomization {
     // Other Misc Options
     $wp_customize->add_section('ftt_section_footer', array(
       'title'    => __('Footer Text', 'food-truck'),
-      'description' => 'Stuff that you can change',
+      //'description' => '',
       'priority' => 10,
       'panel' => 'ftt_panel_advanced'
     ));
@@ -137,9 +142,10 @@ class FoodTruckThemeCustomization {
     $option_id = 'ftt_theme_mod_color_scheme';
     $control_id = $option_id;
     $wp_customize->add_setting($option_id, array(
-      'default'        => 'palm',
+      'default'        => 'del-mar',
       'capability'     => 'edit_theme_options',
       'type'           => 'theme_mod', // Alt: 'option' get_option()
+      'sanitize_callback' => 'sanitize_text_field'
     ));
     $wp_customize->add_control($control_id, array(
       'type'    => 'radio',
@@ -173,6 +179,7 @@ class FoodTruckThemeCustomization {
       'default'        => '#888888',
       'capability'     => 'edit_theme_options',
       'type'           => 'theme_mod',
+      'sanitize_callback' => 'sanitize_hex_color'
     ));
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $control_id, array(
       'label'      => __( 'Brand Color', 'food-truck'),
@@ -188,6 +195,7 @@ class FoodTruckThemeCustomization {
       'default'        => '#444444',
       'capability'     => 'edit_theme_options',
       'type'           => 'theme_mod',
+      'sanitize_callback' => 'sanitize_hex_color'
     ));
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $control_id, array(
       'label'      => __( 'Text Colour', 'food-truck'),
@@ -203,6 +211,7 @@ class FoodTruckThemeCustomization {
       'default'        => '#ffffff',
       'capability'     => 'edit_theme_options',
       'type'           => 'theme_mod',
+      'sanitize_callback' => 'sanitize_hex_color'
     ));
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $control_id, array(
       'label'      => __( 'Background Color', 'food-truck'),
@@ -226,6 +235,7 @@ class FoodTruckThemeCustomization {
       'default'        => 'Spreading the love for all things tasty, our sustainably run food truck strives to bring fresh, vibrant and carefully handpicked ingredients to your plate.',
       'capability'     => 'edit_theme_options',
       'type'           => 'theme_mod',
+      'sanitize_callback' => 'wp_kses_post'
     ));
     $wp_customize->add_control($control_id, array(
       'type' => 'textarea',
@@ -240,6 +250,7 @@ class FoodTruckThemeCustomization {
       //'default'        => 'bungee',
       'capability'     => 'edit_theme_options',
       'type'           => 'theme_mod',
+      'sanitize_callback' => 'esc_url_raw'
     ));
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, $control_id, array(
       'label'      => __( 'Background Image', 'food-truck' ),
@@ -253,6 +264,7 @@ class FoodTruckThemeCustomization {
       'default'        => true,
       'capability'     => 'edit_theme_options',
       'type'           => 'theme_mod',
+      'sanitize_callback' => 'wp_validate_boolean'
     ));
     $wp_customize->add_control($control_id, array(
       'type' => 'checkbox',
@@ -270,6 +282,7 @@ class FoodTruckThemeCustomization {
       'default'        => 'bungee',
       'capability'     => 'edit_theme_options',
       'type'           => 'theme_mod',
+      'sanitize_callback' => 'sanitize_text_field'
     ));
     $wp_customize->add_control($control_id, array(
       'type'    => 'radio',
@@ -299,12 +312,13 @@ class FoodTruckThemeCustomization {
     $wp_customize->add_setting($option_id, array(
       'default'        => '[copyright] [year] [name]',
       'capability'     => 'edit_theme_options',
-      'type'           => 'theme_mod'
+      'type'           => 'theme_mod',
+      'sanitize_callback' => 'wp_kses_post' // alt. wp_filter_nohtml_kses
     ));
     $wp_customize->add_control($control_id, array(
-        'label'      => __('Footer Text', 'food-truck'),
-        'section'    => $section_id,
-        'settings'   => $option_id,
+      'label'      => __('Footer Text', 'food-truck'),
+      'section'    => $section_id,
+      'settings'   => $option_id
     ));
   }
 
@@ -313,15 +327,16 @@ class FoodTruckThemeCustomization {
     $option_id = 'ftt_theme_mod_nav_breakpoint';
     $control_id = $option_id;
     $wp_customize->add_setting($option_id, array(
-      'default'        => 1200,
+      'default'        => 1100,
       'capability'     => 'edit_theme_options',
-      'type'           => 'theme_mod'
+      'type'           => 'theme_mod',
+      'sanitize_callback' => 'absint'
     ));
     $wp_customize->add_control($control_id, array(
-        'type'    => 'number',
-        'label'      => __('Breakpoint in pixels', 'food-truck'),
-        'section'    => $section_id,
-        'settings'   => $option_id,
+      'type'    => 'number',
+      'label'      => __('Breakpoint in pixels', 'food-truck'),
+      'section'    => $section_id,
+      'settings'   => $option_id,
     ));
   }
 
@@ -333,9 +348,6 @@ class FoodTruckThemeCustomization {
 
       return sprintf('%s { %s }', $selector, implode("; ", $rules));
     };
-
-    $color_scheme_name = get_theme_mod('ftt_theme_mod_color_scheme', 'tropical');
-    $font_scheme_name = get_theme_mod('ftt_theme_mod_font_scheme', 'tropical');
 
     $color_schemes_available = array(
       'del-mar' => array('#599977', '#7d3b41', '#FFF9DA'),
@@ -365,9 +377,11 @@ class FoodTruckThemeCustomization {
       'comic' => array('Bangers', 'Inconsolata'),
     );
 
+    $color_scheme_name = get_theme_mod('ftt_theme_mod_color_scheme', false);
+    $font_scheme_name = get_theme_mod('ftt_theme_mod_font_scheme', false);
 
-    $color_scheme_name = isset($color_schemes_available[$color_scheme_name]) ? $color_scheme_name : 'tropical';
-    $font_scheme_name = isset($font_schemes_available[$font_scheme_name]) ? $font_scheme_name : 'strong';
+    $color_scheme_name = isset($color_schemes_available[$color_scheme_name]) ? $color_scheme_name : key($color_schemes_available);
+    $font_scheme_name = isset($font_schemes_available[$font_scheme_name]) ? $font_scheme_name : key($font_schemes_available);
     $color_scheme = $color_schemes_available[$color_scheme_name];
     $font_scheme_query = str_replace(' ', '+', implode('|', $font_schemes_available[$font_scheme_name]));
     $font_scheme_stack = array_map(function($v) {
@@ -423,7 +437,9 @@ class FoodTruckThemeCustomization {
   }
 
   function manage_theme_helpers() {
-    // Helpers to allow adjusting the theme content container on a per text basis
+    // Two theme specific shortcodes - allows for breaking out or
+    // enlarging this theme's content container on a per text basis.
+    // Useful to support things like embedding full width videos, sliders etc.
     if(!shortcode_exists('no_container')) {
       add_shortcode('no_container', function($a = array(), $c = '') {
         return sprintf('</div></section><div class="content">%s</div><section class="contain contain--md ptmd mbmd"><div class="content">', do_shortcode($c));
@@ -440,19 +456,20 @@ class FoodTruckThemeCustomization {
   function get_starter_content() {
     $content = array();
 
-    $content['attachments'] = array(
+    // Not needed yet..
+    /*$content['attachments'] = array(
       'food-truck-footer' => array(
         'post_title' => 'Food Truck Example Image',
-        'file' => get_parent_theme_file_path('inc/starter-content/widget-image.jpg'),
+        'file' => 'inc/starter-content/widget-image.jpg',
       ),
-    );
+    );*/
 
     $starter_home = '<p>Welcome to your site! This is your homepage. You can change the content</p>'
-      . '<h2>Upcoming Locations</h2><p>Try the <a href="' . admin_url('plugin-install.php?s=food-truck&tab=search&type=tag') . '>Food Truck Plugin</a> to show a list of locations &amp; times with this shortcode: [foodtruck display="list" count="3"]</p>'
-      . '<h3>Theme Customize</h3><p>You can customize this theme\'s look and feel in the admin <a href="' . admin_url('customize.php') . '">Appearance &gt; Customize</a></p>';
+      . '<h2>Upcoming Locations</h2><p>Try the <a href="' . admin_url('plugin-install.php?s=food-truck&tab=search&type=tag') . '">Food Truck Plugin</a> to show a list of locations &amp; times with this shortcode:</p>[foodtruck display="list" count="3"]'
+      . '<h3>Customize Theme</h3><p>You can customize this theme\'s look and feel in the admin <a href="' . admin_url('customize.php') . '">Appearance &gt; Customize</a></p>';
 
     $starter_locations = '<h1>Upcoming Locations</h1>'
-      . '<p>Try the <a href="' . admin_url('plugin-install.php?s=food-truck&tab=search&type=tag') . '>Food Truck Plugin</a> to show a list of locations &amp; times with this shortcode: [foodtruck display="list" separator="bg" count="30"]</p>';
+      . '<p>Try the <a href="' . admin_url('plugin-install.php?s=food-truck&tab=search&type=tag') . '">Food Truck Plugin</a> to show a list of locations &amp; times with this shortcode:</p> [foodtruck display="list" separator="bg" count="30"]';
 
     $content['posts'] = array(
       'home' => array(
@@ -468,21 +485,21 @@ class FoodTruckThemeCustomization {
       'menu' => array(
         'post_type' => 'page',
         'post_title' => _x('Menu', 'Starter Content', 'food-truck'),
-        'post_content' => _x('Place your menu items on this page. You might also try a menu plugin for different layouts.', 'Starter Content', 'food-truck')
+        'post_content' => _x('<h1>Menu</h1> <p>Place your menu items on this page. You might also try a menu plugin for different layouts.</p>', 'Starter Content', 'food-truck')
       ),
       'about' => array(
         'post_type' => 'page',
         'post_title' => _x('About', 'Starter Content', 'food-truck'),
         'post_content' => _x('<h3>Our Story</h3> <p>Introduce your food truck here</p> <h3>Our Mission</h3> <p>What makes your food truck special</p>', 'Starter Content', 'food-truck' ),
       ),
-      'news' => array(
+      'blog' => array(
         'post_type' => 'page',
         'post_title' => _x('News', 'Starter Content', 'food-truck'),
       ),
       'catering' => array(
         'post_type' => 'page',
         'post_title' => _x('Catering', 'Starter Content', 'food-truck'),
-        'post_content' => _x('This is a page with some basic contact information, such as an address and phone number. You might also try a plugin to add a contact form.', 'Starter Content', 'food-truck' ),
+        'post_content' => _x('<h1>Catering</h1> <p>This is a page with some basic contact information, such as an address and phone number. You might also try a plugin to add a contact form.</p>', 'Starter Content', 'food-truck' ),
       )
     );
 
@@ -490,11 +507,7 @@ class FoodTruckThemeCustomization {
       'top-left' => array(
         'name' => __('My Top Menu Left', 'food-truck'),
         'items' => array(
-          'page_home' => array(
-            'type' => 'post_type',
-            'object' => 'page',
-            'object_id' => '{{home}}',
-          ),
+          'link_home',
           'page_locations' => array(
             'type' => 'post_type',
             'object' => 'page',
@@ -509,16 +522,13 @@ class FoodTruckThemeCustomization {
       ),
       'top-right' => array(
         'name' => __('My Top Menu Right', 'food-truck'),
+        'auto_add' => true,
         'items' => array(
-          'page_about' => array(
-            'type' => 'post_type',
-            'object' => 'page',
-            'object_id' => '{{about}}',
-          ),
+          'page_about',
           'page_news' => array(
             'type' => 'post_type',
             'object' => 'page',
-            'object_id' => '{{news}}',
+            'object_id' => '{{blog}}',
           ),
           'page_catering' => array(
             'type' => 'post_type',
@@ -526,18 +536,18 @@ class FoodTruckThemeCustomization {
             'object_id' => '{{catering}}',
           )
         ),
-      ),
+      )
     );
 
     $content['options'] = array(
 			'show_on_front' => 'page',
 			'page_on_front' => '{{home}}',
-			'page_for_posts' => '{{news}}',
-      'blogdescription' => 'Taste Satisfaction To-go'
+			'page_for_posts' => '{{blog}}',
+      'blogdescription' => 'Satisfaction To-go'
       // Additional Future Options: posts_per_page
     );
 
-    $content['theme-mods'] = array(
+    $content['theme_mods'] = array(
       'header_text' => true,
       'ftt_theme_mod_tagline_bgtint' => true
     );
@@ -549,15 +559,17 @@ class FoodTruckThemeCustomization {
           'text' => 'This is a good spot for a sign up form! Try the Mailchimp plugin'
         )),
         'theme_initial_widget_2' => array('text', array(
-          'title' => 'Great spot for Social Media buttons. Try a Social Icon plugin or create some links'
+          'title' => 'Follow Us',
+          'text' => 'Great spot for Social Media buttons. Try a Social Button plugin or add some links'
         )),
-        'theme_initial_widget_1' => array('text', array(
+        'theme_initial_widget_3' => array('text', array(
           'title' => 'Upcoming Locations',
-          'text' => 'This is a good spot for a location listing. Try the <a href="' . admin_url('plugin-install.php?s=food-truck&tab=search&type=tag') . '">"Food Truck" plugin</a> to convert this shortcode": [foodtruck display="summary" count="2"]'
+          'text' => '<p>This is a good spot for a location listing. Try the <a href="' . admin_url('plugin-install.php?s=food-truck&tab=search&type=tag') . '">"Food Truck" plugin</a> to convert this shortcode":</p>[foodtruck display="summary" count="2"]'
         )),
-        'theme_initial_widget_1' => array('image', array(
+        'theme_initial_widget_4' => array('text', array(
           'title' => '',
-          'attachment' => '{{food-truck-footer}}'
+          // Note: Can't add attachments to media_image widget ..yet?
+          'text' => '<img style="max-width: 250px" src=" ' . get_parent_theme_file_uri('inc/starter-content/widget-image.jpg') . '" />'
         )),
       ),
     );

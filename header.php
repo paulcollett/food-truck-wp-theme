@@ -37,7 +37,7 @@
             ));
           ?>
         <?php else: ?>
-          <div class="logo_text"><?php echo get_bloginfo('name', 'display'); ?></div>
+          <div class="logo_text"><?php echo esc_html(get_bloginfo('name', 'display')); ?></div>
         <?php endif; ?>
       </a>
     </div>
