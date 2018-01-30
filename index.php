@@ -6,7 +6,7 @@
 		</header>
 <?php else : ?>
 	<header class="page-header  content">
-		<h2 class="page-title"><?php _e( 'Posts', 'twentyseventeen' ); ?></h2>
+		<h2 class="page-title"><?php _e( 'Posts', 'food-truck' ); ?></h2>
 	</header>
 <?php endif; ?>
 
@@ -21,9 +21,9 @@
 				endwhile;
 
 				the_posts_pagination(array(
-					'prev_text' => '<span class="screen-reader-text">' . __( 'Previous page', 'twentyseventeen' ) . '</span>',
-					'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'twentyseventeen' ) . '</span>',
-					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyseventeen' ) . ' </span>',
+					'prev_text' => '<span class="screen-reader-text">' . __( 'Previous page', 'food-truck' ) . '</span>',
+					'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'food-truck' ) . '</span>',
+					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'food-truck' ) . ' </span>',
 				));
 			else :
 				get_template_part('template-parts/content', 'none');

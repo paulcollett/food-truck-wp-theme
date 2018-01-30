@@ -216,3 +216,24 @@
 @media (max-width: 900px)
   .content
     font-size: 0.75em
+
+// Force styles for widgets & plugins
+.content
+  .button, *[type=submit], button, .btn
+    display: inline-block!important
+    width: auto !important
+    font-size: 1rem !important
+    padding: .4em .8em !important
+    height: auto!important
+    border: none!important
+  input[type=email],
+  input[type=text],
+  input[type=tel]
+    display: inline-block!important
+    padding: .6em .8em !important
+    border: 3px solid currentcolor!important
+    font-size: 1rem !important
+    width: 100% !important
+    color: inherit!important
+    background: transparent!important
+    height: auto!important

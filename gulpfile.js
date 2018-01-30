@@ -11,17 +11,18 @@ var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps   = require('gulp-sourcemaps');
 var uglify       = require('gulp-uglify');
 var notify       = require('gulp-notify');
+var rename       = require("gulp-rename");
 
 // Original Asset Paths
 var src = {
-  css: 'assets/src/**/*.sass',
-  js: 'assets/src/*.js',
+  css: 'assets_src/**/*.{scss,sass}',
+  js: 'assets_src/*.js',
 };
 
 // Destination Asset Paths
 var dest = {
-  css: 'assets/dist',
-  js: 'assets/dist',
+  css: 'assets',
+  js: 'assets',
 };
 
 // Main Tasks
@@ -30,21 +31,39 @@ gulp.task('default', function(){
 });
 
 gulp.task('watch',['default'],function(){
-  gulp.watch(src.css, {cwd:'./'}, ['compile-sass-to-css-min']);
-  gulp.watch(src.js, {cwd:'./'}, ['compile-js-to-min']);
+  gulp.watch(src.css, {cwd:'./'}, ['compile-sass-to-css-min', 'compile-sass-to-css']);
+  gulp.watch(src.js, {cwd:'./'}, ['compile-js-to-min', 'compile-js']);
 });
 
 gulp.task('build',[
   'compile-sass-to-css-min',
-  'compile-js-to-min'
+  'compile-sass-to-css',
+  'compile-js-to-min',
+  'compile-js'
 ]);
+
+gulp.task('compile-sass-to-css', function(){
+  return gulp.src( src.css )
+    .pipe(plumber())
+    .pipe(sass({
+      outputStyle: 'expanded',
+      precision: 4,
+    }))
+    .pipe(autoprefixer({
+      browsers: ['ie >= 8', '> 1%']
+    }))
+    .pipe(rename(function (path) {
+      path.basename += ".source";
+    }))
+    .pipe(gulp.dest( dest.css ));
+});
 
 gulp.task('compile-sass-to-css-min', function(){
   return gulp.src( src.css )
     .pipe(plumber({
         errorHandler: css_error_os_alert
     }))
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     .pipe(sass({
       outputStyle: 'compressed',
       precision: 4,
@@ -52,7 +71,7 @@ gulp.task('compile-sass-to-css-min', function(){
     .pipe(autoprefixer({
       browsers: ['ie >= 8', '> 1%']
     }))
-    .pipe(sourcemaps.write( './'))
+    //.pipe(sourcemaps.write( './'))
     .pipe(gulp.dest( dest.css ))
     //.pipe(browserSync.stream({match: '**/*.{css}'}))
     .pipe(notify({
@@ -70,11 +89,25 @@ gulp.task("js-error-check", function() {
 
 gulp.task("compile-js-to-min",['js-error-check'], function() {
   return gulp.src( src.js )
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     //.pipe(jsinclude())
-    .pipe(uglify({mangle: false}))
+    .pipe(uglify())//{mangle: false}
     .on('error',function(){})
-    .pipe(sourcemaps.write( './'))
+    //.pipe(sourcemaps.write( './'))
+    .pipe(gulp.dest( dest.js ))
+    //.pipe(browserSync.stream({match: '**/*.{js,map}'}));
+});
+
+gulp.task("compile-js", function() {
+  return gulp.src( src.js )
+    //.pipe(sourcemaps.init())
+    //.pipe(jsinclude())
+    //.pipe(uglify({mangle: false}))
+    .on('error',function(){})
+    //.pipe(sourcemaps.write( './'))
+    .pipe(rename(function (path) {
+      path.basename += ".source";
+    }))
     .pipe(gulp.dest( dest.js ))
     //.pipe(browserSync.stream({match: '**/*.{js,map}'}));
 });

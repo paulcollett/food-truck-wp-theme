@@ -15,8 +15,8 @@
 				endif;
 
 				the_post_navigation( array(
-					'prev_text' => '<span class="screen-reader-text">' . __( 'Previous Post', 'twentyseventeen' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Previous', 'twentyseventeen' ) . '</span> <span class="nav-title"><span class="nav-title-icon-wrapper">' . '</span>%title</span>',
-					'next_text' => '<span class="screen-reader-text">' . __( 'Next Post', 'twentyseventeen' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Next', 'twentyseventeen' ) . '</span> <span class="nav-title">%title<span class="nav-title-icon-wrapper">' . '</span></span>',
+					'prev_text' => '<span class="screen-reader-text">' . __( 'Previous Post', 'food-truck' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Previous', 'food-truck' ) . '</span> <span class="nav-title"><span class="nav-title-icon-wrapper">' . '</span>%title</span>',
+					'next_text' => '<span class="screen-reader-text">' . __( 'Next Post', 'food-truck' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Next', 'food-truck' ) . '</span> <span class="nav-title">%title<span class="nav-title-icon-wrapper">' . '</span></span>',
 				) );
 
 			endwhile; // End of the loop.

@@ -3,13 +3,14 @@
   "scripts": {
     "dev": "gulp watch",
     "build": "gulp",
-    "pack": "zip -r --exclude=.git* --exclude=*.DS_Store* --exclude=*node_modules* --exclude=README.md --exclude=package* --exclude=gulpfile.js ../food-truck.zip ./"
+    "pack": "zip -r --exclude=.git* --exclude=*.DS_Store* --exclude=*node_modules* --exclude=assets_src* --exclude=package* --exclude=gulpfile.js ../food-truck-theme.zip ./"
   },
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.2.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.3"
