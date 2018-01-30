@@ -12,18 +12,14 @@ class FoodTruckThemeCustomization {
     // Setup Customizer with theme options
     add_action('customize_register', array($this, 'init_options'));
 
-    // Possible future feature
-    //$this->add_default_bg_support();
-
-    // Provide suitable starter content typical of Food Truck websites WP4.7+
-    // We can't replicate that this works, maybe a future core addition?
+    // Suggest suitable starter content typical of Food Truck websites (WP4.7+)
+    // Note: WP Bug? Conflicts with other themes content when theme-switching in Customizer
     add_action('after_setup_theme', function() {
-      //add_filter('get_theme_starter_content', function($x) {
-        //var_dump($x);
-        //die;
-      //});
       add_theme_support('starter-content', $this->get_starter_content());
     });
+
+    // Possible future feature
+    //$this->add_default_bg_support();
 
     // Output customization css
     add_action('wp_head', array($this, 'output_css'));
@@ -437,9 +433,12 @@ class FoodTruckThemeCustomization {
   }
 
   function manage_theme_helpers() {
-    // Two theme specific shortcodes - allows for breaking out or
+    // Shortcode Note:
+
+    // Two theme specific shortcodes which allows for breaking out or
     // enlarging this theme's content container on a per text basis.
     // Useful to support things like embedding full width videos, sliders etc.
+
     if(!shortcode_exists('no_container')) {
       add_shortcode('no_container', function($a = array(), $c = '') {
         return sprintf('</div></section><div class="content">%s</div><section class="contain contain--md ptmd mbmd"><div class="content">', do_shortcode($c));
