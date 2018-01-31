@@ -2,9 +2,8 @@
 
 class FoodTruckThemeCustomization {
   function __construct() {
+    // Register features supported by this theme
     $this->manage_feature_support();
-
-    $this->manage_theme_helpers();
 
     // Make theme available for translation
     load_theme_textdomain('food-truck');
@@ -17,9 +16,6 @@ class FoodTruckThemeCustomization {
     add_action('after_setup_theme', function() {
       add_theme_support('starter-content', $this->get_starter_content());
     });
-
-    // Possible future feature
-    //$this->add_default_bg_support();
 
     // Output customization css
     add_action('wp_head', array($this, 'output_css'));
@@ -54,6 +50,9 @@ class FoodTruckThemeCustomization {
       'gallery',
       'caption',
     ));
+
+    // Possible future feature
+    //$this->add_default_bg_support();
   }
 
   function add_default_bg_support() {
@@ -432,20 +431,20 @@ class FoodTruckThemeCustomization {
     ));
   }
 
-  function manage_theme_helpers() {
-    // No helpers
-  }
-
   function get_starter_content() {
     $content = array();
 
-    // Not needed yet..
-    /*$content['attachments'] = array(
-      'food-truck-footer' => array(
-        'post_title' => 'Food Truck Example Image',
-        'file' => 'inc/starter-content/widget-image.jpg',
-      ),
-    );*/
+    // Possible Future addition
+    // Provide food truck related imagery
+    // Can be added to posts/pages thumbnail with {{food-truck-footer}}
+    /*
+      $content['attachments'] = array(
+        'food-truck-footer' => array(
+          'post_title' => 'Food Truck Example Image',
+          'file' => 'inc/starter-content/widget-image.jpg',
+        ),
+      );
+    */
 
     $starter_home = '<p>Welcome to your site! This is your homepage. You can change the content</p>'
       . '<h2>Upcoming Locations</h2><p>Try the <a href="' . admin_url('plugin-install.php?s=food-truck&tab=search&type=tag') . '">Food Truck Plugin</a> to show a list of locations &amp; times with this shortcode:</p>[foodtruck display="list" count="3"]'
@@ -552,7 +551,8 @@ class FoodTruckThemeCustomization {
         'theme_initial_widget_4' => array('text', array(
           'title' => '',
           // Note: Can't add attachments to media_image widget ..yet?
-          'text' => '<img style="max-width: 250px" src=" ' . get_parent_theme_file_uri('inc/starter-content/widget-image.jpg') . '" />'
+          // provide in text widget for now:
+          'text' => '<img src=" ' . get_parent_theme_file_uri('inc/starter-content/widget-image.jpg') . '" />'
         )),
       ),
     );

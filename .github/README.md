@@ -1,20 +1,23 @@
 # Food Truck Wordpress Theme
 ### A free, customizable Wordpress theme for Food Trucks & Street Food Vendors
 
-Food Truck is a theme designed and built around the needs of Food Truck and Mobile Street Food operators.
+Food Truck is a theme designed and built around the needs of Food Truck and Mobile street food operators.
 
 - Highly Customizable
 - Mobile, Responsive Ready
-- Designer suggested Color Schemes (Suitable for Food Trucks)
-- Designer suggested Google Fonts Pairings (Suitable for Food Trucks)
-- Choose your own Color Schemes
+- Designer suggested Color Schemes (suitable for Food Trucks)
+- Designer suggested Google Fonts Pairings (suitable for Food Trucks)
+- Choose your own Color Schemes, Logo, Banner Images & more!
+- Easily extend the look and functionality of your website with widgets & plugins
 
 Optimized for use with [Food Truck Location & Times Plugin](https://wordpress.org/plugins/food-truck/) to show your visitors where you will be in style.
 
-### To use
+_This theme is built upon Wordpress' core theme to provide full compatibility and feature support with in-built and third-party plugin functionality._
 
-1. [Download Theme from GitHub](https://github.com/paulcollett/food-truck-wp-theme/archive/master.zip)
-2. Upload the `.zip` file in your wordpress admin (or, Un-zip & Move the folder `food-truck-wp-theme` into your wordpress's theme directory)
+### To Use
+
+1. **[Download Theme from GitHub](https://github.com/paulcollett/food-truck-wp-theme/archive/master.zip)**
+2. Upload the `.zip` file into your Wordpress admin theme page (or, un-zip & move the folder `food-truck-wp-theme` into the wp-content/themes folder)
 
 ### Examples
 

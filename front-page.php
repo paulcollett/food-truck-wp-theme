@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<?php if(get_theme_mod('header_text', false)): ?>
+<?php if(get_theme_mod('header_text', true)): ?>
   <section class="ftt-banner-tagline<?php echo get_theme_mod('ftt_theme_mod_tagline_bgtint', false) ? ' ftt-banner-tagline--tint' : ''; ?>">
     <div class="ftt-banner-tagline_contain content">
       <h1 class="ftt-banner-tagline-text">
