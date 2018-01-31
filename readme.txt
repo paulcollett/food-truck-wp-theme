@@ -7,11 +7,11 @@ Food Truck is a theme designed and built around the needs of Food Truck and Mobi
 
 - Highly Customizable
 - Mobile, Responsive Ready
-- Designer suggested Color Schemes (Suitable for Food Trucks)
-- Designer suggested Google Fonts Pairings (Suitable for Food Trucks)
+- Designer suggested Color Schemes (suitable for Food Trucks)
+- Designer suggested Google Fonts Pairings (suitable for Food Trucks)
 - Choose your own Color Schemes
 
-Optimized for use with Food Truck Location & Times plugin to show your visitors where you will be in style.
+Optimized for use with Food Truck Location & Times plugin to show your visitors where you will be.
 
 == Installation ==
 
@@ -22,5 +22,5 @@ Optimized for use with Food Truck Location & Times plugin to show your visitors 
 
 == Changelog ==
 
-= 1.0 =
+= 1.0.1 =
 - Initial Food Truck Theme Release

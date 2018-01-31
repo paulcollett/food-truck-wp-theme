@@ -433,23 +433,7 @@ class FoodTruckThemeCustomization {
   }
 
   function manage_theme_helpers() {
-    // Shortcode Note:
-
-    // Two theme specific shortcodes which allows for breaking out or
-    // enlarging this theme's content container on a per text basis.
-    // Useful to support things like embedding full width videos, sliders etc.
-
-    if(!shortcode_exists('no_container')) {
-      add_shortcode('no_container', function($a = array(), $c = '') {
-        return sprintf('</div></section><div class="content">%s</div><section class="contain contain--md ptmd mbmd"><div class="content">', do_shortcode($c));
-      });
-    }
-
-    if(!shortcode_exists('large_container')) {
-      add_shortcode('large_container', function($a = array(), $c = '') {
-        return sprintf('</div></section><section class="contain contain--lg ptmd mbmd"><div class="content">%s</div></section><section class="contain contain--md ptmd mbmd"><div class="content">', do_shortcode($c));
-      });
-    }
+    // No helpers
   }
 
   function get_starter_content() {
