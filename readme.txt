@@ -1,5 +1,9 @@
 === Food Truck ===
 Contributors: paulcollett
+Requires at least: WordPress 4.7
+Tested up to: WordPress 4.9.2
+Requires PHP: 5.3
+Stable tag: trunk
 
 == Description ==
 
