@@ -22,5 +22,5 @@ Optimized for use with Food Truck Location & Times plugin to show your visitors 
 
 == Changelog ==
 
-= 1.0.1 =
+= 1.0.2 =
 - Initial Food Truck Theme Release
