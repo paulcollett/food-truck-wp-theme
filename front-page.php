@@ -15,19 +15,18 @@
   </section>
 <?php endif; ?>
 
-<section class="contain contain--md ptmd mbmd">
-  <div class="content">
+<?php ftt_content_contain_before(); ?>
 
-		<?php // Show the selected frontpage content.
-		if ( have_posts() ) :
-			while ( have_posts() ) : the_post();
-				get_template_part('template-parts/content');
-			endwhile;
-		else :
-			get_template_part('template-parts/content', 'none');
-		endif; ?>
+<?php // Show the selected frontpage content.
+  if ( have_posts() ) :
+    while ( have_posts() ) : the_post();
+      get_template_part('template-parts/content');
+    endwhile;
+  else :
+    get_template_part('template-parts/content', 'none');
+  endif;
+?>
 
-  </div>
-</section>
+<?php ftt_content_contain_after(); ?>
 
 <?php get_footer();

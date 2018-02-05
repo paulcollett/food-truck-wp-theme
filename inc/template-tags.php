@@ -12,6 +12,39 @@ function ftt_no_wp_top_menu_fallback($args) {
 }
 
 /**
+ * Content Container Helpers
+ * You can filter the content in various ways to disable or change
+ */
+
+function ftt_content_contain_before($options = array()) {
+  $container_classlist = array('contain', 'contain--md', 'ptmd', 'mbmd');
+
+  // Some templates add additional classes.
+  // You can filter any of these with add_filter('ftt_container_layout_classlist', function($classes) { ... })
+  if(!empty($options['container_class'])) {
+    $container_classlist = array_merge($container_classlist, (array) $options['container_class']);
+  }
+
+  // Wrap opening 2 contain elements with filters
+  $default_layout_container_classlist = apply_filters('ftt_container_layout_classlist', $container_classlist);
+  $default_layout_container = sprintf(apply_filters('ftt_container_layout_before', '<section class="%s">'), implode(' ', $default_layout_container_classlist));
+  $default_style_container_classlist = apply_filters('ftt_container_style_classlist', array('content'));
+  $default_style_container = sprintf(apply_filters('ftt_container_style_before', '<div class="%s">'), implode(' ', $default_style_container_classlist));
+
+  // run final html through filter
+  echo apply_filters('ftt_container_before', $default_layout_container . $default_style_container);
+}
+
+function ftt_content_contain_after() {
+  // Wrap closing 2 contain elements with filters
+  $default_layout_container = apply_filters('ftt_container_layout_after', '</section>');
+  $default_style_container = apply_filters('ftt_container_style_after', '</div>');
+
+  // run final html through filter
+  echo apply_filters('ftt_container_after', $default_style_container . $default_layout_container);
+}
+
+/**
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function fft_posted_on() {

@@ -11,24 +11,22 @@
   </div>
 <?php endif; ?>
 
-<section class="contain contain--md ptmd mbmd">
-  <div class="content">
+<?php ftt_content_contain_before(); ?>
 
-		<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+<?php
+  /* Start the Loop */
+  while ( have_posts() ) : the_post();
 
-				get_template_part('template-parts/content');
+    get_template_part('template-parts/content');
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
+    // If comments are open or we have at least one comment, load up the comment template.
+    if ( comments_open() || get_comments_number() ) :
+      comments_template();
+    endif;
 
-			endwhile; // End of the loop.
-		?>
+  endwhile; // End of the loop.
+?>
 
-  </div>
-</section>
+<?php ftt_content_contain_after(); ?>
 
 <?php get_footer(); ?>
