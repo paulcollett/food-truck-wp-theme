@@ -48,13 +48,10 @@ window.FoodTruckTheme = (function(global) {
       windowWidth = window.innerWidth || $(window).width();
 
       $body.toggleClass('site--nav-mobile', windowWidth <= breakPoint);
-
-      console.log('resize', windowWidth);
     }
 
     exprt.mobileNavAt = function(newBreakpoint) {
       breakPoint = ~~newBreakpoint;
-      console.log('updated breakpoint', newBreakpoint);
     }
 
     exprt.bodyReady = function() {
