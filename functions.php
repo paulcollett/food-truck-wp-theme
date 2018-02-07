@@ -6,57 +6,33 @@
  *
  */
 
-class FoodTruckTheme
-{
-  function __construct() {
-    // Hooks
-    add_action('wp_enqueue_scripts', array($this, 'manage_frontend_assets'));
-    add_action('widgets_init', array($this, 'widgets_init'));
-    add_editor_style(array('assets/editor-style.css'));
-
-    // This theme uses wp_nav_menu() in two locations.
-    register_nav_menus(array(
-      'top-left'    => __('Main Menu: Left of Logo', 'food-truck'),
-      'top-right'    => __('Main Menu: Right of Logo', 'food-truck')
-    ));
-
-    // Load Customization Options for Theme
-    require get_parent_theme_file_path( '/inc/customization.php' );
-
-    // Load Navigation Helpers
-    require get_parent_theme_file_path( '/inc/navigation-helpers.php' );
-
-    // Load Functions used in the templates
-    require get_parent_theme_file_path( '/inc/template-tags.php' );
-
-    // Initiate Customization Options
-    new FoodTruckThemeCustomization();
-  }
-
-  function manage_frontend_assets() {
-    $theme_version = wp_get_theme()->get('Version');
-
-    // Add assets to wp_head
-    wp_enqueue_style('food-truck-theme', get_parent_theme_file_uri('/assets/site.css'), null, $theme_version, 'all');
-    wp_enqueue_script('food-truck-theme', get_parent_theme_file_uri('/assets/site.js'), array('jquery'), $theme_version, false);
-
-    // Add comments reply script
-    if ( is_singular() && comments_open() && get_option('thread_comments')) {
-      wp_enqueue_script( 'comment-reply' );
-    }
-  }
-
-  function widgets_init() {
-    register_sidebar( array(
-      'name'          => __('Footer Widgets', 'food-truck'),
-      'id'            => 'footer-widgets',
-      'description'   => __('Add widgets here to appear at the bottom of all pages.', 'food-truck'),
-      'before_widget' => '<section id="%1$s" class="widgets-layout_widget %2$s"><div class="widgets-layout_widget_contain"><div class="content">',
-      'after_widget'  => '</section>',
-      'before_title'  => '<h3 class="widget-title">',
-      'after_title'   => '</h3>',
-    ));
-  }
+if ( ! version_compare( PHP_VERSION, '5.4', '>=' ) ) {
+  add_action( 'admin_notices', 'ftt_fail_php_version' );
+  add_action( 'after_switch_theme', 'ftt_restore_old_theme' );
+} elseif ( ! version_compare( get_bloginfo( 'version' ), '4.5', '>=' ) ) {
+  add_action( 'admin_notices', 'ftt_fail_wp_version' );
+  add_action( 'after_switch_theme', 'ftt_restore_old_theme' );
+} else {
+	require get_parent_theme_file_path( 'inc/theme.php' );
 }
 
-new FoodTruckTheme();
+function ftt_fail_php_version() {
+	/* translators: %s: PHP version */
+	$message = sprintf( esc_html__( 'Food Truck Theme requires PHP version %s+. Theme is NOT ACTIVE.', 'food-truck' ), '5.4' );
+	$html_message = sprintf( '<div class="error">%s</div>', wpautop( $message ) );
+	echo wp_kses_post( $html_message );
+}
+
+function ftt_fail_wp_version() {
+	/* translators: %s: WordPress version */
+	$message = sprintf( esc_html__( 'Food Truck Theme requires WordPress version %s+. Because you are using an earlier version, the theme is NOT ACTIVE.', 'food-truck' ), '4.5' );
+	$html_message = sprintf( '<div class="error">%s</div>', wpautop( $message ) );
+	echo wp_kses_post( $html_message );
+}
+
+function ftt_restore_old_theme() {
+  // Switch back to previous theme
+  switch_theme(get_option('theme_switched'));
+  // Not sure if needed
+  return false;
+}
