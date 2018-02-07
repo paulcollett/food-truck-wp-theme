@@ -13,9 +13,13 @@ class FoodTruckThemeCustomization {
 
     // Suggest suitable starter content typical of Food Truck websites (WP4.7+)
     // Note: WP Bug? Conflicts with other themes content when theme-switching in Customizer
-    add_action('after_setup_theme', function() {
-      add_theme_support('starter-content', $this->get_starter_content());
-    });
+    $starter_content = apply_filters('ftt_starter_content', $this->get_starter_content());
+
+    if($starter_content) {
+      add_action('after_setup_theme', function() {
+        add_theme_support('starter-content', $starter_content);
+      });
+    }
 
     // Output customization css
     add_action('wp_head', array($this, 'output_css'));
@@ -411,7 +415,7 @@ class FoodTruckThemeCustomization {
       $css_rule('.mainnav, .sub-pages, h1, h2, h3, h4, h5, .btn, .button, button, *[type=submit], .submit', array(
         'font-family' => $font_scheme_stack[0]
       )),
-      $css_rule('.logo_text, .btn, .button, button, *[type=submit], .submit', array(
+      $css_rule('.logo_text, .btn, .button, button, *[type=submit], .submit, .elementor-button', array(
         'color' => $color_scheme[2],
         'background-color' => $color_scheme[0]
       )),

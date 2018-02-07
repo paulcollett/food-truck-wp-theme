@@ -112,6 +112,15 @@
 .content .locations-summary-addr-link
   border-bottom: none
 
+// Elementor add correct padding to container
+// Note max-width can be overridden
+.elementor-page .elementor-section-wrap > .elementor-section-boxed > .elementor-container
+  box-sizing: content-box
+  margin: 0 auto
+  padding: 0 4vw
+  *, *:before, *:after
+    box-sizing: border-box
+
 // WP Forms Plugin
 // Subscriber Form Layout
 .widgets-layout
@@ -128,5 +137,3 @@
   margin-bottom: 1.5em!important
 #mc_embed_signup .indicates-required
   display: none
-
-

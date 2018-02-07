@@ -25,8 +25,7 @@
   padding: 0
   max-width: none
 
-
-.btn, .button, button, *[type=submit], .submit
+.btn, .button, button, *[type=submit], .submit, .elementor-button
   cursor: pointer
   display: inline-block
   background: #ccc
@@ -174,7 +173,7 @@
         content: ''
         border-top: 1px solid currentcolor
         opacity: 0.1
-  a:not(.button):not(.btn)
+  a:not(.button):not(.btn):not(.elementor-button)
     text-decoration-skip: ink
     text-decoration: underline
     transition: opacity .2s ease
@@ -219,13 +218,14 @@
 
 // Force styles for widgets & plugins
 .content
-  .button, *[type=submit], button, .btn
+  .button, *[type=submit], button, .btn, .elementor-button
     display: inline-block!important
     width: auto !important
     font-size: 1rem !important
     padding: .4em .8em !important
     height: auto!important
     border: none!important
+    line-height: inherit!important
   input[type=email],
   input[type=text],
   input[type=tel]

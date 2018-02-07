@@ -1031,14 +1031,14 @@ hr {
   opacity: 0.1;
 }
 
-.content a:not(.button):not(.btn) {
+.content a:not(.button):not(.btn):not(.elementor-button) {
   -webkit-text-decoration-skip: ink;
           text-decoration-skip: ink;
   text-decoration: underline;
   transition: opacity .2s ease;
 }
 
-.content a:not(.button):not(.btn):hover {
+.content a:not(.button):not(.btn):not(.elementor-button):hover {
   opacity: 0.7;
 }
 
@@ -1107,13 +1107,14 @@ hr {
   }
 }
 
-.content .button, .content *[type=submit], .content button, .content .btn {
+.content .button, .content *[type=submit], .content button, .content .btn, .content .elementor-button {
   display: inline-block !important;
   width: auto !important;
   font-size: 1rem !important;
   padding: .4em .8em !important;
   height: auto !important;
   border: none !important;
+  line-height: inherit !important;
 }
 
 .content input[type=email],
@@ -1387,6 +1388,16 @@ hr {
 
 .content .locations-summary-addr-link {
   border-bottom: none;
+}
+
+.elementor-page .elementor-section-wrap > .elementor-section-boxed > .elementor-container {
+  box-sizing: content-box;
+  margin: 0 auto;
+  padding: 0 4vw;
+}
+
+.elementor-page .elementor-section-wrap > .elementor-section-boxed > .elementor-container *, .elementor-page .elementor-section-wrap > .elementor-section-boxed > .elementor-container *:before, .elementor-page .elementor-section-wrap > .elementor-section-boxed > .elementor-container *:after {
+  box-sizing: border-box;
 }
 
 .widgets-layout .wpforms-field-medium {
