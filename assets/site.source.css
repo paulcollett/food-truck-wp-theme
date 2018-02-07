@@ -812,7 +812,7 @@ hr {
   max-width: none;
 }
 
-.btn, .button, button, *[type=submit], .submit {
+.btn, .button, button, *[type=submit], .submit, .elementor-button {
   cursor: pointer;
   display: inline-block;
   background: #ccc;
@@ -825,14 +825,14 @@ hr {
   outline: none;
 }
 
-.btn:hover, .button:hover, button:hover, *[type=submit]:hover, .submit:hover {
+.btn:hover, .button:hover, button:hover, *[type=submit]:hover, .submit:hover, .elementor-button:hover {
   border: none;
   -webkit-transform: scale(1.03);
       -ms-transform: scale(1.03);
           transform: scale(1.03);
 }
 
-.btn:active, .button:active, button:active, *[type=submit]:active, .submit:active {
+.btn:active, .button:active, button:active, *[type=submit]:active, .submit:active, .elementor-button:active {
   -webkit-transform: scale(1);
       -ms-transform: scale(1);
           transform: scale(1);
