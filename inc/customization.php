@@ -16,7 +16,7 @@ class FoodTruckThemeCustomization {
     $starter_content = apply_filters('ftt_starter_content', $this->get_starter_content());
 
     if($starter_content) {
-      add_action('after_setup_theme', function() {
+      add_action('after_setup_theme', function() use ($starter_content) {
         add_theme_support('starter-content', $starter_content);
       });
     }
