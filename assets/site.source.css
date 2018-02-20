@@ -348,6 +348,7 @@ img {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  vertical-align: middle;
 }
 
 a {
@@ -378,6 +379,7 @@ hr {
 }
 
 .mainnav {
+  position: relative;
   position: -webkit-sticky;
   position: sticky;
   width: 100%;
@@ -1034,6 +1036,7 @@ hr {
 .content a:not(.button):not(.btn):not(.elementor-button) {
   -webkit-text-decoration-skip: ink;
           text-decoration-skip: ink;
+  text-decoration-skip-ink: auto;
   text-decoration: underline;
   transition: opacity .2s ease;
 }
@@ -1388,16 +1391,6 @@ hr {
 
 .content .locations-summary-addr-link {
   border-bottom: none;
-}
-
-.elementor-page .elementor-section-wrap > .elementor-section-boxed > .elementor-container {
-  box-sizing: content-box;
-  margin: 0 auto;
-  padding: 0 4vw;
-}
-
-.elementor-page .elementor-section-wrap > .elementor-section-boxed > .elementor-container *, .elementor-page .elementor-section-wrap > .elementor-section-boxed > .elementor-container *:before, .elementor-page .elementor-section-wrap > .elementor-section-boxed > .elementor-container *:after {
-  box-sizing: border-box;
 }
 
 .widgets-layout .wpforms-field-medium {
