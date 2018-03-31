@@ -32,7 +32,7 @@ class FoodTruckTheme
     $theme_version = wp_get_theme()->get('Version');
 
     // Add assets to wp_head
-    wp_enqueue_style('food-truck-theme', get_parent_theme_file_uri('/assets/site.css'), null, $theme_version, 'all');
+    wp_enqueue_style('food-truck-theme', get_parent_theme_file_uri('style.css'), null, $theme_version, 'all');
     wp_enqueue_script('food-truck-theme', get_parent_theme_file_uri('/assets/site.js'), array('jquery'), $theme_version, false);
 
     // Add comments reply script

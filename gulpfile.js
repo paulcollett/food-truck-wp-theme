@@ -31,16 +31,22 @@ gulp.task('default', function(){
 });
 
 gulp.task('watch',['default'],function(){
-  gulp.watch(src.css, {cwd:'./'}, ['compile-sass-to-css-min', 'compile-sass-to-css']);
+  gulp.watch(src.css, {cwd:'./'}, ['compile-sass-to-css-min-and-move', 'compile-sass-to-css']);
   gulp.watch(src.js, {cwd:'./'}, ['compile-js-to-min', 'compile-js']);
 });
 
 gulp.task('build',[
-  'compile-sass-to-css-min',
+  'compile-sass-to-css-min-and-move',
   'compile-sass-to-css',
   'compile-js-to-min',
   'compile-js'
 ]);
+
+//move-site-css-to-style-css
+gulp.task('compile-sass-to-css-min-and-move', ['compile-sass-to-css-min'], function() {
+  return gulp.src( dest.css + '/style.css' )
+    .pipe(gulp.dest( './' ));
+});
 
 gulp.task('compile-sass-to-css', function(){
   return gulp.src( src.css )

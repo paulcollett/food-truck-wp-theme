@@ -1,9 +1,24 @@
 /*!
- * Food Truck Theme for Wordpress
- * https://github.com/paulcollett/food-truck-wp-theme
- * Paul Collett <paulcollett.com>
- *
- */
+Theme Name: Food Truck
+Theme URI: https://github.com/paulcollett/food-truck-wp-theme
+Author: Paul Collett
+Author URI: http://www.paulcollett.com/
+Description: Food Truck is a Wordpress Theme designed and built around the needs of Food Truck and Mobile Street Food operators. Highly customizable, responsive & optimized for use with the Locations & Times Food Truck Plugin
+Version: 1.0.5
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: foodtruck
+Tags: flexible-header, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, sticky-post, theme-options, threaded-comments, translation-ready
+*/
+/*!
+
+The original uncompressed style.css version
+can be found at assets/style.source.css
+
+To add or override css styles it's reccomended to add css
+through the customization panel, or create a child theme.
+
+*/
 html {
   box-sizing: border-box;
   font-family: sans-serif;
@@ -413,24 +428,20 @@ hr {
 }
 
 .mainnav_items {
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+      align-items: center;
   min-height: 1px;
   padding: 0 1%;
 }
 
 .mainnav_items_links {
   width: 1%;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex: 1;
+      flex: 1;
+  -ms-flex-align: center;
+      align-items: center;
   padding: 2vh 0;
   font-size: calc(0.5em + 1vw);
 }
@@ -469,7 +480,6 @@ hr {
   top: 0;
   left: 0;
   height: 0;
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   z-index: 1;
@@ -499,57 +509,37 @@ hr {
 .mainnav_mob_items_item {
   font-size: calc(1em + 1vw);
   margin-bottom: .3em;
-  -webkit-animation: mob-nav-items-in .25s ease-out both;
-          animation: mob-nav-items-in .25s ease-out both;
+  animation: mob-nav-items-in .25s ease-out both;
 }
 
 .mainnav_mob_items_item:nth-child(2) {
-  -webkit-animation-delay: .1s;
-          animation-delay: .1s;
+  animation-delay: .1s;
 }
 
 .mainnav_mob_items_item:nth-child(3) {
-  -webkit-animation-delay: .2s;
-          animation-delay: .2s;
+  animation-delay: .2s;
 }
 
 .mainnav_mob_items_item:nth-child(4) {
-  -webkit-animation-delay: .28s;
-          animation-delay: .28s;
+  animation-delay: .28s;
 }
 
 .mainnav_mob_items_item:nth-child(n+5) {
-  -webkit-animation-delay: .32s;
-          animation-delay: .32s;
+  animation-delay: .32s;
 }
 
 .mainnav_mob_items_item:last-child {
   margin-bottom: 0;
 }
 
-@-webkit-keyframes mob-nav-items-in {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(-20%);
-            transform: translateY(-20%);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
 @keyframes mob-nav-items-in {
   0% {
     opacity: 0;
-    -webkit-transform: translateY(-20%);
-            transform: translateY(-20%);
+    transform: translateY(-20%);
   }
   100% {
     opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
   }
 }
 
@@ -578,9 +568,7 @@ hr {
 
 .mainnav-toggle:before, .mainnav-toggle:after {
   content: '';
-  transition-property: top, -webkit-transform;
   transition-property: top, transform;
-  transition-property: top, transform, -webkit-transform;
 }
 
 .mainnav-toggle > * {
@@ -589,16 +577,14 @@ hr {
 }
 
 .site--nav-open .mainnav-toggle:before {
-  -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
   top: 14px;
 }
 
 .site--nav-open .mainnav-toggle:after {
-  -webkit-transform: rotate(-45deg);
-      -ms-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
   top: -14px;
 }
 
@@ -668,64 +654,38 @@ hr {
   left: 0%;
 }
 
-@-webkit-keyframes logo-in {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale(0.9);
-            transform: scale(0.9);
-  }
-  90% {
-    opacity: 1;
-    -webkit-transform: scale(1.05);
-            transform: scale(1.05);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
 @keyframes logo-in {
   0% {
     opacity: 0;
-    -webkit-transform: scale(0.9);
-            transform: scale(0.9);
+    transform: scale(0.9);
   }
   90% {
     opacity: 1;
-    -webkit-transform: scale(1.05);
-            transform: scale(1.05);
+    transform: scale(1.05);
   }
   100% {
     opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
 }
 
 .logo {
   display: inline-block;
-  -webkit-animation: logo-in .4s .1s ease backwards;
-          animation: logo-in .4s .1s ease backwards;
+  animation: logo-in .4s .1s ease backwards;
   color: currentcolor;
   font-size: 120%;
   min-height: 1px;
   max-width: 250px;
   text-align: center;
   line-height: 1.3em;
-  -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1);
-  transition: -webkit-transform .2s ease;
+  -ms-transform: scale(1);
+      transform: scale(1);
   transition: transform .2s ease;
-  transition: transform .2s ease, -webkit-transform .2s ease;
 }
 
 .logo:hover {
-  -webkit-transform: scale(1.05);
-      -ms-transform: scale(1.05);
-          transform: scale(1.05);
+  -ms-transform: scale(1.05);
+      transform: scale(1.05);
 }
 
 .logo img {
@@ -821,27 +781,22 @@ hr {
   color: #fff;
   border: none;
   padding: .4em .8em;
-  transition: -webkit-transform .3s ease;
   transition: transform .3s ease;
-  transition: transform .3s ease, -webkit-transform .3s ease;
   outline: none;
 }
 
 .btn:hover, .button:hover, button:hover, *[type=submit]:hover, .submit:hover, .elementor-button:hover {
   border: none;
-  -webkit-transform: scale(1.03);
-      -ms-transform: scale(1.03);
-          transform: scale(1.03);
+  -ms-transform: scale(1.03);
+      transform: scale(1.03);
 }
 
 .btn:active, .button:active, button:active, *[type=submit]:active, .submit:active, .elementor-button:active {
-  -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1);
+  -ms-transform: scale(1);
+      transform: scale(1);
 }
 
 .ftt-banner-tagline {
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   padding: 4vh 4vw;
@@ -886,7 +841,6 @@ hr {
 }
 
 .widgets-layout {
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
@@ -895,12 +849,10 @@ hr {
 
 .widgets-layout_widget {
   min-width: 50%;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-flex: 1;
+      flex: 1;
   background: #666;
   color: #fff;
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }

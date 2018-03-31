@@ -1,0 +1,29 @@
+/*!
+Theme Name: Food Truck
+Theme URI: https://github.com/paulcollett/food-truck-wp-theme
+Author: Paul Collett
+Author URI: http://www.paulcollett.com/
+Description: Food Truck is a Wordpress Theme designed and built around the needs of Food Truck and Mobile Street Food operators. Highly customizable, responsive & optimized for use with the Locations & Times Food Truck Plugin
+Version: 1.0.5
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: foodtruck
+Tags: flexible-header, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, sticky-post, theme-options, threaded-comments, translation-ready
+*/
+
+/*!
+
+The original uncompressed style.css version
+can be found at assets/style.source.css
+
+To add or override css styles it's reccomended to add css
+through the customization panel, or create a child theme.
+
+*/
+
+@import 'sass/vendor/reboot';
+@import 'sass/site/globals';
+@import 'sass/site/headfoot';
+@import 'sass/site/elements';
+@import 'sass/site/utilites';
+@import 'sass/site/wp-overrides';
