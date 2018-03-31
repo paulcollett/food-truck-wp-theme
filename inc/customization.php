@@ -23,6 +23,7 @@ class FoodTruckThemeCustomization {
 
     // Output customization css
     add_action('wp_head', array($this, 'output_css'));
+    add_action('wp_enqueue_scripts', array($this, 'output_fonts'));
   }
 
   function manage_feature_support() {
@@ -363,38 +364,19 @@ class FoodTruckThemeCustomization {
         get_theme_mod('ftt_theme_mod_background_color', '#fff')
       )
     );
-    $font_schemes_available = array(
-      'bungee' => array('Bungee', 'Overpass:300'),
-      'la-mex' => array('Sancreek', 'Lato'),
-      'impact' => array('Anton', 'Barlow Semi Condensed'),//Tinos
-      'samari' => array('Shojumaru', 'PT Serif'),//Vollkorn
-      'leaf' => array('Vesper Libre:900', 'Zilla Slab'),//Karla
-      'modern' => array('Overpass Mono', 'Overpass Mono'),//Montserrat:300
-      'icing' => array('Leckerli One', 'ABeeZee'),//Pacifico //Dosis
-      'black-ops' => array('Black Ops One', 'Titillium Web'),//Monda
-      'diner' => array('Fontdiner Swanky', 'Josefin Sans'),//Fira Sans:300
-      'comic' => array('Bangers', 'Inconsolata'),
-    );
 
     $color_scheme_name = get_theme_mod('ftt_theme_mod_color_scheme', false);
-    $font_scheme_name = get_theme_mod('ftt_theme_mod_font_scheme', false);
-
     $color_scheme_name = isset($color_schemes_available[$color_scheme_name]) ? $color_scheme_name : key($color_schemes_available);
-    $font_scheme_name = isset($font_schemes_available[$font_scheme_name]) ? $font_scheme_name : key($font_schemes_available);
     $color_scheme = $color_schemes_available[$color_scheme_name];
-    $font_scheme_query = str_replace(' ', '+', implode('|', $font_schemes_available[$font_scheme_name]));
-    $font_scheme_stack = array_map(function($v) {
-      return '"' . (explode(':', $v)[0]) . '", sans-serif';
-    }, $font_schemes_available[$font_scheme_name]);
+    $font_scheme = $this->_get_custom_font_scheme();
 
     echo implode("\n", array(
-      sprintf('<!-- Customized Food Truck Theme CSS (%s, %s) --> ', $color_scheme_name, $font_scheme_name),
-      '<link href="https://fonts.googleapis.com/css?family=' . $font_scheme_query . '" rel="stylesheet">',
+      sprintf('<!-- Customized Food Truck Theme CSS (%s, %s) --> ', $color_scheme_name, $font_scheme['name']),
       '<style>',
       $css_rule('body', array(
         'color' => $color_scheme[1],
         'background-color' => $color_scheme[2],
-        'font-family' => $font_scheme_stack[1]
+        'font-family' => $font_scheme['stack'][1]
       )),
       $css_rule('.mainnav, .ftt-banner-tagline-text_line', array(
         'color' => $color_scheme[0],
@@ -413,7 +395,7 @@ class FoodTruckThemeCustomization {
         'background-image' => sprintf('url(%s)', get_theme_mod('ftt_theme_mod_tagline_image', ''))
       )) : '',
       $css_rule('.mainnav, .sub-pages, h1, h2, h3, h4, h5, .btn, .button, button, *[type=submit], .submit', array(
-        'font-family' => $font_scheme_stack[0]
+        'font-family' => $font_scheme['stack'][0]
       )),
       $css_rule('.logo_text, .btn, .button, button, *[type=submit], .submit, .elementor-button', array(
         'color' => $color_scheme[2],
@@ -433,6 +415,49 @@ class FoodTruckThemeCustomization {
       )),
       '</style>'
     ));
+  }
+
+  function _get_custom_font_scheme() {
+    if(!empty($this->font_scheme)) {
+      return $this->font_scheme;
+    }
+
+    $r = array();
+
+    $font_schemes_available = array(
+      'bungee' => array('Bungee', 'Overpass:300'),
+      'la-mex' => array('Sancreek', 'Lato'),
+      'impact' => array('Anton', 'Barlow Semi Condensed'),//Tinos
+      'samari' => array('Shojumaru', 'PT Serif'),//Vollkorn
+      'leaf' => array('Vesper Libre:900', 'Zilla Slab'),//Karla
+      'modern' => array('Overpass Mono', 'Overpass Mono'),//Montserrat:300
+      'icing' => array('Leckerli One', 'ABeeZee'),//Pacifico //Dosis
+      'black-ops' => array('Black Ops One', 'Titillium Web'),//Monda
+      'diner' => array('Fontdiner Swanky', 'Josefin Sans'),//Fira Sans:300
+      'comic' => array('Bangers', 'Inconsolata'),
+    );
+
+    $font_scheme_name = get_theme_mod('ftt_theme_mod_font_scheme', false);
+    $r['name'] = isset($font_schemes_available[$font_scheme_name]) ? $font_scheme_name : key($font_schemes_available);
+
+    $r['query'] = str_replace(' ', '+', implode('|', $font_schemes_available[$r['name']]));
+    $r['stack'] = array_map(function($v) {
+      return '"' . (explode(':', $v)[0]) . '", sans-serif';
+    }, $font_schemes_available[$r['name']]);
+
+    return $this->font_scheme = $r;
+  }
+
+  function output_fonts() {
+    $font_scheme = $this->_get_custom_font_scheme();
+
+    $custom_font_stylesheet = 'https://fonts.googleapis.com/css?family=' . $font_scheme['query'];
+
+    wp_enqueue_style('food-truck-theme-custom-fonts',
+      $custom_font_stylesheet,
+      null,
+      null, 'all'
+    );
   }
 
   function get_starter_content() {
