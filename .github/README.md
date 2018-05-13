@@ -21,7 +21,7 @@ _This theme is built upon Wordpress' core theme to provide full compatibility an
 1. **[Download Theme from GitHub](https://github.com/paulcollett/food-truck-wp-theme/archive/master.zip)**
 2. Upload the `.zip` file into your Wordpress admin theme page (or, un-zip & move the folder `food-truck-wp-theme` into the wp-content/themes folder)
 
-Or, simply search themes for "Food Truck" in your wordpress admin panel_
+_Or, simply search themes for "Food Truck" in your wordpress admin panel_
 
 ### Examples
 
